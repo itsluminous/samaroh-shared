@@ -1,0 +1,11 @@
+# Minimal Supabase CLI configuration — enough to run `supabase db start` /
+# `supabase db reset` against the migrations and seed in this directory.
+project_id = "samaroh"
+
+[db]
+port = 54322
+major_version = 15
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
