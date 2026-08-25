@@ -87,6 +87,14 @@
     "value": "{feature} स्क्रीन अभी बन रही है।",
     "description": "Body text on placeholder shell screens. {feature} is the localized tab name."
   },
+  "app.feature.onboarding": {
+    "value": "सेटअप",
+    "description": "Display name of the onboarding/setup flow, used on its placeholder screen (not a bottom tab)."
+  },
+  "app.feature.reports": {
+    "value": "रिपोर्ट्स",
+    "description": "Display name of the reports section (lives inside the Menu tab), used on its placeholder screen."
+  },
   "booking.event_type.engagement": {
     "value": "सगाई",
     "description": "Built-in event type label (💍)."
