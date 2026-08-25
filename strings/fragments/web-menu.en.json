@@ -1,0 +1,78 @@
+{
+  "settings.sync.queue_title": {
+    "value": "Pending changes",
+    "description": "Heading of the queued-changes list on the web sync-status page (offline outbox items waiting to reach the server)."
+  },
+  "settings.sync.op_create": {
+    "value": "New record",
+    "description": "Operation label on a sync-queue row: the queued change creates a new record."
+  },
+  "settings.sync.op_update": {
+    "value": "Change",
+    "description": "Operation label on a sync-queue row: the queued change edits an existing record."
+  },
+  "settings.sync.op_delete": {
+    "value": "Deletion",
+    "description": "Operation label on a sync-queue row: the queued change deletes (tombstones) a record."
+  },
+  "settings.sync.status_queued": {
+    "value": "Waiting to sync",
+    "description": "Status chip on a sync-queue row that has not been tried yet or will be retried."
+  },
+  "settings.sync.status_error": {
+    "value": "Failed",
+    "description": "Status chip on a sync-queue row whose upload was rejected by the server (e.g. missing permission)."
+  },
+  "settings.sync.status_conflict": {
+    "value": "Overridden by a newer change from another device",
+    "description": "Explanation on a sync-queue row that was dropped because the server copy was updated more recently (last-write-wins)."
+  },
+  "settings.sync.discard": {
+    "value": "Discard",
+    "description": "Button on a failed sync-queue row: throw the queued change away instead of retrying it."
+  },
+  "menu.members.edit_title": {
+    "value": "Edit member",
+    "description": "Dialog title when the owner edits an existing member's display name and permissions."
+  },
+  "menu.members.revoke_confirm_title": {
+    "value": "Revoke access?",
+    "description": "Confirmation dialog title before revoking a member's access."
+  },
+  "menu.members.revoke_confirm_message": {
+    "value": "{name} will lose access to this business right away.",
+    "description": "Confirmation dialog body before revoking a member. {name} is the member's display name."
+  },
+  "menu.members.reactivate": {
+    "value": "Restore access",
+    "description": "Action on a revoked member: make the membership active again."
+  },
+  "menu.members.saved": {
+    "value": "Member saved",
+    "description": "Snackbar shown after a member was added or updated successfully."
+  },
+  "menu.members.save_failed": {
+    "value": "Could not save the member",
+    "description": "Snackbar shown when adding or updating a member failed (e.g. network or duplicate email)."
+  },
+  "settings.business.save_failed": {
+    "value": "Could not save the changes",
+    "description": "Snackbar shown when saving the business profile failed."
+  },
+  "menu.about.licenses_body_web": {
+    "value": "The web app is built with open-source software, including: Next.js and React (MIT), Material UI (MIT), Supabase JS (MIT), next-intl (MIT), pdf-lib (MIT), Dexie.js (Apache 2.0).",
+    "description": "Licenses note on the web About screen listing the open-source libraries the web app uses."
+  },
+  "reports.range.from_label": {
+    "value": "From",
+    "description": "Label of the start-date field in the custom date-range picker on web report pages."
+  },
+  "reports.range.to_label": {
+    "value": "To",
+    "description": "Label of the end-date field in the custom date-range picker on web report pages."
+  },
+  "reports.export.download_csv": {
+    "value": "Download CSV",
+    "description": "Button on web report pages that downloads the current report as a CSV file (web counterpart of the Android share action)."
+  }
+}

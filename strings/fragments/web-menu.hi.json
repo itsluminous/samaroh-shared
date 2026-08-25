@@ -1,0 +1,78 @@
+{
+  "settings.sync.queue_title": {
+    "value": "बाकी बदलाव",
+    "description": "Heading of the queued-changes list on the web sync-status page (offline outbox items waiting to reach the server)."
+  },
+  "settings.sync.op_create": {
+    "value": "नया रिकॉर्ड",
+    "description": "Operation label on a sync-queue row: the queued change creates a new record."
+  },
+  "settings.sync.op_update": {
+    "value": "बदलाव",
+    "description": "Operation label on a sync-queue row: the queued change edits an existing record."
+  },
+  "settings.sync.op_delete": {
+    "value": "हटाना",
+    "description": "Operation label on a sync-queue row: the queued change deletes (tombstones) a record."
+  },
+  "settings.sync.status_queued": {
+    "value": "सिंक का इंतज़ार है",
+    "description": "Status chip on a sync-queue row that has not been tried yet or will be retried."
+  },
+  "settings.sync.status_error": {
+    "value": "विफल",
+    "description": "Status chip on a sync-queue row whose upload was rejected by the server (e.g. missing permission)."
+  },
+  "settings.sync.status_conflict": {
+    "value": "दूसरे डिवाइस के नए बदलाव ने इसे हटा दिया",
+    "description": "Explanation on a sync-queue row that was dropped because the server copy was updated more recently (last-write-wins)."
+  },
+  "settings.sync.discard": {
+    "value": "हटा दें",
+    "description": "Button on a failed sync-queue row: throw the queued change away instead of retrying it."
+  },
+  "menu.members.edit_title": {
+    "value": "सदस्य बदलें",
+    "description": "Dialog title when the owner edits an existing member's display name and permissions."
+  },
+  "menu.members.revoke_confirm_title": {
+    "value": "पहुँच वापस लें?",
+    "description": "Confirmation dialog title before revoking a member's access."
+  },
+  "menu.members.revoke_confirm_message": {
+    "value": "{name} की इस व्यवसाय तक पहुँच तुरंत खत्म हो जाएगी।",
+    "description": "Confirmation dialog body before revoking a member. {name} is the member's display name."
+  },
+  "menu.members.reactivate": {
+    "value": "पहुँच वापस दें",
+    "description": "Action on a revoked member: make the membership active again."
+  },
+  "menu.members.saved": {
+    "value": "सदस्य सहेज लिया गया",
+    "description": "Snackbar shown after a member was added or updated successfully."
+  },
+  "menu.members.save_failed": {
+    "value": "सदस्य सहेजा नहीं जा सका",
+    "description": "Snackbar shown when adding or updating a member failed (e.g. network or duplicate email)."
+  },
+  "settings.business.save_failed": {
+    "value": "बदलाव सहेजे नहीं जा सके",
+    "description": "Snackbar shown when saving the business profile failed."
+  },
+  "menu.about.licenses_body_web": {
+    "value": "यह वेब ऐप ओपन-सोर्स सॉफ़्टवेयर से बना है, जिनमें शामिल हैं: Next.js और React (MIT), Material UI (MIT), Supabase JS (MIT), next-intl (MIT), pdf-lib (MIT), Dexie.js (Apache 2.0)।",
+    "description": "Licenses note on the web About screen listing the open-source libraries the web app uses."
+  },
+  "reports.range.from_label": {
+    "value": "से",
+    "description": "Label of the start-date field in the custom date-range picker on web report pages."
+  },
+  "reports.range.to_label": {
+    "value": "तक",
+    "description": "Label of the end-date field in the custom date-range picker on web report pages."
+  },
+  "reports.export.download_csv": {
+    "value": "CSV डाउनलोड करें",
+    "description": "Button on web report pages that downloads the current report as a CSV file (web counterpart of the Android share action)."
+  }
+}
