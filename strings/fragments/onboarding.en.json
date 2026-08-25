@@ -290,5 +290,9 @@
   "auth.permissions.action_gcal_sync": {
     "value": "Google Calendar sync",
     "description": "Permission toggle: enable and manage Google Calendar sync."
+  },
+  "onboarding.sign_in.continue_offline": {
+    "value": "Continue without an account",
+    "description": "Sign-in screen escape hatch (offline-first): proceeds to business setup in device-local owner mode; data syncs once the user signs in later."
   }
 }
