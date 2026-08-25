@@ -1,0 +1,118 @@
+{
+  "common.app_name": {
+    "value": "समारोह",
+    "description": "Application name shown in launcher, top bar and about screen. Brand name in Devanagari."
+  },
+  "common.action.save": {
+    "value": "सहेजें",
+    "description": "Generic confirm/save button label used on all forms."
+  },
+  "common.action.cancel": {
+    "value": "रद्द करें",
+    "description": "Generic dismiss/cancel button label used on all dialogs and forms."
+  },
+  "common.action.delete": {
+    "value": "हटाएँ",
+    "description": "Generic delete action label (soft delete / tombstone in this app)."
+  },
+  "common.action.edit": {
+    "value": "बदलें",
+    "description": "Generic edit action label on cards and list rows."
+  },
+  "common.action.add": {
+    "value": "जोड़ें",
+    "description": "Generic add action label, used on FABs and empty states."
+  },
+  "common.action.search": {
+    "value": "खोजें",
+    "description": "Placeholder/label for search input fields."
+  },
+  "common.action.close": {
+    "value": "बंद करें",
+    "description": "Generic close action for sheets and dialogs."
+  },
+  "common.action.retry": {
+    "value": "फिर से कोशिश करें",
+    "description": "Retry action after a failed operation (e.g. sync error, network failure)."
+  },
+  "common.action.share": {
+    "value": "साझा करें",
+    "description": "Generic share action label (share sheet trigger)."
+  },
+  "common.state.loading": {
+    "value": "लोड हो रहा है…",
+    "description": "Generic loading indicator text."
+  },
+  "common.state.offline": {
+    "value": "ऑफ़लाइन",
+    "description": "Short connectivity state label shown next to the cloud status icon."
+  },
+  "common.state.synced": {
+    "value": "सिंक हो गया",
+    "description": "Sync state label: all local changes have been pushed to the server."
+  },
+  "common.state.pending": {
+    "value": "लंबित",
+    "description": "Sync state label: local changes are queued and waiting to sync."
+  },
+  "common.state.offline_banner": {
+    "value": "ऑफ़लाइन — बदलाव बाद में सिंक होंगे",
+    "description": "Persistent thin banner shown while the device has no connectivity."
+  },
+  "common.state.pending_changes": {
+    "value": "{count, plural, one {# बदलाव सिंक होना बाकी} other {# बदलाव सिंक होने बाकी}}",
+    "description": "Outbox badge text; count is the number of local operations waiting to sync. ICU plural."
+  },
+  "common.nav.booking": {
+    "value": "बुकिंग",
+    "description": "Bottom navigation tab 1: calendar-first booking management."
+  },
+  "common.nav.expenses": {
+    "value": "खर्च",
+    "description": "Bottom navigation tab 2: party ledger for money paid/received."
+  },
+  "common.nav.inventory": {
+    "value": "सामान",
+    "description": "Bottom navigation tab 3: stock items and in/out transactions."
+  },
+  "common.nav.menu": {
+    "value": "मेनू",
+    "description": "Bottom navigation tab 4: settings, reports, members, about."
+  },
+  "app.placeholder.title": {
+    "value": "जल्द आ रहा है",
+    "description": "Title on placeholder shell screens before the feature is implemented."
+  },
+  "app.placeholder.message": {
+    "value": "{feature} स्क्रीन अभी बन रही है।",
+    "description": "Body text on placeholder shell screens. {feature} is the localized tab name."
+  },
+  "booking.event_type.engagement": {
+    "value": "सगाई",
+    "description": "Built-in event type label (💍)."
+  },
+  "booking.event_type.tilak": {
+    "value": "तिलक",
+    "description": "Built-in event type label (🪔) — pre-wedding tilak ceremony."
+  },
+  "booking.event_type.wedding": {
+    "value": "शादी",
+    "description": "Built-in event type label (💒)."
+  },
+  "booking.event_type.room_booking": {
+    "value": "कमरा बुकिंग",
+    "description": "Built-in event type label (🏨) — guest house / room stay."
+  },
+  "booking.event_type.birthday": {
+    "value": "जन्मदिन",
+    "description": "Built-in event type label (🎂)."
+  },
+  "booking.event_type.anniversary": {
+    "value": "सालगिरह",
+    "description": "Built-in event type label (👫🏻)."
+  },
+  "booking.event_type.custom": {
+    "value": "अपनी पसंद",
+    "description": "Built-in event type label (✨) — user provides free-text label and emoji."
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "common.app_name": {
+    "value": "Samaroh",
+    "description": "Application name shown in launcher, top bar and about screen. Never translated phonetically differently — brand name."
+  },
+  "common.action.save": {
+    "value": "Save",
+    "description": "Generic confirm/save button label used on all forms."
+  },
+  "common.action.cancel": {
+    "value": "Cancel",
+    "description": "Generic dismiss/cancel button label used on all dialogs and forms."
+  },
+  "common.action.delete": {
+    "value": "Delete",
+    "description": "Generic delete action label (soft delete / tombstone in this app)."
+  },
+  "common.action.edit": {
+    "value": "Edit",
+    "description": "Generic edit action label on cards and list rows."
+  },
+  "common.action.add": {
+    "value": "Add",
+    "description": "Generic add action label, used on FABs and empty states."
+  },
+  "common.action.search": {
+    "value": "Search",
+    "description": "Placeholder/label for search input fields."
+  },
+  "common.action.close": {
+    "value": "Close",
+    "description": "Generic close action for sheets and dialogs."
+  },
+  "common.action.retry": {
+    "value": "Retry",
+    "description": "Retry action after a failed operation (e.g. sync error, network failure)."
+  },
+  "common.action.share": {
+    "value": "Share",
+    "description": "Generic share action label (share sheet trigger)."
+  },
+  "common.state.loading": {
+    "value": "Loading…",
+    "description": "Generic loading indicator text."
+  },
+  "common.state.offline": {
+    "value": "Offline",
+    "description": "Short connectivity state label shown next to the cloud status icon."
+  },
+  "common.state.synced": {
+    "value": "Synced",
+    "description": "Sync state label: all local changes have been pushed to the server."
+  },
+  "common.state.pending": {
+    "value": "Pending",
+    "description": "Sync state label: local changes are queued and waiting to sync."
+  },
+  "common.state.offline_banner": {
+    "value": "Offline — changes will sync",
+    "description": "Persistent thin banner shown while the device has no connectivity."
+  },
+  "common.state.pending_changes": {
+    "value": "{count, plural, one {# pending change} other {# pending changes}}",
+    "description": "Outbox badge text; count is the number of local operations waiting to sync. ICU plural."
+  },
+  "common.nav.booking": {
+    "value": "Booking",
+    "description": "Bottom navigation tab 1: calendar-first booking management."
+  },
+  "common.nav.expenses": {
+    "value": "Expenses",
+    "description": "Bottom navigation tab 2: party ledger for money paid/received."
+  },
+  "common.nav.inventory": {
+    "value": "Inventory",
+    "description": "Bottom navigation tab 3: stock items and in/out transactions."
+  },
+  "common.nav.menu": {
+    "value": "Menu",
+    "description": "Bottom navigation tab 4: settings, reports, members, about."
+  },
+  "app.placeholder.title": {
+    "value": "Coming soon",
+    "description": "Title on placeholder shell screens before the feature is implemented."
+  },
+  "app.placeholder.message": {
+    "value": "The {feature} screen is under construction.",
+    "description": "Body text on placeholder shell screens. {feature} is the localized tab name."
+  },
+  "booking.event_type.engagement": {
+    "value": "Engagement",
+    "description": "Built-in event type label (💍)."
+  },
+  "booking.event_type.tilak": {
+    "value": "Tilak",
+    "description": "Built-in event type label (🪔) — pre-wedding tilak ceremony."
+  },
+  "booking.event_type.wedding": {
+    "value": "Wedding",
+    "description": "Built-in event type label (💒)."
+  },
+  "booking.event_type.room_booking": {
+    "value": "Room Booking",
+    "description": "Built-in event type label (🏨) — guest house / room stay."
+  },
+  "booking.event_type.birthday": {
+    "value": "Birthday",
+    "description": "Built-in event type label (🎂)."
+  },
+  "booking.event_type.anniversary": {
+    "value": "Anniversary",
+    "description": "Built-in event type label (👫🏻)."
+  },
+  "booking.event_type.custom": {
+    "value": "Custom",
+    "description": "Built-in event type label (✨) — user provides free-text label and emoji."
+  }
+}
