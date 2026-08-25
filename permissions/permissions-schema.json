@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://samaroh.app/schemas/permissions.json",
+  "title": "Samaroh member permissions",
+  "description": "Shape of business_members.permissions. Every action defaults to false when absent. Owners bypass this object entirely (implicit full access). Backups are owner-only and deliberately NOT representable here.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "booking": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "view": { "type": "boolean", "description": "See the calendar, booking list and booking cards." },
+        "create": { "type": "boolean", "description": "Add new bookings." },
+        "edit": { "type": "boolean", "description": "Edit bookings and manage date blocks." },
+        "delete": { "type": "boolean", "description": "Cancel bookings / delete booking records (tombstone)." },
+        "record_payment": { "type": "boolean", "description": "Record payments against bookings and act on payment reminders." },
+        "generate_invoice": { "type": "boolean", "description": "Generate and share booking invoices." }
+      }
+    },
+    "expenses": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "view": { "type": "boolean", "description": "See parties, ledgers and attachments." },
+        "create": { "type": "boolean", "description": "Add ledger entries and attachments." },
+        "edit": { "type": "boolean", "description": "Edit ledger entries." },
+        "delete": { "type": "boolean", "description": "Delete ledger entries (tombstone)." },
+        "manage_parties": { "type": "boolean", "description": "Add and edit parties (people/suppliers in the ledger)." }
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "view": { "type": "boolean", "description": "See current stock and transaction history." },
+        "create": { "type": "boolean", "description": "Record add/remove transactions." },
+        "edit": { "type": "boolean", "description": "Edit transactions." },
+        "delete": { "type": "boolean", "description": "Delete transactions (tombstone)." },
+        "manage_master_items": { "type": "boolean", "description": "Add, edit and delete master items and their images." }
+      }
+    },
+    "reports": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "view": { "type": "boolean", "description": "Open the Reports section and export report PDFs/CSVs." }
+      }
+    },
+    "settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "manage_business": { "type": "boolean", "description": "Edit business profile, logo, invoice prefix and business settings." },
+        "manage_members": { "type": "boolean", "description": "Invite, edit and revoke members. (Owner always can; granting this to employees is unusual.)" },
+        "gcal_sync": { "type": "boolean", "description": "Toggle and manage Google Calendar sync." }
+      }
+    }
+  }
+}

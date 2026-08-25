@@ -1,0 +1,12 @@
+{
+  "$comment": "Built-in booking event types. `key` is stored in bookings.event_type; `emoji` is the default bookings.event_icon; `label_key` resolves the localized display name from the string catalog. The `custom` type additionally lets the user enter a free-text label and pick any emoji. Emoji are NOT localized.",
+  "event_types": [
+    { "key": "engagement", "emoji": "💍", "label_key": "booking.event_type.engagement" },
+    { "key": "tilak", "emoji": "🪔", "label_key": "booking.event_type.tilak" },
+    { "key": "wedding", "emoji": "💒", "label_key": "booking.event_type.wedding" },
+    { "key": "room_booking", "emoji": "🏨", "label_key": "booking.event_type.room_booking" },
+    { "key": "birthday", "emoji": "🎂", "label_key": "booking.event_type.birthday" },
+    { "key": "anniversary", "emoji": "👫🏻", "label_key": "booking.event_type.anniversary" },
+    { "key": "custom", "emoji": "✨", "label_key": "booking.event_type.custom" }
+  ]
+}
