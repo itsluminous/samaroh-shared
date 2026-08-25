@@ -1,0 +1,270 @@
+{
+  "expenses.home.search_placeholder": {
+    "value": "Search parties",
+    "description": "Placeholder of the search box above the party list on the expenses home."
+  },
+  "expenses.home.empty": {
+    "value": "No parties yet — add a person to start the ledger.",
+    "description": "Empty state of the expenses home when the business has no parties."
+  },
+  "expenses.home.no_results": {
+    "value": "No parties match your search",
+    "description": "Shown when the party search filter returns nothing."
+  },
+  "expenses.home.no_entries": {
+    "value": "No entries yet",
+    "description": "Secondary line on a party row that has no ledger entries (instead of the last-entry relative time)."
+  },
+  "expenses.state.no_business": {
+    "value": "No business found for this account",
+    "description": "Shown on the expenses section when the signed-in user has no business membership."
+  },
+  "expenses.error.load_failed": {
+    "value": "Could not load data. Check your connection and try again.",
+    "description": "Generic load-failure message on the expenses screens."
+  },
+  "expenses.error.save_failed": {
+    "value": "Could not save. Try again.",
+    "description": "Generic save-failure message on the expenses forms."
+  },
+  "expenses.person.name_label": {
+    "value": "Name",
+    "description": "Label of the party name field in the add-person dialog."
+  },
+  "expenses.person.phone_label": {
+    "value": "Phone (optional)",
+    "description": "Label of the optional phone field in the add-person dialog."
+  },
+  "expenses.person.suggestions_title": {
+    "value": "Already added?",
+    "description": "Heading above the fuzzy-matched existing-party suggestions in the add-person dialog (duplicate steering)."
+  },
+  "expenses.person.name_required": {
+    "value": "Enter a name",
+    "description": "Validation error when the party name is empty."
+  },
+  "expenses.person.duplicate_exists": {
+    "value": "A party with this name already exists",
+    "description": "Validation error when the typed party name exactly matches an existing party."
+  },
+  "expenses.ledger.balance_chip": {
+    "value": "Balance: {amount}",
+    "description": "Balance-after chip on each ledger row. {amount} is a formatted rupee amount."
+  },
+  "expenses.ledger.net_you_get": {
+    "value": "You will get",
+    "description": "Net-balance caption when the party owes you (net positive)."
+  },
+  "expenses.ledger.net_you_give": {
+    "value": "You will give",
+    "description": "Net-balance caption when you owe the party (net negative)."
+  },
+  "expenses.ledger.settled": {
+    "value": "Settled",
+    "description": "Net-balance caption when the party balance is zero."
+  },
+  "expenses.ledger.empty": {
+    "value": "No entries yet — record what you gave or got.",
+    "description": "Empty state of a person ledger with no entries."
+  },
+  "expenses.ledger.back": {
+    "value": "Back to expenses",
+    "description": "Accessible label of the back button from a person ledger to the expenses home."
+  },
+  "expenses.entry.edit_title": {
+    "value": "Edit entry",
+    "description": "Dialog title when editing an existing ledger entry."
+  },
+  "expenses.entry.attachments_label": {
+    "value": "Attachments",
+    "description": "Heading of the attachment list in the add/edit entry dialog."
+  },
+  "expenses.entry.attach": {
+    "value": "Attach invoice",
+    "description": "Button that opens the file picker to attach an invoice (image/PDF) to an entry."
+  },
+  "expenses.entry.attachment_pending": {
+    "value": "Upload pending",
+    "description": "Badge on an attachment whose Google Drive upload has not completed yet."
+  },
+  "expenses.entry.attachment_limit_hint": {
+    "value": "Up to {max} attachments",
+    "description": "Hint under the attach button. {max} is the numeric attachment limit (4)."
+  },
+  "expenses.entry.amount_invalid": {
+    "value": "Enter a valid amount",
+    "description": "Validation error for an empty/invalid/non-positive amount."
+  },
+  "expenses.entry.delete_title": {
+    "value": "Delete entry?",
+    "description": "Confirmation dialog title before tombstone-deleting a ledger entry."
+  },
+  "expenses.entry.delete_message": {
+    "value": "The entry will be removed from the ledger.",
+    "description": "Confirmation dialog body before tombstone-deleting a ledger entry."
+  },
+  "inventory.stock.title": {
+    "value": "Current stock",
+    "description": "Title of the inventory current-stock list screen; also the toggle label back from the master list."
+  },
+  "inventory.stock.search_placeholder": {
+    "value": "Search items",
+    "description": "Placeholder of the search box on the inventory screens."
+  },
+  "inventory.stock.value_label": {
+    "value": "Value",
+    "description": "Label prefix for the FIFO total value shown on a stock row."
+  },
+  "inventory.stock.updated": {
+    "value": "Updated {time}",
+    "description": "Last-transaction caption on a stock row. {time} is a localized relative time like '2 days ago'."
+  },
+  "inventory.stock.empty": {
+    "value": "No stock yet — record a transaction to get started.",
+    "description": "Empty state of the current-stock list when there are no items with stock."
+  },
+  "inventory.stock.no_results": {
+    "value": "No items match your search",
+    "description": "Shown when the item search filter returns nothing."
+  },
+  "inventory.stock.record_transaction": {
+    "value": "Record transaction",
+    "description": "FAB label and dialog title for recording an inventory add/remove transaction."
+  },
+  "inventory.stock.open_masterlist": {
+    "value": "Master list",
+    "description": "Top-bar toggle to the master-item management screen; also that screen's title."
+  },
+  "inventory.state.no_business": {
+    "value": "No business found for this account",
+    "description": "Shown on the inventory section when the signed-in user has no business membership."
+  },
+  "inventory.error.load_failed": {
+    "value": "Could not load data. Check your connection and try again.",
+    "description": "Generic load-failure message on the inventory screens."
+  },
+  "inventory.error.save_failed": {
+    "value": "Could not save. Try again.",
+    "description": "Generic save-failure message on the inventory forms."
+  },
+  "inventory.txn.add": {
+    "value": "Add",
+    "description": "Transaction-type toggle: add stock."
+  },
+  "inventory.txn.remove": {
+    "value": "Remove",
+    "description": "Transaction-type toggle: remove stock (consumes FIFO lots)."
+  },
+  "inventory.txn.no_matches": {
+    "value": "No matching items",
+    "description": "Shown in the item type-ahead when nothing matches the typed text."
+  },
+  "inventory.txn.current_stock": {
+    "value": "In stock: {qty} {unit}",
+    "description": "Caption under the item picker showing the selected item's current stock. {qty} number, {unit} unit label."
+  },
+  "inventory.txn.insufficient_stock": {
+    "value": "Cannot remove more than the current stock ({qty} {unit})",
+    "description": "Validation error when a remove quantity exceeds current stock."
+  },
+  "inventory.txn.item_required": {
+    "value": "Choose an item",
+    "description": "Validation error when no item is selected in the record-transaction dialog."
+  },
+  "inventory.txn.quantity_invalid": {
+    "value": "Enter a valid quantity",
+    "description": "Validation error for an empty/invalid/non-positive quantity."
+  },
+  "inventory.txn.price_invalid": {
+    "value": "Enter a valid price",
+    "description": "Validation error for an empty/invalid/negative unit price."
+  },
+  "inventory.master.add_item": {
+    "value": "Add item",
+    "description": "FAB label / dialog title for creating a master item."
+  },
+  "inventory.master.edit_item": {
+    "value": "Edit item",
+    "description": "Dialog title when editing a master item."
+  },
+  "inventory.master.name_label": {
+    "value": "Name",
+    "description": "Label of the master-item name field."
+  },
+  "inventory.master.unit_label": {
+    "value": "Unit",
+    "description": "Label of the unit dropdown on the master-item form."
+  },
+  "inventory.master.unit_pieces": {
+    "value": "Pieces",
+    "description": "Built-in unit option: pieces."
+  },
+  "inventory.master.unit_quantity": {
+    "value": "Quantity",
+    "description": "Built-in unit option: generic quantity."
+  },
+  "inventory.master.unit_kg": {
+    "value": "Kg",
+    "description": "Built-in unit option: kilograms."
+  },
+  "inventory.master.unit_litre": {
+    "value": "Litre",
+    "description": "Built-in unit option: litres."
+  },
+  "inventory.master.unit_custom": {
+    "value": "Custom…",
+    "description": "Unit dropdown option that reveals a free-text custom unit field."
+  },
+  "inventory.master.custom_unit_label": {
+    "value": "Custom unit",
+    "description": "Label of the free-text field shown when the custom unit option is selected."
+  },
+  "inventory.master.photo_label": {
+    "value": "Photo",
+    "description": "Heading of the item photo section on the master-item form."
+  },
+  "inventory.master.choose_photo": {
+    "value": "Choose photo",
+    "description": "Button that opens the image picker on the master-item form (compressed to ≤320px WebP)."
+  },
+  "inventory.master.remove_photo": {
+    "value": "Remove photo",
+    "description": "Button that clears the picked/existing photo on the master-item form."
+  },
+  "inventory.master.similar_title": {
+    "value": "Similar items already exist:",
+    "description": "Heading above the fuzzy-duplicate suggestion chips on the master-item form (3+ chars, 40% similarity)."
+  },
+  "inventory.master.name_required": {
+    "value": "Enter a name",
+    "description": "Validation error when the master-item name is empty."
+  },
+  "inventory.master.unit_required": {
+    "value": "Enter a unit",
+    "description": "Validation error when the custom unit text is empty."
+  },
+  "inventory.master.duplicate_exists": {
+    "value": "An item with this name already exists",
+    "description": "Validation error when the typed item name exactly matches an existing master item."
+  },
+  "inventory.master.delete_title": {
+    "value": "Delete item?",
+    "description": "Confirmation dialog title before tombstone-deleting a master item."
+  },
+  "inventory.master.delete_message": {
+    "value": "The item will be removed from the master list.",
+    "description": "Confirmation dialog body before tombstone-deleting a master item."
+  },
+  "inventory.master.delete_blocked": {
+    "value": "Cannot delete — this item has transactions",
+    "description": "Tooltip/message on a disabled delete button for a master item that has inventory transactions."
+  },
+  "inventory.master.empty": {
+    "value": "No items yet — add your first item.",
+    "description": "Empty state of the master list."
+  },
+  "inventory.master.image_upload_failed": {
+    "value": "Could not upload the photo",
+    "description": "Error shown when compressing/uploading the item photo to storage fails."
+  }
+}

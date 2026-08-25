@@ -1,0 +1,270 @@
+{
+  "expenses.home.search_placeholder": {
+    "value": "पार्टी खोजें",
+    "description": "Placeholder of the search box above the party list on the expenses home."
+  },
+  "expenses.home.empty": {
+    "value": "अभी कोई पार्टी नहीं है — खाता शुरू करने के लिए व्यक्ति जोड़ें।",
+    "description": "Empty state of the expenses home when the business has no parties."
+  },
+  "expenses.home.no_results": {
+    "value": "खोज से मेल खाती कोई पार्टी नहीं मिली",
+    "description": "Shown when the party search filter returns nothing."
+  },
+  "expenses.home.no_entries": {
+    "value": "अभी कोई एंट्री नहीं",
+    "description": "Secondary line on a party row that has no ledger entries (instead of the last-entry relative time)."
+  },
+  "expenses.state.no_business": {
+    "value": "इस खाते से कोई व्यवसाय नहीं जुड़ा है",
+    "description": "Shown on the expenses section when the signed-in user has no business membership."
+  },
+  "expenses.error.load_failed": {
+    "value": "डेटा लोड नहीं हो सका। कनेक्शन जाँचें और फिर से कोशिश करें।",
+    "description": "Generic load-failure message on the expenses screens."
+  },
+  "expenses.error.save_failed": {
+    "value": "सहेजा नहीं जा सका। फिर से कोशिश करें।",
+    "description": "Generic save-failure message on the expenses forms."
+  },
+  "expenses.person.name_label": {
+    "value": "नाम",
+    "description": "Label of the party name field in the add-person dialog."
+  },
+  "expenses.person.phone_label": {
+    "value": "फ़ोन (वैकल्पिक)",
+    "description": "Label of the optional phone field in the add-person dialog."
+  },
+  "expenses.person.suggestions_title": {
+    "value": "क्या पहले से जुड़े हैं?",
+    "description": "Heading above the fuzzy-matched existing-party suggestions in the add-person dialog (duplicate steering)."
+  },
+  "expenses.person.name_required": {
+    "value": "नाम दर्ज करें",
+    "description": "Validation error when the party name is empty."
+  },
+  "expenses.person.duplicate_exists": {
+    "value": "इस नाम की पार्टी पहले से मौजूद है",
+    "description": "Validation error when the typed party name exactly matches an existing party."
+  },
+  "expenses.ledger.balance_chip": {
+    "value": "बाकी: {amount}",
+    "description": "Balance-after chip on each ledger row. {amount} is a formatted rupee amount."
+  },
+  "expenses.ledger.net_you_get": {
+    "value": "आपको मिलेंगे",
+    "description": "Net-balance caption when the party owes you (net positive)."
+  },
+  "expenses.ledger.net_you_give": {
+    "value": "आपको देने हैं",
+    "description": "Net-balance caption when you owe the party (net negative)."
+  },
+  "expenses.ledger.settled": {
+    "value": "हिसाब बराबर",
+    "description": "Net-balance caption when the party balance is zero."
+  },
+  "expenses.ledger.empty": {
+    "value": "अभी कोई एंट्री नहीं — जो दिया या मिला, दर्ज करें।",
+    "description": "Empty state of a person ledger with no entries."
+  },
+  "expenses.ledger.back": {
+    "value": "खर्च सूची पर वापस जाएँ",
+    "description": "Accessible label of the back button from a person ledger to the expenses home."
+  },
+  "expenses.entry.edit_title": {
+    "value": "एंट्री संपादित करें",
+    "description": "Dialog title when editing an existing ledger entry."
+  },
+  "expenses.entry.attachments_label": {
+    "value": "अटैचमेंट",
+    "description": "Heading of the attachment list in the add/edit entry dialog."
+  },
+  "expenses.entry.attach": {
+    "value": "बिल जोड़ें",
+    "description": "Button that opens the file picker to attach an invoice (image/PDF) to an entry."
+  },
+  "expenses.entry.attachment_pending": {
+    "value": "अपलोड बाकी",
+    "description": "Badge on an attachment whose Google Drive upload has not completed yet."
+  },
+  "expenses.entry.attachment_limit_hint": {
+    "value": "अधिकतम {max} अटैचमेंट",
+    "description": "Hint under the attach button. {max} is the numeric attachment limit (4)."
+  },
+  "expenses.entry.amount_invalid": {
+    "value": "मान्य राशि दर्ज करें",
+    "description": "Validation error for an empty/invalid/non-positive amount."
+  },
+  "expenses.entry.delete_title": {
+    "value": "एंट्री हटाएँ?",
+    "description": "Confirmation dialog title before tombstone-deleting a ledger entry."
+  },
+  "expenses.entry.delete_message": {
+    "value": "यह एंट्री खाते से हटा दी जाएगी।",
+    "description": "Confirmation dialog body before tombstone-deleting a ledger entry."
+  },
+  "inventory.stock.title": {
+    "value": "मौजूदा स्टॉक",
+    "description": "Title of the inventory current-stock list screen; also the toggle label back from the master list."
+  },
+  "inventory.stock.search_placeholder": {
+    "value": "आइटम खोजें",
+    "description": "Placeholder of the search box on the inventory screens."
+  },
+  "inventory.stock.value_label": {
+    "value": "कीमत",
+    "description": "Label prefix for the FIFO total value shown on a stock row."
+  },
+  "inventory.stock.updated": {
+    "value": "अपडेट: {time}",
+    "description": "Last-transaction caption on a stock row. {time} is a localized relative time like '2 days ago'."
+  },
+  "inventory.stock.empty": {
+    "value": "अभी कोई स्टॉक नहीं — शुरू करने के लिए लेन-देन दर्ज करें।",
+    "description": "Empty state of the current-stock list when there are no items with stock."
+  },
+  "inventory.stock.no_results": {
+    "value": "खोज से मेल खाता कोई आइटम नहीं मिला",
+    "description": "Shown when the item search filter returns nothing."
+  },
+  "inventory.stock.record_transaction": {
+    "value": "लेन-देन दर्ज करें",
+    "description": "FAB label and dialog title for recording an inventory add/remove transaction."
+  },
+  "inventory.stock.open_masterlist": {
+    "value": "मास्टर सूची",
+    "description": "Top-bar toggle to the master-item management screen; also that screen's title."
+  },
+  "inventory.state.no_business": {
+    "value": "इस खाते से कोई व्यवसाय नहीं जुड़ा है",
+    "description": "Shown on the inventory section when the signed-in user has no business membership."
+  },
+  "inventory.error.load_failed": {
+    "value": "डेटा लोड नहीं हो सका। कनेक्शन जाँचें और फिर से कोशिश करें।",
+    "description": "Generic load-failure message on the inventory screens."
+  },
+  "inventory.error.save_failed": {
+    "value": "सहेजा नहीं जा सका। फिर से कोशिश करें।",
+    "description": "Generic save-failure message on the inventory forms."
+  },
+  "inventory.txn.add": {
+    "value": "जोड़ें",
+    "description": "Transaction-type toggle: add stock."
+  },
+  "inventory.txn.remove": {
+    "value": "निकालें",
+    "description": "Transaction-type toggle: remove stock (consumes FIFO lots)."
+  },
+  "inventory.txn.no_matches": {
+    "value": "कोई मिलता-जुलता आइटम नहीं",
+    "description": "Shown in the item type-ahead when nothing matches the typed text."
+  },
+  "inventory.txn.current_stock": {
+    "value": "स्टॉक में: {qty} {unit}",
+    "description": "Caption under the item picker showing the selected item's current stock. {qty} number, {unit} unit label."
+  },
+  "inventory.txn.insufficient_stock": {
+    "value": "मौजूदा स्टॉक ({qty} {unit}) से ज़्यादा नहीं निकाल सकते",
+    "description": "Validation error when a remove quantity exceeds current stock."
+  },
+  "inventory.txn.item_required": {
+    "value": "कोई आइटम चुनें",
+    "description": "Validation error when no item is selected in the record-transaction dialog."
+  },
+  "inventory.txn.quantity_invalid": {
+    "value": "मान्य मात्रा दर्ज करें",
+    "description": "Validation error for an empty/invalid/non-positive quantity."
+  },
+  "inventory.txn.price_invalid": {
+    "value": "मान्य मूल्य दर्ज करें",
+    "description": "Validation error for an empty/invalid/negative unit price."
+  },
+  "inventory.master.add_item": {
+    "value": "आइटम जोड़ें",
+    "description": "FAB label / dialog title for creating a master item."
+  },
+  "inventory.master.edit_item": {
+    "value": "आइटम संपादित करें",
+    "description": "Dialog title when editing a master item."
+  },
+  "inventory.master.name_label": {
+    "value": "नाम",
+    "description": "Label of the master-item name field."
+  },
+  "inventory.master.unit_label": {
+    "value": "इकाई",
+    "description": "Label of the unit dropdown on the master-item form."
+  },
+  "inventory.master.unit_pieces": {
+    "value": "नग",
+    "description": "Built-in unit option: pieces."
+  },
+  "inventory.master.unit_quantity": {
+    "value": "मात्रा",
+    "description": "Built-in unit option: generic quantity."
+  },
+  "inventory.master.unit_kg": {
+    "value": "किलो",
+    "description": "Built-in unit option: kilograms."
+  },
+  "inventory.master.unit_litre": {
+    "value": "लीटर",
+    "description": "Built-in unit option: litres."
+  },
+  "inventory.master.unit_custom": {
+    "value": "अन्य…",
+    "description": "Unit dropdown option that reveals a free-text custom unit field."
+  },
+  "inventory.master.custom_unit_label": {
+    "value": "अपनी इकाई",
+    "description": "Label of the free-text field shown when the custom unit option is selected."
+  },
+  "inventory.master.photo_label": {
+    "value": "फ़ोटो",
+    "description": "Heading of the item photo section on the master-item form."
+  },
+  "inventory.master.choose_photo": {
+    "value": "फ़ोटो चुनें",
+    "description": "Button that opens the image picker on the master-item form (compressed to ≤320px WebP)."
+  },
+  "inventory.master.remove_photo": {
+    "value": "फ़ोटो हटाएँ",
+    "description": "Button that clears the picked/existing photo on the master-item form."
+  },
+  "inventory.master.similar_title": {
+    "value": "मिलते-जुलते आइटम पहले से मौजूद हैं:",
+    "description": "Heading above the fuzzy-duplicate suggestion chips on the master-item form (3+ chars, 40% similarity)."
+  },
+  "inventory.master.name_required": {
+    "value": "नाम दर्ज करें",
+    "description": "Validation error when the master-item name is empty."
+  },
+  "inventory.master.unit_required": {
+    "value": "इकाई दर्ज करें",
+    "description": "Validation error when the custom unit text is empty."
+  },
+  "inventory.master.duplicate_exists": {
+    "value": "इस नाम का आइटम पहले से मौजूद है",
+    "description": "Validation error when the typed item name exactly matches an existing master item."
+  },
+  "inventory.master.delete_title": {
+    "value": "आइटम हटाएँ?",
+    "description": "Confirmation dialog title before tombstone-deleting a master item."
+  },
+  "inventory.master.delete_message": {
+    "value": "यह आइटम मास्टर सूची से हटा दिया जाएगा।",
+    "description": "Confirmation dialog body before tombstone-deleting a master item."
+  },
+  "inventory.master.delete_blocked": {
+    "value": "हटा नहीं सकते — इस आइटम के लेन-देन मौजूद हैं",
+    "description": "Tooltip/message on a disabled delete button for a master item that has inventory transactions."
+  },
+  "inventory.master.empty": {
+    "value": "अभी कोई आइटम नहीं — पहला आइटम जोड़ें।",
+    "description": "Empty state of the master list."
+  },
+  "inventory.master.image_upload_failed": {
+    "value": "फ़ोटो अपलोड नहीं हो सकी",
+    "description": "Error shown when compressing/uploading the item photo to storage fails."
+  }
+}
