@@ -370,5 +370,25 @@
   "settings.business.saved": {
     "value": "Saved",
     "description": "Snackbar/confirmation after saving the business profile."
+  },
+  "settings.booking_form.title": {
+    "value": "Booking form fields",
+    "description": "Settings section header for choosing which optional booking-form fields are visible."
+  },
+  "settings.booking_form.subtitle": {
+    "value": "Choose which optional fields appear in the booking form",
+    "description": "Supporting text under the booking-form-fields settings section header."
+  },
+  "settings.booking_form.show_deposit": {
+    "value": "Security deposit",
+    "description": "Toggle label: show the security-deposit field in the booking form (off by default)."
+  },
+  "settings.booking_form.show_source": {
+    "value": "Booking source",
+    "description": "Toggle label: show the booking-source chips in the booking form (on by default)."
+  },
+  "settings.booking_form.show_times": {
+    "value": "Event times",
+    "description": "Toggle label: show the start/end time fields in the booking form (on by default)."
   }
 }

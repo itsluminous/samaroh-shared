@@ -370,5 +370,25 @@
   "settings.business.saved": {
     "value": "सहेज लिया",
     "description": "Snackbar/confirmation after saving the business profile."
+  },
+  "settings.booking_form.title": {
+    "value": "बुकिंग फ़ॉर्म फ़ील्ड",
+    "description": "Settings section header for choosing which optional booking-form fields are visible."
+  },
+  "settings.booking_form.subtitle": {
+    "value": "चुनें कि बुकिंग फ़ॉर्म में कौन से वैकल्पिक फ़ील्ड दिखें",
+    "description": "Supporting text under the booking-form-fields settings section header."
+  },
+  "settings.booking_form.show_deposit": {
+    "value": "सिक्योरिटी डिपॉज़िट",
+    "description": "Toggle label: show the security-deposit field in the booking form (off by default)."
+  },
+  "settings.booking_form.show_source": {
+    "value": "बुकिंग स्रोत",
+    "description": "Toggle label: show the booking-source chips in the booking form (on by default)."
+  },
+  "settings.booking_form.show_times": {
+    "value": "कार्यक्रम का समय",
+    "description": "Toggle label: show the start/end time fields in the booking form (on by default)."
   }
 }

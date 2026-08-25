@@ -3,10 +3,6 @@
     "value": "इस महीने",
     "description": "Title of the month summary card on top of the Booking calendar."
   },
-  "booking.summary.received_pending": {
-    "value": "मिले {received} · बाकी {pending}",
-    "description": "Month summary card body. {received} and {pending} are pre-formatted rupee amounts (e.g. ₹1,06,511)."
-  },
   "booking.calendar.prev_month": {
     "value": "पिछला महीना",
     "description": "Accessible label / long-press explanation for the calendar's previous-month arrow."
@@ -382,5 +378,65 @@
   "booking.empty.no_business_message": {
     "value": "बुकिंग शुरू करने के लिए पहले सेटअप पूरा करें।",
     "description": "Empty-state body on the Booking tab when no business exists locally; setup happens in onboarding."
+  },
+  "booking.summary.received": {
+    "value": "मिले {amount}",
+    "description": "Month summary card: total payments received this month. {amount} is a pre-formatted rupee amount. Rendered green (moneyIn)."
+  },
+  "booking.summary.pending": {
+    "value": "बाकी {amount}",
+    "description": "Month summary card: total outstanding dues this month. {amount} is a pre-formatted rupee amount. Rendered red (moneyOut)."
+  },
+  "booking.calendar.icon_overflow": {
+    "value": "+{count}",
+    "description": "Overflow badge in a calendar day cell when more bookings exist than icons shown. {count} is the number of hidden bookings."
+  },
+  "booking.form.invoice_number": {
+    "value": "चालान नंबर",
+    "description": "Label of the manual invoice-number field on the booking form."
+  },
+  "booking.form.invoice_number_hint": {
+    "value": "वैकल्पिक — खाली छोड़ने पर अपने आप बनेगा",
+    "description": "Supporting text under the invoice-number field while it is still editable (no number assigned yet)."
+  },
+  "booking.form.invoice_number_duplicate": {
+    "value": "यह चालान नंबर पहले से इस्तेमाल में है",
+    "description": "Blocking validation message when the manually entered invoice number already exists for another booking of the business."
+  },
+  "booking.form.follow_up_label": {
+    "value": "इतने दिनों बाद फ़ॉलो-अप करें",
+    "description": "Label above the follow-up-days chips shown when the booking status is Tentative."
+  },
+  "booking.form.follow_up_days_chip": {
+    "value": "{count, plural, one {# दिन} other {# दिन}}",
+    "description": "Chip label for the tentative follow-up selector (1/3/7 days). {count} is the number of days."
+  },
+  "booking.form.follow_up_custom": {
+    "value": "अपनी पसंद",
+    "description": "Chip label for entering a custom follow-up day count on the booking form."
+  },
+  "booking.form.follow_up_custom_days": {
+    "value": "दिन",
+    "description": "Label of the numeric field for a custom follow-up day count."
+  },
+  "booking.form.clear_time": {
+    "value": "समय हटाएँ",
+    "description": "Accessible label / long-press explanation of the icon that clears an optional time field."
+  },
+  "booking.reminder.follow_up_title": {
+    "value": "बुकिंग फ़ॉलो-अप",
+    "description": "Notification title for a tentative-booking follow-up reminder."
+  },
+  "booking.reminder.follow_up_question": {
+    "value": "{event} के बारे में {customer} से फ़ॉलो-अप करें",
+    "description": "Follow-up reminder body (notification and in-app pending card). {customer} is the customer name, {event} is the localized event-type label."
+  },
+  "booking.reminder.action_confirm_booking": {
+    "value": "बुकिंग पक्की करें",
+    "description": "Follow-up card action that flips the tentative booking to confirmed."
+  },
+  "booking.reminder.action_snooze": {
+    "value": "बाद में याद दिलाएँ",
+    "description": "Follow-up card action that re-reminds after a week."
   }
 }
