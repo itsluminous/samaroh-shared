@@ -1,0 +1,330 @@
+{
+  "reports.home.title": {
+    "value": "Reports",
+    "description": "Top bar title of the Reports home screen (Menu tab → Reports)."
+  },
+  "reports.report.revenue": {
+    "value": "Revenue summary",
+    "description": "Report name: bookings revenue by month, collected vs outstanding."
+  },
+  "reports.report.revenue_subtitle": {
+    "value": "Collected vs outstanding by month",
+    "description": "Reports home: subtitle under the Revenue summary row."
+  },
+  "reports.report.dues_aging": {
+    "value": "Outstanding dues",
+    "description": "Report name: who owes what, bucketed by how long it is overdue."
+  },
+  "reports.report.dues_aging_subtitle": {
+    "value": "Who owes what, and for how long",
+    "description": "Reports home: subtitle under the Outstanding dues row."
+  },
+  "reports.report.occupancy": {
+    "value": "Occupancy",
+    "description": "Report name: booked days per month and hall utilization."
+  },
+  "reports.report.occupancy_subtitle": {
+    "value": "Booked days and utilization by month",
+    "description": "Reports home: subtitle under the Occupancy row."
+  },
+  "reports.report.event_types": {
+    "value": "Event types",
+    "description": "Report name: bookings count and revenue by event type."
+  },
+  "reports.report.event_types_subtitle": {
+    "value": "Bookings and revenue by event type",
+    "description": "Reports home: subtitle under the Event types row."
+  },
+  "reports.report.sources": {
+    "value": "Booking sources",
+    "description": "Report name: which channel (walk-in, phone, referral, repeat) brings revenue."
+  },
+  "reports.report.sources_subtitle": {
+    "value": "Which channel brings revenue",
+    "description": "Reports home: subtitle under the Booking sources row."
+  },
+  "reports.report.expense_summary": {
+    "value": "Expense summary",
+    "description": "Report name: spend by party, biggest parties first."
+  },
+  "reports.report.expense_summary_subtitle": {
+    "value": "Spend by party, top 10",
+    "description": "Reports home: subtitle under the Expense summary row."
+  },
+  "reports.report.profit": {
+    "value": "Profit",
+    "description": "Report name: booking income minus expenses per month."
+  },
+  "reports.report.profit_subtitle": {
+    "value": "Income minus expenses by month",
+    "description": "Reports home: subtitle under the Profit row."
+  },
+  "reports.report.inventory_valuation": {
+    "value": "Inventory value",
+    "description": "Report name: current stock value per item."
+  },
+  "reports.report.inventory_valuation_subtitle": {
+    "value": "Current stock value by item",
+    "description": "Reports home: subtitle under the Inventory value row."
+  },
+  "reports.report.collection": {
+    "value": "Collection speed",
+    "description": "Report name: average days from event end to full payment."
+  },
+  "reports.report.collection_subtitle": {
+    "value": "Days from event end to full payment",
+    "description": "Reports home: subtitle under the Collection speed row."
+  },
+  "reports.permission.denied_title": {
+    "value": "No access to reports",
+    "description": "Title shown instead of report content when the member lacks the reports view permission."
+  },
+  "reports.permission.denied_message": {
+    "value": "Ask the owner for report access.",
+    "description": "Message under the no-access title explaining how to get the reports permission."
+  },
+  "reports.range.this_month": {
+    "value": "This month",
+    "description": "Date-range filter chip: the current calendar month."
+  },
+  "reports.range.last_3_months": {
+    "value": "3 months",
+    "description": "Date-range filter chip: the last 3 calendar months including the current one."
+  },
+  "reports.range.last_12_months": {
+    "value": "12 months",
+    "description": "Date-range filter chip: the last 12 calendar months including the current one."
+  },
+  "reports.range.custom": {
+    "value": "Custom",
+    "description": "Date-range filter chip that opens a start/end date picker."
+  },
+  "reports.range.picker_title": {
+    "value": "Choose dates",
+    "description": "Title of the custom date-range picker dialog."
+  },
+  "reports.range.summary": {
+    "value": "{start} – {end}",
+    "description": "Compact display of the active date range. {start} and {end} are localized dates."
+  },
+  "reports.export.pdf": {
+    "value": "Share PDF",
+    "description": "Button that exports the current report as a PDF and opens the share sheet."
+  },
+  "reports.export.csv": {
+    "value": "Share CSV",
+    "description": "Button that exports the current report as a CSV file and opens the share sheet."
+  },
+  "reports.export.failed": {
+    "value": "Could not share the report",
+    "description": "Snackbar shown when exporting a report to PDF/CSV fails."
+  },
+  "reports.empty.title": {
+    "value": "Nothing to show",
+    "description": "Empty-state title when a report has no data in the chosen date range."
+  },
+  "reports.empty.message": {
+    "value": "No data in the chosen dates.",
+    "description": "Empty-state message when a report has no data in the chosen date range."
+  },
+  "reports.amount.thousand": {
+    "value": "₹{amount}K",
+    "description": "Compact chart-axis money label for thousands of rupees. {amount} is a short number like 1.5."
+  },
+  "reports.amount.lakh": {
+    "value": "₹{amount}L",
+    "description": "Compact chart-axis money label for lakhs of rupees. {amount} is a short number like 1.5."
+  },
+  "reports.amount.crore": {
+    "value": "₹{amount}Cr",
+    "description": "Compact chart-axis money label for crores of rupees. {amount} is a short number like 1.5."
+  },
+  "reports.legend.collected": {
+    "value": "Collected",
+    "description": "Chart legend: money already received for bookings."
+  },
+  "reports.legend.outstanding": {
+    "value": "Outstanding",
+    "description": "Chart legend: money still due for bookings."
+  },
+  "reports.legend.booked_days": {
+    "value": "Booked days",
+    "description": "Chart legend: number of days with at least one booking."
+  },
+  "reports.legend.revenue": {
+    "value": "Revenue",
+    "description": "Chart legend: total booking amount."
+  },
+  "reports.legend.net": {
+    "value": "Net profit",
+    "description": "Chart legend: income minus expenses."
+  },
+  "reports.legend.avg_days": {
+    "value": "Average days",
+    "description": "Chart legend: average days from event end to full payment."
+  },
+  "reports.legend.value": {
+    "value": "Stock value",
+    "description": "Chart legend: current inventory value."
+  },
+  "reports.legend.spend": {
+    "value": "Spend",
+    "description": "Chart legend: net money paid to a party."
+  },
+  "reports.table.month": {
+    "value": "Month",
+    "description": "Report table column header: calendar month."
+  },
+  "reports.table.collected": {
+    "value": "Collected",
+    "description": "Report table column header: money received."
+  },
+  "reports.table.outstanding": {
+    "value": "Outstanding",
+    "description": "Report table column header: money still due."
+  },
+  "reports.table.total": {
+    "value": "Total",
+    "description": "Report table column header: total amount."
+  },
+  "reports.table.customer": {
+    "value": "Customer",
+    "description": "Report table column header: booking customer name."
+  },
+  "reports.table.event": {
+    "value": "Event",
+    "description": "Report table column header: event type of the booking."
+  },
+  "reports.table.end_date": {
+    "value": "Event end",
+    "description": "Report table column header: date the event ended."
+  },
+  "reports.table.due": {
+    "value": "Due",
+    "description": "Report table column header: outstanding amount of a booking."
+  },
+  "reports.table.days_overdue": {
+    "value": "Days overdue",
+    "description": "Report table column header: days since the event ended with money still due."
+  },
+  "reports.table.booked_days": {
+    "value": "Booked days",
+    "description": "Report table column header: days with at least one booking in the month."
+  },
+  "reports.table.utilization": {
+    "value": "Utilization",
+    "description": "Report table column header: booked days as a percentage of the month."
+  },
+  "reports.table.event_type": {
+    "value": "Event type",
+    "description": "Report table column header: kind of event (wedding, birthday…)."
+  },
+  "reports.table.bookings": {
+    "value": "Bookings",
+    "description": "Report table column header: number of bookings."
+  },
+  "reports.table.revenue": {
+    "value": "Revenue",
+    "description": "Report table column header: total booking amount."
+  },
+  "reports.table.source": {
+    "value": "Source",
+    "description": "Report table column header: booking source channel."
+  },
+  "reports.table.party": {
+    "value": "Party",
+    "description": "Report table column header: expense party name."
+  },
+  "reports.table.spend": {
+    "value": "Spend",
+    "description": "Report table column header: net money paid to the party."
+  },
+  "reports.table.income": {
+    "value": "Income",
+    "description": "Report table column header: booking payments received in the month."
+  },
+  "reports.table.expenses": {
+    "value": "Expenses",
+    "description": "Report table column header: net expenses in the month."
+  },
+  "reports.table.net": {
+    "value": "Net",
+    "description": "Report table column header: income minus expenses."
+  },
+  "reports.table.item": {
+    "value": "Item",
+    "description": "Report table column header: inventory item name."
+  },
+  "reports.table.quantity": {
+    "value": "Stock",
+    "description": "Report table column header: current stock quantity with unit."
+  },
+  "reports.table.value": {
+    "value": "Value",
+    "description": "Report table column header: current stock value."
+  },
+  "reports.table.days_to_pay": {
+    "value": "Days to full payment",
+    "description": "Report table column header: days from event end until the booking was fully paid."
+  },
+  "reports.table.paid_on": {
+    "value": "Fully paid on",
+    "description": "Report table column header: date the booking became fully paid."
+  },
+  "reports.aging.bucket_0_7": {
+    "value": "0–7 days",
+    "description": "Dues-aging bucket label: overdue up to 7 days."
+  },
+  "reports.aging.bucket_8_30": {
+    "value": "8–30 days",
+    "description": "Dues-aging bucket label: overdue 8 to 30 days."
+  },
+  "reports.aging.bucket_31_90": {
+    "value": "31–90 days",
+    "description": "Dues-aging bucket label: overdue 31 to 90 days."
+  },
+  "reports.aging.bucket_90_plus": {
+    "value": "90+ days",
+    "description": "Dues-aging bucket label: overdue more than 90 days."
+  },
+  "reports.format.percent": {
+    "value": "{percent}%",
+    "description": "Percentage display, e.g. occupancy utilization. {percent} is a whole number."
+  },
+  "reports.format.quantity_unit": {
+    "value": "{quantity} {unit}",
+    "description": "Stock quantity with its unit, e.g. \"7 pcs\". {quantity} is a number, {unit} the item unit."
+  },
+  "reports.collection.average": {
+    "value": "On average, full payment arrives {days} days after the event ends",
+    "description": "Headline of the collection-speed report. {days} is a short number like 4.5."
+  },
+  "reports.expense.unknown_party": {
+    "value": "Removed party",
+    "description": "Fallback name in the expense summary for entries whose party was deleted."
+  },
+  "reports.sources.unspecified": {
+    "value": "Not set",
+    "description": "Label for bookings whose source channel was never chosen."
+  },
+  "reports.chart.empty": {
+    "value": "No chart data",
+    "description": "Accessibility description of an empty chart."
+  },
+  "reports.chart.summary": {
+    "value": "Chart from {first} to {last}",
+    "description": "Accessibility summary of a chart. {first} and {last} are the first and last axis labels."
+  },
+  "reports.chart.legend_value": {
+    "value": "{legend}: {value}",
+    "description": "One legend/value pair inside the chart selection details, e.g. \"Collected: ₹50,000\"."
+  },
+  "reports.inventory.snapshot_note": {
+    "value": "Current stock value — dates do not apply",
+    "description": "Note on the inventory value report explaining why it has no date-range filter."
+  },
+  "reports.pdf.footer": {
+    "value": "Generated by Samaroh",
+    "description": "Footer line at the bottom of every exported report PDF page."
+  }
+}

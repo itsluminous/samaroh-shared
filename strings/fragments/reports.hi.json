@@ -1,0 +1,330 @@
+{
+  "reports.home.title": {
+    "value": "रिपोर्ट",
+    "description": "Top bar title of the Reports home screen (Menu tab → Reports)."
+  },
+  "reports.report.revenue": {
+    "value": "आय सारांश",
+    "description": "Report name: bookings revenue by month, collected vs outstanding."
+  },
+  "reports.report.revenue_subtitle": {
+    "value": "महीने के हिसाब से वसूला गया बनाम बकाया",
+    "description": "Reports home: subtitle under the Revenue summary row."
+  },
+  "reports.report.dues_aging": {
+    "value": "बकाया राशि",
+    "description": "Report name: who owes what, bucketed by how long it is overdue."
+  },
+  "reports.report.dues_aging_subtitle": {
+    "value": "किस पर कितना और कब से बकाया है",
+    "description": "Reports home: subtitle under the Outstanding dues row."
+  },
+  "reports.report.occupancy": {
+    "value": "बुकिंग भराव",
+    "description": "Report name: booked days per month and hall utilization."
+  },
+  "reports.report.occupancy_subtitle": {
+    "value": "हर महीने बुक हुए दिन और उपयोग",
+    "description": "Reports home: subtitle under the Occupancy row."
+  },
+  "reports.report.event_types": {
+    "value": "आयोजन के प्रकार",
+    "description": "Report name: bookings count and revenue by event type."
+  },
+  "reports.report.event_types_subtitle": {
+    "value": "प्रकार के अनुसार बुकिंग और आय",
+    "description": "Reports home: subtitle under the Event types row."
+  },
+  "reports.report.sources": {
+    "value": "बुकिंग का स्रोत",
+    "description": "Report name: which channel (walk-in, phone, referral, repeat) brings revenue."
+  },
+  "reports.report.sources_subtitle": {
+    "value": "कौन-सा ज़रिया आय लाता है",
+    "description": "Reports home: subtitle under the Booking sources row."
+  },
+  "reports.report.expense_summary": {
+    "value": "खर्च सारांश",
+    "description": "Report name: spend by party, biggest parties first."
+  },
+  "reports.report.expense_summary_subtitle": {
+    "value": "पार्टी के अनुसार खर्च, टॉप 10",
+    "description": "Reports home: subtitle under the Expense summary row."
+  },
+  "reports.report.profit": {
+    "value": "मुनाफ़ा",
+    "description": "Report name: booking income minus expenses per month."
+  },
+  "reports.report.profit_subtitle": {
+    "value": "महीने के हिसाब से आय घटा खर्च",
+    "description": "Reports home: subtitle under the Profit row."
+  },
+  "reports.report.inventory_valuation": {
+    "value": "स्टॉक की कीमत",
+    "description": "Report name: current stock value per item."
+  },
+  "reports.report.inventory_valuation_subtitle": {
+    "value": "हर आइटम के मौजूदा स्टॉक की कीमत",
+    "description": "Reports home: subtitle under the Inventory value row."
+  },
+  "reports.report.collection": {
+    "value": "वसूली की रफ़्तार",
+    "description": "Report name: average days from event end to full payment."
+  },
+  "reports.report.collection_subtitle": {
+    "value": "आयोजन खत्म होने से पूरे भुगतान तक के दिन",
+    "description": "Reports home: subtitle under the Collection speed row."
+  },
+  "reports.permission.denied_title": {
+    "value": "रिपोर्ट देखने की अनुमति नहीं",
+    "description": "Title shown instead of report content when the member lacks the reports view permission."
+  },
+  "reports.permission.denied_message": {
+    "value": "रिपोर्ट देखने के लिए मालिक से अनुमति माँगें।",
+    "description": "Message under the no-access title explaining how to get the reports permission."
+  },
+  "reports.range.this_month": {
+    "value": "इस महीने",
+    "description": "Date-range filter chip: the current calendar month."
+  },
+  "reports.range.last_3_months": {
+    "value": "3 महीने",
+    "description": "Date-range filter chip: the last 3 calendar months including the current one."
+  },
+  "reports.range.last_12_months": {
+    "value": "12 महीने",
+    "description": "Date-range filter chip: the last 12 calendar months including the current one."
+  },
+  "reports.range.custom": {
+    "value": "अपनी तारीख़ें",
+    "description": "Date-range filter chip that opens a start/end date picker."
+  },
+  "reports.range.picker_title": {
+    "value": "तारीख़ें चुनें",
+    "description": "Title of the custom date-range picker dialog."
+  },
+  "reports.range.summary": {
+    "value": "{start} – {end}",
+    "description": "Compact display of the active date range. {start} and {end} are localized dates."
+  },
+  "reports.export.pdf": {
+    "value": "PDF शेयर करें",
+    "description": "Button that exports the current report as a PDF and opens the share sheet."
+  },
+  "reports.export.csv": {
+    "value": "CSV शेयर करें",
+    "description": "Button that exports the current report as a CSV file and opens the share sheet."
+  },
+  "reports.export.failed": {
+    "value": "रिपोर्ट शेयर नहीं हो पाई",
+    "description": "Snackbar shown when exporting a report to PDF/CSV fails."
+  },
+  "reports.empty.title": {
+    "value": "दिखाने के लिए कुछ नहीं",
+    "description": "Empty-state title when a report has no data in the chosen date range."
+  },
+  "reports.empty.message": {
+    "value": "चुनी गई तारीख़ों में कोई डेटा नहीं।",
+    "description": "Empty-state message when a report has no data in the chosen date range."
+  },
+  "reports.amount.thousand": {
+    "value": "₹{amount} हज़ार",
+    "description": "Compact chart-axis money label for thousands of rupees. {amount} is a short number like 1.5."
+  },
+  "reports.amount.lakh": {
+    "value": "₹{amount} लाख",
+    "description": "Compact chart-axis money label for lakhs of rupees. {amount} is a short number like 1.5."
+  },
+  "reports.amount.crore": {
+    "value": "₹{amount} करोड़",
+    "description": "Compact chart-axis money label for crores of rupees. {amount} is a short number like 1.5."
+  },
+  "reports.legend.collected": {
+    "value": "वसूला गया",
+    "description": "Chart legend: money already received for bookings."
+  },
+  "reports.legend.outstanding": {
+    "value": "बकाया",
+    "description": "Chart legend: money still due for bookings."
+  },
+  "reports.legend.booked_days": {
+    "value": "बुक हुए दिन",
+    "description": "Chart legend: number of days with at least one booking."
+  },
+  "reports.legend.revenue": {
+    "value": "आय",
+    "description": "Chart legend: total booking amount."
+  },
+  "reports.legend.net": {
+    "value": "शुद्ध मुनाफ़ा",
+    "description": "Chart legend: income minus expenses."
+  },
+  "reports.legend.avg_days": {
+    "value": "औसत दिन",
+    "description": "Chart legend: average days from event end to full payment."
+  },
+  "reports.legend.value": {
+    "value": "स्टॉक की कीमत",
+    "description": "Chart legend: current inventory value."
+  },
+  "reports.legend.spend": {
+    "value": "खर्च",
+    "description": "Chart legend: net money paid to a party."
+  },
+  "reports.table.month": {
+    "value": "महीना",
+    "description": "Report table column header: calendar month."
+  },
+  "reports.table.collected": {
+    "value": "वसूला गया",
+    "description": "Report table column header: money received."
+  },
+  "reports.table.outstanding": {
+    "value": "बकाया",
+    "description": "Report table column header: money still due."
+  },
+  "reports.table.total": {
+    "value": "कुल",
+    "description": "Report table column header: total amount."
+  },
+  "reports.table.customer": {
+    "value": "ग्राहक",
+    "description": "Report table column header: booking customer name."
+  },
+  "reports.table.event": {
+    "value": "आयोजन",
+    "description": "Report table column header: event type of the booking."
+  },
+  "reports.table.end_date": {
+    "value": "आयोजन समाप्ति",
+    "description": "Report table column header: date the event ended."
+  },
+  "reports.table.due": {
+    "value": "बकाया",
+    "description": "Report table column header: outstanding amount of a booking."
+  },
+  "reports.table.days_overdue": {
+    "value": "कितने दिन से बकाया",
+    "description": "Report table column header: days since the event ended with money still due."
+  },
+  "reports.table.booked_days": {
+    "value": "बुक हुए दिन",
+    "description": "Report table column header: days with at least one booking in the month."
+  },
+  "reports.table.utilization": {
+    "value": "उपयोग",
+    "description": "Report table column header: booked days as a percentage of the month."
+  },
+  "reports.table.event_type": {
+    "value": "आयोजन का प्रकार",
+    "description": "Report table column header: kind of event (wedding, birthday…)."
+  },
+  "reports.table.bookings": {
+    "value": "बुकिंग",
+    "description": "Report table column header: number of bookings."
+  },
+  "reports.table.revenue": {
+    "value": "आय",
+    "description": "Report table column header: total booking amount."
+  },
+  "reports.table.source": {
+    "value": "स्रोत",
+    "description": "Report table column header: booking source channel."
+  },
+  "reports.table.party": {
+    "value": "पार्टी",
+    "description": "Report table column header: expense party name."
+  },
+  "reports.table.spend": {
+    "value": "खर्च",
+    "description": "Report table column header: net money paid to the party."
+  },
+  "reports.table.income": {
+    "value": "आमदनी",
+    "description": "Report table column header: booking payments received in the month."
+  },
+  "reports.table.expenses": {
+    "value": "खर्च",
+    "description": "Report table column header: net expenses in the month."
+  },
+  "reports.table.net": {
+    "value": "शुद्ध",
+    "description": "Report table column header: income minus expenses."
+  },
+  "reports.table.item": {
+    "value": "आइटम",
+    "description": "Report table column header: inventory item name."
+  },
+  "reports.table.quantity": {
+    "value": "स्टॉक",
+    "description": "Report table column header: current stock quantity with unit."
+  },
+  "reports.table.value": {
+    "value": "कीमत",
+    "description": "Report table column header: current stock value."
+  },
+  "reports.table.days_to_pay": {
+    "value": "पूरे भुगतान में लगे दिन",
+    "description": "Report table column header: days from event end until the booking was fully paid."
+  },
+  "reports.table.paid_on": {
+    "value": "पूरा भुगतान कब हुआ",
+    "description": "Report table column header: date the booking became fully paid."
+  },
+  "reports.aging.bucket_0_7": {
+    "value": "0–7 दिन",
+    "description": "Dues-aging bucket label: overdue up to 7 days."
+  },
+  "reports.aging.bucket_8_30": {
+    "value": "8–30 दिन",
+    "description": "Dues-aging bucket label: overdue 8 to 30 days."
+  },
+  "reports.aging.bucket_31_90": {
+    "value": "31–90 दिन",
+    "description": "Dues-aging bucket label: overdue 31 to 90 days."
+  },
+  "reports.aging.bucket_90_plus": {
+    "value": "90+ दिन",
+    "description": "Dues-aging bucket label: overdue more than 90 days."
+  },
+  "reports.format.percent": {
+    "value": "{percent}%",
+    "description": "Percentage display, e.g. occupancy utilization. {percent} is a whole number."
+  },
+  "reports.format.quantity_unit": {
+    "value": "{quantity} {unit}",
+    "description": "Stock quantity with its unit, e.g. \"7 pcs\". {quantity} is a number, {unit} the item unit."
+  },
+  "reports.collection.average": {
+    "value": "आयोजन खत्म होने के बाद पूरा भुगतान औसतन {days} दिन में आता है",
+    "description": "Headline of the collection-speed report. {days} is a short number like 4.5."
+  },
+  "reports.expense.unknown_party": {
+    "value": "हटाई गई पार्टी",
+    "description": "Fallback name in the expense summary for entries whose party was deleted."
+  },
+  "reports.sources.unspecified": {
+    "value": "तय नहीं",
+    "description": "Label for bookings whose source channel was never chosen."
+  },
+  "reports.chart.empty": {
+    "value": "चार्ट के लिए कोई डेटा नहीं",
+    "description": "Accessibility description of an empty chart."
+  },
+  "reports.chart.summary": {
+    "value": "{first} से {last} तक का चार्ट",
+    "description": "Accessibility summary of a chart. {first} and {last} are the first and last axis labels."
+  },
+  "reports.chart.legend_value": {
+    "value": "{legend}: {value}",
+    "description": "One legend/value pair inside the chart selection details, e.g. \"Collected: ₹50,000\"."
+  },
+  "reports.inventory.snapshot_note": {
+    "value": "मौजूदा स्टॉक की कीमत — तारीख़ें लागू नहीं होतीं",
+    "description": "Note on the inventory value report explaining why it has no date-range filter."
+  },
+  "reports.pdf.footer": {
+    "value": "Samaroh द्वारा बनाया गया",
+    "description": "Footer line at the bottom of every exported report PDF page."
+  }
+}

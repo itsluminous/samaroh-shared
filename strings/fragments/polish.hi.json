@@ -1,0 +1,34 @@
+{
+  "booking.calendar.a11y_today": {
+    "value": "आज",
+    "description": "Screen-reader announcement fragment for the current date's calendar cell."
+  },
+  "booking.calendar.a11y_blocked_day": {
+    "value": "रखरखाव या बंदी के लिए बंद",
+    "description": "Screen-reader announcement fragment for a calendar cell inside a date block."
+  },
+  "booking.calendar.a11y_no_bookings": {
+    "value": "कोई बुकिंग नहीं",
+    "description": "Screen-reader announcement fragment for a calendar cell without any bookings."
+  },
+  "booking.calendar.a11y_bookings_on_day": {
+    "value": "{count, plural, one {# बुकिंग: {summaries}} other {# बुकिंग: {summaries}}}",
+    "description": "Screen-reader booking summary for a calendar cell. ICU plural; count is the number of bookings on the date, summaries is a comma-separated list of '{icon} {first name}' labels."
+  },
+  "booking.calendar.agenda_empty_hint": {
+    "value": "बुकिंग जोड़ने के लिए ऊपर कैलेंडर में कोई भी खाली तारीख दबाएँ।",
+    "description": "Guidance under the agenda empty-state title telling the user how to create their first booking of the month."
+  },
+  "expenses.home.no_results_title": {
+    "value": "ऐसा कोई नाम नहीं मिला",
+    "description": "Empty-state title on the Expenses tab when the search box filters out every party."
+  },
+  "expenses.home.no_results_message": {
+    "value": "नाम की वर्तनी जाँचें, या इन्हें नए व्यक्ति के रूप में जोड़ें।",
+    "description": "Empty-state guidance on the Expenses tab when a search has no matches."
+  },
+  "settings.sync.all_synced_message": {
+    "value": "आपके सभी बदलाव सुरक्षित हैं। ऑनलाइन होते ही नए बदलाव अपने आप सिंक हो जाते हैं।",
+    "description": "Reassuring guidance on the Sync status screen when there are no pending changes, conflicts or errors."
+  }
+}

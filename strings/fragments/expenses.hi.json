@@ -100,7 +100,7 @@
     "description": "Validation error under the amount field when the input is not a positive rupee amount."
   },
   "expenses.entry.date_label": {
-    "value": "तारीख़",
+    "value": "तारीख",
     "description": "Label of the entry-date field on the add-entry screen (defaults to today)."
   },
   "expenses.entry.notes_label": {

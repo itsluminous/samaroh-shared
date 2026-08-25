@@ -60,7 +60,7 @@
     "description": "Members list: status chip for an active member."
   },
   "menu.members.status_revoked": {
-    "value": "हटाया गया",
+    "value": "पहुँच हटाई गई",
     "description": "Members list: status chip for a member whose access was revoked."
   },
   "menu.members.owner_badge": {
@@ -332,7 +332,7 @@
     "description": "Sync status: button requesting an immediate sync."
   },
   "settings.sync.errors_title": {
-    "value": "ध्यान देने वाली चीज़ें",
+    "value": "इन पर ध्यान दें",
     "description": "Sync status: heading above the list of failed sync items."
   },
   "settings.sync.error_entity": {
@@ -360,7 +360,7 @@
     "description": "Business profile: owner name field label (printed on invoices)."
   },
   "settings.business.invoice_prefix": {
-    "value": "इनवॉइस प्रीफ़िक्स",
+    "value": "बिल प्रीफ़िक्स",
     "description": "Business profile: prefix used in generated invoice numbers, e.g. INV."
   },
   "settings.business.change_logo": {

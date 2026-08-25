@@ -1,0 +1,34 @@
+{
+  "booking.calendar.a11y_today": {
+    "value": "Today",
+    "description": "Screen-reader announcement fragment for the current date's calendar cell."
+  },
+  "booking.calendar.a11y_blocked_day": {
+    "value": "Blocked for maintenance or closure",
+    "description": "Screen-reader announcement fragment for a calendar cell inside a date block."
+  },
+  "booking.calendar.a11y_no_bookings": {
+    "value": "No bookings",
+    "description": "Screen-reader announcement fragment for a calendar cell without any bookings."
+  },
+  "booking.calendar.a11y_bookings_on_day": {
+    "value": "{count, plural, one {# booking: {summaries}} other {# bookings: {summaries}}}",
+    "description": "Screen-reader booking summary for a calendar cell. ICU plural; count is the number of bookings on the date, summaries is a comma-separated list of '{icon} {first name}' labels."
+  },
+  "booking.calendar.agenda_empty_hint": {
+    "value": "Tap any empty date on the calendar above to add a booking.",
+    "description": "Guidance under the agenda empty-state title telling the user how to create their first booking of the month."
+  },
+  "expenses.home.no_results_title": {
+    "value": "No matching people",
+    "description": "Empty-state title on the Expenses tab when the search box filters out every party."
+  },
+  "expenses.home.no_results_message": {
+    "value": "Check the spelling, or add them as a new person.",
+    "description": "Empty-state guidance on the Expenses tab when a search has no matches."
+  },
+  "settings.sync.all_synced_message": {
+    "value": "All your changes are saved. New changes sync on their own whenever you are online.",
+    "description": "Reassuring guidance on the Sync status screen when there are no pending changes, conflicts or errors."
+  }
+}

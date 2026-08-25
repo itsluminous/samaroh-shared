@@ -56,11 +56,11 @@
     "description": "Heading of the create-vs-join fork screen after sign-in."
   },
   "onboarding.fork.create": {
-    "value": "नया व्यवसाय बनाएं",
+    "value": "नया व्यवसाय बनाएँ",
     "description": "Fork option: start a brand-new business (owner path)."
   },
   "onboarding.fork.create_body": {
-    "value": "अपना हॉल या स्थल शुरुआत से सेट करें।",
+    "value": "अपना हॉल या आयोजन स्थल शुरू से सेट करें।",
     "description": "Supporting line under the create-a-business fork option."
   },
   "onboarding.fork.join": {
@@ -72,7 +72,7 @@
     "description": "Supporting line under the join-a-business fork option."
   },
   "onboarding.fork.invite_badge": {
-    "value": "{count, plural, one {# निमंत्रण प्रतीक्षा में} other {# निमंत्रण प्रतीक्षा में}}",
+    "value": "{count, plural, one {# निमंत्रण आपका इंतज़ार कर रहा है} other {# निमंत्रण आपका इंतज़ार कर रहे हैं}}",
     "description": "Badge on the join option when pending invitations were auto-detected. ICU plural; count = number of invitations."
   },
   "onboarding.join.title": {
@@ -92,11 +92,11 @@
     "description": "Empty state on the invitation screen when no pending invitation exists for the signed-in email."
   },
   "onboarding.join.refresh": {
-    "value": "फिर से जांचें",
+    "value": "फिर से जाँचें",
     "description": "Button that re-fetches memberships/invitations from the server."
   },
   "onboarding.create.title": {
-    "value": "अपने व्यवसाय के बारे में बताएं",
+    "value": "अपने व्यवसाय के बारे में बताएँ",
     "description": "Heading of the create-business form."
   },
   "onboarding.create.name_label": {
@@ -140,11 +140,11 @@
     "description": "Accessibility description of the cropped logo preview image."
   },
   "onboarding.create.submit": {
-    "value": "व्यवसाय बनाएं",
+    "value": "व्यवसाय बनाएँ",
     "description": "Submit button of the create-business form."
   },
   "onboarding.create.error": {
-    "value": "आपका व्यवसाय सेव नहीं हो सका। कृपया दोबारा कोशिश करें।",
+    "value": "आपका व्यवसाय सहेजा नहीं जा सका। कृपया दोबारा कोशिश करें।",
     "description": "Generic error when persisting the new business fails."
   },
   "onboarding.business_type.marriage_hall": {
@@ -184,19 +184,19 @@
     "description": "Prominent secondary action that skips Google linking and finishes onboarding."
   },
   "auth.sign_up.title": {
-    "value": "खाता बनाएं",
+    "value": "खाता बनाएँ",
     "description": "Heading of the email sign-up form (toggled from the sign-in screen)."
   },
   "auth.sign_up.submit": {
-    "value": "खाता बनाएं",
+    "value": "खाता बनाएँ",
     "description": "Submit button of the email sign-up form."
   },
   "auth.sign_up.error": {
-    "value": "खाता नहीं बन पाया। कोई दूसरा ईमेल या लंबा पासवर्ड आज़माएं।",
+    "value": "खाता नहीं बन पाया। कोई दूसरा ईमेल या लंबा पासवर्ड आज़माएँ।",
     "description": "Generic error shown when email+password sign-up is rejected."
   },
   "auth.mode.to_sign_up": {
-    "value": "नए हैं? खाता बनाएं",
+    "value": "नए हैं? खाता बनाएँ",
     "description": "Link that switches the auth form from sign-in to sign-up mode."
   },
   "auth.mode.to_sign_in": {
@@ -208,11 +208,11 @@
     "description": "Disabled-state label on the Google button when no Google client ID is configured in this build."
   },
   "auth.error.network": {
-    "value": "कनेक्ट नहीं हो पाया। अपना इंटरनेट जांचें और दोबारा कोशिश करें।",
+    "value": "कनेक्ट नहीं हो पाया। अपना इंटरनेट जाँचें और दोबारा कोशिश करें।",
     "description": "Error shown when an auth call fails due to network problems."
   },
   "auth.permissions.presets_label": {
-    "value": "त्वरित प्रीसेट",
+    "value": "तैयार प्रीसेट",
     "description": "Label above the Viewer/Staff/Manager preset chips on the permission matrix editor."
   },
   "auth.permissions.preset_viewer": {
@@ -236,7 +236,7 @@
     "description": "Permission matrix group header for expenses capabilities."
   },
   "auth.permissions.group_inventory": {
-    "value": "इन्वेंट्री",
+    "value": "सामान",
     "description": "Permission matrix group header for inventory capabilities."
   },
   "auth.permissions.group_reports": {
@@ -256,11 +256,11 @@
     "description": "Permission toggle: create new records in this tab."
   },
   "auth.permissions.action_edit": {
-    "value": "संपादित करें",
+    "value": "बदलें",
     "description": "Permission toggle: edit existing records in this tab."
   },
   "auth.permissions.action_delete": {
-    "value": "हटाएं",
+    "value": "हटाएँ",
     "description": "Permission toggle: delete (tombstone) records in this tab."
   },
   "auth.permissions.action_record_payment": {
@@ -268,19 +268,19 @@
     "description": "Permission toggle: record payments against bookings and act on payment reminders."
   },
   "auth.permissions.action_generate_invoice": {
-    "value": "इनवॉइस बनाएं",
+    "value": "बिल बनाएँ",
     "description": "Permission toggle: generate and share booking invoices."
   },
   "auth.permissions.action_manage_parties": {
-    "value": "पार्टियां प्रबंधित करें",
+    "value": "व्यक्ति प्रबंधित करें",
     "description": "Permission toggle: add and edit ledger parties."
   },
   "auth.permissions.action_manage_master_items": {
-    "value": "वस्तु सूची प्रबंधित करें",
+    "value": "सामान की सूची प्रबंधित करें",
     "description": "Permission toggle: add, edit and delete inventory master items."
   },
   "auth.permissions.action_manage_business": {
-    "value": "व्यवसाय प्रोफ़ाइल संपादित करें",
+    "value": "व्यवसाय प्रोफ़ाइल बदलें",
     "description": "Permission toggle: edit business profile, logo, invoice prefix and business settings."
   },
   "auth.permissions.action_manage_members": {

@@ -232,7 +232,7 @@
     "description": "Booking source chip: any other channel."
   },
   "booking.form.notes": {
-    "value": "टिप्पणी",
+    "value": "नोट्स",
     "description": "Label of the free-text notes field on booking, payment and block forms."
   },
   "booking.form.status": {
@@ -360,7 +360,7 @@
     "description": "How far away an upcoming event is, shown under the event title in reminders. ICU plural on the day count."
   },
   "booking.reminder.dismiss": {
-    "value": "हटाएँ",
+    "value": "बंद करें",
     "description": "Dismiss action on the full-screen upcoming-event reminder."
   },
   "booking.reminder.view": {
@@ -368,7 +368,7 @@
     "description": "View action on upcoming-event reminders; opens the booking in the app."
   },
   "booking.whatsapp.reminder_text": {
-    "value": "नमस्ते {name}, {date} के {event} के {due} बाकी हैं — {business}।",
+    "value": "नमस्ते {name}, {event} ({date}) के {due} बाकी हैं — {business}।",
     "description": "Prefilled WhatsApp payment-reminder message. {due} is a pre-formatted rupee amount, {event} the localized event type, {date} a localized date, {business} the business name."
   },
   "booking.whatsapp.not_installed": {

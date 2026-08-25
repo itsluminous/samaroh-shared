@@ -28,11 +28,11 @@
     "description": "In-app banner text shown while unacknowledged sync conflicts exist; tapping opens Settings → Sync status."
   },
   "invoice.title": {
-    "value": "चालान",
+    "value": "बिल",
     "description": "Localized 'Invoice' document title in the PDF header band and the text receipt."
   },
   "invoice.number_label": {
-    "value": "चालान क्रमांक",
+    "value": "बिल क्रमांक",
     "description": "Label preceding the immutable invoice number ({prefix}-{YYYY}-{counter}) on the PDF and text receipt."
   },
   "invoice.issue_date_label": {
@@ -52,7 +52,7 @@
     "description": "Amounts-block row label for the booking's total amount."
   },
   "invoice.security_deposit": {
-    "value": "सुरक्षा जमा",
+    "value": "सिक्योरिटी जमा",
     "description": "Amounts-block row label for the refundable security deposit; the row appears only when the deposit is greater than zero."
   },
   "invoice.payment_history": {
@@ -92,7 +92,7 @@
     "description": "Placeholder row shown in the payment history when the booking has no payments."
   },
   "invoice.footer": {
-    "value": "समारोह द्वारा निर्मित",
+    "value": "समारोह द्वारा तैयार किया गया",
     "description": "Centered grey footer line on the PDF and the last line of the text receipt."
   },
   "invoice.method.cash": {

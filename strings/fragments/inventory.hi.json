@@ -24,7 +24,7 @@
     "description": "Body of the empty state on the current-inventory screen guiding the user to the item list."
   },
   "inventory.list.no_results": {
-    "value": "आपकी खोज से मिलता कोई सामान नहीं।",
+    "value": "आपकी खोज से मेल खाता कोई सामान नहीं मिला।",
     "description": "Shown instead of the list when the search query filters out every item."
   },
   "inventory.toggle.masterlist": {
@@ -64,11 +64,11 @@
     "description": "Label of the required quantity input in the record-transaction dialog."
   },
   "inventory.txn.unit_price_label": {
-    "value": "इकाई दाम",
+    "value": "प्रति इकाई दाम",
     "description": "Label of the per-unit price input (rupees), required for Add transactions. Removes derive cost from FIFO lots."
   },
   "inventory.txn.notes_label": {
-    "value": "नोट",
+    "value": "नोट्स",
     "description": "Label of the optional notes input in the record-transaction dialog."
   },
   "inventory.txn.stock_available": {
@@ -84,7 +84,7 @@
     "description": "Validation error for a missing, zero or non-numeric quantity."
   },
   "inventory.txn.error_price_invalid": {
-    "value": "सही इकाई दाम भरें।",
+    "value": "सही दाम भरें।",
     "description": "Validation error for a missing or non-numeric unit price on an Add transaction."
   },
   "inventory.txn.error_insufficient_stock": {

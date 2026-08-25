@@ -92,7 +92,7 @@
     "description": "Display name of the onboarding/setup flow, used on its placeholder screen (not a bottom tab)."
   },
   "app.feature.reports": {
-    "value": "रिपोर्ट्स",
+    "value": "रिपोर्ट",
     "description": "Display name of the reports section (lives inside the Menu tab), used on its placeholder screen."
   },
   "booking.event_type.engagement": {
@@ -156,7 +156,7 @@
     "description": "Button label for signing in with a Google account."
   },
   "auth.sign_in.error": {
-    "value": "साइन इन नहीं हो पाया। अपना ईमेल और पासवर्ड जांचें।",
+    "value": "साइन इन नहीं हो पाया। अपना ईमेल और पासवर्ड जाँचें।",
     "description": "Generic error shown when email+password sign-in is rejected."
   },
   "auth.sign_in.not_configured": {
