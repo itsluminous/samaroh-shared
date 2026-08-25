@@ -114,5 +114,49 @@
   "booking.event_type.custom": {
     "value": "अपनी पसंद",
     "description": "Built-in event type label (✨) — user provides free-text label and emoji."
+  },
+  "common.language.switcher_label": {
+    "value": "भाषा",
+    "description": "Label / accessible name for the locale switcher control in the app bar and settings."
+  },
+  "common.language.en": {
+    "value": "English",
+    "description": "Display name of the English locale, always shown in its own script regardless of current locale."
+  },
+  "common.language.hi": {
+    "value": "हिन्दी",
+    "description": "Display name of the Hindi locale, always shown in its own script regardless of current locale."
+  },
+  "auth.sign_in.title": {
+    "value": "साइन इन करें",
+    "description": "Heading of the sign-in screen."
+  },
+  "auth.sign_in.email_label": {
+    "value": "ईमेल",
+    "description": "Label for the email input on the sign-in form."
+  },
+  "auth.sign_in.password_label": {
+    "value": "पासवर्ड",
+    "description": "Label for the password input on the sign-in form."
+  },
+  "auth.sign_in.submit": {
+    "value": "साइन इन करें",
+    "description": "Submit button label on the sign-in form."
+  },
+  "auth.sign_in.google": {
+    "value": "Google से जारी रखें",
+    "description": "Button label for signing in with a Google account."
+  },
+  "auth.sign_in.error": {
+    "value": "साइन इन नहीं हो पाया। अपना ईमेल और पासवर्ड जांचें।",
+    "description": "Generic error shown when email+password sign-in is rejected."
+  },
+  "auth.sign_in.not_configured": {
+    "value": "साइन इन अभी इस सर्वर पर सेट नहीं है।",
+    "description": "Shown when the backend connection settings are missing, so authentication is unavailable."
+  },
+  "auth.action.sign_out": {
+    "value": "साइन आउट करें",
+    "description": "Sign-out action label in the app shell / menu."
   }
 }
