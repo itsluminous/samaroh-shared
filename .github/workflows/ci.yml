@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate-catalogs:
+    name: Validate string catalogs & codegen
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate catalogs (schema, key parity, placeholders)
+        run: node scripts/validate-catalogs.mjs
+      - name: Validate remaining JSON contracts parse
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('permissions/permissions-schema.json'))"
+          node -e "JSON.parse(require('fs').readFileSync('event-types.json'))"
+      - name: Codegen smoke test (Android + web)
+        run: |
+          node codegen/gen-android.mjs "$RUNNER_TEMP/res"
+          node codegen/gen-web.mjs "$RUNNER_TEMP/messages"
+          test -s "$RUNNER_TEMP/res/values/strings.xml"
+          test -s "$RUNNER_TEMP/res/values-hi/strings.xml"
+          test -s "$RUNNER_TEMP/messages/en.json"
+          test -s "$RUNNER_TEMP/messages/hi.json"
+
+  legal-hygiene:
+    name: Legal-hygiene denylist check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run denylist scan
+        run: bash scripts/legal-check.sh
+
+  migrations:
+    name: Apply migrations to scratch Postgres
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Start scratch database and apply migrations + seed
+        working-directory: supabase
+        run: |
+          supabase db start
+          supabase db reset --local
