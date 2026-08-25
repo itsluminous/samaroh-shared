@@ -1,30 +1,87 @@
 // Shared helpers for the string-catalog code generators. Pure Node, no dependencies.
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const STRINGS_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'strings');
+export const FRAGMENTS_DIR = join(STRINGS_DIR, 'fragments');
 export const CANONICAL_LOCALE = 'en';
 
-/** Discover locales from strings/catalog.<locale>.json files. */
+const LOCALE_PATTERN = '[a-z]{2}(?:-[A-Za-z]+)?';
+const FRAGMENT_FILE_RE = new RegExp(`^([a-z][a-z0-9_-]*)\\.(${LOCALE_PATTERN})\\.json$`);
+
+/** List strings/fragments/ entries, tolerating a missing directory. Dotfiles (.gitkeep) are ignored. */
+function fragmentDirEntries() {
+  if (!existsSync(FRAGMENTS_DIR)) return [];
+  return readdirSync(FRAGMENTS_DIR).filter((f) => !f.startsWith('.'));
+}
+
+/**
+ * Discover locales from strings/catalog.<locale>.json files, and validate that every
+ * fragment file (strings/fragments/<namespace>.<locale>.json) is well-formed and uses a
+ * locale that has a base catalog. Throws on a malformed fragment filename or an unknown
+ * fragment locale — both would otherwise be silently skipped.
+ */
 export function discoverLocales() {
-  return readdirSync(STRINGS_DIR)
-    .map((f) => /^catalog\.([a-z]{2}(?:-[A-Za-z]+)?)\.json$/.exec(f))
+  const locales = readdirSync(STRINGS_DIR)
+    .map((f) => new RegExp(`^catalog\\.(${LOCALE_PATTERN})\\.json$`).exec(f))
     .filter(Boolean)
     .map((m) => m[1])
     .sort((a, b) => (a === CANONICAL_LOCALE ? -1 : b === CANONICAL_LOCALE ? 1 : a.localeCompare(b)));
-}
-
-/** Load one catalog file and validate its basic shape. */
-export function loadCatalog(locale) {
-  const file = join(STRINGS_DIR, `catalog.${locale}.json`);
-  const data = JSON.parse(readFileSync(file, 'utf8'));
-  for (const [key, entry] of Object.entries(data)) {
-    if (typeof entry !== 'object' || entry === null || typeof entry.value !== 'string') {
-      throw new Error(`${file}: entry "${key}" must be an object with a string "value"`);
+  for (const f of fragmentDirEntries()) {
+    const m = FRAGMENT_FILE_RE.exec(f);
+    if (!m) {
+      throw new Error(
+        `fragments/${f}: does not match <namespace>.<locale>.json (namespace: lowercase [a-z0-9_-])`,
+      );
+    }
+    if (!locales.includes(m[2])) {
+      throw new Error(
+        `fragments/${f}: locale "${m[2]}" has no base catalog.${m[2]}.json — fragment would be silently ignored`,
+      );
     }
   }
-  return data;
+  return locales;
+}
+
+/** All catalog source files for a locale: the base catalog plus fragments, sorted by namespace. */
+export function catalogFilesFor(locale) {
+  const files = [join(STRINGS_DIR, `catalog.${locale}.json`)];
+  const fragments = fragmentDirEntries()
+    .filter((f) => {
+      const m = FRAGMENT_FILE_RE.exec(f);
+      return m && m[2] === locale;
+    })
+    .sort()
+    .map((f) => join(FRAGMENTS_DIR, f));
+  return files.concat(fragments);
+}
+
+/**
+ * Load the merged catalog for a locale: strings/catalog.<locale>.json plus every
+ * strings/fragments/*.<locale>.json. Validates each entry's basic shape. A key appearing
+ * in more than one file (for the same locale) is a HARD ERROR — namespaces are owned by
+ * exactly one file.
+ */
+export function loadCatalog(locale) {
+  const merged = {};
+  const keySource = {};
+  for (const file of catalogFilesFor(locale)) {
+    const data = JSON.parse(readFileSync(file, 'utf8'));
+    for (const [key, entry] of Object.entries(data)) {
+      if (typeof entry !== 'object' || entry === null || typeof entry.value !== 'string') {
+        throw new Error(`${file}: entry "${key}" must be an object with a string "value"`);
+      }
+      if (key in merged) {
+        throw new Error(
+          `DUPLICATE KEY: "${key}" defined in both ${keySource[key]} and ${file} (locale ${locale})`,
+        );
+      }
+      merged[key] = entry;
+      keySource[key] = file;
+    }
+  }
+  return merged;
 }
 
 /**

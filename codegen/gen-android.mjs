@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Generates Android string resources from the canonical catalog.
 //   node gen-android.mjs <output-res-dir>
+// Sources per locale: strings/catalog.<locale>.json merged with every
+// strings/fragments/*.<locale>.json (duplicate keys across files = hard error).
 // Emits <output-res-dir>/values/strings.xml (en) and values-<locale>/strings.xml for
 // every other locale. Pure Node, no dependencies. Exits non-zero on key-parity mismatch.
 import { mkdirSync, writeFileSync } from 'node:fs';

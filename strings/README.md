@@ -9,6 +9,7 @@ Android app and the web app comes from these files — **no string literals in a
 |---|---|
 | `catalog.en.json` | Canonical catalog (English). The source of truth for keys, placeholders and descriptions. |
 | `catalog.hi.json` | Hindi translation. Must have **exact key parity** with `catalog.en.json`. |
+| `fragments/<namespace>.{en,hi}.json` | Per-feature **fragment catalogs** (see below). Merged with the base catalog by codegen and the validator. |
 
 Each entry maps a key to an object:
 
@@ -45,6 +46,36 @@ Module namespaces and their owners:
 
 New keys are added **only in this repo**, always to **both** locale files, in the feature's
 own namespace. CI enforces key parity and shape (`scripts/validate-catalogs.mjs`).
+
+## Fragment catalogs (`fragments/`) — parallel-agent workflow
+
+To let Wave-1 agents add keys **without merge conflicts** in the base catalog, each agent
+owns exactly **one fragment namespace file pair** under `strings/fragments/`:
+
+```
+fragments/booking.en.json     fragments/booking.hi.json      # W1-A
+fragments/expenses.en.json    fragments/expenses.hi.json     # W1-B
+fragments/inventory.en.json   fragments/inventory.hi.json    # W1-C
+fragments/onboarding.en.json  fragments/onboarding.hi.json   # W1-D  (auth.* keys too)
+fragments/invoice.en.json     fragments/invoice.hi.json      # W1-E  (sync.* keys too)
+fragments/menu.en.json        fragments/menu.hi.json         # W1-F  (settings.* keys too)
+```
+
+Rules:
+
+- File name shape: `<namespace>.<locale>.json` (namespace: lowercase `[a-z0-9_-]`). Entry
+  shape is identical to the base catalog (`key → {value, description}`).
+- Codegen (`gen-android.mjs`, `gen-web.mjs`) and the validator **merge** the base catalog
+  with all fragments per locale. Generated output is indistinguishable from keys living in
+  the base catalog.
+- A key defined in **more than one file** (base or fragment, same locale) is a **hard
+  error** — namespaces are exclusively owned; never redefine another module's key.
+- **Key parity is enforced across the merged set**: every key must exist in every locale.
+  Adding a key to `booking.en.json` without `booking.hi.json` fails validation and codegen.
+- A fragment file for a locale that has no base `catalog.<locale>.json` is an error (it
+  would otherwise be silently ignored).
+- Do not create/edit another agent's fragment files. The integrator folds fragments into
+  the base catalog (or keeps them) at wave merge time — either is valid.
 
 ## Placeholders (ICU)
 

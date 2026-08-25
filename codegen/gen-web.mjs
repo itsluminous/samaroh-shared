@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Generates next-intl message files from the canonical catalog.
 //   node gen-web.mjs <output-messages-dir>
+// Sources per locale: strings/catalog.<locale>.json merged with every
+// strings/fragments/*.<locale>.json (duplicate keys across files = hard error).
 // Emits <output-messages-dir>/<locale>.json with keys nested by dot segments
 // (e.g. "common.action.save" -> { common: { action: { save: "…" } } }).
 // ICU values pass through unchanged — next-intl consumes ICU natively.

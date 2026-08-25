@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 // Validates the string catalogs. Pure Node, no dependencies. Exit 1 on any failure.
+// Sources per locale: strings/catalog.<locale>.json merged with every
+// strings/fragments/*.<locale>.json — a key defined in more than one file is a hard error.
 // Checks:
-//   1. every catalog parses and every entry is {value: string, description: string}
+//   1. every catalog/fragment parses; every entry is {value: string, description: string};
+//      no duplicate keys across the base catalog and fragment files of a locale
 //   2. key naming convention: module.screen.element (lowercase snake_case dot segments)
-//   3. exact key parity across all locales
+//   3. exact key parity across all locales (over the merged set)
 //   4. ICU placeholder-name parity per key across locales
 //   5. plural shape parity (a key that is a plural in en must be a plural everywhere)
 import {
@@ -22,7 +25,13 @@ const fail = (msg) => {
   failures += 1;
 };
 
-const locales = discoverLocales();
+let locales;
+try {
+  locales = discoverLocales();
+} catch (e) {
+  fail(e.message);
+  process.exit(1);
+}
 if (!locales.includes(CANONICAL_LOCALE)) {
   fail(`canonical locale "${CANONICAL_LOCALE}" catalog not found`);
   process.exit(1);
@@ -33,7 +42,7 @@ for (const locale of locales) {
   try {
     catalogs[locale] = loadCatalog(locale);
   } catch (e) {
-    fail(`catalog.${locale}.json: ${e.message}`);
+    fail(`[${locale}] ${e.message}`);
   }
 }
 if (failures) process.exit(1);
