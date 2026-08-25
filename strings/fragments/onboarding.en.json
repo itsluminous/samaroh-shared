@@ -1,0 +1,294 @@
+{
+  "onboarding.language.title": {
+    "value": "Choose your language",
+    "description": "Heading of the very first onboarding screen: the language picker."
+  },
+  "onboarding.language.subtitle": {
+    "value": "You can change this anytime in Settings.",
+    "description": "Reassurance line under the language picker heading."
+  },
+  "onboarding.action.continue": {
+    "value": "Continue",
+    "description": "Primary forward-navigation button used across onboarding screens."
+  },
+  "onboarding.welcome.skip": {
+    "value": "Skip",
+    "description": "Skips the welcome carousel and jumps straight to sign-in."
+  },
+  "onboarding.welcome.next": {
+    "value": "Next",
+    "description": "Advances the welcome carousel to the next slide."
+  },
+  "onboarding.welcome.get_started": {
+    "value": "Get started",
+    "description": "Final button on the last welcome-carousel slide; proceeds to sign-in."
+  },
+  "onboarding.welcome.slide1.title": {
+    "value": "All your bookings on one calendar",
+    "description": "Title of welcome carousel slide 1 (booking calendar pitch)."
+  },
+  "onboarding.welcome.slide1.body": {
+    "value": "See every event at a glance and never miss a payment — as easy as WhatsApp.",
+    "description": "Body of welcome carousel slide 1. WhatsApp is a permitted integration name."
+  },
+  "onboarding.welcome.slide2.title": {
+    "value": "A simple ledger for every party",
+    "description": "Title of welcome carousel slide 2 (expenses ledger pitch)."
+  },
+  "onboarding.welcome.slide2.body": {
+    "value": "Track money you gave and got, person by person, with receipts attached.",
+    "description": "Body of welcome carousel slide 2."
+  },
+  "onboarding.welcome.slide3.title": {
+    "value": "Works without internet",
+    "description": "Title of welcome carousel slide 3 (offline-first pitch)."
+  },
+  "onboarding.welcome.slide3.body": {
+    "value": "Everything is saved on your phone and syncs automatically when you are back online.",
+    "description": "Body of welcome carousel slide 3."
+  },
+  "onboarding.signin.subtitle": {
+    "value": "Sign in to keep your data safe across devices.",
+    "description": "Reassurance line under the sign-in heading during onboarding."
+  },
+  "onboarding.fork.title": {
+    "value": "How would you like to start?",
+    "description": "Heading of the create-vs-join fork screen after sign-in."
+  },
+  "onboarding.fork.create": {
+    "value": "Create a business",
+    "description": "Fork option: start a brand-new business (owner path)."
+  },
+  "onboarding.fork.create_body": {
+    "value": "Set up your hall or venue from scratch.",
+    "description": "Supporting line under the create-a-business fork option."
+  },
+  "onboarding.fork.join": {
+    "value": "Join a business",
+    "description": "Fork option: join an existing business via an invitation (employee path)."
+  },
+  "onboarding.fork.join_body": {
+    "value": "Work in a business you were invited to.",
+    "description": "Supporting line under the join-a-business fork option."
+  },
+  "onboarding.fork.invite_badge": {
+    "value": "{count, plural, one {# invitation waiting} other {# invitations waiting}}",
+    "description": "Badge on the join option when pending invitations were auto-detected. ICU plural; count = number of invitations."
+  },
+  "onboarding.join.title": {
+    "value": "Your invitations",
+    "description": "Heading of the invitation-acceptance screen."
+  },
+  "onboarding.join.invited_as": {
+    "value": "Invited as {name}",
+    "description": "Subtitle on an invitation row; {name} is the display name the owner assigned to this member."
+  },
+  "onboarding.join.accept": {
+    "value": "Accept & join",
+    "description": "Button on an invitation row that accepts the invite and enters that business."
+  },
+  "onboarding.join.empty": {
+    "value": "No invitations found for your email yet. Ask the owner to invite you, then try again.",
+    "description": "Empty state on the invitation screen when no pending invitation exists for the signed-in email."
+  },
+  "onboarding.join.refresh": {
+    "value": "Check again",
+    "description": "Button that re-fetches memberships/invitations from the server."
+  },
+  "onboarding.create.title": {
+    "value": "Tell us about your business",
+    "description": "Heading of the create-business form."
+  },
+  "onboarding.create.name_label": {
+    "value": "Business name",
+    "description": "Label of the required business-name field on the create-business form."
+  },
+  "onboarding.create.name_required": {
+    "value": "Business name is required.",
+    "description": "Validation error when the business name is left empty."
+  },
+  "onboarding.create.type_label": {
+    "value": "Business type",
+    "description": "Label of the business-type dropdown (suggestions + free text)."
+  },
+  "onboarding.create.address_label": {
+    "value": "Address",
+    "description": "Label of the optional address field on the create-business form."
+  },
+  "onboarding.create.owner_label": {
+    "value": "Owner name",
+    "description": "Label of the required owner-name field on the create-business form."
+  },
+  "onboarding.create.owner_required": {
+    "value": "Owner name is required.",
+    "description": "Validation error when the owner name is left empty."
+  },
+  "onboarding.create.logo_label": {
+    "value": "Logo",
+    "description": "Label of the optional logo section on the create-business form."
+  },
+  "onboarding.create.logo_camera": {
+    "value": "Take photo",
+    "description": "Button that opens the camera to capture a business logo."
+  },
+  "onboarding.create.logo_gallery": {
+    "value": "Choose from gallery",
+    "description": "Button that opens the photo picker to select a business logo."
+  },
+  "onboarding.create.logo_preview": {
+    "value": "Business logo",
+    "description": "Accessibility description of the cropped logo preview image."
+  },
+  "onboarding.create.submit": {
+    "value": "Create business",
+    "description": "Submit button of the create-business form."
+  },
+  "onboarding.create.error": {
+    "value": "Could not save your business. Please try again.",
+    "description": "Generic error when persisting the new business fails."
+  },
+  "onboarding.business_type.marriage_hall": {
+    "value": "Marriage Hall",
+    "description": "Business-type suggestion in the create-business dropdown."
+  },
+  "onboarding.business_type.banquet_hall": {
+    "value": "Banquet Hall",
+    "description": "Business-type suggestion in the create-business dropdown."
+  },
+  "onboarding.business_type.community_hall": {
+    "value": "Community Hall",
+    "description": "Business-type suggestion in the create-business dropdown."
+  },
+  "onboarding.business_type.guest_house": {
+    "value": "Guest House",
+    "description": "Business-type suggestion in the create-business dropdown."
+  },
+  "onboarding.business_type.other": {
+    "value": "Other",
+    "description": "Business-type suggestion for a custom, free-text type."
+  },
+  "onboarding.link_google.title": {
+    "value": "Connect Google",
+    "description": "Heading of the optional Google-linking onboarding step."
+  },
+  "onboarding.link_google.body": {
+    "value": "Connect Google for Calendar sync and Drive backup. You can do this anytime from Settings.",
+    "description": "Explanation on the Google-linking step; linking is optional and relinkable from Settings."
+  },
+  "onboarding.link_google.connect": {
+    "value": "Connect Google",
+    "description": "Button that starts Google account linking (Calendar/Drive scopes)."
+  },
+  "onboarding.link_google.later": {
+    "value": "Do it later",
+    "description": "Prominent secondary action that skips Google linking and finishes onboarding."
+  },
+  "auth.sign_up.title": {
+    "value": "Create account",
+    "description": "Heading of the email sign-up form (toggled from the sign-in screen)."
+  },
+  "auth.sign_up.submit": {
+    "value": "Create account",
+    "description": "Submit button of the email sign-up form."
+  },
+  "auth.sign_up.error": {
+    "value": "Could not create the account. Try a different email or a longer password.",
+    "description": "Generic error shown when email+password sign-up is rejected."
+  },
+  "auth.mode.to_sign_up": {
+    "value": "New here? Create an account",
+    "description": "Link that switches the auth form from sign-in to sign-up mode."
+  },
+  "auth.mode.to_sign_in": {
+    "value": "Already have an account? Sign in",
+    "description": "Link that switches the auth form from sign-up back to sign-in mode."
+  },
+  "auth.google.not_configured": {
+    "value": "Google sign-in isn't set up yet",
+    "description": "Disabled-state label on the Google button when no Google client ID is configured in this build."
+  },
+  "auth.error.network": {
+    "value": "Could not connect. Check your internet and try again.",
+    "description": "Error shown when an auth call fails due to network problems."
+  },
+  "auth.permissions.presets_label": {
+    "value": "Quick presets",
+    "description": "Label above the Viewer/Staff/Manager preset chips on the permission matrix editor."
+  },
+  "auth.permissions.preset_viewer": {
+    "value": "Viewer",
+    "description": "Permission preset chip: every view permission, nothing else."
+  },
+  "auth.permissions.preset_staff": {
+    "value": "Staff",
+    "description": "Permission preset chip: view + create permissions."
+  },
+  "auth.permissions.preset_manager": {
+    "value": "Manager",
+    "description": "Permission preset chip: everything except settings/members."
+  },
+  "auth.permissions.group_booking": {
+    "value": "Booking",
+    "description": "Permission matrix group header for booking capabilities."
+  },
+  "auth.permissions.group_expenses": {
+    "value": "Expenses",
+    "description": "Permission matrix group header for expenses capabilities."
+  },
+  "auth.permissions.group_inventory": {
+    "value": "Inventory",
+    "description": "Permission matrix group header for inventory capabilities."
+  },
+  "auth.permissions.group_reports": {
+    "value": "Reports",
+    "description": "Permission matrix group header for reports capabilities."
+  },
+  "auth.permissions.group_settings": {
+    "value": "Settings",
+    "description": "Permission matrix group header for settings capabilities."
+  },
+  "auth.permissions.action_view": {
+    "value": "View",
+    "description": "Permission toggle: see this tab's content."
+  },
+  "auth.permissions.action_create": {
+    "value": "Add new",
+    "description": "Permission toggle: create new records in this tab."
+  },
+  "auth.permissions.action_edit": {
+    "value": "Edit",
+    "description": "Permission toggle: edit existing records in this tab."
+  },
+  "auth.permissions.action_delete": {
+    "value": "Delete",
+    "description": "Permission toggle: delete (tombstone) records in this tab."
+  },
+  "auth.permissions.action_record_payment": {
+    "value": "Record payments",
+    "description": "Permission toggle: record payments against bookings and act on payment reminders."
+  },
+  "auth.permissions.action_generate_invoice": {
+    "value": "Generate invoices",
+    "description": "Permission toggle: generate and share booking invoices."
+  },
+  "auth.permissions.action_manage_parties": {
+    "value": "Manage parties",
+    "description": "Permission toggle: add and edit ledger parties."
+  },
+  "auth.permissions.action_manage_master_items": {
+    "value": "Manage item list",
+    "description": "Permission toggle: add, edit and delete inventory master items."
+  },
+  "auth.permissions.action_manage_business": {
+    "value": "Edit business profile",
+    "description": "Permission toggle: edit business profile, logo, invoice prefix and business settings."
+  },
+  "auth.permissions.action_manage_members": {
+    "value": "Manage members",
+    "description": "Permission toggle: invite, edit and revoke members."
+  },
+  "auth.permissions.action_gcal_sync": {
+    "value": "Google Calendar sync",
+    "description": "Permission toggle: enable and manage Google Calendar sync."
+  }
+}

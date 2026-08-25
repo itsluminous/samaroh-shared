@@ -1,0 +1,386 @@
+{
+  "booking.summary.this_month": {
+    "value": "This month",
+    "description": "Title of the month summary card on top of the Booking calendar."
+  },
+  "booking.summary.received_pending": {
+    "value": "Received {received} · Pending {pending}",
+    "description": "Month summary card body. {received} and {pending} are pre-formatted rupee amounts (e.g. ₹1,06,511)."
+  },
+  "booking.calendar.prev_month": {
+    "value": "Previous month",
+    "description": "Accessible label / long-press explanation for the calendar's previous-month arrow."
+  },
+  "booking.calendar.next_month": {
+    "value": "Next month",
+    "description": "Accessible label / long-press explanation for the calendar's next-month arrow."
+  },
+  "booking.calendar.pick_month": {
+    "value": "Choose month",
+    "description": "Title of the year/month picker dialog opened from the calendar header."
+  },
+  "booking.calendar.today": {
+    "value": "Today",
+    "description": "Label for the today outline in the calendar and the jump-to-today action."
+  },
+  "booking.calendar.agenda_title": {
+    "value": "Bookings this month",
+    "description": "Heading of the agenda list under the calendar grid."
+  },
+  "booking.calendar.agenda_empty": {
+    "value": "No bookings this month",
+    "description": "Empty state of the agenda list when the displayed month has no bookings."
+  },
+  "booking.calendar.blocked": {
+    "value": "Blocked",
+    "description": "Label shown on grey-striped blocked (maintenance/closure) dates and in the block details sheet."
+  },
+  "booking.calendar.add": {
+    "value": "Add booking",
+    "description": "Add-booking FAB description and the add-booking form title."
+  },
+  "booking.calendar.block_dates": {
+    "value": "Block dates",
+    "description": "Overflow menu entry and dialog title for blocking dates for maintenance/closure."
+  },
+  "booking.calendar.more_options": {
+    "value": "More options",
+    "description": "Accessible label for the calendar screen's overflow (three-dot) menu button."
+  },
+  "booking.status.confirmed": {
+    "value": "Confirmed",
+    "description": "Booking status chip/label: confirmed booking (filled purple pill on the calendar)."
+  },
+  "booking.status.tentative": {
+    "value": "Tentative",
+    "description": "Booking status chip/label: tentative booking (outlined amber pill on the calendar)."
+  },
+  "booking.status.completed": {
+    "value": "Completed",
+    "description": "Booking status chip/label: event finished."
+  },
+  "booking.status.cancelled": {
+    "value": "Cancelled",
+    "description": "Booking status chip/label: cancelled booking (hidden on the calendar, struck through in lists)."
+  },
+  "booking.card.phone_call": {
+    "value": "Call",
+    "description": "Tap-to-call icon explanation on the booking card; opens the dialer with the customer's number."
+  },
+  "booking.card.dates_label": {
+    "value": "Dates",
+    "description": "Label above the event date range on the booking card."
+  },
+  "booking.card.total_label": {
+    "value": "Total",
+    "description": "Label for the booking's total amount on the card and invoice sheet."
+  },
+  "booking.card.deposit_label": {
+    "value": "Security deposit",
+    "description": "Label for the refundable security deposit amount, tracked separately from the advance."
+  },
+  "booking.card.paid_label": {
+    "value": "Paid",
+    "description": "Label for the sum of recorded payments on the booking card."
+  },
+  "booking.card.due_label": {
+    "value": "Due",
+    "description": "Label above the auto-calculated outstanding amount (total − paid); rendered bold red when positive."
+  },
+  "booking.card.payments_title": {
+    "value": "Payment history",
+    "description": "Heading of the payment list on the booking card."
+  },
+  "booking.card.no_payments": {
+    "value": "No payments recorded yet",
+    "description": "Empty state of the payment history list on the booking card."
+  },
+  "booking.card.audit_added": {
+    "value": "Added by {name} on {date}",
+    "description": "Audit line at the bottom of the booking card. {name} is the creator's display name, {date} a localized date."
+  },
+  "booking.card.action_record_payment": {
+    "value": "Record payment",
+    "description": "Booking card action button: opens the record-payment sheet. Also the sheet's title."
+  },
+  "booking.card.action_invoice": {
+    "value": "Invoice",
+    "description": "Booking card action button: generates/shares the invoice."
+  },
+  "booking.card.action_whatsapp": {
+    "value": "WhatsApp",
+    "description": "Booking card action button: opens WhatsApp with a prefilled payment-reminder message."
+  },
+  "booking.card.action_cancel_booking": {
+    "value": "Cancel booking",
+    "description": "Booking card action: marks the booking cancelled and releases the date."
+  },
+  "booking.card.cancel_confirm_title": {
+    "value": "Cancel this booking?",
+    "description": "Title of the confirmation dialog before cancelling a booking."
+  },
+  "booking.card.cancel_confirm_message": {
+    "value": "The booking will be marked cancelled and the date will be released.",
+    "description": "Body of the cancel-booking confirmation dialog."
+  },
+  "booking.card.invoice_pdf": {
+    "value": "Share PDF",
+    "description": "Invoice output option: generate the PDF invoice and open the share sheet."
+  },
+  "booking.card.invoice_text": {
+    "value": "Share as text",
+    "description": "Invoice output option: share a plain-text receipt summary via any messaging app."
+  },
+  "booking.card.invoice_failed": {
+    "value": "Could not generate the invoice",
+    "description": "Error toast when invoice generation fails (e.g. booking missing or storage failure)."
+  },
+  "booking.block.reason_label": {
+    "value": "Reason",
+    "description": "Label for the optional reason field when blocking dates, and on the block details sheet."
+  },
+  "booking.block.no_reason": {
+    "value": "No reason given",
+    "description": "Shown on a block's details when no reason was entered."
+  },
+  "booking.block.remove": {
+    "value": "Remove block",
+    "description": "Action on a blocked date's details sheet: deletes the date block, freeing the dates."
+  },
+  "booking.form.title_edit": {
+    "value": "Edit booking",
+    "description": "Title of the booking form when editing an existing booking."
+  },
+  "booking.form.event_type": {
+    "value": "Event type",
+    "description": "Label of the event-type dropdown on the booking form."
+  },
+  "booking.form.custom_label": {
+    "value": "Event name",
+    "description": "Label for the free-text event name input shown when the Custom event type is selected."
+  },
+  "booking.form.custom_emoji": {
+    "value": "Icon",
+    "description": "Label for the emoji input shown when the Custom event type is selected."
+  },
+  "booking.form.customer_name": {
+    "value": "Customer name",
+    "description": "Label of the required customer name field on the booking form."
+  },
+  "booking.form.customer_phone": {
+    "value": "Phone number",
+    "description": "Label of the optional customer phone field on the booking form."
+  },
+  "booking.form.pick_contact": {
+    "value": "Pick from contacts",
+    "description": "Explanation of the contact-picker icon next to the phone field."
+  },
+  "booking.form.start_date": {
+    "value": "Start date",
+    "description": "Label of the booking start date field."
+  },
+  "booking.form.end_date": {
+    "value": "End date",
+    "description": "Label of the booking end date field (same as start date for single-day events)."
+  },
+  "booking.form.start_time": {
+    "value": "Start time",
+    "description": "Label of the optional event start time field."
+  },
+  "booking.form.end_time": {
+    "value": "End time",
+    "description": "Label of the optional event end time field."
+  },
+  "booking.form.total_amount": {
+    "value": "Total amount",
+    "description": "Label of the booking's total amount field (rupees)."
+  },
+  "booking.form.security_deposit": {
+    "value": "Security deposit",
+    "description": "Label of the optional refundable security deposit field (rupees)."
+  },
+  "booking.form.advance": {
+    "value": "Advance paid",
+    "description": "Label of the advance field on the add form; a non-zero advance becomes the first payment row dated today."
+  },
+  "booking.form.due_auto": {
+    "value": "Due (auto-calculated)",
+    "description": "Label of the read-only, live-updating due amount on the booking form."
+  },
+  "booking.form.source": {
+    "value": "Booking source",
+    "description": "Label of the optional booking-source chip row (how the customer found the business)."
+  },
+  "booking.source.walk_in": {
+    "value": "Walk-in",
+    "description": "Booking source chip: customer walked in."
+  },
+  "booking.source.phone": {
+    "value": "Phone",
+    "description": "Booking source chip: customer called."
+  },
+  "booking.source.referral": {
+    "value": "Referral",
+    "description": "Booking source chip: referred by someone."
+  },
+  "booking.source.repeat": {
+    "value": "Repeat",
+    "description": "Booking source chip: returning customer."
+  },
+  "booking.source.other": {
+    "value": "Other",
+    "description": "Booking source chip: any other channel."
+  },
+  "booking.form.notes": {
+    "value": "Notes",
+    "description": "Label of the free-text notes field on booking, payment and block forms."
+  },
+  "booking.form.status": {
+    "value": "Status",
+    "description": "Label of the Confirmed/Tentative status selector on the booking form."
+  },
+  "booking.form.name_required": {
+    "value": "Enter the customer name",
+    "description": "Validation error when the required customer name is empty."
+  },
+  "booking.form.end_before_start": {
+    "value": "End date cannot be before the start date",
+    "description": "Validation error when the chosen end date precedes the start date."
+  },
+  "booking.form.conflict_title": {
+    "value": "Date already has bookings",
+    "description": "Title of the non-blocking double-booking warning popup."
+  },
+  "booking.form.conflict_message": {
+    "value": "{count, plural, one {This date already has # booking.} other {This date already has # bookings.}}",
+    "description": "Body of the double-booking warning. ICU plural; count is the number of existing bookings overlapping the chosen dates."
+  },
+  "booking.form.conflict_save_anyway": {
+    "value": "Save anyway",
+    "description": "Confirm button of the double-booking warning — halls can host multiple events, so saving is allowed."
+  },
+  "booking.form.conflict_go_back": {
+    "value": "Go back",
+    "description": "Dismiss button of the double-booking warning; returns to the form to change dates."
+  },
+  "booking.form.blocked_title": {
+    "value": "Dates are blocked",
+    "description": "Title of the popup shown when the chosen dates fall on a maintenance/closure block."
+  },
+  "booking.form.blocked_message": {
+    "value": "The selected dates are blocked for bookings.",
+    "description": "Body of the blocked-dates popup. Blocked dates block booking, unlike the double-booking warning."
+  },
+  "booking.form.blocked_override": {
+    "value": "Book anyway",
+    "description": "Owner-only override button on the blocked-dates popup."
+  },
+  "booking.payment.amount": {
+    "value": "Amount",
+    "description": "Label of the amount field on the record-payment sheet (pre-filled with the current due)."
+  },
+  "booking.payment.date": {
+    "value": "Date",
+    "description": "Label of the payment date field on the record-payment sheet (defaults to today)."
+  },
+  "booking.payment.method": {
+    "value": "Method",
+    "description": "Label of the payment method chip row on the record-payment sheet."
+  },
+  "booking.payment.method_cash": {
+    "value": "Cash",
+    "description": "Payment method chip: cash."
+  },
+  "booking.payment.method_upi": {
+    "value": "UPI",
+    "description": "Payment method chip: UPI transfer."
+  },
+  "booking.payment.method_bank_transfer": {
+    "value": "Bank transfer",
+    "description": "Payment method chip: bank transfer (NEFT/IMPS/RTGS)."
+  },
+  "booking.payment.method_cheque": {
+    "value": "Cheque",
+    "description": "Payment method chip: cheque."
+  },
+  "booking.payment.method_other": {
+    "value": "Other",
+    "description": "Payment method chip: any other method."
+  },
+  "booking.payment.invalid_amount": {
+    "value": "Enter a valid amount",
+    "description": "Validation error when the payment amount is empty, zero or not a number."
+  },
+  "booking.payment.recorded": {
+    "value": "Payment recorded",
+    "description": "Confirmation toast after a payment is saved (also from the notification's Yes-full action)."
+  },
+  "booking.reminder.channel_payment": {
+    "value": "Payment confirmations",
+    "description": "Notification channel name for day-after-event payment confirmation reminders."
+  },
+  "booking.reminder.channel_payment_desc": {
+    "value": "Asks whether pending dues were paid after an event",
+    "description": "Notification channel description for payment confirmation reminders."
+  },
+  "booking.reminder.channel_upcoming": {
+    "value": "Upcoming events",
+    "description": "Notification channel name for reminders before a booked event starts."
+  },
+  "booking.reminder.channel_upcoming_desc": {
+    "value": "Reminds you before a booked event starts",
+    "description": "Notification channel description for upcoming-event reminders."
+  },
+  "booking.reminder.payment_title": {
+    "value": "Payment pending",
+    "description": "Title of the payment confirmation notification."
+  },
+  "booking.reminder.payment_question": {
+    "value": "Did {customer} pay {due} for {event}?",
+    "description": "Body of the payment confirmation notification and in-app card row. {due} is a pre-formatted rupee amount; {event} the localized event type."
+  },
+  "booking.reminder.action_yes_full": {
+    "value": "Yes, full",
+    "description": "Notification/card action: records a payment of the full due amount."
+  },
+  "booking.reminder.action_partial": {
+    "value": "Partial…",
+    "description": "Notification/card action: opens the record-payment sheet to enter a partial amount."
+  },
+  "booking.reminder.action_not_yet": {
+    "value": "Not yet",
+    "description": "Notification/card action: snoozes the reminder; it re-reminds after 7 days."
+  },
+  "booking.reminder.pending_card_title": {
+    "value": "Pending confirmations",
+    "description": "Title of the in-app card at the top of the Booking tab listing payment reminders awaiting an answer."
+  },
+  "booking.reminder.upcoming_days": {
+    "value": "{count, plural, one {in # day} other {in # days}}",
+    "description": "How far away an upcoming event is, shown under the event title in reminders. ICU plural on the day count."
+  },
+  "booking.reminder.dismiss": {
+    "value": "Dismiss",
+    "description": "Dismiss action on the full-screen upcoming-event reminder."
+  },
+  "booking.reminder.view": {
+    "value": "View",
+    "description": "View action on upcoming-event reminders; opens the booking in the app."
+  },
+  "booking.whatsapp.reminder_text": {
+    "value": "Namaste {name}, {due} is pending for {event} on {date} — {business}.",
+    "description": "Prefilled WhatsApp payment-reminder message. {due} is a pre-formatted rupee amount, {event} the localized event type, {date} a localized date, {business} the business name."
+  },
+  "booking.whatsapp.not_installed": {
+    "value": "WhatsApp is not installed on this phone",
+    "description": "Error toast when the WhatsApp share button is used but no app can handle the intent."
+  },
+  "booking.empty.no_business_title": {
+    "value": "No business yet",
+    "description": "Empty-state title on the Booking tab when no business has been set up on this device."
+  },
+  "booking.empty.no_business_message": {
+    "value": "Finish setup to start taking bookings.",
+    "description": "Empty-state body on the Booking tab when no business exists locally; setup happens in onboarding."
+  }
+}

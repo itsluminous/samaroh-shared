@@ -1,0 +1,374 @@
+{
+  "menu.home.title": {
+    "value": "मेनू",
+    "description": "Top bar title of the Menu tab home screen."
+  },
+  "menu.section.settings": {
+    "value": "सेटिंग्स",
+    "description": "Menu home: settings section row title."
+  },
+  "menu.section.settings_subtitle": {
+    "value": "भाषा, थीम, रिमाइंडर, बैकअप",
+    "description": "Menu home: subtitle under the Settings row."
+  },
+  "menu.section.reports": {
+    "value": "रिपोर्ट",
+    "description": "Menu home: reports section row title."
+  },
+  "menu.section.reports_subtitle": {
+    "value": "चार्ट और सारांश",
+    "description": "Menu home: subtitle under the Reports row."
+  },
+  "menu.section.members": {
+    "value": "सदस्य",
+    "description": "Menu home: members section row title (owner only)."
+  },
+  "menu.section.members_subtitle": {
+    "value": "स्टाफ़ जोड़ें और अनुमतियाँ तय करें",
+    "description": "Menu home: subtitle under the Members row."
+  },
+  "menu.section.about": {
+    "value": "ऐप के बारे में",
+    "description": "Menu home: about section row title."
+  },
+  "menu.section.about_subtitle": {
+    "value": "संस्करण और लाइसेंस",
+    "description": "Menu home: subtitle under the About row."
+  },
+  "menu.members.title": {
+    "value": "सदस्य",
+    "description": "Members screen top bar title."
+  },
+  "menu.members.add": {
+    "value": "सदस्य जोड़ें",
+    "description": "Members screen: button/dialog title for inviting a new member."
+  },
+  "menu.members.email_label": {
+    "value": "ईमेल",
+    "description": "Add-member dialog: label of the invite email field."
+  },
+  "menu.members.name_label": {
+    "value": "नाम",
+    "description": "Add-member dialog: label of the member display-name field."
+  },
+  "menu.members.status_invited": {
+    "value": "आमंत्रित",
+    "description": "Members list: status chip for a member who has not accepted yet."
+  },
+  "menu.members.status_active": {
+    "value": "सक्रिय",
+    "description": "Members list: status chip for an active member."
+  },
+  "menu.members.status_revoked": {
+    "value": "हटाया गया",
+    "description": "Members list: status chip for a member whose access was revoked."
+  },
+  "menu.members.owner_badge": {
+    "value": "मालिक",
+    "description": "Members list: badge marking the business owner row."
+  },
+  "menu.members.empty_title": {
+    "value": "अभी कोई सदस्य नहीं",
+    "description": "Members screen empty state title."
+  },
+  "menu.members.empty_message": {
+    "value": "काम बाँटने के लिए अपने स्टाफ़ को ईमेल से आमंत्रित करें।",
+    "description": "Members screen empty state message."
+  },
+  "menu.members.permissions_title": {
+    "value": "अनुमतियाँ",
+    "description": "Member editor: heading above the permission matrix."
+  },
+  "menu.members.permissions_placeholder": {
+    "value": "अनुमति नियंत्रण यहाँ दिखेंगे।",
+    "description": "Member editor: placeholder text shown until the permission matrix editor is integrated."
+  },
+  "menu.members.revoke": {
+    "value": "पहुँच हटाएँ",
+    "description": "Member editor: action that sets the member's status to revoked."
+  },
+  "menu.members.owner_only": {
+    "value": "सिर्फ़ मालिक ही सदस्य प्रबंधित कर सकते हैं।",
+    "description": "Shown when a non-owner opens the members screen."
+  },
+  "menu.about.title": {
+    "value": "ऐप के बारे में",
+    "description": "About screen top bar title."
+  },
+  "menu.about.version": {
+    "value": "संस्करण {version}",
+    "description": "About screen: app version line. {version} is the version name, e.g. 0.1.0."
+  },
+  "menu.about.source_code": {
+    "value": "GitHub पर सोर्स कोड",
+    "description": "About screen: link row that opens the GitHub repository."
+  },
+  "menu.about.licenses": {
+    "value": "ओपन-सोर्स लाइसेंस",
+    "description": "About screen: row that shows the open-source license attributions."
+  },
+  "menu.about.licenses_body": {
+    "value": "Samaroh ओपन-सोर्स सॉफ़्टवेयर से बना है, जिनमें शामिल हैं: Kotlin, Jetpack Compose और AndroidX (Apache 2.0), Material Components (Apache 2.0), Hilt और Dagger (Apache 2.0), Room (Apache 2.0), WorkManager (Apache 2.0), kotlinx.serialization और kotlinx.coroutines (Apache 2.0), Coil (Apache 2.0)।",
+    "description": "About screen: license attribution text listing bundled open-source libraries. Library names are proper nouns and stay untranslated."
+  },
+  "menu.about.made_with_love": {
+    "value": "❤️ से बनाया गया",
+    "description": "About screen footer."
+  },
+  "settings.title": {
+    "value": "सेटिंग्स",
+    "description": "Settings screen top bar title."
+  },
+  "settings.language.title": {
+    "value": "भाषा",
+    "description": "Settings: language row title."
+  },
+  "settings.language.picker_title": {
+    "value": "भाषा चुनें",
+    "description": "Full-screen language picker top bar title."
+  },
+  "settings.language.system": {
+    "value": "डिवाइस की भाषा इस्तेमाल करें",
+    "description": "Language picker: option that follows the phone's system language."
+  },
+  "settings.language.name_en": {
+    "value": "English",
+    "description": "Language picker: English shown in its own script — identical in every locale."
+  },
+  "settings.language.name_hi": {
+    "value": "हिन्दी",
+    "description": "Language picker: Hindi shown in its own script — identical in every locale."
+  },
+  "settings.theme.title": {
+    "value": "थीम",
+    "description": "Settings: theme section title."
+  },
+  "settings.theme.system": {
+    "value": "सिस्टम",
+    "description": "Theme choice: follow the device light/dark setting."
+  },
+  "settings.theme.light": {
+    "value": "हल्की",
+    "description": "Theme choice: always light."
+  },
+  "settings.theme.dark": {
+    "value": "गहरी",
+    "description": "Theme choice: always dark."
+  },
+  "settings.theme.dynamic_color": {
+    "value": "वॉलपेपर के रंग इस्तेमाल करें",
+    "description": "Settings: toggle for Material You dynamic color (Android 12+)."
+  },
+  "settings.reminders.title": {
+    "value": "बुकिंग रिमाइंडर",
+    "description": "Settings: booking reminders row/screen title."
+  },
+  "settings.reminders.subtitle": {
+    "value": "आने वाले आयोजनों की याद कब और कैसे दिलाएँ",
+    "description": "Settings: subtitle under the booking reminders row."
+  },
+  "settings.reminders.lead_title": {
+    "value": "आयोजन से पहले याद दिलाएँ",
+    "description": "Reminder settings: heading above the lead-time choices."
+  },
+  "settings.reminders.lead_option": {
+    "value": "{count, plural, one {# दिन पहले} other {# दिन पहले}}",
+    "description": "Reminder settings: one selectable lead-time chip. {count} is the number of days before the event."
+  },
+  "settings.reminders.custom": {
+    "value": "अपनी पसंद…",
+    "description": "Reminder settings: chip that opens the custom lead-time input."
+  },
+  "settings.reminders.custom_days_label": {
+    "value": "आयोजन से कितने दिन पहले",
+    "description": "Reminder settings: label of the custom lead-time number field."
+  },
+  "settings.reminders.style_title": {
+    "value": "रिमाइंडर का तरीका",
+    "description": "Reminder settings: heading above the notification/full-screen choice."
+  },
+  "settings.reminders.style_notification": {
+    "value": "सादी सूचना",
+    "description": "Reminder style option: a normal notification."
+  },
+  "settings.reminders.style_fullscreen": {
+    "value": "पूरी स्क्रीन पर पॉपअप",
+    "description": "Reminder style option: an alarm-style full-screen popup."
+  },
+  "settings.reminders.sound_title": {
+    "value": "रिमाइंडर की आवाज़",
+    "description": "Reminder settings: row that opens the system ringtone picker."
+  },
+  "settings.reminders.sound_default": {
+    "value": "डिफ़ॉल्ट आवाज़",
+    "description": "Reminder settings: shown when no custom ringtone is selected."
+  },
+  "settings.google.title": {
+    "value": "Google खाता",
+    "description": "Settings: Google account section title."
+  },
+  "settings.google.link": {
+    "value": "Google खाता जोड़ें",
+    "description": "Settings: button that starts the Google account linking flow."
+  },
+  "settings.google.unlink": {
+    "value": "लिंक हटाएँ",
+    "description": "Settings: button that removes the Google account link."
+  },
+  "settings.google.linked_as": {
+    "value": "{email} से जुड़ा है",
+    "description": "Settings: shows which Google account is linked. {email} is the account email."
+  },
+  "settings.google.not_configured": {
+    "value": "इस बिल्ड में Google सुविधाएँ सेट नहीं हैं।",
+    "description": "Settings: shown instead of the link button when the Google client id is missing (see docs/google-setup.md)."
+  },
+  "settings.google.link_failed": {
+    "value": "खाता जोड़ा नहीं जा सका। फिर से कोशिश करें।",
+    "description": "Settings: error message when the Google link flow fails."
+  },
+  "settings.google.not_signed_in": {
+    "value": "Google जोड़ने के लिए पहले साइन इन करें।",
+    "description": "Settings: error when linking is attempted without a signed-in user."
+  },
+  "settings.gcal.title": {
+    "value": "Google Calendar सिंक",
+    "description": "Settings: calendar sync toggle title."
+  },
+  "settings.gcal.subtitle": {
+    "value": "बुकिंग Google Calendar में भेजें",
+    "description": "Settings: subtitle under the calendar sync toggle."
+  },
+  "settings.gcal.remove_events_title": {
+    "value": "भेजे गए इवेंट हटाएँ?",
+    "description": "Dialog title shown when calendar sync is turned off."
+  },
+  "settings.gcal.remove_events_message": {
+    "value": "सिंक अब बंद है। Google Calendar में बने इवेंट रखें या हटा दें?",
+    "description": "Dialog message shown when calendar sync is turned off."
+  },
+  "settings.gcal.remove_events_keep": {
+    "value": "इवेंट रखें",
+    "description": "Disable-sync dialog: leaves the pushed events in Google Calendar."
+  },
+  "settings.gcal.remove_events_remove": {
+    "value": "इवेंट हटाएँ",
+    "description": "Disable-sync dialog: deletes every event the app pushed."
+  },
+  "settings.gcal.tentative_suffix": {
+    "value": " (संभावित)",
+    "description": "Suffix appended to the Google Calendar event title of tentative bookings. Keep the leading space."
+  },
+  "settings.gcal.event_description": {
+    "value": "कुल: {total} · मिला: {paid} · बाकी: {due}",
+    "description": "Google Calendar event description: amounts summary. {total}/{paid}/{due} are formatted rupee amounts."
+  },
+  "settings.gcal.event_managed_by": {
+    "value": "Samaroh द्वारा प्रबंधित",
+    "description": "Google Calendar event description footer line."
+  },
+  "settings.backup.title": {
+    "value": "बैकअप",
+    "description": "Settings: backup section title (owner only)."
+  },
+  "settings.backup.frequency_title": {
+    "value": "बैकअप कितनी बार हो",
+    "description": "Backup settings: heading above the frequency choices."
+  },
+  "settings.backup.freq_daily": {
+    "value": "रोज़",
+    "description": "Backup frequency option: every day."
+  },
+  "settings.backup.freq_weekly": {
+    "value": "हर हफ़्ते",
+    "description": "Backup frequency option: every week."
+  },
+  "settings.backup.freq_monthly": {
+    "value": "हर महीने",
+    "description": "Backup frequency option: every month."
+  },
+  "settings.backup.freq_manual": {
+    "value": "सिर्फ़ खुद करने पर",
+    "description": "Backup frequency option: only when the user taps Back up now."
+  },
+  "settings.backup.backup_now": {
+    "value": "अभी बैकअप लें",
+    "description": "Backup settings: button that starts a backup immediately."
+  },
+  "settings.backup.last_backup": {
+    "value": "पिछला बैकअप: {time}",
+    "description": "Backup settings: when the last backup finished. {time} is a localized date-time."
+  },
+  "settings.backup.never": {
+    "value": "अभी तक कोई बैकअप नहीं",
+    "description": "Backup settings: shown when no backup has completed."
+  },
+  "settings.backup.started": {
+    "value": "बैकअप शुरू हो गया",
+    "description": "Snackbar/confirmation after tapping Back up now."
+  },
+  "settings.sync.title": {
+    "value": "सिंक की स्थिति",
+    "description": "Settings: sync status row/screen title."
+  },
+  "settings.sync.pending": {
+    "value": "{count, plural, one {# बदलाव सिंक होना बाकी है} other {# बदलाव सिंक होने बाकी हैं}}",
+    "description": "Sync status: number of local changes still in the outbox."
+  },
+  "settings.sync.all_synced": {
+    "value": "सब कुछ सिंक हो चुका है",
+    "description": "Sync status: shown when the outbox is empty."
+  },
+  "settings.sync.last_sync": {
+    "value": "पिछला सिंक: {time}",
+    "description": "Sync status: time of the last successful sync. {time} is a localized date-time."
+  },
+  "settings.sync.not_synced_yet": {
+    "value": "अभी तक सिंक नहीं हुआ",
+    "description": "Sync status: shown when no successful sync has completed."
+  },
+  "settings.sync.sync_now": {
+    "value": "अभी सिंक करें",
+    "description": "Sync status: button requesting an immediate sync."
+  },
+  "settings.sync.errors_title": {
+    "value": "ध्यान देने वाली चीज़ें",
+    "description": "Sync status: heading above the list of failed sync items."
+  },
+  "settings.sync.error_entity": {
+    "value": "आइटम: {entity}",
+    "description": "Sync status error row: which record failed. {entity} is the technical record type."
+  },
+  "settings.business.title": {
+    "value": "व्यवसाय प्रोफ़ाइल",
+    "description": "Settings: business profile row/screen title."
+  },
+  "settings.business.name": {
+    "value": "व्यवसाय का नाम",
+    "description": "Business profile: name field label."
+  },
+  "settings.business.type": {
+    "value": "व्यवसाय का प्रकार",
+    "description": "Business profile: type field label (e.g. marriage hall, guest house)."
+  },
+  "settings.business.address": {
+    "value": "पता",
+    "description": "Business profile: address field label."
+  },
+  "settings.business.owner_name": {
+    "value": "मालिक का नाम",
+    "description": "Business profile: owner name field label (printed on invoices)."
+  },
+  "settings.business.invoice_prefix": {
+    "value": "इनवॉइस प्रीफ़िक्स",
+    "description": "Business profile: prefix used in generated invoice numbers, e.g. INV."
+  },
+  "settings.business.change_logo": {
+    "value": "लोगो बदलें",
+    "description": "Business profile: button that opens the image picker for the business logo."
+  },
+  "settings.business.saved": {
+    "value": "सहेज लिया",
+    "description": "Snackbar/confirmation after saving the business profile."
+  }
+}

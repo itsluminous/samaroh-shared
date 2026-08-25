@@ -1,0 +1,118 @@
+{
+  "sync.notification.channel_name": {
+    "value": "सिंक",
+    "description": "Notification channel name for the background sync engine (conflict alerts and the expedited-sync progress notification)."
+  },
+  "sync.notification.channel_description": {
+    "value": "दूसरे डिवाइस से सिंक हुए बदलावों की सूचनाएँ।",
+    "description": "Notification channel description shown in the system notification settings."
+  },
+  "sync.notification.syncing": {
+    "value": "सिंक हो रहा है…",
+    "description": "Text of the low-importance progress notification shown while an expedited sync runs as a foreground task on older Android versions."
+  },
+  "sync.notification.conflict_title": {
+    "value": "दूसरे डिवाइस पर बदलाव हुआ",
+    "description": "Title of the conflict notification fired when a pulled remote change wins over a local pending edit."
+  },
+  "sync.notification.conflict_rebased": {
+    "value": "'{title}' को दूसरे डिवाइस पर बदला गया — {fields} में आपका बदलाव उस बदलाव के ऊपर फिर से लागू कर दिया गया।",
+    "description": "Conflict notification body when the local pending edit was rebased on top of a newer remote row and re-queued. {title} is the record name (customer/party/item), {fields} the comma-joined changed field names."
+  },
+  "sync.notification.conflict_dropped": {
+    "value": "'{title}' को दूसरे डिवाइस पर बदला गया — {fields} में आपका बदलाव हटा दिया गया।",
+    "description": "Conflict notification body when the local pending operation lost to a newer remote change and was discarded. {title} is the record name, {fields} the comma-joined overridden field names."
+  },
+  "sync.banner.conflict": {
+    "value": "दूसरे डिवाइस के बदलाव ने आपका एक स्थानीय बदलाव बदल दिया। सिंक स्थिति में देखें।",
+    "description": "In-app banner text shown while unacknowledged sync conflicts exist; tapping opens Settings → Sync status."
+  },
+  "invoice.title": {
+    "value": "चालान",
+    "description": "Localized 'Invoice' document title in the PDF header band and the text receipt."
+  },
+  "invoice.number_label": {
+    "value": "चालान क्रमांक",
+    "description": "Label preceding the immutable invoice number ({prefix}-{YYYY}-{counter}) on the PDF and text receipt."
+  },
+  "invoice.issue_date_label": {
+    "value": "दिनांक",
+    "description": "Label for the invoice issue date in the PDF header band and the text receipt."
+  },
+  "invoice.billed_to": {
+    "value": "बिल प्राप्तकर्ता",
+    "description": "Bold label above the customer name/phone block on the invoice."
+  },
+  "invoice.event_label": {
+    "value": "कार्यक्रम",
+    "description": "Label for the event block (event type and dates) on the invoice and text receipt."
+  },
+  "invoice.total_amount": {
+    "value": "कुल राशि",
+    "description": "Amounts-block row label for the booking's total amount."
+  },
+  "invoice.security_deposit": {
+    "value": "सुरक्षा जमा",
+    "description": "Amounts-block row label for the refundable security deposit; the row appears only when the deposit is greater than zero."
+  },
+  "invoice.payment_history": {
+    "value": "भुगतान इतिहास",
+    "description": "Section title above the itemized payments table."
+  },
+  "invoice.table.date": {
+    "value": "दिनांक",
+    "description": "Payments-table column header: date the payment was made."
+  },
+  "invoice.table.method": {
+    "value": "माध्यम",
+    "description": "Payments-table column header: payment method (cash/UPI/etc.)."
+  },
+  "invoice.table.notes": {
+    "value": "टिप्पणी",
+    "description": "Payments-table column header: free-text note on the payment."
+  },
+  "invoice.table.amount": {
+    "value": "राशि",
+    "description": "Payments-table column header: payment amount (right-aligned)."
+  },
+  "invoice.total_paid": {
+    "value": "कुल भुगतान",
+    "description": "Bold footer row of the payments table showing the sum of all payments."
+  },
+  "invoice.balance_due": {
+    "value": "बकाया राशि",
+    "description": "Label in the tonal balance band: total amount minus total paid, computed at render time."
+  },
+  "invoice.fully_paid": {
+    "value": "पूरा भुगतान हो गया",
+    "description": "Note shown next to a zero balance due (rendered in green)."
+  },
+  "invoice.no_payments": {
+    "value": "अभी तक कोई भुगतान दर्ज नहीं हुआ",
+    "description": "Placeholder row shown in the payment history when the booking has no payments."
+  },
+  "invoice.footer": {
+    "value": "समारोह द्वारा निर्मित",
+    "description": "Centered grey footer line on the PDF and the last line of the text receipt."
+  },
+  "invoice.method.cash": {
+    "value": "नकद",
+    "description": "Localized payment-method label for 'cash' in the payments table."
+  },
+  "invoice.method.upi": {
+    "value": "UPI",
+    "description": "Localized payment-method label for 'upi' in the payments table (kept as the UPI brand acronym in every locale)."
+  },
+  "invoice.method.bank_transfer": {
+    "value": "बैंक ट्रांसफ़र",
+    "description": "Localized payment-method label for 'bank_transfer' in the payments table."
+  },
+  "invoice.method.cheque": {
+    "value": "चेक",
+    "description": "Localized payment-method label for 'cheque' in the payments table."
+  },
+  "invoice.method.other": {
+    "value": "अन्य",
+    "description": "Localized payment-method label for 'other' in the payments table."
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "onboarding.language.title": {
+    "value": "अपनी भाषा चुनें",
+    "description": "Heading of the very first onboarding screen: the language picker."
+  },
+  "onboarding.language.subtitle": {
+    "value": "आप इसे कभी भी सेटिंग्स में बदल सकते हैं।",
+    "description": "Reassurance line under the language picker heading."
+  },
+  "onboarding.action.continue": {
+    "value": "जारी रखें",
+    "description": "Primary forward-navigation button used across onboarding screens."
+  },
+  "onboarding.welcome.skip": {
+    "value": "छोड़ें",
+    "description": "Skips the welcome carousel and jumps straight to sign-in."
+  },
+  "onboarding.welcome.next": {
+    "value": "आगे",
+    "description": "Advances the welcome carousel to the next slide."
+  },
+  "onboarding.welcome.get_started": {
+    "value": "शुरू करें",
+    "description": "Final button on the last welcome-carousel slide; proceeds to sign-in."
+  },
+  "onboarding.welcome.slide1.title": {
+    "value": "आपकी सारी बुकिंग एक ही कैलेंडर पर",
+    "description": "Title of welcome carousel slide 1 (booking calendar pitch)."
+  },
+  "onboarding.welcome.slide1.body": {
+    "value": "हर आयोजन एक नज़र में देखें और कोई भुगतान न छूटे — WhatsApp जितना आसान।",
+    "description": "Body of welcome carousel slide 1. WhatsApp is a permitted integration name."
+  },
+  "onboarding.welcome.slide2.title": {
+    "value": "हर पार्टी का सीधा-सादा हिसाब",
+    "description": "Title of welcome carousel slide 2 (expenses ledger pitch)."
+  },
+  "onboarding.welcome.slide2.body": {
+    "value": "किसे कितना दिया और किससे कितना मिला — रसीदों के साथ, व्यक्ति-दर-व्यक्ति हिसाब रखें।",
+    "description": "Body of welcome carousel slide 2."
+  },
+  "onboarding.welcome.slide3.title": {
+    "value": "बिना इंटरनेट भी चलता है",
+    "description": "Title of welcome carousel slide 3 (offline-first pitch)."
+  },
+  "onboarding.welcome.slide3.body": {
+    "value": "सब कुछ आपके फ़ोन में सुरक्षित रहता है और इंटरनेट आते ही अपने आप सिंक हो जाता है।",
+    "description": "Body of welcome carousel slide 3."
+  },
+  "onboarding.signin.subtitle": {
+    "value": "अपना डेटा हर डिवाइस पर सुरक्षित रखने के लिए साइन इन करें।",
+    "description": "Reassurance line under the sign-in heading during onboarding."
+  },
+  "onboarding.fork.title": {
+    "value": "आप कैसे शुरू करना चाहेंगे?",
+    "description": "Heading of the create-vs-join fork screen after sign-in."
+  },
+  "onboarding.fork.create": {
+    "value": "नया व्यवसाय बनाएं",
+    "description": "Fork option: start a brand-new business (owner path)."
+  },
+  "onboarding.fork.create_body": {
+    "value": "अपना हॉल या स्थल शुरुआत से सेट करें।",
+    "description": "Supporting line under the create-a-business fork option."
+  },
+  "onboarding.fork.join": {
+    "value": "किसी व्यवसाय से जुड़ें",
+    "description": "Fork option: join an existing business via an invitation (employee path)."
+  },
+  "onboarding.fork.join_body": {
+    "value": "उस व्यवसाय में काम करें जिसमें आपको आमंत्रित किया गया है।",
+    "description": "Supporting line under the join-a-business fork option."
+  },
+  "onboarding.fork.invite_badge": {
+    "value": "{count, plural, one {# निमंत्रण प्रतीक्षा में} other {# निमंत्रण प्रतीक्षा में}}",
+    "description": "Badge on the join option when pending invitations were auto-detected. ICU plural; count = number of invitations."
+  },
+  "onboarding.join.title": {
+    "value": "आपके निमंत्रण",
+    "description": "Heading of the invitation-acceptance screen."
+  },
+  "onboarding.join.invited_as": {
+    "value": "{name} के रूप में आमंत्रित",
+    "description": "Subtitle on an invitation row; {name} is the display name the owner assigned to this member."
+  },
+  "onboarding.join.accept": {
+    "value": "स्वीकार कर जुड़ें",
+    "description": "Button on an invitation row that accepts the invite and enters that business."
+  },
+  "onboarding.join.empty": {
+    "value": "आपके ईमेल के लिए अभी कोई निमंत्रण नहीं मिला। मालिक से निमंत्रण भेजने को कहें, फिर दोबारा कोशिश करें।",
+    "description": "Empty state on the invitation screen when no pending invitation exists for the signed-in email."
+  },
+  "onboarding.join.refresh": {
+    "value": "फिर से जांचें",
+    "description": "Button that re-fetches memberships/invitations from the server."
+  },
+  "onboarding.create.title": {
+    "value": "अपने व्यवसाय के बारे में बताएं",
+    "description": "Heading of the create-business form."
+  },
+  "onboarding.create.name_label": {
+    "value": "व्यवसाय का नाम",
+    "description": "Label of the required business-name field on the create-business form."
+  },
+  "onboarding.create.name_required": {
+    "value": "व्यवसाय का नाम ज़रूरी है।",
+    "description": "Validation error when the business name is left empty."
+  },
+  "onboarding.create.type_label": {
+    "value": "व्यवसाय का प्रकार",
+    "description": "Label of the business-type dropdown (suggestions + free text)."
+  },
+  "onboarding.create.address_label": {
+    "value": "पता",
+    "description": "Label of the optional address field on the create-business form."
+  },
+  "onboarding.create.owner_label": {
+    "value": "मालिक का नाम",
+    "description": "Label of the required owner-name field on the create-business form."
+  },
+  "onboarding.create.owner_required": {
+    "value": "मालिक का नाम ज़रूरी है।",
+    "description": "Validation error when the owner name is left empty."
+  },
+  "onboarding.create.logo_label": {
+    "value": "लोगो",
+    "description": "Label of the optional logo section on the create-business form."
+  },
+  "onboarding.create.logo_camera": {
+    "value": "फ़ोटो लें",
+    "description": "Button that opens the camera to capture a business logo."
+  },
+  "onboarding.create.logo_gallery": {
+    "value": "गैलरी से चुनें",
+    "description": "Button that opens the photo picker to select a business logo."
+  },
+  "onboarding.create.logo_preview": {
+    "value": "व्यवसाय का लोगो",
+    "description": "Accessibility description of the cropped logo preview image."
+  },
+  "onboarding.create.submit": {
+    "value": "व्यवसाय बनाएं",
+    "description": "Submit button of the create-business form."
+  },
+  "onboarding.create.error": {
+    "value": "आपका व्यवसाय सेव नहीं हो सका। कृपया दोबारा कोशिश करें।",
+    "description": "Generic error when persisting the new business fails."
+  },
+  "onboarding.business_type.marriage_hall": {
+    "value": "मैरिज हॉल",
+    "description": "Business-type suggestion in the create-business dropdown."
+  },
+  "onboarding.business_type.banquet_hall": {
+    "value": "बैंक्वेट हॉल",
+    "description": "Business-type suggestion in the create-business dropdown."
+  },
+  "onboarding.business_type.community_hall": {
+    "value": "सामुदायिक भवन",
+    "description": "Business-type suggestion in the create-business dropdown."
+  },
+  "onboarding.business_type.guest_house": {
+    "value": "गेस्ट हाउस",
+    "description": "Business-type suggestion in the create-business dropdown."
+  },
+  "onboarding.business_type.other": {
+    "value": "अन्य",
+    "description": "Business-type suggestion for a custom, free-text type."
+  },
+  "onboarding.link_google.title": {
+    "value": "Google जोड़ें",
+    "description": "Heading of the optional Google-linking onboarding step."
+  },
+  "onboarding.link_google.body": {
+    "value": "कैलेंडर सिंक और Drive बैकअप के लिए Google जोड़ें। आप यह कभी भी सेटिंग्स से कर सकते हैं।",
+    "description": "Explanation on the Google-linking step; linking is optional and relinkable from Settings."
+  },
+  "onboarding.link_google.connect": {
+    "value": "Google जोड़ें",
+    "description": "Button that starts Google account linking (Calendar/Drive scopes)."
+  },
+  "onboarding.link_google.later": {
+    "value": "बाद में करें",
+    "description": "Prominent secondary action that skips Google linking and finishes onboarding."
+  },
+  "auth.sign_up.title": {
+    "value": "खाता बनाएं",
+    "description": "Heading of the email sign-up form (toggled from the sign-in screen)."
+  },
+  "auth.sign_up.submit": {
+    "value": "खाता बनाएं",
+    "description": "Submit button of the email sign-up form."
+  },
+  "auth.sign_up.error": {
+    "value": "खाता नहीं बन पाया। कोई दूसरा ईमेल या लंबा पासवर्ड आज़माएं।",
+    "description": "Generic error shown when email+password sign-up is rejected."
+  },
+  "auth.mode.to_sign_up": {
+    "value": "नए हैं? खाता बनाएं",
+    "description": "Link that switches the auth form from sign-in to sign-up mode."
+  },
+  "auth.mode.to_sign_in": {
+    "value": "पहले से खाता है? साइन इन करें",
+    "description": "Link that switches the auth form from sign-up back to sign-in mode."
+  },
+  "auth.google.not_configured": {
+    "value": "Google साइन-इन अभी सेट नहीं है",
+    "description": "Disabled-state label on the Google button when no Google client ID is configured in this build."
+  },
+  "auth.error.network": {
+    "value": "कनेक्ट नहीं हो पाया। अपना इंटरनेट जांचें और दोबारा कोशिश करें।",
+    "description": "Error shown when an auth call fails due to network problems."
+  },
+  "auth.permissions.presets_label": {
+    "value": "त्वरित प्रीसेट",
+    "description": "Label above the Viewer/Staff/Manager preset chips on the permission matrix editor."
+  },
+  "auth.permissions.preset_viewer": {
+    "value": "दर्शक",
+    "description": "Permission preset chip: every view permission, nothing else."
+  },
+  "auth.permissions.preset_staff": {
+    "value": "स्टाफ़",
+    "description": "Permission preset chip: view + create permissions."
+  },
+  "auth.permissions.preset_manager": {
+    "value": "प्रबंधक",
+    "description": "Permission preset chip: everything except settings/members."
+  },
+  "auth.permissions.group_booking": {
+    "value": "बुकिंग",
+    "description": "Permission matrix group header for booking capabilities."
+  },
+  "auth.permissions.group_expenses": {
+    "value": "खर्च",
+    "description": "Permission matrix group header for expenses capabilities."
+  },
+  "auth.permissions.group_inventory": {
+    "value": "इन्वेंट्री",
+    "description": "Permission matrix group header for inventory capabilities."
+  },
+  "auth.permissions.group_reports": {
+    "value": "रिपोर्ट",
+    "description": "Permission matrix group header for reports capabilities."
+  },
+  "auth.permissions.group_settings": {
+    "value": "सेटिंग्स",
+    "description": "Permission matrix group header for settings capabilities."
+  },
+  "auth.permissions.action_view": {
+    "value": "देखें",
+    "description": "Permission toggle: see this tab's content."
+  },
+  "auth.permissions.action_create": {
+    "value": "नया जोड़ें",
+    "description": "Permission toggle: create new records in this tab."
+  },
+  "auth.permissions.action_edit": {
+    "value": "संपादित करें",
+    "description": "Permission toggle: edit existing records in this tab."
+  },
+  "auth.permissions.action_delete": {
+    "value": "हटाएं",
+    "description": "Permission toggle: delete (tombstone) records in this tab."
+  },
+  "auth.permissions.action_record_payment": {
+    "value": "भुगतान दर्ज करें",
+    "description": "Permission toggle: record payments against bookings and act on payment reminders."
+  },
+  "auth.permissions.action_generate_invoice": {
+    "value": "इनवॉइस बनाएं",
+    "description": "Permission toggle: generate and share booking invoices."
+  },
+  "auth.permissions.action_manage_parties": {
+    "value": "पार्टियां प्रबंधित करें",
+    "description": "Permission toggle: add and edit ledger parties."
+  },
+  "auth.permissions.action_manage_master_items": {
+    "value": "वस्तु सूची प्रबंधित करें",
+    "description": "Permission toggle: add, edit and delete inventory master items."
+  },
+  "auth.permissions.action_manage_business": {
+    "value": "व्यवसाय प्रोफ़ाइल संपादित करें",
+    "description": "Permission toggle: edit business profile, logo, invoice prefix and business settings."
+  },
+  "auth.permissions.action_manage_members": {
+    "value": "सदस्य प्रबंधित करें",
+    "description": "Permission toggle: invite, edit and revoke members."
+  },
+  "auth.permissions.action_gcal_sync": {
+    "value": "Google कैलेंडर सिंक",
+    "description": "Permission toggle: enable and manage Google Calendar sync."
+  }
+}

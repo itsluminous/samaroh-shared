@@ -1,0 +1,158 @@
+{
+  "expenses.home.you_gave": {
+    "value": "आपने दिया",
+    "description": "Header totals card label for money the business paid out (rendered red). Also the title of the add-entry screen in the 'gave' direction."
+  },
+  "expenses.home.you_got": {
+    "value": "आपको मिला",
+    "description": "Header totals card label for money the business received (rendered green). Also the title of the add-entry screen in the 'got' direction."
+  },
+  "expenses.home.search_hint": {
+    "value": "नाम से खोजें",
+    "description": "Placeholder/label of the search box above the party list on the Expenses home screen."
+  },
+  "expenses.home.add_person": {
+    "value": "व्यक्ति जोड़ें",
+    "description": "Label of the FAB on the Expenses home screen and the title of the add-person screen."
+  },
+  "expenses.home.empty_title": {
+    "value": "अभी कोई व्यक्ति नहीं",
+    "description": "Empty-state title on the Expenses home screen when no parties exist."
+  },
+  "expenses.home.empty_message": {
+    "value": "लेन-देन दर्ज करने के लिए कोई व्यक्ति जोड़ें।",
+    "description": "Empty-state message on the Expenses home screen when no parties exist."
+  },
+  "expenses.add_person.name_label": {
+    "value": "नाम",
+    "description": "Label of the required name field on the add-person screen."
+  },
+  "expenses.add_person.phone_label": {
+    "value": "फ़ोन (वैकल्पिक)",
+    "description": "Label of the optional phone field on the add-person screen."
+  },
+  "expenses.add_person.pick_contact": {
+    "value": "संपर्कों से चुनें",
+    "description": "Explanation/content description of the contact-picker icon button next to the phone field."
+  },
+  "expenses.add_person.contact_error": {
+    "value": "संपर्कों से नंबर नहीं मिल सका",
+    "description": "Snackbar shown when the system contact picker returns nothing usable or is unavailable."
+  },
+  "expenses.add_person.name_required": {
+    "value": "कृपया नाम लिखें",
+    "description": "Validation error under the name field when saving with an empty name."
+  },
+  "expenses.add_person.exists_notice": {
+    "value": "{name} पहले से मौजूद हैं — उनका पेज खोल रहे हैं",
+    "description": "Toast shown when saving a person whose name already exists; the app steers to the existing party's ledger instead of creating a duplicate. {name} is the existing party's name."
+  },
+  "expenses.ledger.you_gave_button": {
+    "value": "आपने दिया ₹",
+    "description": "Big red bottom button on the person ledger that starts a new 'paid' entry."
+  },
+  "expenses.ledger.you_got_button": {
+    "value": "आपको मिला ₹",
+    "description": "Big green bottom button on the person ledger that starts a new 'received' entry."
+  },
+  "expenses.ledger.balance_after": {
+    "value": "बाकी {amount}",
+    "description": "Chip on each ledger row showing the running balance after that entry. {amount} is a formatted rupee amount."
+  },
+  "expenses.ledger.net_balance_label": {
+    "value": "कुल बाकी",
+    "description": "Label above the party's overall net balance in the ledger header."
+  },
+  "expenses.ledger.empty_title": {
+    "value": "अभी कोई एंट्री नहीं",
+    "description": "Empty-state title on a person's ledger with no entries."
+  },
+  "expenses.ledger.empty_message": {
+    "value": "नीचे के बटनों से दर्ज करें कि आपने क्या दिया या क्या मिला।",
+    "description": "Empty-state message on a person's ledger with no entries."
+  },
+  "expenses.ledger.pending_upload": {
+    "value": "Google Drive पर अपलोड होना बाकी है",
+    "description": "Long-press explanation and content description of the pending-upload badge on an attachment that has not reached Google Drive yet."
+  },
+  "expenses.ledger.delete_title": {
+    "value": "यह एंट्री हटाएँ?",
+    "description": "Title of the confirmation dialog before deleting a ledger entry."
+  },
+  "expenses.ledger.delete_message": {
+    "value": "यह एंट्री बही से हटा दी जाएगी।",
+    "description": "Body of the confirmation dialog before deleting a ledger entry."
+  },
+  "expenses.ledger.entry_menu": {
+    "value": "एंट्री के विकल्प",
+    "description": "Long-press explanation and content description of the per-entry overflow (edit/delete) icon on a ledger row."
+  },
+  "expenses.ledger.attachment_thumbnail": {
+    "value": "जुड़ा हुआ बिल",
+    "description": "Content description of an attachment thumbnail on a ledger row."
+  },
+  "expenses.entry.amount_label": {
+    "value": "राशि (₹)",
+    "description": "Label of the plain numeric amount field on the add-entry screen."
+  },
+  "expenses.entry.amount_error": {
+    "value": "सही राशि लिखें",
+    "description": "Validation error under the amount field when the input is not a positive rupee amount."
+  },
+  "expenses.entry.date_label": {
+    "value": "तारीख़",
+    "description": "Label of the entry-date field on the add-entry screen (defaults to today)."
+  },
+  "expenses.entry.notes_label": {
+    "value": "नोट्स",
+    "description": "Label of the optional notes field on the add-entry screen."
+  },
+  "expenses.entry.attach_title": {
+    "value": "बिल जोड़ें",
+    "description": "Section heading above the attachment buttons on the add-entry screen."
+  },
+  "expenses.entry.attach_camera": {
+    "value": "कैमरा",
+    "description": "Button that captures an invoice photo with the camera."
+  },
+  "expenses.entry.attach_gallery": {
+    "value": "गैलरी",
+    "description": "Button that picks an invoice image from the gallery/photo picker."
+  },
+  "expenses.entry.attach_pdf": {
+    "value": "PDF",
+    "description": "Button that picks an invoice PDF from the document picker."
+  },
+  "expenses.entry.attach_limit": {
+    "value": "आप अधिकतम {count} फ़ाइलें जोड़ सकते हैं",
+    "description": "Snackbar shown when the user tries to attach more than the maximum number of files. {count} is that maximum."
+  },
+  "expenses.entry.attach_failed": {
+    "value": "यह फ़ाइल नहीं जुड़ सकी",
+    "description": "Snackbar shown when a picked or captured file could not be read or compressed."
+  },
+  "expenses.entry.remove_attachment": {
+    "value": "फ़ाइल हटाएँ",
+    "description": "Long-press explanation and content description of the remove (X) button on a pending attachment chip."
+  },
+  "expenses.google_prompt.title": {
+    "value": "बिल Google Drive पर सुरक्षित करें?",
+    "description": "Title of the prompt shown after saving an entry with attachments while no Google account is linked."
+  },
+  "expenses.google_prompt.message": {
+    "value": "जुड़े हुए बिल अपनी Drive में सुरक्षित रखने के लिए Google से जोड़ें। तब तक फ़ाइलें इसी फ़ोन पर रहेंगी।",
+    "description": "Body of the link-Google prompt; explains that attachments stay local (pending) until Google is connected."
+  },
+  "expenses.google_prompt.connect": {
+    "value": "Google से जोड़ें",
+    "description": "Positive button of the link-Google prompt (linking flow arrives with Settings)."
+  },
+  "expenses.google_prompt.later": {
+    "value": "बाद में",
+    "description": "Dismiss button of the link-Google prompt; the user can link later from Settings."
+  },
+  "expenses.a11y.back": {
+    "value": "पीछे जाएँ",
+    "description": "Content description of the back navigation arrow on Expenses screens."
+  }
+}

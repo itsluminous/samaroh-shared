@@ -1,0 +1,182 @@
+{
+  "inventory.list.title": {
+    "value": "Current Inventory",
+    "description": "Top-bar title of the Inventory tab's stock screen listing every item with quantity and FIFO value."
+  },
+  "inventory.list.search_placeholder": {
+    "value": "Search items",
+    "description": "Placeholder of the search box that filters the current-inventory list by item name."
+  },
+  "inventory.list.quantity_with_unit": {
+    "value": "{quantity} {unit}",
+    "description": "Stock amount on a list row. {quantity} is the numeric stock, {unit} is the localized unit label (e.g. Pieces, Kg)."
+  },
+  "inventory.list.last_updated": {
+    "value": "Updated {date}",
+    "description": "Last-transaction date on a current-inventory row. {date} is a locale-formatted date."
+  },
+  "inventory.list.empty_title": {
+    "value": "No items yet",
+    "description": "Title of the empty state on the current-inventory screen when the business has no master items."
+  },
+  "inventory.list.empty_message": {
+    "value": "Add items to the item list, then record a transaction to see stock here.",
+    "description": "Body of the empty state on the current-inventory screen guiding the user to the item list."
+  },
+  "inventory.list.no_results": {
+    "value": "No items match your search.",
+    "description": "Shown instead of the list when the search query filters out every item."
+  },
+  "inventory.toggle.masterlist": {
+    "value": "Item list",
+    "description": "Explanation/label of the top-bar icon that switches from the stock screen to the item (master) list screen."
+  },
+  "inventory.toggle.stock": {
+    "value": "Current inventory",
+    "description": "Explanation/label of the top-bar icon that switches from the item list back to the stock screen."
+  },
+  "inventory.fab.record_transaction": {
+    "value": "Record transaction",
+    "description": "Explanation/content description of the + floating button on the stock screen that opens the record-transaction dialog."
+  },
+  "inventory.image.expanded": {
+    "value": "Item photo",
+    "description": "Content description of the enlarged item photo shown after tapping a row's thumbnail; also names the close affordance context."
+  },
+  "inventory.txn.title": {
+    "value": "Record transaction",
+    "description": "Title of the dialog for recording an add/remove inventory transaction."
+  },
+  "inventory.txn.item_label": {
+    "value": "Item",
+    "description": "Label of the type-ahead item picker in the record-transaction dialog."
+  },
+  "inventory.txn.type_add": {
+    "value": "Add",
+    "description": "Toggle option: transaction adds stock (a purchase/in movement)."
+  },
+  "inventory.txn.type_remove": {
+    "value": "Remove",
+    "description": "Toggle option: transaction removes stock (consumed FIFO from the oldest lots)."
+  },
+  "inventory.txn.quantity_label": {
+    "value": "Quantity",
+    "description": "Label of the required quantity input in the record-transaction dialog."
+  },
+  "inventory.txn.unit_price_label": {
+    "value": "Unit price",
+    "description": "Label of the per-unit price input (rupees), required for Add transactions. Removes derive cost from FIFO lots."
+  },
+  "inventory.txn.notes_label": {
+    "value": "Notes",
+    "description": "Label of the optional notes input in the record-transaction dialog."
+  },
+  "inventory.txn.stock_available": {
+    "value": "In stock: {quantity} {unit}",
+    "description": "Helper line under the item picker showing current stock of the selected item. {quantity} numeric, {unit} localized unit."
+  },
+  "inventory.txn.error_item_required": {
+    "value": "Choose an item from the suggestions.",
+    "description": "Validation error when saving a transaction without picking an item from the type-ahead list."
+  },
+  "inventory.txn.error_quantity_invalid": {
+    "value": "Enter a quantity greater than zero.",
+    "description": "Validation error for a missing, zero or non-numeric quantity."
+  },
+  "inventory.txn.error_price_invalid": {
+    "value": "Enter a valid unit price.",
+    "description": "Validation error for a missing or non-numeric unit price on an Add transaction."
+  },
+  "inventory.txn.error_insufficient_stock": {
+    "value": "Not enough stock — only {quantity} {unit} available.",
+    "description": "Validation error when a Remove asks for more than the current stock. {quantity} is the available stock, {unit} its localized unit."
+  },
+  "inventory.masterlist.title": {
+    "value": "Item List",
+    "description": "Top-bar title of the master-item management screen."
+  },
+  "inventory.masterlist.add_title": {
+    "value": "Add item",
+    "description": "Title of the dialog for creating a new master item; also the FAB explanation on the item list screen."
+  },
+  "inventory.masterlist.edit_title": {
+    "value": "Edit item",
+    "description": "Title of the dialog when editing an existing master item."
+  },
+  "inventory.masterlist.name_label": {
+    "value": "Name",
+    "description": "Label of the required item-name input in the item editor dialog."
+  },
+  "inventory.masterlist.unit_label": {
+    "value": "Unit",
+    "description": "Label of the unit dropdown in the item editor dialog."
+  },
+  "inventory.masterlist.unit_pieces": {
+    "value": "Pieces",
+    "description": "Unit dropdown option for countable pieces (stored as wire value 'pcs')."
+  },
+  "inventory.masterlist.unit_quantity": {
+    "value": "Quantity",
+    "description": "Unit dropdown option for generic quantity (stored as wire value 'qty')."
+  },
+  "inventory.masterlist.unit_kg": {
+    "value": "Kg",
+    "description": "Unit dropdown option for kilograms (stored as wire value 'kg')."
+  },
+  "inventory.masterlist.unit_litre": {
+    "value": "Litre",
+    "description": "Unit dropdown option for litres (stored as wire value 'litre')."
+  },
+  "inventory.masterlist.unit_custom": {
+    "value": "Custom",
+    "description": "Unit dropdown option that reveals a free-text field for the user's own unit."
+  },
+  "inventory.masterlist.custom_unit_label": {
+    "value": "Custom unit",
+    "description": "Label of the free-text unit input shown when Custom is picked in the unit dropdown."
+  },
+  "inventory.masterlist.photo_pick": {
+    "value": "Choose photo",
+    "description": "Button that opens the system photo picker in the item editor. The picked image is cropped square and compressed."
+  },
+  "inventory.masterlist.photo_remove": {
+    "value": "Remove photo",
+    "description": "Button that clears the currently selected item photo in the item editor."
+  },
+  "inventory.masterlist.similar_items_hint": {
+    "value": "Did you mean one of these?",
+    "description": "Hint shown above the fuzzy duplicate-suggestion chips while typing a new item name."
+  },
+  "inventory.masterlist.error_name_required": {
+    "value": "Enter a name.",
+    "description": "Validation error when saving a master item with a blank name."
+  },
+  "inventory.masterlist.error_unit_required": {
+    "value": "Choose a unit.",
+    "description": "Validation error when the Custom unit option is picked but the free-text unit is blank."
+  },
+  "inventory.masterlist.error_duplicate_name": {
+    "value": "An item with this name already exists.",
+    "description": "Validation error when saving a master item whose name exactly matches another item (names are unique per business)."
+  },
+  "inventory.masterlist.delete_confirm_title": {
+    "value": "Delete item?",
+    "description": "Title of the confirmation dialog before deleting a master item."
+  },
+  "inventory.masterlist.delete_confirm_message": {
+    "value": "{name} will be removed from the item list.",
+    "description": "Body of the delete confirmation dialog. {name} is the item's name."
+  },
+  "inventory.masterlist.delete_blocked": {
+    "value": "This item has transactions, so it cannot be deleted.",
+    "description": "Shown when deletion is refused because inventory transactions exist for the item (the can-delete rule)."
+  },
+  "inventory.masterlist.empty_title": {
+    "value": "Item list is empty",
+    "description": "Title of the empty state on the item list screen when no master items exist."
+  },
+  "inventory.masterlist.empty_message": {
+    "value": "Add an item with its photo and unit to get started.",
+    "description": "Body of the empty state on the item list screen."
+  }
+}
