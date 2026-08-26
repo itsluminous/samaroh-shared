@@ -3,6 +3,14 @@
     "value": "Menu",
     "description": "Top bar title of the Menu tab home screen."
   },
+  "menu.identity.signed_in_as": {
+    "value": "Signed in as",
+    "description": "Menu home: label above the signed-in user's email in the identity row at the top."
+  },
+  "menu.identity.not_signed_in": {
+    "value": "Not signed in",
+    "description": "Menu home: identity row state when the app is in offline/no-account mode."
+  },
   "menu.section.settings": {
     "value": "Settings",
     "description": "Menu home: settings section row title."
