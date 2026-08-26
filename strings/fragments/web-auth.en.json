@@ -1,0 +1,22 @@
+{
+  "auth.sign_up.confirm_email": {
+    "value": "Account created. Open the confirmation link we emailed you, then sign in.",
+    "description": "Info message on the web sign-in page after a successful sign-up when the server requires email confirmation before the first sign-in."
+  },
+  "auth.sign_up.exists": {
+    "value": "An account with this email already exists. Sign in instead.",
+    "description": "Error on the web sign-up form when the email is already registered."
+  },
+  "auth.sign_up.password_min": {
+    "value": "Password must be at least 6 characters.",
+    "description": "Client-side validation error on the web sign-up form for a too-short password."
+  },
+  "guest.banner.message": {
+    "value": "Guest mode — your data is saved only on this device.",
+    "description": "Persistent thin banner shown across the web app while using it without an account (local-only storage)."
+  },
+  "guest.banner.sign_in": {
+    "value": "Sign in",
+    "description": "Call-to-action button on the guest-mode banner that takes the user to the sign-in page."
+  }
+}

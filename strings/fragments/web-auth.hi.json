@@ -1,0 +1,22 @@
+{
+  "auth.sign_up.confirm_email": {
+    "value": "खाता बन गया है। हमने आपको ईमेल में जो पुष्टि लिंक भेजा है उसे खोलें, फिर साइन इन करें।",
+    "description": "Info message on the web sign-in page after a successful sign-up when the server requires email confirmation before the first sign-in."
+  },
+  "auth.sign_up.exists": {
+    "value": "इस ईमेल से खाता पहले से मौजूद है। इसके बजाय साइन इन करें।",
+    "description": "Error on the web sign-up form when the email is already registered."
+  },
+  "auth.sign_up.password_min": {
+    "value": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।",
+    "description": "Client-side validation error on the web sign-up form for a too-short password."
+  },
+  "guest.banner.message": {
+    "value": "अतिथि मोड — आपका डेटा केवल इसी डिवाइस पर सहेजा जाता है।",
+    "description": "Persistent thin banner shown across the web app while using it without an account (local-only storage)."
+  },
+  "guest.banner.sign_in": {
+    "value": "साइन इन करें",
+    "description": "Call-to-action button on the guest-mode banner that takes the user to the sign-in page."
+  }
+}
