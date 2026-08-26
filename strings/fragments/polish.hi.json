@@ -13,7 +13,7 @@
   },
   "booking.calendar.a11y_bookings_on_day": {
     "value": "{count, plural, one {# बुकिंग: {summaries}} other {# बुकिंग: {summaries}}}",
-    "description": "Screen-reader booking summary for a calendar cell. ICU plural; count is the number of bookings on the date, summaries is a comma-separated list of '{icon} {first name}' labels."
+    "description": "Screen-reader booking summary for a calendar cell. ICU plural; count is the number of bookings on the date, summaries is a comma-separated list of customer first names (icons render only in the day cell)."
   },
   "booking.calendar.agenda_empty_hint": {
     "value": "बुकिंग जोड़ने के लिए ऊपर कैलेंडर में कोई भी खाली तारीख दबाएँ।",
