@@ -398,5 +398,17 @@
   "settings.booking_form.show_times": {
     "value": "Event times",
     "description": "Toggle label: show the start/end time fields in the booking form (on by default)."
+  },
+  "settings.booking_calendar.title": {
+    "value": "Booking calendar",
+    "description": "Settings section header for booking-calendar appearance options."
+  },
+  "settings.booking_calendar.icon_alpha_label": {
+    "value": "Event icon visibility",
+    "description": "Slider label: how opaque the event-icon watermark renders behind the date number on booked calendar days."
+  },
+  "settings.booking_calendar.icon_alpha_description": {
+    "value": "How clearly event icons show behind the date number on booked days",
+    "description": "Supporting text under the event-icon visibility slider; the sample cell next to the slider previews the chosen level."
   }
 }
