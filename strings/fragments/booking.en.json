@@ -463,6 +463,10 @@
     "value": "Default",
     "description": "First option in the booking color picker: no explicit color chosen, the booking keeps the standard themed (purple) look."
   },
+  "booking.color.follows_type": {
+    "value": "Default — follows event type",
+    "description": "Accessibility/annotation on the color swatch that is the current event type's default color while no explicit color is chosen: the booking follows the type's default (picking the swatch stores an explicit color; Default stores none)."
+  },
   "booking.color.tomato": {
     "value": "Tomato",
     "description": "Name of the \"tomato\" swatch in the booking color picker (see booking-colors.json)."
