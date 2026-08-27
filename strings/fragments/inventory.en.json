@@ -178,5 +178,61 @@
   "inventory.masterlist.empty_message": {
     "value": "Add an item with its photo and unit to get started.",
     "description": "Body of the empty state on the item list screen."
+  },
+  "inventory.list.all_zero_title": {
+    "value": "Nothing in stock",
+    "description": "Title of the empty state on the current-inventory screen when items exist but every one has zero stock (zero-quantity rows are hidden)."
+  },
+  "inventory.list.all_zero_message": {
+    "value": "Every item is at zero. Record an Add transaction to bring stock in.",
+    "description": "Body of the all-at-zero empty state on the current-inventory screen guiding the user to record an Add transaction."
+  },
+  "inventory.txn.saved_add": {
+    "value": "Stock added successfully.",
+    "description": "Snackbar confirmation after an Add transaction is recorded."
+  },
+  "inventory.txn.saved_remove": {
+    "value": "Stock removed. Total cost: {amount}",
+    "description": "Snackbar confirmation after a Remove transaction. {amount} is the FIFO cost of the removed stock, formatted as rupees."
+  },
+  "inventory.txn.total_preview": {
+    "value": "Total price: {amount}",
+    "description": "Live total shown in the Add form once quantity and unit price both parse. {amount} is quantity × unit price, formatted as rupees."
+  },
+  "inventory.txn.option_available": {
+    "value": "Available: {quantity} {unit}",
+    "description": "Availability note under each item suggestion in Remove mode. {quantity} is the current stock, {unit} its localized unit label."
+  },
+  "inventory.detail.back": {
+    "value": "Back",
+    "description": "Explanation/content description of the back arrow on the item detail screen."
+  },
+  "inventory.detail.total_value": {
+    "value": "Total value",
+    "description": "Label of the FIFO total stock value shown in the item detail header."
+  },
+  "inventory.detail.transactions_title": {
+    "value": "Transaction history",
+    "description": "Section heading above the transaction list on the item detail screen."
+  },
+  "inventory.detail.showing_count": {
+    "value": "Showing {shown} of {total} transactions",
+    "description": "Pagination status under the transaction list. {shown} is the number currently visible, {total} the item's full transaction count."
+  },
+  "inventory.detail.load_more": {
+    "value": "Load more",
+    "description": "Button that reveals the next page of transactions on the item detail screen."
+  },
+  "inventory.detail.empty": {
+    "value": "No transactions for this item yet.",
+    "description": "Empty state of the transaction list on the item detail screen."
+  },
+  "inventory.detail.qty_at_price": {
+    "value": "{quantity} {unit} @ {price}",
+    "description": "Per-transaction line on the item detail screen: quantity, localized unit and per-unit price (rupees)."
+  },
+  "inventory.masterlist.similar_chip": {
+    "value": "{name} ({percent}%)",
+    "description": "Label of a fuzzy duplicate-suggestion chip. {name} is the existing item's name, {percent} the similarity percentage."
   }
 }

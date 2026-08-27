@@ -178,5 +178,61 @@
   "inventory.masterlist.empty_message": {
     "value": "शुरू करने के लिए फ़ोटो और इकाई के साथ सामान जोड़ें।",
     "description": "Body of the empty state on the item list screen."
+  },
+  "inventory.list.all_zero_title": {
+    "value": "स्टॉक में कुछ नहीं",
+    "description": "Title of the empty state on the current-inventory screen when items exist but every one has zero stock (zero-quantity rows are hidden)."
+  },
+  "inventory.list.all_zero_message": {
+    "value": "सभी सामान शून्य पर हैं। स्टॉक लाने के लिए जोड़ें लेन-देन दर्ज करें।",
+    "description": "Body of the all-at-zero empty state on the current-inventory screen guiding the user to record an Add transaction."
+  },
+  "inventory.txn.saved_add": {
+    "value": "स्टॉक जोड़ दिया गया।",
+    "description": "Snackbar confirmation after an Add transaction is recorded."
+  },
+  "inventory.txn.saved_remove": {
+    "value": "स्टॉक हटा दिया गया। कुल लागत: {amount}",
+    "description": "Snackbar confirmation after a Remove transaction. {amount} is the FIFO cost of the removed stock, formatted as rupees."
+  },
+  "inventory.txn.total_preview": {
+    "value": "कुल कीमत: {amount}",
+    "description": "Live total shown in the Add form once quantity and unit price both parse. {amount} is quantity × unit price, formatted as rupees."
+  },
+  "inventory.txn.option_available": {
+    "value": "उपलब्ध: {quantity} {unit}",
+    "description": "Availability note under each item suggestion in Remove mode. {quantity} is the current stock, {unit} its localized unit label."
+  },
+  "inventory.detail.back": {
+    "value": "वापस",
+    "description": "Explanation/content description of the back arrow on the item detail screen."
+  },
+  "inventory.detail.total_value": {
+    "value": "कुल मूल्य",
+    "description": "Label of the FIFO total stock value shown in the item detail header."
+  },
+  "inventory.detail.transactions_title": {
+    "value": "लेन-देन का इतिहास",
+    "description": "Section heading above the transaction list on the item detail screen."
+  },
+  "inventory.detail.showing_count": {
+    "value": "{total} में से {shown} लेन-देन दिख रहे हैं",
+    "description": "Pagination status under the transaction list. {shown} is the number currently visible, {total} the item's full transaction count."
+  },
+  "inventory.detail.load_more": {
+    "value": "और देखें",
+    "description": "Button that reveals the next page of transactions on the item detail screen."
+  },
+  "inventory.detail.empty": {
+    "value": "इस सामान का अभी कोई लेन-देन नहीं है।",
+    "description": "Empty state of the transaction list on the item detail screen."
+  },
+  "inventory.detail.qty_at_price": {
+    "value": "{quantity} {unit} @ {price}",
+    "description": "Per-transaction line on the item detail screen: quantity, localized unit and per-unit price (rupees)."
+  },
+  "inventory.masterlist.similar_chip": {
+    "value": "{name} ({percent}%)",
+    "description": "Label of a fuzzy duplicate-suggestion chip. {name} is the existing item's name, {percent} the similarity percentage."
   }
 }
