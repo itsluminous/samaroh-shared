@@ -1,0 +1,18 @@
+{
+  "common.cropper.title": {
+    "value": "फ़ोटो एडजस्ट करें",
+    "description": "Title of the reusable square photo-crop dialog shown after picking or capturing an image."
+  },
+  "common.cropper.hint": {
+    "value": "ज़ूम के लिए पिंच करें, जगह बदलने के लिए खींचें",
+    "description": "Gesture hint under the crop viewport in the square photo-crop dialog."
+  },
+  "common.cropper.confirm": {
+    "value": "क्रॉप करें",
+    "description": "Confirm button of the square photo-crop dialog; applies the chosen crop."
+  },
+  "common.cropper.image_desc": {
+    "value": "क्रॉप की जा रही फ़ोटो",
+    "description": "Accessibility description of the image shown inside the crop viewport."
+  }
+}
