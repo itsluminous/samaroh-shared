@@ -454,5 +454,77 @@
   "booking.calendar.events_empty": {
     "value": "No bookings yet",
     "description": "Empty state of the full agenda (events) list when the business has no bookings at all."
+  },
+  "booking.form.color": {
+    "value": "Colour",
+    "description": "Label of the calendar-color picker field on the booking add/edit form."
+  },
+  "booking.color.default": {
+    "value": "Default",
+    "description": "First option in the booking color picker: no explicit color chosen, the booking keeps the standard themed (purple) look."
+  },
+  "booking.color.tomato": {
+    "value": "Tomato",
+    "description": "Name of the \"tomato\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.flamingo": {
+    "value": "Flamingo",
+    "description": "Name of the \"flamingo\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.tangerine": {
+    "value": "Tangerine",
+    "description": "Name of the \"tangerine\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.banana": {
+    "value": "Banana",
+    "description": "Name of the \"banana\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.sage": {
+    "value": "Sage",
+    "description": "Name of the \"sage\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.basil": {
+    "value": "Basil",
+    "description": "Name of the \"basil\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.olive": {
+    "value": "Olive",
+    "description": "Name of the \"olive\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.peacock": {
+    "value": "Peacock",
+    "description": "Name of the \"peacock\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.sky": {
+    "value": "Sky",
+    "description": "Name of the \"sky\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.blueberry": {
+    "value": "Blueberry",
+    "description": "Name of the \"blueberry\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.midnight": {
+    "value": "Midnight",
+    "description": "Name of the \"midnight\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.lavender": {
+    "value": "Lavender",
+    "description": "Name of the \"lavender\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.grape": {
+    "value": "Grape",
+    "description": "Name of the \"grape\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.fuchsia": {
+    "value": "Fuchsia",
+    "description": "Name of the \"fuchsia\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.cocoa": {
+    "value": "Cocoa",
+    "description": "Name of the \"cocoa\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.graphite": {
+    "value": "Graphite",
+    "description": "Name of the \"graphite\" swatch in the booking color picker (see booking-colors.json)."
   }
 }

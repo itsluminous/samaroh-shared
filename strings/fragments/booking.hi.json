@@ -454,5 +454,77 @@
   "booking.calendar.events_empty": {
     "value": "अभी कोई बुकिंग नहीं",
     "description": "Empty state of the full agenda (events) list when the business has no bookings at all."
+  },
+  "booking.form.color": {
+    "value": "रंग",
+    "description": "Label of the calendar-color picker field on the booking add/edit form."
+  },
+  "booking.color.default": {
+    "value": "डिफ़ॉल्ट",
+    "description": "First option in the booking color picker: no explicit color chosen, the booking keeps the standard themed (purple) look."
+  },
+  "booking.color.tomato": {
+    "value": "टमाटर",
+    "description": "Name of the \"tomato\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.flamingo": {
+    "value": "गुलाबी",
+    "description": "Name of the \"flamingo\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.tangerine": {
+    "value": "संतरा",
+    "description": "Name of the \"tangerine\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.banana": {
+    "value": "केला",
+    "description": "Name of the \"banana\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.sage": {
+    "value": "धानी",
+    "description": "Name of the \"sage\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.basil": {
+    "value": "तुलसी",
+    "description": "Name of the \"basil\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.olive": {
+    "value": "मेहंदी",
+    "description": "Name of the \"olive\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.peacock": {
+    "value": "मोरपंखी",
+    "description": "Name of the \"peacock\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.sky": {
+    "value": "आसमानी",
+    "description": "Name of the \"sky\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.blueberry": {
+    "value": "नीला",
+    "description": "Name of the \"blueberry\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.midnight": {
+    "value": "गहरा नीला",
+    "description": "Name of the \"midnight\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.lavender": {
+    "value": "लैवेंडर",
+    "description": "Name of the \"lavender\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.grape": {
+    "value": "जामुनी",
+    "description": "Name of the \"grape\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.fuchsia": {
+    "value": "रानी",
+    "description": "Name of the \"fuchsia\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.cocoa": {
+    "value": "भूरा",
+    "description": "Name of the \"cocoa\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.color.graphite": {
+    "value": "स्लेटी",
+    "description": "Name of the \"graphite\" swatch in the booking color picker (see booking-colors.json)."
   }
 }
