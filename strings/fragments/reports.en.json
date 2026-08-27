@@ -303,6 +303,10 @@
     "value": "Removed party",
     "description": "Fallback name in the expense summary for entries whose party was deleted."
   },
+  "reports.expense.inventory_purchases_label": {
+    "value": "Inventory purchases",
+    "description": "Label for inventory purchases (stock add transactions, quantity x unit price) counted as an expense per month in the Expense summary and Profit reports."
+  },
   "reports.sources.unspecified": {
     "value": "Not set",
     "description": "Label for bookings whose source channel was never chosen."
