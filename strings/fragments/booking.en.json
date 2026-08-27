@@ -438,5 +438,21 @@
   "booking.reminder.action_snooze": {
     "value": "Snooze",
     "description": "Follow-up card action that re-reminds after a week."
+  },
+  "booking.calendar.events_view": {
+    "value": "Events view",
+    "description": "Overflow menu entry that switches the Booking calendar from the month grid to the full agenda (events) list."
+  },
+  "booking.calendar.month_view": {
+    "value": "Month view",
+    "description": "Overflow menu entry that switches the Booking calendar from the agenda (events) list back to the month grid."
+  },
+  "booking.calendar.events_title": {
+    "value": "All bookings",
+    "description": "Heading of the full agenda (events) list that replaces the month grid in events view."
+  },
+  "booking.calendar.events_empty": {
+    "value": "No bookings yet",
+    "description": "Empty state of the full agenda (events) list when the business has no bookings at all."
   }
 }

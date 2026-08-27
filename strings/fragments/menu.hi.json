@@ -498,5 +498,17 @@
   "settings.booking_calendar.icon_alpha_description": {
     "value": "दाईं ओर खिसकाने पर बुक की गई तारीख़ों पर इवेंट आइकन गहरे दिखते हैं — बीच से आगे तारीख़ का अंक धुँधला होता जाता है और सबसे दाईं ओर सिर्फ़ आइकन दिखता है",
     "description": "Supporting text under the date-and-icon balance slider; the sample cell next to the slider previews the crossfade live. Unbooked days always show the full date."
+  },
+  "menu.about.donate_upi": {
+    "value": "UPI से दान करें",
+    "description": "About screen row that opens a UPI payment app chooser to support development; also the chooser title."
+  },
+  "menu.about.donate_upi_summary": {
+    "value": "इस ऐप के विकास में सहयोग करें",
+    "description": "Supporting line under the Donate via UPI row on the About screen."
+  },
+  "menu.about.donate_no_upi_app": {
+    "value": "इस डिवाइस पर कोई UPI ऐप नहीं मिला",
+    "description": "Toast shown when the Donate via UPI row is tapped but no installed app can handle UPI payment links."
   }
 }

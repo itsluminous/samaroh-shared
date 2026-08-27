@@ -234,5 +234,17 @@
   "inventory.masterlist.similar_chip": {
     "value": "{name} ({percent}%)",
     "description": "Label of a fuzzy duplicate-suggestion chip. {name} is the existing item's name, {percent} the similarity percentage."
+  },
+  "inventory.detail.more_options": {
+    "value": "और विकल्प",
+    "description": "Accessible label / long-press explanation for the item detail screen's overflow (three dots) menu."
+  },
+  "inventory.detail.edit_item": {
+    "value": "सामान बदलें",
+    "description": "Overflow menu entry on the item detail screen that opens the edit-item dialog."
+  },
+  "inventory.detail.delete_item": {
+    "value": "सामान हटाएँ",
+    "description": "Overflow menu entry on the item detail screen that starts the delete-item flow."
   }
 }
