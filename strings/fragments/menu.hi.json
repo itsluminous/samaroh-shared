@@ -404,11 +404,11 @@
     "description": "Settings section header for booking-calendar appearance options."
   },
   "settings.booking_calendar.icon_alpha_label": {
-    "value": "इवेंट आइकन की दृश्यता",
-    "description": "Slider label: how opaque the event-icon watermark renders behind the date number on booked calendar days."
+    "value": "तारीख़ और आइकन का संतुलन",
+    "description": "Slider label for the date ↔ icon crossfade on booked calendar days: left = full date with a faint icon, middle = the default watermark look, right = the date number fades until only the icon shows."
   },
   "settings.booking_calendar.icon_alpha_description": {
-    "value": "बुक की गई तारीख़ों पर तारीख़ के पीछे इवेंट आइकन कितना साफ़ दिखे",
-    "description": "Supporting text under the event-icon visibility slider; the sample cell next to the slider previews the chosen level."
+    "value": "दाईं ओर खिसकाने पर बुक की गई तारीख़ों पर इवेंट आइकन गहरे दिखते हैं — बीच से आगे तारीख़ का अंक धुँधला होता जाता है और सबसे दाईं ओर सिर्फ़ आइकन दिखता है",
+    "description": "Supporting text under the date-and-icon balance slider; the sample cell next to the slider previews the crossfade live. Unbooked days always show the full date."
   }
 }
