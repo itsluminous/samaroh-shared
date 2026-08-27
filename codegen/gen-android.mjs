@@ -44,9 +44,12 @@ function androidEscape(text) {
  * Replace named ICU placeholders with Android positional args (%1$s, %2$s, ...).
  * Position order comes from the ENGLISH value of the same key, so a placeholder keeps
  * the same position in every locale even when word order differs.
+ * A string that carries args is format-processed by Android, so literal `%` must be
+ * escaped as `%%` (done BEFORE substitution — placeholders are brace-delimited).
  */
 function toPositional(text, order) {
   let out = text;
+  if (order.length > 0) out = out.replace(/%/g, '%%');
   order.forEach((name, i) => {
     out = out.split(`{${name}}`).join(`%${i + 1}$s`);
   });
@@ -78,7 +81,7 @@ for (const locale of locales) {
       lines.push(`    <plurals name="${name}">`);
       for (const quantity of PLURAL_ORDER) {
         if (!(quantity in plural.forms)) continue;
-        let form = plural.forms[quantity].trim();
+        let form = plural.forms[quantity].trim().replace(/%/g, '%%');
         form = form.replaceAll('#', '%1$d').split(`{${plural.arg}}`).join('%1$d');
         extraOrder.forEach((p, i) => {
           form = form.split(`{${p}}`).join(`%${i + 2}$s`);
