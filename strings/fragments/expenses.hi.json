@@ -55,6 +55,30 @@
     "value": "निजी",
     "description": "Badge shown on party list rows and the ledger header for parties marked personal (not associated with the business). Personal parties are excluded from financial reports and appear only in the personal-expenses report."
   },
+  "expenses.party.menu": {
+    "value": "पार्टी के विकल्प",
+    "description": "Long-press explanation and content description of the party-level overflow (edit/delete) icon in the ledger header / party row."
+  },
+  "expenses.party.edit_title": {
+    "value": "पार्टी बदलें",
+    "description": "Title of the edit-party dialog/screen (name, phone, business flag — same fields as add-party). Buttons reuse common.action.save / common.action.cancel."
+  },
+  "expenses.party.delete_action": {
+    "value": "पार्टी हटाएँ",
+    "description": "Menu action that starts deleting a party (opens the confirmation dialog)."
+  },
+  "expenses.party.delete_confirm_title": {
+    "value": "{name} को हटाएँ?",
+    "description": "Title of the confirmation dialog before deleting a party. {name} is the party's name."
+  },
+  "expenses.party.delete_confirm_message": {
+    "value": "इस पार्टी की सभी एंट्री और लगे हुए बिल भी हट जाएँगे। इसे वापस नहीं किया जा सकता।",
+    "description": "Body of the party delete confirmation dialog, warning that every ledger transaction and its attached bill files are deleted along with the party. Confirm/dismiss buttons reuse common.action.delete / common.action.cancel."
+  },
+  "expenses.party.deleted_notice": {
+    "value": "{name} को हटा दिया गया",
+    "description": "Snackbar/toast confirmation after a party (with all their entries and attachments) was deleted. {name} is the deleted party's name."
+  },
   "expenses.ledger.you_gave_button": {
     "value": "आपने दिया ₹",
     "description": "Big red bottom button on the person ledger that starts a new 'paid' entry."
