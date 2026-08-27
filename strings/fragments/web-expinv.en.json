@@ -266,5 +266,69 @@
   "inventory.master.image_upload_failed": {
     "value": "Could not upload the photo",
     "description": "Error shown when compressing/uploading the item photo to storage fails."
+  },
+  "inventory.item.back": {
+    "value": "Back to current stock",
+    "description": "Accessible label of the back button from the item detail page to the current-stock list."
+  },
+  "inventory.item.not_found": {
+    "value": "Item not found",
+    "description": "Shown on the item detail page when the item id does not exist for this business."
+  },
+  "inventory.item.history_title": {
+    "value": "Transaction history",
+    "description": "Heading above the transaction table on the item detail page."
+  },
+  "inventory.item.showing": {
+    "value": "Showing {shown} of {total} transactions",
+    "description": "Pagination caption on the item detail page. {shown} is the number of rows currently visible, {total} the total transaction count."
+  },
+  "inventory.item.load_more": {
+    "value": "Load more",
+    "description": "Button that reveals the next page of transactions on the item detail page."
+  },
+  "inventory.item.no_transactions": {
+    "value": "No transactions yet for this item.",
+    "description": "Empty state of the transaction table on the item detail page."
+  },
+  "inventory.item.col_date": {
+    "value": "Date",
+    "description": "Transaction-table column header: transaction date and time."
+  },
+  "inventory.item.col_type": {
+    "value": "Type",
+    "description": "Transaction-table column header: add/remove type chip."
+  },
+  "inventory.item.col_quantity": {
+    "value": "Qty",
+    "description": "Transaction-table column header: transaction quantity."
+  },
+  "inventory.item.col_unit_price": {
+    "value": "Unit price",
+    "description": "Transaction-table column header: per-unit price (FIFO cost per unit for removes)."
+  },
+  "inventory.item.col_total_price": {
+    "value": "Total price",
+    "description": "Transaction-table column header: quantity x unit price."
+  },
+  "inventory.item.col_notes": {
+    "value": "Notes",
+    "description": "Transaction-table column header: free-text transaction notes."
+  },
+  "inventory.txn.total_price": {
+    "value": "Total price: {amount}",
+    "description": "Live total preview in the add-transaction form once quantity and unit price parse. {amount} is a formatted rupee amount."
+  },
+  "inventory.txn.add_success": {
+    "value": "{name} added successfully",
+    "description": "Success snackbar after recording an add transaction. {name} is the item name."
+  },
+  "inventory.txn.remove_success": {
+    "value": "{name} removed successfully. Total cost: {amount}",
+    "description": "Success snackbar after recording a remove transaction. {name} is the item name, {amount} the formatted FIFO cost of the removed quantity."
+  },
+  "inventory.master.save_success": {
+    "value": "Item saved",
+    "description": "Success snackbar after creating or editing a master item."
   }
 }
