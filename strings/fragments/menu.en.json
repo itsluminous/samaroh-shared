@@ -343,6 +343,94 @@
     "value": "Items needing attention",
     "description": "Sync status: heading above the list of failed sync items."
   },
+  "settings.sync.op_phrase": {
+    "value": "{verb} {noun}",
+    "description": "Sync status: composes one pending-change line from a localized operation verb and entity noun, e.g. 'Add booking'. Hindi reorders to noun-first."
+  },
+  "settings.sync.op_line": {
+    "value": "{operation} — {detail}",
+    "description": "Sync status: full pending-change line: the composed operation phrase plus a human identifier, e.g. 'Add booking — Sharma'."
+  },
+  "settings.sync.verb_add": {
+    "value": "Add",
+    "description": "Sync status: operation verb for a newly created record waiting to sync."
+  },
+  "settings.sync.verb_update": {
+    "value": "Update",
+    "description": "Sync status: operation verb for an edited record waiting to sync."
+  },
+  "settings.sync.verb_delete": {
+    "value": "Delete",
+    "description": "Sync status: operation verb for a deleted record waiting to sync."
+  },
+  "settings.sync.entity_booking": {
+    "value": "booking",
+    "description": "Sync status: entity noun for a booking, composed into 'Add booking — Sharma'."
+  },
+  "settings.sync.entity_payment": {
+    "value": "payment",
+    "description": "Sync status: entity noun for a booking payment."
+  },
+  "settings.sync.entity_reminder": {
+    "value": "payment reminder",
+    "description": "Sync status: entity noun for a payment reminder."
+  },
+  "settings.sync.entity_date_block": {
+    "value": "date block",
+    "description": "Sync status: entity noun for a blocked date range."
+  },
+  "settings.sync.entity_party": {
+    "value": "party",
+    "description": "Sync status: entity noun for an expenses-ledger party (vendor/customer)."
+  },
+  "settings.sync.entity_expense": {
+    "value": "expense",
+    "description": "Sync status: entity noun for an expense entry."
+  },
+  "settings.sync.entity_attachment": {
+    "value": "attachment",
+    "description": "Sync status: entity noun for an expense attachment (receipt photo)."
+  },
+  "settings.sync.entity_inventory_item": {
+    "value": "inventory item",
+    "description": "Sync status: entity noun for a master-list inventory item."
+  },
+  "settings.sync.entity_stock_entry": {
+    "value": "stock entry",
+    "description": "Sync status: entity noun for an inventory stock transaction (add/remove)."
+  },
+  "settings.sync.entity_business": {
+    "value": "business",
+    "description": "Sync status: entity noun for the business profile."
+  },
+  "settings.sync.entity_member": {
+    "value": "member",
+    "description": "Sync status: entity noun for a business member."
+  },
+  "settings.sync.entity_business_settings": {
+    "value": "business settings",
+    "description": "Sync status: entity noun for the business settings row."
+  },
+  "settings.sync.entity_google_account": {
+    "value": "Google account",
+    "description": "Sync status: entity noun for the linked Google account."
+  },
+  "settings.sync.entity_record": {
+    "value": "record",
+    "description": "Sync status: fallback entity noun for an unrecognized record type."
+  },
+  "settings.sync.payment_detail": {
+    "value": "{amount} for {name}",
+    "description": "Sync status: payment identifier — formatted amount plus the booking's customer name, e.g. '₹500 for Sharma'."
+  },
+  "settings.sync.technical_detail": {
+    "value": "{type} · {op} · {id}",
+    "description": "Sync status: technical detail line shown when a pending/error row is expanded — raw table name, operation and record id."
+  },
+  "settings.sync.queued_at": {
+    "value": "Queued: {time}",
+    "description": "Sync status: when the expanded pending change was queued locally. {time} is a localized date-time."
+  },
   "settings.sync.error_entity": {
     "value": "Item: {entity}",
     "description": "Sync status error row: which record failed. {entity} is the technical record type."

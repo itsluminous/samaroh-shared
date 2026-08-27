@@ -343,6 +343,94 @@
     "value": "इन पर ध्यान दें",
     "description": "Sync status: heading above the list of failed sync items."
   },
+  "settings.sync.op_phrase": {
+    "value": "{noun} {verb}",
+    "description": "Sync status: composes one pending-change line from a localized operation verb and entity noun, e.g. 'Add booking'. Hindi reorders to noun-first."
+  },
+  "settings.sync.op_line": {
+    "value": "{operation} — {detail}",
+    "description": "Sync status: full pending-change line: the composed operation phrase plus a human identifier, e.g. 'Add booking — Sharma'."
+  },
+  "settings.sync.verb_add": {
+    "value": "जोड़ना",
+    "description": "Sync status: operation verb for a newly created record waiting to sync."
+  },
+  "settings.sync.verb_update": {
+    "value": "अपडेट करना",
+    "description": "Sync status: operation verb for an edited record waiting to sync."
+  },
+  "settings.sync.verb_delete": {
+    "value": "हटाना",
+    "description": "Sync status: operation verb for a deleted record waiting to sync."
+  },
+  "settings.sync.entity_booking": {
+    "value": "बुकिंग",
+    "description": "Sync status: entity noun for a booking, composed into 'Add booking — Sharma'."
+  },
+  "settings.sync.entity_payment": {
+    "value": "भुगतान",
+    "description": "Sync status: entity noun for a booking payment."
+  },
+  "settings.sync.entity_reminder": {
+    "value": "भुगतान रिमाइंडर",
+    "description": "Sync status: entity noun for a payment reminder."
+  },
+  "settings.sync.entity_date_block": {
+    "value": "तारीख़ ब्लॉक",
+    "description": "Sync status: entity noun for a blocked date range."
+  },
+  "settings.sync.entity_party": {
+    "value": "पार्टी",
+    "description": "Sync status: entity noun for an expenses-ledger party (vendor/customer)."
+  },
+  "settings.sync.entity_expense": {
+    "value": "खर्च",
+    "description": "Sync status: entity noun for an expense entry."
+  },
+  "settings.sync.entity_attachment": {
+    "value": "अटैचमेंट",
+    "description": "Sync status: entity noun for an expense attachment (receipt photo)."
+  },
+  "settings.sync.entity_inventory_item": {
+    "value": "इन्वेंट्री आइटम",
+    "description": "Sync status: entity noun for a master-list inventory item."
+  },
+  "settings.sync.entity_stock_entry": {
+    "value": "स्टॉक प्रविष्टि",
+    "description": "Sync status: entity noun for an inventory stock transaction (add/remove)."
+  },
+  "settings.sync.entity_business": {
+    "value": "व्यवसाय",
+    "description": "Sync status: entity noun for the business profile."
+  },
+  "settings.sync.entity_member": {
+    "value": "सदस्य",
+    "description": "Sync status: entity noun for a business member."
+  },
+  "settings.sync.entity_business_settings": {
+    "value": "व्यवसाय सेटिंग्स",
+    "description": "Sync status: entity noun for the business settings row."
+  },
+  "settings.sync.entity_google_account": {
+    "value": "Google खाता",
+    "description": "Sync status: entity noun for the linked Google account."
+  },
+  "settings.sync.entity_record": {
+    "value": "रिकॉर्ड",
+    "description": "Sync status: fallback entity noun for an unrecognized record type."
+  },
+  "settings.sync.payment_detail": {
+    "value": "{name} के लिए {amount}",
+    "description": "Sync status: payment identifier — formatted amount plus the booking's customer name, e.g. '₹500 for Sharma'."
+  },
+  "settings.sync.technical_detail": {
+    "value": "{type} · {op} · {id}",
+    "description": "Sync status: technical detail line shown when a pending/error row is expanded — raw table name, operation and record id."
+  },
+  "settings.sync.queued_at": {
+    "value": "कतार में जोड़ा गया: {time}",
+    "description": "Sync status: when the expanded pending change was queued locally. {time} is a localized date-time."
+  },
   "settings.sync.error_entity": {
     "value": "आइटम: {entity}",
     "description": "Sync status error row: which record failed. {entity} is the technical record type."
