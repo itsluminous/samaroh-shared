@@ -1,0 +1,21 @@
+{
+  "$comment": "Curated booking calendar colors. `key` is stored in bookings.color (NULL = default themed look); `hex` is the swatch/fill color; `on_hex` is the legible text/icon color to use on top of `hex` (all pairs meet WCAG AA >= 4.5:1); `label_key` resolves the localized color name from the string catalog. Hexes are chosen to read well on both light and dark surfaces.",
+  "colors": [
+    { "key": "tomato", "hex": "#C62828", "on_hex": "#FFFFFF", "label_key": "booking.color.tomato" },
+    { "key": "flamingo", "hex": "#E67C73", "on_hex": "#212121", "label_key": "booking.color.flamingo" },
+    { "key": "tangerine", "hex": "#EF6C00", "on_hex": "#212121", "label_key": "booking.color.tangerine" },
+    { "key": "banana", "hex": "#F6BF26", "on_hex": "#212121", "label_key": "booking.color.banana" },
+    { "key": "sage", "hex": "#33B679", "on_hex": "#212121", "label_key": "booking.color.sage" },
+    { "key": "basil", "hex": "#0B8043", "on_hex": "#FFFFFF", "label_key": "booking.color.basil" },
+    { "key": "olive", "hex": "#687830", "on_hex": "#FFFFFF", "label_key": "booking.color.olive" },
+    { "key": "peacock", "hex": "#00838F", "on_hex": "#FFFFFF", "label_key": "booking.color.peacock" },
+    { "key": "sky", "hex": "#4FC3F7", "on_hex": "#212121", "label_key": "booking.color.sky" },
+    { "key": "blueberry", "hex": "#1967D2", "on_hex": "#FFFFFF", "label_key": "booking.color.blueberry" },
+    { "key": "midnight", "hex": "#3949AB", "on_hex": "#FFFFFF", "label_key": "booking.color.midnight" },
+    { "key": "lavender", "hex": "#7986CB", "on_hex": "#212121", "label_key": "booking.color.lavender" },
+    { "key": "grape", "hex": "#8E24AA", "on_hex": "#FFFFFF", "label_key": "booking.color.grape" },
+    { "key": "fuchsia", "hex": "#C2185B", "on_hex": "#FFFFFF", "label_key": "booking.color.fuchsia" },
+    { "key": "cocoa", "hex": "#795548", "on_hex": "#FFFFFF", "label_key": "booking.color.cocoa" },
+    { "key": "graphite", "hex": "#616161", "on_hex": "#FFFFFF", "label_key": "booking.color.graphite" }
+  ]
+}
