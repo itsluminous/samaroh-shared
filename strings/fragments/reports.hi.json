@@ -59,6 +59,14 @@
     "value": "महीने के हिसाब से आय घटा खर्च",
     "description": "Reports home: subtitle under the Profit row."
   },
+  "reports.report.personal_expenses": {
+    "value": "निजी खर्च",
+    "description": "Report name: spend on parties marked personal (not associated with the business). Personal parties are excluded from all other financial reports."
+  },
+  "reports.report.personal_expenses_subtitle": {
+    "value": "निजी पार्टियों पर खर्च",
+    "description": "Reports home: subtitle under the Personal expenses row."
+  },
   "reports.report.inventory_valuation": {
     "value": "स्टॉक की कीमत",
     "description": "Report name: current stock value per item."
@@ -127,6 +135,14 @@
     "value": "चुनी गई तारीख़ों में कोई डेटा नहीं।",
     "description": "Empty-state message when a report has no data in the chosen date range."
   },
+  "reports.personal_expenses.empty_title": {
+    "value": "कोई निजी खर्च नहीं",
+    "description": "Empty-state title on the personal-expenses report when no personal parties have entries in the chosen date range."
+  },
+  "reports.personal_expenses.empty_message": {
+    "value": "चुनी गई तारीख़ों में निजी पार्टियों की कोई एंट्री नहीं। किसी पार्टी को व्यवसाय से न जुड़ी चिह्नित करें, तो वह यहाँ दिखेगी।",
+    "description": "Empty-state message on the personal-expenses report; also hints how parties become personal (the yes/no pill on the add-party screen)."
+  },
   "reports.amount.thousand": {
     "value": "₹{amount} हज़ार",
     "description": "Compact chart-axis money label for thousands of rupees. {amount} is a short number like 1.5."
@@ -186,6 +202,10 @@
   "reports.table.total": {
     "value": "कुल",
     "description": "Report table column header: total amount."
+  },
+  "reports.table.total_row": {
+    "value": "कुल",
+    "description": "Label in the first cell of the summary TOTAL row appended at the bottom of every report table (and its CSV export), with column totals in the numeric cells."
   },
   "reports.table.customer": {
     "value": "ग्राहक",

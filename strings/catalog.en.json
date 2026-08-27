@@ -39,6 +39,14 @@
     "value": "Share",
     "description": "Generic share action label (share sheet trigger)."
   },
+  "common.action.yes": {
+    "value": "Yes",
+    "description": "Generic affirmative option label, used on yes/no pills and confirmation prompts."
+  },
+  "common.action.no": {
+    "value": "No",
+    "description": "Generic negative option label, used on yes/no pills and confirmation prompts."
+  },
   "common.state.loading": {
     "value": "Loading…",
     "description": "Generic loading indicator text."

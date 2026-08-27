@@ -12,8 +12,8 @@
     "description": "Placeholder/label of the search box above the party list on the Expenses home screen."
   },
   "expenses.home.add_person": {
-    "value": "Add person",
-    "description": "Label of the FAB on the Expenses home screen and the title of the add-person screen."
+    "value": "Add party",
+    "description": "Label of the FAB on the Expenses home screen and the title of the add-party screen. (Renamed from 'Add person' — key name kept for compatibility.)"
   },
   "expenses.home.empty_title": {
     "value": "No people yet",
@@ -46,6 +46,14 @@
   "expenses.add_person.exists_notice": {
     "value": "{name} already exists — opening their page",
     "description": "Toast shown when saving a person whose name already exists; the app steers to the existing party's ledger instead of creating a duplicate. {name} is the existing party's name."
+  },
+  "expenses.add_person.business_question": {
+    "value": "Associated with {business}?",
+    "description": "Title of the yes/no pill selector on the add-party screen asking whether the party is business-related. {business} is the business name. Yes = business-related (default, counted in financial reports); No = personal. Options reuse common.action.yes / common.action.no."
+  },
+  "expenses.party.personal_tag": {
+    "value": "Personal",
+    "description": "Badge shown on party list rows and the ledger header for parties marked personal (not associated with the business). Personal parties are excluded from financial reports and appear only in the personal-expenses report."
   },
   "expenses.ledger.you_gave_button": {
     "value": "You gave ₹",

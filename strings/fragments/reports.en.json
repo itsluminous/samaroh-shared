@@ -59,6 +59,14 @@
     "value": "Income minus expenses by month",
     "description": "Reports home: subtitle under the Profit row."
   },
+  "reports.report.personal_expenses": {
+    "value": "Personal expenses",
+    "description": "Report name: spend on parties marked personal (not associated with the business). Personal parties are excluded from all other financial reports."
+  },
+  "reports.report.personal_expenses_subtitle": {
+    "value": "Spend on personal parties",
+    "description": "Reports home: subtitle under the Personal expenses row."
+  },
   "reports.report.inventory_valuation": {
     "value": "Inventory value",
     "description": "Report name: current stock value per item."
@@ -127,6 +135,14 @@
     "value": "No data in the chosen dates.",
     "description": "Empty-state message when a report has no data in the chosen date range."
   },
+  "reports.personal_expenses.empty_title": {
+    "value": "No personal expenses",
+    "description": "Empty-state title on the personal-expenses report when no personal parties have entries in the chosen date range."
+  },
+  "reports.personal_expenses.empty_message": {
+    "value": "No entries for personal parties in the chosen dates. Mark a party as not associated with the business to see it here.",
+    "description": "Empty-state message on the personal-expenses report; also hints how parties become personal (the yes/no pill on the add-party screen)."
+  },
   "reports.amount.thousand": {
     "value": "₹{amount}K",
     "description": "Compact chart-axis money label for thousands of rupees. {amount} is a short number like 1.5."
@@ -186,6 +202,10 @@
   "reports.table.total": {
     "value": "Total",
     "description": "Report table column header: total amount."
+  },
+  "reports.table.total_row": {
+    "value": "Total",
+    "description": "Label in the first cell of the summary TOTAL row appended at the bottom of every report table (and its CSV export), with column totals in the numeric cells."
   },
   "reports.table.customer": {
     "value": "Customer",

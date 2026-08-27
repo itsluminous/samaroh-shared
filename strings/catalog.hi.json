@@ -39,6 +39,14 @@
     "value": "साझा करें",
     "description": "Generic share action label (share sheet trigger)."
   },
+  "common.action.yes": {
+    "value": "हाँ",
+    "description": "Generic affirmative option label, used on yes/no pills and confirmation prompts."
+  },
+  "common.action.no": {
+    "value": "नहीं",
+    "description": "Generic negative option label, used on yes/no pills and confirmation prompts."
+  },
   "common.state.loading": {
     "value": "लोड हो रहा है…",
     "description": "Generic loading indicator text."
