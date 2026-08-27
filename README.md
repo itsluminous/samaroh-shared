@@ -17,7 +17,8 @@ supabase/
 brand/                    logo + shared color palette tokens
 invoice/                  invoice PDF layout contract (both renderers must match)
 permissions/              JSON Schema for member permissions
-event-types.json          built-in booking event types (key, emoji, catalog label key)
+event-types.json          built-in booking event types (key, emoji, catalog label key,
+                          default calendar color — a booking-colors.json key)
 scripts/                  CI validators + operational SQL (see below)
 ```
 
@@ -82,6 +83,16 @@ Android renderer (platform PDF API in `core:invoice`) and the web renderer (`pdf
 A4 portrait, fixed margins/typography, brand accent `#6750A4`, Devanagari-capable font,
 rendered in the app's current language from this catalog. Any layout change requires a
 `docs/decisions.md` entry in **both** app repos.
+
+## Booking calendar colors
+
+`booking-colors.json` defines the curated 16-swatch picker palette; `event-types.json`
+gives every built-in event type a distinct **default** color from that palette (its
+`color` field). Both apps resolve a booking's calendar color the same way:
+
+1. `bookings.color` if set (the user picked a swatch),
+2. else the booking's event-type `color` default from `event-types.json`,
+3. else the standard themed purple look.
 
 ## Permissions schema
 

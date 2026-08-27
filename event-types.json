@@ -1,12 +1,12 @@
 {
-  "$comment": "Built-in booking event types. `key` is stored in bookings.event_type; `emoji` is the default bookings.event_icon; `label_key` resolves the localized display name from the string catalog. The `custom` type additionally lets the user enter a free-text label and pick any emoji. Emoji are NOT localized.",
+  "$comment": "Built-in booking event types. `key` is stored in bookings.event_type; `emoji` is the default bookings.event_icon; `label_key` resolves the localized display name from the string catalog; `color` is the type's DEFAULT calendar color — a key from booking-colors.json. Color resolution contract (both apps): explicit bookings.color if set → this event-type default → standard themed purple. The `custom` type additionally lets the user enter a free-text label and pick any emoji. Emoji are NOT localized.",
   "event_types": [
-    { "key": "engagement", "emoji": "💍", "label_key": "booking.event_type.engagement" },
-    { "key": "tilak", "emoji": "🪔", "label_key": "booking.event_type.tilak" },
-    { "key": "wedding", "emoji": "💒", "label_key": "booking.event_type.wedding" },
-    { "key": "room_booking", "emoji": "🏨", "label_key": "booking.event_type.room_booking" },
-    { "key": "birthday", "emoji": "🎂", "label_key": "booking.event_type.birthday" },
-    { "key": "anniversary", "emoji": "👫🏻", "label_key": "booking.event_type.anniversary" },
-    { "key": "custom", "emoji": "✨", "label_key": "booking.event_type.custom" }
+    { "key": "engagement", "emoji": "💍", "label_key": "booking.event_type.engagement", "color": "flamingo" },
+    { "key": "tilak", "emoji": "🪔", "label_key": "booking.event_type.tilak", "color": "tangerine" },
+    { "key": "wedding", "emoji": "💒", "label_key": "booking.event_type.wedding", "color": "tomato" },
+    { "key": "room_booking", "emoji": "🏨", "label_key": "booking.event_type.room_booking", "color": "blueberry" },
+    { "key": "birthday", "emoji": "🎂", "label_key": "booking.event_type.birthday", "color": "banana" },
+    { "key": "anniversary", "emoji": "👫🏻", "label_key": "booking.event_type.anniversary", "color": "sage" },
+    { "key": "custom", "emoji": "✨", "label_key": "booking.event_type.custom", "color": "grape" }
   ]
 }
