@@ -295,6 +295,14 @@
     "value": "Google Calendar sync",
     "description": "Permission toggle: enable and manage Google Calendar sync."
   },
+  "auth.permissions.action_view_amounts": {
+    "value": "View amounts",
+    "description": "Permission toggle (row appears under Booking, Expenses, Inventory and Reports): see financial amounts in this tab. ON by default — an absent key means amounts stay visible; the owner switches it OFF explicitly to hide them, and the app then masks every figure as ₹•••."
+  },
+  "auth.permissions.amount_hidden_a11y": {
+    "value": "Amount hidden",
+    "description": "Accessibility label (screen readers only, never rendered visually) announced wherever a masked amount is shown as ₹••• because the member's view_amounts permission is off."
+  },
   "onboarding.sign_in.continue_offline": {
     "value": "Continue without an account",
     "description": "Sign-in screen escape hatch (offline-first): proceeds to business setup in device-local owner mode; data syncs once the user signs in later."

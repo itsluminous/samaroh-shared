@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://samaroh.app/schemas/permissions.json",
   "title": "Samaroh member permissions",
-  "description": "Shape of business_members.permissions. Every action defaults to false when absent. Owners bypass this object entirely (implicit full access). Backups are owner-only and deliberately NOT representable here.",
+  "description": "Shape of business_members.permissions. Every action defaults to false when absent, with ONE exception: the per-module \"view_amounts\" keys default to TRUE when absent — an existing permissions object written before amounts-visibility existed keeps showing amounts unchanged (backward compatible). Owners hide amounts by explicitly setting view_amounts to false; apps then mask financial figures as ₹••• wherever they would render. Owners bypass this object entirely (implicit full access). Backups are owner-only and deliberately NOT representable here.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -15,7 +15,8 @@
         "edit": { "type": "boolean", "description": "Edit bookings and manage date blocks." },
         "delete": { "type": "boolean", "description": "Cancel bookings / delete booking records (tombstone)." },
         "record_payment": { "type": "boolean", "description": "Record payments against bookings and act on payment reminders." },
-        "generate_invoice": { "type": "boolean", "description": "Generate and share booking invoices." }
+        "generate_invoice": { "type": "boolean", "description": "Generate and share booking invoices." },
+        "view_amounts": { "type": "boolean", "default": true, "description": "See financial amounts on bookings (package total, advance, balance due, payment history). ABSENT = TRUE (backward compat); set false explicitly to mask amounts as ₹•••. Presets: Viewer/Staff/Manager all leave this true — owners toggle it off per member." }
       }
     },
     "expenses": {
@@ -26,7 +27,8 @@
         "create": { "type": "boolean", "description": "Add ledger entries and attachments." },
         "edit": { "type": "boolean", "description": "Edit ledger entries." },
         "delete": { "type": "boolean", "description": "Delete ledger entries (tombstone)." },
-        "manage_parties": { "type": "boolean", "description": "Add and edit parties (people/suppliers in the ledger)." }
+        "manage_parties": { "type": "boolean", "description": "Add and edit parties (people/suppliers in the ledger)." },
+        "view_amounts": { "type": "boolean", "default": true, "description": "See rupee amounts on ledger entries and party balances. ABSENT = TRUE (backward compat); set false explicitly to mask amounts as ₹•••. Presets: Viewer/Staff/Manager all leave this true — owners toggle it off per member." }
       }
     },
     "inventory": {
@@ -37,14 +39,16 @@
         "create": { "type": "boolean", "description": "Record add/remove transactions." },
         "edit": { "type": "boolean", "description": "Edit transactions." },
         "delete": { "type": "boolean", "description": "Delete transactions (tombstone)." },
-        "manage_master_items": { "type": "boolean", "description": "Add, edit and delete master items and their images." }
+        "manage_master_items": { "type": "boolean", "description": "Add, edit and delete master items and their images." },
+        "view_amounts": { "type": "boolean", "default": true, "description": "See monetary values on inventory (item prices, transaction values, stock worth). ABSENT = TRUE (backward compat); set false explicitly to mask amounts as ₹•••. Presets: Viewer/Staff/Manager all leave this true — owners toggle it off per member." }
       }
     },
     "reports": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "view": { "type": "boolean", "description": "Open the Reports section and export report PDFs/CSVs." }
+        "view": { "type": "boolean", "description": "Open the Reports section and export report PDFs/CSVs." },
+        "view_amounts": { "type": "boolean", "default": true, "description": "See financial figures in reports (revenue, expense totals, dues). ABSENT = TRUE (backward compat); set false explicitly to mask amounts as ₹••• — reports then show counts/trends only. Presets: Viewer/Staff/Manager all leave this true — owners toggle it off per member." }
       }
     },
     "settings": {
