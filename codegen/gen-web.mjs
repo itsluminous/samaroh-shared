@@ -6,10 +6,12 @@
 // Emits <output-messages-dir>/<locale>.json with keys nested by dot segments
 // (e.g. "common.action.save" -> { common: { action: { save: "…" } } }).
 // ICU values pass through unchanged — next-intl consumes ICU natively.
+// Entries marked "translatable": false exist only in the canonical (en) catalog; every
+// locale's messages file carries the en value for them, so lookups never miss.
 // Pure Node, no dependencies. Exits non-zero on key-parity mismatch.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { assertKeyParity, discoverLocales, loadCatalog } from './lib.mjs';
+import { CANONICAL_LOCALE, assertKeyParity, discoverLocales, isNonTranslatable, loadCatalog } from './lib.mjs';
 
 const outDir = process.argv[2];
 if (!outDir) {
@@ -25,7 +27,10 @@ mkdirSync(outDir, { recursive: true });
 
 for (const locale of locales) {
   const nested = {};
-  for (const [key, entry] of Object.entries(catalogs[locale])) {
+  // Iterate the canonical key set: non-translatable keys exist only in en, and every
+  // locale takes the en value for them.
+  for (const [key, enEntry] of Object.entries(catalogs[CANONICAL_LOCALE])) {
+    const value = isNonTranslatable(enEntry) ? enEntry.value : catalogs[locale][key].value;
     const segments = key.split('.');
     let node = nested;
     for (const seg of segments.slice(0, -1)) {
@@ -40,9 +45,9 @@ for (const locale of locales) {
       console.error(`ERROR: key "${key}" collides with an existing longer key at its leaf segment`);
       process.exit(1);
     }
-    node[leaf] = entry.value;
+    node[leaf] = value;
   }
   const file = join(outDir, `${locale}.json`);
   writeFileSync(file, `${JSON.stringify(nested, null, 2)}\n`, 'utf8');
-  console.log(`wrote ${file} (${Object.keys(catalogs[locale]).length} keys)`);
+  console.log(`wrote ${file} (${Object.keys(catalogs[CANONICAL_LOCALE]).length} keys)`);
 }

@@ -23,6 +23,37 @@ Each entry maps a key to an object:
 - `value` — the translated string (may contain ICU placeholders, see below).
 - `description` — translator/developer context: where the string appears and what
   placeholders mean. Required on every entry.
+- `translatable` *(optional)* — set to `false` for data-like values that must never be
+  localized (see below). Any value other than `false` (or omitting the field) is a
+  validation error.
+
+## Non-translatable entries (`"translatable": false`)
+
+Some catalog values are **data, not copy**: URIs, technical identifiers, payment deep
+links. Localizing them would break them. Mark those entries `"translatable": false`:
+
+```json
+"menu.about.donate_upi_uri": {
+  "value": "upi://pay?pa=someone@bank&cn=App&tn=App%20donation",
+  "description": "Data, not copy: the UPI payment deep link the Donate row fires.",
+  "translatable": false
+}
+```
+
+Rules:
+
+- The entry lives **only in the canonical `en` catalog/fragment**. It is exempt from key
+  parity; adding a matching entry to `hi` (or any other locale) is a **hard error** — a
+  silently-ignored translation would drift from the canonical value, so the validator
+  refuses it outright.
+- The value must not be an ICU plural (nothing locale-varying to pluralize).
+- **Android** (`gen-android.mjs`): emitted once, in the default `values/strings.xml`,
+  with `android:translatable="false"` — every locale falls back to it. A value containing
+  a literal `%` (percent-encoding in a URI) also gets `formatted="false"` so AAPT does
+  not format-validate it.
+- **Web** (`gen-web.mjs`): the `en` value is copied into **every** locale's messages
+  file, so lookups never miss.
+- Tested by `scripts/test-catalogs.mjs` (fixture-driven; run it with the validator).
 
 ## Key convention: `module.screen.element`
 

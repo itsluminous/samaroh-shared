@@ -501,7 +501,7 @@
   },
   "menu.about.donate_upi": {
     "value": "UPI से दान करें",
-    "description": "About screen row that opens a UPI payment app chooser to support development; also the chooser title."
+    "description": "About screen row that fires the UPI payment deep link to support development; the system shows its own app picker when several UPI apps are installed."
   },
   "menu.about.donate_upi_summary": {
     "value": "इस ऐप के विकास में सहयोग करें",

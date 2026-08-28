@@ -12,6 +12,7 @@ import {
   assertKeyParity,
   discoverLocales,
   extractPlaceholders,
+  isNonTranslatable,
   loadCatalog,
   parseIcuPlural,
 } from './lib.mjs';
@@ -66,6 +67,16 @@ for (const locale of locales) {
 
   for (const [key, entry] of Object.entries(catalogs[CANONICAL_LOCALE])) {
     const name = androidName(key);
+    // Non-translatable entries (URIs, technical identifiers) ship ONLY in the default
+    // values/ resources with translatable="false" — every locale falls back to them.
+    // A literal '%' (e.g. percent-encoding in a URI) must not be format-validated.
+    if (isNonTranslatable(entry)) {
+      if (locale === CANONICAL_LOCALE) {
+        const formatted = entry.value.includes('%') ? ' formatted="false"' : '';
+        lines.push(`    <string name="${name}" translatable="false"${formatted}>${androidEscape(entry.value)}</string>`);
+      }
+      continue;
+    }
     const localized = catalogs[locale][key].value;
     const enPlural = parseIcuPlural(entry.value);
 

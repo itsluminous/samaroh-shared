@@ -501,7 +501,7 @@
   },
   "menu.about.donate_upi": {
     "value": "Donate via UPI",
-    "description": "About screen row that opens a UPI payment app chooser to support development; also the chooser title."
+    "description": "About screen row that fires the UPI payment deep link to support development; the system shows its own app picker when several UPI apps are installed."
   },
   "menu.about.donate_upi_summary": {
     "value": "Support the development of this app",
@@ -510,6 +510,16 @@
   "menu.about.donate_no_upi_app": {
     "value": "No UPI app found on this device",
     "description": "Toast shown when the Donate via UPI row is tapped but no installed app can handle UPI payment links."
+  },
+  "menu.about.donate_upi_uri": {
+    "value": "upi://pay?pa=electricprakash@axisb&cn=Samaroh&tn=Samaroh%20donation",
+    "description": "Data, not copy: the UPI payment deep link the Donate row fires (payee VPA, payee name, note — percent-encoded). Never localized.",
+    "translatable": false
+  },
+  "menu.about.source_code_url": {
+    "value": "https://github.com/itsluminous/samaroh-android",
+    "description": "Data, not copy: the URL the About screen's source-code row opens. Never localized.",
+    "translatable": false
   },
   "settings.event_types.title": {
     "value": "Event types",

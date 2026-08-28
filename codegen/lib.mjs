@@ -3,9 +3,21 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-export const STRINGS_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'strings');
+// SAMAROH_STRINGS_DIR lets the validator/codegen test suite point at fixture catalogs.
+export const STRINGS_DIR =
+  process.env.SAMAROH_STRINGS_DIR || join(dirname(fileURLToPath(import.meta.url)), '..', 'strings');
 export const FRAGMENTS_DIR = join(STRINGS_DIR, 'fragments');
 export const CANONICAL_LOCALE = 'en';
+
+/**
+ * Non-translatable entries (`"translatable": false`) carry data-like values — URIs,
+ * technical identifiers — that must never be localized. They live ONLY in the canonical
+ * (en) catalog: key parity deliberately excludes them, and a translated-locale entry for
+ * such a key is a HARD ERROR (a silently-ignored translation would drift from the
+ * canonical value). Android codegen emits them with `translatable="false"` in the default
+ * values/ resources only; web codegen copies the en value into every locale.
+ */
+export const isNonTranslatable = (entry) => entry.translatable === false;
 
 const LOCALE_PATTERN = '[a-z]{2}(?:-[A-Za-z]+)?';
 const FRAGMENT_FILE_RE = new RegExp(`^([a-z][a-z0-9_-]*)\\.(${LOCALE_PATTERN})\\.json$`);
@@ -72,6 +84,11 @@ export function loadCatalog(locale) {
       if (typeof entry !== 'object' || entry === null || typeof entry.value !== 'string') {
         throw new Error(`${file}: entry "${key}" must be an object with a string "value"`);
       }
+      if ('translatable' in entry && entry.translatable !== false) {
+        throw new Error(
+          `${file}: entry "${key}" has translatable=${JSON.stringify(entry.translatable)} — only false (or omitting the field) is allowed`,
+        );
+      }
       if (key in merged) {
         throw new Error(
           `DUPLICATE KEY: "${key}" defined in both ${keySource[key]} and ${file} (locale ${locale})`,
@@ -86,16 +103,26 @@ export function loadCatalog(locale) {
 
 /**
  * Assert exact key parity between the canonical locale and every other locale.
- * Exits the process with code 1 on any mismatch.
+ * Non-translatable keys (see [isNonTranslatable]) are canonical-only: they are exempt
+ * from the missing-in-locale check, and their PRESENCE in a translated locale is an
+ * error. Exits the process with code 1 on any mismatch.
  */
 export function assertKeyParity(catalogs) {
   const locales = Object.keys(catalogs);
-  const canonicalKeys = new Set(Object.keys(catalogs[CANONICAL_LOCALE]));
+  const canonical = catalogs[CANONICAL_LOCALE];
+  const canonicalKeys = new Set(Object.keys(canonical));
   let ok = true;
   for (const locale of locales) {
     if (locale === CANONICAL_LOCALE) continue;
     const keys = new Set(Object.keys(catalogs[locale]));
     for (const k of canonicalKeys) {
+      if (isNonTranslatable(canonical[k])) {
+        if (keys.has(k)) {
+          console.error(`PARITY ERROR: key "${k}" is non-translatable (en-only) but has an entry in ${locale} — delete it`);
+          ok = false;
+        }
+        continue;
+      }
       if (!keys.has(k)) {
         console.error(`PARITY ERROR: key "${k}" present in ${CANONICAL_LOCALE} but missing in ${locale}`);
         ok = false;

@@ -16,6 +16,8 @@ jobs:
           node-version: 22
       - name: Validate catalogs (schema, key parity, placeholders)
         run: node scripts/validate-catalogs.mjs
+      - name: Catalog pipeline tests (validator + codegen, fixture-driven)
+        run: node scripts/test-catalogs.mjs
       - name: Validate remaining JSON contracts parse
         run: |
           node -e "JSON.parse(require('fs').readFileSync('permissions/permissions-schema.json'))"

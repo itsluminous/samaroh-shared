@@ -8,6 +8,7 @@ event types consumed by `samaroh-android` and `samaroh-web` as a `shared/` git s
 
 ```bash
 node scripts/validate-catalogs.mjs    # catalog shape, key parity (en↔hi), placeholder parity
+node scripts/test-catalogs.mjs        # fixture-driven validator + codegen tests
 bash scripts/legal-check.sh           # legal-hygiene denylist scan (base64-embedded list)
 
 # codegen smoke (what the app repos run at build time):
@@ -23,8 +24,11 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
 1. **Legal hygiene — never name third-party reference products** in strings, docs,
    comments or commit messages. Allowed third-party names: Google, Supabase, WhatsApp
    (share target), OSS attributions. `scripts/legal-check.sh` is CI-blocking.
-2. **Key parity is absolute**: every key exists in both `en` and `hi` (base catalog and
-   every fragment pair). The validator and both app builds fail otherwise.
+2. **Key parity is absolute** for translatable entries: every key exists in both `en` and
+   `hi` (base catalog and every fragment pair). The one exception: entries marked
+   `"translatable": false` (data-like values — URIs, technical identifiers) live **only**
+   in `en`; a `hi` entry for one is a hard error. See `strings/README.md`. The validator,
+   `scripts/test-catalogs.mjs` and both app builds fail otherwise.
 3. **Schema changes are additive migrations only**: never edit an existing
    `supabase/migrations/00N_*.sql`; add the next-numbered file. Contract-level changes
    (schema, invoice layout, permissions shape, key-namespace structure) also require an
