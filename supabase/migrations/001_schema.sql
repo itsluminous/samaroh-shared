@@ -1,6 +1,11 @@
--- 001_schema.sql — canonical Samaroh schema.
+-- 001_schema.sql — canonical Samaroh schema (consolidated baseline).
 -- All tables: client-generated UUID PKs (offline creation), updated_at for LWW conflict
 -- resolution, deleted_at tombstones (soft delete; sync engines never hard-delete synced rows).
+--
+-- This file is the consolidation of the original migrations 001 + 004 (parties.business_related)
+-- + 005 (bookings.color) + 006/007 (event_types table — WITHOUT their per-business seed blocks:
+-- a fresh database has no businesses; presets are seeded CLIENT-SIDE from event-types.json when
+-- a business is created, and the booking import script backfills them too).
 
 -- ============ EXTENSIONS ============
 create extension if not exists "uuid-ossp";
@@ -81,9 +86,15 @@ create table bookings (
   updated_by uuid references auth.users(id),           -- audit
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
-  deleted_at timestamptz
+  deleted_at timestamptz,
+  -- trailing position preserves the physical column order of the pre-consolidation
+  -- schema (this column was appended by former migration 005)
+  color text                       -- calendar color key from booking-colors.json; null = default
 );
 create index idx_bookings_biz_date on bookings(business_id, start_date);
+
+comment on column bookings.color is
+  'Calendar color key from booking-colors.json (e.g. tomato, peacock). NULL = default themed color.';
 
 -- Maintenance/closure blocks — NOT bookings; render grey-striped on calendar
 create table date_blocks (
@@ -137,8 +148,14 @@ create table parties (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
   deleted_at timestamptz,
+  -- trailing position preserves the physical column order of the pre-consolidation
+  -- schema (this column was appended by former migration 004)
+  business_related boolean not null default true,  -- false = personal party
   unique (business_id, name)
 );
+
+comment on column parties.business_related is
+  'true = counts in financial reports; false = personal party, shown only in the personal-expenses report.';
 
 create table expenses (
   id uuid primary key default gen_random_uuid(),
@@ -211,6 +228,41 @@ create table business_settings (
   updated_at timestamptz not null default now()
 );
 
+-- ============ EVENT-TYPE PRESETS ============
+-- Per-business booking event-type presets, user-managed (see docs/event-type-presets.md).
+--   * label is PLAIN TEXT USER DATA, not a catalog key — whatever the user typed (or the
+--     client seed inserted) is what every member sees, in every app language.
+--   * bookings.event_type / bookings.event_icon stay as recorded free text — bookings are
+--     NOT re-pointed at this table. Deleting a preset never touches existing bookings.
+--   * Soft delete via deleted_at like every other synced table, so uniqueness is a PARTIAL
+--     unique index over live rows only (a deleted preset's name can be reused).
+--   * NO seed here: a fresh database has no businesses. The app that creates a business
+--     seeds the presets CLIENT-SIDE from event-types.json (the seed template) in the same
+--     flow; the booking import script also backfills missing presets.
+create table event_types (
+  id uuid primary key default gen_random_uuid(),
+  business_id uuid not null references businesses(id) on delete cascade,
+  label text not null,               -- plain-text display name (user data, not a catalog key)
+  icon text not null,                -- emoji shown on the calendar / booking form
+  color text,                        -- default calendar color key from booking-colors.json; null = themed default
+  sort_order int not null default 0, -- display order in pickers and the manage screen
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  deleted_at timestamptz
+);
+
+comment on table event_types is
+  'Per-business booking event-type presets, user-managed. Seeded CLIENT-SIDE from event-types.json (the seed template) when a business is created; the import script backfills.';
+comment on column event_types.label is
+  'Plain-text display name. User data — NOT localized; not a string-catalog key.';
+comment on column event_types.color is
+  'Default calendar color key from booking-colors.json (e.g. tomato). NULL = standard themed color.';
+
+-- Live presets must have unique names per business; tombstoned rows do not block reuse.
+create unique index uq_event_types_biz_label
+  on event_types (business_id, label)
+  where deleted_at is null;
+
 -- ============ updated_at TRIGGER (LWW conflict resolution) ============
 -- The server clock is authoritative: every write bumps updated_at to now(), so
 -- clients can pull incrementally (updated_at > cursor) and resolve conflicts
@@ -263,6 +315,9 @@ create trigger trg_inventory_transactions_updated_at
   for each row execute function set_updated_at();
 create trigger trg_business_settings_updated_at
   before insert or update on business_settings
+  for each row execute function set_updated_at();
+create trigger trg_event_types_updated_at
+  before insert or update on event_types
   for each row execute function set_updated_at();
 
 -- ============ FIFO HELPER (web app reads current stock server-side) ============

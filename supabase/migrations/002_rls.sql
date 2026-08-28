@@ -20,6 +20,7 @@
 --   business_settings   -> member SELECT; settings.manage_business for writes
 --   business_members    -> owner-managed; members may SELECT their own row
 --   google_accounts     -> row owner only (refresh tokens NEVER visible to others)
+--   event_types         -> member SELECT; settings.manage_business for writes
 --
 -- NOTE: the app soft-deletes (sets deleted_at) via UPDATE; the DELETE policies below
 -- exist so that even a hard delete is permission-guarded.
@@ -101,6 +102,7 @@ alter table expense_attachments enable row level security;
 alter table master_items enable row level security;
 alter table inventory_transactions enable row level security;
 alter table business_settings enable row level security;
+alter table event_types enable row level security;
 
 -- ============ businesses ============
 create policy businesses_select on businesses
@@ -244,6 +246,21 @@ create policy inventory_transactions_update on inventory_transactions
   with check (has_perm(business_id, 'inventory', 'edit'));
 create policy inventory_transactions_delete on inventory_transactions
   for delete using (has_perm(business_id, 'inventory', 'delete'));
+
+-- ============ event_types ============
+-- SELECT: any active member — consistent with businesses_select. Every member
+-- needs the presets to render the calendar and booking form regardless of
+-- their booking.* permissions.
+-- Writes: settings.manage_business (has_perm already grants owners implicitly).
+create policy event_types_select on event_types
+  for select using (is_active_member(business_id));
+create policy event_types_insert on event_types
+  for insert with check (has_perm(business_id, 'settings', 'manage_business'));
+create policy event_types_update on event_types
+  for update using (has_perm(business_id, 'settings', 'manage_business'))
+  with check (has_perm(business_id, 'settings', 'manage_business'));
+create policy event_types_delete on event_types
+  for delete using (has_perm(business_id, 'settings', 'manage_business'));
 
 -- ============ INVITE ACTIVATION ============
 -- Invite flow: owner creates business_members(status='invited', invited_email=...).
