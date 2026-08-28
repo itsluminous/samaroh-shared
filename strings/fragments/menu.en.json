@@ -510,5 +510,45 @@
   "menu.about.donate_no_upi_app": {
     "value": "No UPI app found on this device",
     "description": "Toast shown when the Donate via UPI row is tapped but no installed app can handle UPI payment links."
+  },
+  "settings.event_types.title": {
+    "value": "Event types",
+    "description": "Title of the manage event-type presets screen (Menu → Settings). Preset labels themselves are plain-text user data from the event_types table, NOT catalog keys."
+  },
+  "settings.event_types.empty": {
+    "value": "No event types yet — add one and it will appear in the booking form",
+    "description": "Empty state of the manage event-type presets screen, shown when every preset has been deleted."
+  },
+  "settings.event_types.add_title": {
+    "value": "New event type",
+    "description": "Title of the dialog for adding an event-type preset."
+  },
+  "settings.event_types.edit_title": {
+    "value": "Edit event type",
+    "description": "Title of the dialog for editing an existing event-type preset."
+  },
+  "settings.event_types.name_label": {
+    "value": "Name",
+    "description": "Label of the preset name input in the add/edit event-type dialog. The value entered is stored as plain text in event_types.label."
+  },
+  "settings.event_types.icon_label": {
+    "value": "Icon",
+    "description": "Label of the emoji input in the add/edit event-type dialog (event_types.icon)."
+  },
+  "settings.event_types.color_label": {
+    "value": "Colour",
+    "description": "Label of the default calendar-colour picker in the add/edit event-type dialog (event_types.color, a booking-colors.json key; empty = themed default)."
+  },
+  "settings.event_types.delete_title": {
+    "value": "Delete event type?",
+    "description": "Title of the delete-preset confirmation dialog."
+  },
+  "settings.event_types.delete_message": {
+    "value": "Delete “{label}”? Existing bookings keep their recorded event type and icon.",
+    "description": "Body of the delete-preset confirmation dialog. {label} is the preset's name. Must reassure that bookings are untouched: bookings store the type/icon as recorded free text, not a reference to the preset."
+  },
+  "settings.event_types.duplicate_name": {
+    "value": "An event type with this name already exists",
+    "description": "Inline error in the add/edit dialog when the entered name matches another live preset of this business (backed by the partial unique index on event_types)."
   }
 }

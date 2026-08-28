@@ -510,5 +510,45 @@
   "menu.about.donate_no_upi_app": {
     "value": "इस डिवाइस पर कोई UPI ऐप नहीं मिला",
     "description": "Toast shown when the Donate via UPI row is tapped but no installed app can handle UPI payment links."
+  },
+  "settings.event_types.title": {
+    "value": "आयोजन के प्रकार",
+    "description": "Title of the manage event-type presets screen (Menu → Settings). Preset labels themselves are plain-text user data from the event_types table, NOT catalog keys."
+  },
+  "settings.event_types.empty": {
+    "value": "अभी कोई आयोजन प्रकार नहीं है — एक जोड़ें और वह बुकिंग फ़ॉर्म में दिखेगा",
+    "description": "Empty state of the manage event-type presets screen, shown when every preset has been deleted."
+  },
+  "settings.event_types.add_title": {
+    "value": "नया आयोजन प्रकार",
+    "description": "Title of the dialog for adding an event-type preset."
+  },
+  "settings.event_types.edit_title": {
+    "value": "आयोजन प्रकार बदलें",
+    "description": "Title of the dialog for editing an existing event-type preset."
+  },
+  "settings.event_types.name_label": {
+    "value": "नाम",
+    "description": "Label of the preset name input in the add/edit event-type dialog. The value entered is stored as plain text in event_types.label."
+  },
+  "settings.event_types.icon_label": {
+    "value": "चिह्न",
+    "description": "Label of the emoji input in the add/edit event-type dialog (event_types.icon)."
+  },
+  "settings.event_types.color_label": {
+    "value": "रंग",
+    "description": "Label of the default calendar-colour picker in the add/edit event-type dialog (event_types.color, a booking-colors.json key; empty = themed default)."
+  },
+  "settings.event_types.delete_title": {
+    "value": "आयोजन प्रकार हटाएँ?",
+    "description": "Title of the delete-preset confirmation dialog."
+  },
+  "settings.event_types.delete_message": {
+    "value": "“{label}” हटाएँ? पहले से दर्ज बुकिंग में आयोजन का प्रकार और चिह्न वैसे ही रहेंगे।",
+    "description": "Body of the delete-preset confirmation dialog. {label} is the preset's name. Must reassure that bookings are untouched: bookings store the type/icon as recorded free text, not a reference to the preset."
+  },
+  "settings.event_types.duplicate_name": {
+    "value": "इस नाम का आयोजन प्रकार पहले से मौजूद है",
+    "description": "Inline error in the add/edit dialog when the entered name matches another live preset of this business (backed by the partial unique index on event_types)."
   }
 }
