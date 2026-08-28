@@ -17,8 +17,11 @@ supabase/
 brand/                    logo + shared color palette tokens
 invoice/                  invoice PDF layout contract (both renderers must match)
 permissions/              JSON Schema for member permissions
-event-types.json          built-in booking event types (key, emoji, catalog label key,
-                          default calendar color — a booking-colors.json key)
+event-types.json          SEED TEMPLATE for per-business event-type presets (key, emoji,
+                          catalog label key, default calendar color — a booking-colors.json
+                          key). Presets live in the event_types table since migration 006;
+                          clients seed NEW businesses from this file at business creation.
+docs/                     shared decision notes (e.g. event-type presets model)
 scripts/                  CI validators + operational SQL (see below)
 ```
 
@@ -31,7 +34,7 @@ split into a small base catalog plus **per-namespace fragment files**
 onboarding, reports, sync-invoice, designsystem, polish, web-auth, web-expinv, web-menu).
 Fragments exist so parallel feature work merges additively: each feature owns its own
 fragment pair and never touches another feature's file. Codegen and the validator merge
-base + all fragments into one catalog (currently **705 keys × 2 locales**).
+base + all fragments into one catalog (currently **734 keys × 2 locales**).
 
 App repos never hand-edit generated resources — they are git-ignored and regenerated at
 build time:
@@ -60,6 +63,8 @@ node codegen/gen-web.mjs <web-app>/messages
 | `002_rls.sql` | RLS helper functions, per-command policies on every table, invite activation |
 | `003_storage.sql` | private storage buckets + membership-scoped object policies |
 | `004_party_business_flag.sql` | `parties.business_related boolean not null default true` (personal-party support) |
+| `005_booking_color.sql` | `bookings.color` — user-chosen calendar color key (booking-colors.json) |
+| `006_event_types.sql` | `event_types` table (user-managed presets), RLS, seed of the 7 built-ins for existing businesses — see `docs/event-type-presets.md` |
 
 Apply with the Supabase CLI (`supabase db push` against a linked project, or
 `supabase db reset` locally — which also loads `seed.sql`). Schema changes are made only by
@@ -86,12 +91,13 @@ rendered in the app's current language from this catalog. Any layout change requ
 
 ## Booking calendar colors
 
-`booking-colors.json` defines the curated 16-swatch picker palette; `event-types.json`
-gives every built-in event type a distinct **default** color from that palette (its
-`color` field). Both apps resolve a booking's calendar color the same way:
+`booking-colors.json` defines the curated 16-swatch picker palette. Every event-type
+preset carries a distinct **default** color from that palette (its `color` — a
+`booking-colors.json` key), stored on the preset's `event_types` row (seeded from
+`event-types.json`). Both apps resolve a booking's calendar color the same way:
 
 1. `bookings.color` if set (the user picked a swatch),
-2. else the booking's event-type `color` default from `event-types.json`,
+2. else the booking's event-type `color` default,
 3. else the standard themed purple look.
 
 ## Permissions schema
