@@ -28,7 +28,11 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
 3. **Schema changes are additive migrations only**: never edit an existing
    `supabase/migrations/00N_*.sql`; add the next-numbered file. Contract-level changes
    (schema, invoice layout, permissions shape, key-namespace structure) also require an
-   ADR entry in the affected app repos' `docs/decisions.md`.
+   ADR entry in the affected app repos' `docs/decisions.md`. (One historical exception:
+   in Aug 2026 the original migrations 001–007 were consolidated into the current
+   3-file baseline as part of a deliberate full-schema rebuild via
+   `scripts/destroy-everything.sql`; the net schema was verified identical by
+   old-vs-new pg_dump diff. From that baseline the additive rule applies again.)
 
 ## Conventions
 
@@ -45,5 +49,8 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
   `feat(schema): …`, `feat(scripts): …`).
 - Operational scripts live in `scripts/` (`cleanup-data.sql` for data rows,
   `cleanup-storage.mjs` for storage files — SQL cannot touch storage tables on
-  hosted Supabase, error 42501). Keep the header comments (what's kept vs
-  deleted) accurate when editing.
+  hosted Supabase, error 42501; `destroy-everything.sql` for a full schema
+  drop + rebuild via `supabase db push`). Keep the header comments (what's
+  kept vs deleted) accurate when editing. Event-type presets are seeded
+  CLIENT-SIDE at business creation (both apps, from `event-types.json`); the
+  booking import script backfills — migrations never seed them.

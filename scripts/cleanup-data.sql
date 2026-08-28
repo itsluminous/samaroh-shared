@@ -10,7 +10,7 @@
 --              master_items                      (child tables first, FK-safe)
 --     kept   : auth.users, businesses, business_members, business_settings,
 --              google_accounts, event_types
---   event_types (migration 006) are deliberately KEPT: they are per-business
+--   event_types are deliberately KEPT: they are per-business
 --   user CONFIGURATION (like the business profile / settings), not
 --   operational data — a data reset must not wipe the user's preset list.
 --   Resets bookings-dependent state on the KEPT tables:

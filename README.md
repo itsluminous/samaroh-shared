@@ -19,8 +19,9 @@ invoice/                  invoice PDF layout contract (both renderers must match
 permissions/              JSON Schema for member permissions
 event-types.json          SEED TEMPLATE for per-business event-type presets (key, emoji,
                           catalog label key, default calendar color — a booking-colors.json
-                          key). Presets live in the event_types table since migration 006;
-                          clients seed NEW businesses from this file at business creation.
+                          key). Presets live in the event_types table; BOTH apps seed a
+                          NEW business from this file client-side at business creation,
+                          and the booking import script backfills missing presets.
 docs/                     shared decision notes (e.g. event-type presets model)
 scripts/                  CI validators + operational SQL (see below)
 ```
@@ -55,16 +56,19 @@ node codegen/gen-web.mjs <web-app>/messages
 
 ## Database
 
-`supabase/migrations/` is the canonical schema:
+`supabase/migrations/` is the canonical schema — a **consolidated 3-file baseline**
+(the former migrations 001–007 were squashed into it; the net schema is identical):
 
 | File | Contents |
 |---|---|
-| `001_schema.sql` | extensions, enums, all tables, indexes, `updated_at` triggers, inventory helper |
-| `002_rls.sql` | RLS helper functions, per-command policies on every table, invite activation |
-| `003_storage.sql` | private storage buckets + membership-scoped object policies |
-| `004_party_business_flag.sql` | `parties.business_related boolean not null default true` (personal-party support) |
-| `005_booking_color.sql` | `bookings.color` — user-chosen calendar color key (booking-colors.json) |
-| `006_event_types.sql` | `event_types` table (user-managed presets), RLS, seed of the 7 built-ins for existing businesses — see `docs/event-type-presets.md` |
+| `001_schema.sql` | extensions, enums, all tables in final shape (incl. `parties.business_related`, `bookings.color`, `event_types`), indexes, `updated_at` triggers, inventory helper |
+| `002_rls.sql` | RLS helper functions, per-command policies on every table (incl. `event_types`), invite activation trigger on `auth.users` |
+| `003_storage.sql` | private storage buckets (created idempotently) + membership-scoped object policies |
+
+There is **no server-side seeding of event-type presets**: a fresh database has no
+businesses. Both apps seed the presets **client-side from `event-types.json` when a
+business is created**, and the booking import script backfills missing presets — see
+`docs/event-type-presets.md`.
 
 Apply with the Supabase CLI (`supabase db push` against a linked project, or
 `supabase db reset` locally — which also loads `seed.sql`). Schema changes are made only by
@@ -76,10 +80,19 @@ Apply new migrations **before** deploying app versions that read the new columns
 | Script | Purpose |
 |---|---|
 | `scripts/cleanup-data.sql` | **The** data-wipe script — wipe operational data for one business (or all, the default): hard-deletes bookings/payments/reminders/date blocks, expenses/parties/attachments, inventory transactions/master items (child tables first, FK-safe). **Keeps** accounts and setup (`auth.users`, `businesses`, `business_members`, `business_settings`, `google_accounts`, `event_types` — user config) and resets `businesses.invoice_counter` to 0. Run in the Supabase SQL editor (transactional, FK-ordered). |
-| `scripts/cleanup-storage.mjs` | Companion to `cleanup-data.sql` — empties the `inventory-images` and `booking-invoices` storage buckets via the Storage API (hosted Supabase rejects SQL against storage tables with error 42501). Keeps the `logos` bucket. Supports `--dry-run`. Setup: `cd scripts && npm i`, then `SUPABASE_SERVICE_KEY=<key> node cleanup-storage.mjs`. |
+| `scripts/cleanup-storage.mjs` | Companion to the SQL scripts — empties the `inventory-images` and `booking-invoices` storage buckets via the Storage API (hosted Supabase rejects SQL against storage tables with error 42501). Keeps the `logos` bucket. Supports `--dry-run`. Setup: `cd scripts && npm i`, then `SUPABASE_SERVICE_KEY=<key> node cleanup-storage.mjs`. |
+| `scripts/destroy-everything.sql` | ☢️ **Total schema destruction** — drops every Samaroh table (cascade), enum, function, the `auth.users` trigger and the storage policies, and clears the `supabase_migrations` history so `supabase db push` re-applies the baseline from scratch. Keeps `auth.users` rows and `storage.buckets`. Storage FILES are wiped separately by `cleanup-storage.mjs`. |
 
-A full reset = run `cleanup-data.sql` in the SQL editor, then `cleanup-storage.mjs`
-with the service-role key. Accounts and business setup survive both.
+A full reset (data only) = run `cleanup-data.sql` in the SQL editor, then
+`cleanup-storage.mjs` with the service-role key. Accounts and business setup survive both.
+
+A **clean-slate rebuild** (drop and recreate the whole schema) =
+
+1. `destroy-everything.sql` in the SQL editor,
+2. `node scripts/cleanup-storage.mjs` (wipe stored files),
+3. `supabase db push` (re-applies the consolidated baseline),
+4. recreate the business via app onboarding (presets seed client-side),
+5. re-run the import scripts.
 
 ## Invoice layout contract
 

@@ -1,12 +1,18 @@
 # Event-type presets: database-backed, plain-text labels
 
-Migration `006_event_types.sql` moves booking event-type presets from static
-config (`event-types.json`) into the per-business `event_types` table so users
-can add, edit, reorder and delete their own presets.
+Booking event-type presets moved from static config (`event-types.json`) into
+the per-business `event_types` table (originally migration `006_event_types.sql`,
+now part of the consolidated `001_schema.sql` baseline) so users can add, edit,
+reorder and delete their own presets.
+
+**Seeding is client-side**: BOTH apps insert the presets from `event-types.json`
+(the seed template) when a business is created, and the booking import script
+backfills missing presets. Migrations never seed presets — a fresh database has
+no businesses to seed.
 
 ## Decision: labels are plain text, no longer localized
 
-Until 006, event-type display names were string-catalog keys
+Until then, event-type display names were string-catalog keys
 (`booking.event_type.*`) resolved per-locale at render time — an English user
 saw "Wedding", a Hindi user saw "शादी" for the same booking.
 
@@ -22,17 +28,18 @@ inconsistent and force clients to keep two rendering paths for the same
 picker. One rule ("the label is the label") is simpler and matches how the
 rest of the product treats user-entered text.
 
-## Tradeoff: existing businesses are seeded in English
+## Tradeoff: server-side seeding (historical) was in English
 
-Migration 006 seeds the 7 built-ins for every existing business with their
-**English** labels (Engagement, Tilak, … Custom), because a server-side
-migration has no way to know each business's preferred app language. A
-Hindi-locale user of a pre-006 business will see English preset names until
-they rename them — that is the accepted cost of the plain-text model.
+The original migration 006 seeded the 7 built-ins for every then-existing
+business with their **English** labels (Engagement, Tilak, … Custom), because
+a server-side migration has no way to know each business's preferred app
+language. That seed block did NOT survive the consolidation into the current
+baseline — it is unnecessary on a fresh database.
 
-Mitigation: seeding for **future** businesses is client-side at business
-creation (the app inserts the presets from `event-types.json`, the seed
-template), so a client *may* seed in the device's current language.
+Seeding is now entirely client-side at business creation (the app inserts the
+presets from `event-types.json`, the seed template), so a client *may* seed in
+the device's current language; the booking import script backfills missing
+presets in English (the template's canonical locale).
 
 ## What deleting a preset means
 
