@@ -530,5 +530,9 @@
   "booking.color.graphite": {
     "value": "स्लेटी",
     "description": "Name of the \"graphite\" swatch in the booking color picker (see booking-colors.json)."
+  },
+  "booking.calendar.add_new_event": {
+    "value": "नया कार्यक्रम जोड़ें",
+    "description": "Final row of the day bottom sheet (shown when a tapped date has bookings): opens the add-booking form prefilled with that date."
   }
 }
