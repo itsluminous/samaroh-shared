@@ -75,11 +75,11 @@ Apply new migrations **before** deploying app versions that read the new columns
 
 | Script | Purpose |
 |---|---|
-| `scripts/cleanup-data.sql` | Wipe operational data for one business (or all): hard-deletes bookings/payments/reminders/date blocks, expenses/parties/attachments, inventory transactions/master items (child tables first, FK-safe). **Keeps** accounts and setup (`auth.users`, `businesses`, `business_members`, `business_settings`, `google_accounts`) and resets `businesses.invoice_counter` to 0. |
-| `scripts/cleanup-all-data.sql` | Full pre-launch reset: everything `cleanup-data.sql` deletes **plus** stored files in the storage buckets, so real data can be re-imported from scratch. Accounts and business setup survive. |
+| `scripts/cleanup-data.sql` | **The** data-wipe script — wipe operational data for one business (or all, the default): hard-deletes bookings/payments/reminders/date blocks, expenses/parties/attachments, inventory transactions/master items (child tables first, FK-safe). **Keeps** accounts and setup (`auth.users`, `businesses`, `business_members`, `business_settings`, `google_accounts`, `event_types` — user config) and resets `businesses.invoice_counter` to 0. Run in the Supabase SQL editor (transactional, FK-ordered). |
+| `scripts/cleanup-storage.mjs` | Companion to `cleanup-data.sql` — empties the `inventory-images` and `booking-invoices` storage buckets via the Storage API (hosted Supabase rejects SQL against storage tables with error 42501). Keeps the `logos` bucket. Supports `--dry-run`. Setup: `cd scripts && npm i`, then `SUPABASE_SERVICE_KEY=<key> node cleanup-storage.mjs`. |
 
-Run either in the Supabase SQL editor (or `psql`) as a privileged role; both are
-transactional and ordered to satisfy foreign keys.
+A full reset = run `cleanup-data.sql` in the SQL editor, then `cleanup-storage.mjs`
+with the service-role key. Accounts and business setup survive both.
 
 ## Invoice layout contract
 

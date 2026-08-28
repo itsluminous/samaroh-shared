@@ -1,0 +1,14 @@
+{
+  "name": "samaroh-shared-scripts",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Operational scripts for Samaroh's Supabase. `npm i` here installs @supabase/supabase-js for cleanup-storage.mjs.",
+  "scripts": {
+    "cleanup-storage": "node cleanup-storage.mjs",
+    "cleanup-storage:dry": "node cleanup-storage.mjs --dry-run"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}

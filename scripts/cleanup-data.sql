@@ -1,46 +1,58 @@
--- cleanup-data.sql — wipe operational data for a business (or all businesses)
+-- cleanup-data.sql — THE data-wipe script: reset all operational data
 -- ============================================================================
+-- Full reset of operational data for one business (or all businesses), so real
+-- data can be re-imported from scratch. Accounts and business setup survive.
+--
 -- WHAT IT DOES
---   Hard-deletes ALL operational data while KEEPING accounts and setup:
---     kept   : auth.users, businesses, business_members, business_settings,
---              google_accounts, event_types
+--   Hard-deletes ALL operational data rows:
 --     deleted: payment_reminders, booking_payments, bookings, date_blocks,
 --              expense_attachments, expenses, parties, inventory_transactions,
---              master_items                     (child tables first, FK-safe)
+--              master_items                      (child tables first, FK-safe)
+--     kept   : auth.users, businesses, business_members, business_settings,
+--              google_accounts, event_types
 --   event_types (migration 006) are deliberately KEPT: they are per-business
 --   user CONFIGURATION (like the business profile / settings), not
---   operational data — wiping bookings must not wipe the user's preset list.
---   Also resets bookings-dependent state on the kept tables:
---     - businesses.invoice_counter -> 0  (invoice numbers restart from scratch;
+--   operational data — a data reset must not wipe the user's preset list.
+--   Resets bookings-dependent state on the KEPT tables:
+--     - businesses.invoice_counter -> 0 (invoice numbers restart from scratch;
 --       the numbers themselves lived on the deleted bookings.invoice_number)
---     - business_settings.last_backup_at -> null (any recorded backup described
+--     - business_settings.last_backup_at -> null (recorded backups described
 --       data that no longer exists)
+--
+-- STORAGE FILES — handled by the COMPANION SCRIPT, not here
+--   This script does NOT touch Supabase Storage. Hosted Supabase forbids SQL
+--   against the storage tables:
+--     ERROR 42501: "Direct deletion from storage tables is not allowed.
+--     Use the Storage API instead."
+--   Run the companion Node script AFTER this one to wipe the files the
+--   deleted rows referenced (invoice PDFs in 'booking-invoices', item photos
+--   in 'inventory-images'; the 'logos' bucket is kept — logos are setup):
+--     node scripts/cleanup-storage.mjs --dry-run     # preview
+--     SUPABASE_URL=... SUPABASE_SERVICE_KEY=... node scripts/cleanup-storage.mjs
+--   (Expense attachment files live in the owner's Google Drive, not Supabase
+--   Storage — only the expense_attachments metadata rows are removed here;
+--   Drive is never touched.)
 --
 -- HOW TO RUN (Supabase SQL editor)
 --   1. Open the project's SQL editor (runs as postgres, bypasses RLS).
 --   2. Paste this file.
 --   3. Set target_business below:
---        - ONE business : keep the uuid literal, paste the business id.
---        - ALL businesses (run-for-all variant): replace the line with
+--        - ALL businesses (the default, the full-reset case):
 --              target_business uuid := null;
---          A null target makes every "matches(...)" check true, so the wipe
---          applies to EVERY business. Double-check before running!
---   4. Run. The NOTICE at the end reports per-table deleted row counts.
+--        - ONE business only: replace null with the business id in quotes:
+--              target_business uuid := '00000000-0000-...';
+--   4. Run. NOTICEs report per-table deleted row counts.
 --
 -- NOTES
---   - Deletions are HARD deletes (not deleted_at tombstones): synced clients
+--   - Deletions are HARD deletes (no deleted_at tombstones): synced clients
 --     will not see tombstones, so clear their local store (sign out / clear
---     site data) after running this.
---   - expense_attachments rows are metadata pointing at files in the owner's
---     Google Drive; this script removes the rows only and never touches
---     Drive. Generated invoice PDFs / inventory photos in Supabase Storage
---     can optionally be removed with the storage.objects block at the bottom.
+--     site data) on every device after running this.
 -- ============================================================================
 
 do $$
 declare
-  -- >>> SET THIS: business id to clean, or null for ALL businesses <<<
-  target_business uuid := 'PASTE-BUSINESS-ID-HERE';
+  -- >>> null = ALL businesses (full reset); or paste one business id <<<
+  target_business uuid := null;
 
   n bigint;
   total bigint := 0;
@@ -116,15 +128,6 @@ begin
   get diagnostics n = row_count;
   raise notice 'business_settings: last_backup_at cleared on % row(s)', n;
 
-  raise notice 'DONE — % data row(s) deleted (accounts, businesses, members, settings, google_accounts and event_types kept).', total;
+  raise notice 'DONE — % data row(s) deleted. Kept: auth.users, businesses, business_members, business_settings, google_accounts, event_types.', total;
+  raise notice 'NEXT: wipe the stored files with  node scripts/cleanup-storage.mjs  (SQL cannot — error 42501).';
 end $$;
-
--- OPTIONAL: also remove data-dependent FILES from Supabase Storage. The rows
--- above referenced generated invoice PDFs (booking-invoices) and item photos
--- (inventory-images); business logos are setup, not data, and are kept.
--- (Expense attachments live in Google Drive, not Supabase Storage — see
--- 003_storage.sql.) Files live under a "<business_id>/..." prefix. Uncomment
--- to run; drop the "and name like" line for the run-for-all variant.
--- delete from storage.objects
---   where bucket_id in ('booking-invoices', 'inventory-images')
---     and name like 'PASTE-BUSINESS-ID-HERE/%';

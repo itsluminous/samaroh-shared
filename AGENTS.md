@@ -43,5 +43,7 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
   this repo and the remote may have advanced mid-task. Never force-push.
 - Conventional Commits, imperative, ≤50-char subject (`feat(strings): …`,
   `feat(schema): …`, `feat(scripts): …`).
-- Operational SQL lives in `scripts/` (`cleanup-data.sql`, `cleanup-all-data.sql`) —
-  keep the header comments (what's kept vs deleted) accurate when editing.
+- Operational scripts live in `scripts/` (`cleanup-data.sql` for data rows,
+  `cleanup-storage.mjs` for storage files — SQL cannot touch storage tables on
+  hosted Supabase, error 42501). Keep the header comments (what's kept vs
+  deleted) accurate when editing.
