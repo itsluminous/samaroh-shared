@@ -48,7 +48,9 @@ document is the contract. Any change requires a `docs/decisions.md` entry in bot
    - Localized "Billed to" label (bold), customer name, customer phone (if present).
 
 3. **Event block**
-   - Event icon emoji + localized event-type label.
+   - Localized event-type label — **no event icon/emoji in PDF output** (both renderers):
+     emoji glyphs render inconsistently (or as tofu) across PDF fonts and viewers. The
+     icon stays in the app UIs and in the text receipt.
    - Date or date range (locale-formatted; range with an en dash), times if set.
 
 4. **Amounts block**
@@ -77,10 +79,12 @@ document is the contract. Any change requires a `docs/decisions.md` entry in bot
 
 - Every label above comes from `invoice.*` keys in the string catalog — zero hardcoded text.
 - Dates: locale-formatted (e.g. `10 Jul 2026` / `१० जुलाई २०२६` per locale conventions).
-- Emoji render as-is (not localized).
+- No event icons/emoji anywhere in the PDF output (see Event block) — both renderers.
 
 ## Text (non-PDF) variant
 
 The "share as text" receipt mirrors the same order — business name, invoice number,
 customer, event + dates, total / deposit / paid / due, then one line per payment — using
-the same localized labels and the same ₹ formatting.
+the same localized labels and the same ₹ formatting. Unlike the PDF, the text receipt
+KEEPS the event icon emoji on the event line (plain text renders emoji fine; it is sent
+through a share intent, not embedded in a PDF font). Emoji render as-is (not localized).
