@@ -9,7 +9,10 @@
 --              expense_attachments, expenses, parties, inventory_transactions,
 --              master_items                      (child tables first, FK-safe)
 --     kept   : auth.users, businesses, business_members, business_settings,
---              google_accounts
+--              google_accounts, event_types
+--   event_types (migration 006) are deliberately KEPT: they are per-business
+--   user CONFIGURATION (like the business profile / settings), not
+--   operational data — a full data reset must not wipe the user's preset list.
 --   Resets bookings-dependent state on the KEPT tables:
 --     - businesses.invoice_counter -> 0 (invoice numbers restart from scratch)
 --     - business_settings.last_backup_at -> null (recorded backups described
@@ -128,5 +131,5 @@ begin
   get diagnostics n = row_count;
   raise notice 'storage.objects (booking-invoices, inventory-images): % deleted (logos kept)', n;
 
-  raise notice 'DONE — % data row(s) deleted. Kept: auth.users, businesses, business_members, business_settings, google_accounts, logos bucket.', total;
+  raise notice 'DONE — % data row(s) deleted. Kept: auth.users, businesses, business_members, business_settings, google_accounts, event_types, logos bucket.', total;
 end $$;

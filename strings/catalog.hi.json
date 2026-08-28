@@ -131,6 +131,14 @@
     "value": "अपनी पसंद",
     "description": "Built-in event type label (✨) — user provides free-text label and emoji."
   },
+  "booking.event_type.lagan": {
+    "value": "लगन",
+    "description": "Built-in event type label (⭐) — lagan (auspicious wedding-date fixing) ceremony."
+  },
+  "booking.event_type.muh_dikhayi": {
+    "value": "मुंह दिखाई",
+    "description": "Built-in event type label (👰🏻‍♀️) — muh dikhayi (bride's first-look) ceremony."
+  },
   "common.language.switcher_label": {
     "value": "भाषा",
     "description": "Label / accessible name for the locale switcher control in the app bar and settings."

@@ -7,6 +7,8 @@
     { "key": "room_booking", "emoji": "🏨", "label_key": "booking.event_type.room_booking", "color": "blueberry" },
     { "key": "birthday", "emoji": "🎂", "label_key": "booking.event_type.birthday", "color": "banana" },
     { "key": "anniversary", "emoji": "👫🏻", "label_key": "booking.event_type.anniversary", "color": "sage" },
-    { "key": "custom", "emoji": "✨", "label_key": "booking.event_type.custom", "color": "grape" }
+    { "key": "custom", "emoji": "✨", "label_key": "booking.event_type.custom", "color": "grape" },
+    { "key": "lagan", "emoji": "⭐", "label_key": "booking.event_type.lagan", "color": "peacock" },
+    { "key": "muh_dikhayi", "emoji": "👰🏻‍♀️", "label_key": "booking.event_type.muh_dikhayi", "color": "fuchsia" }
   ]
 }

@@ -3,10 +3,13 @@
 -- WHAT IT DOES
 --   Hard-deletes ALL operational data while KEEPING accounts and setup:
 --     kept   : auth.users, businesses, business_members, business_settings,
---              google_accounts
+--              google_accounts, event_types
 --     deleted: payment_reminders, booking_payments, bookings, date_blocks,
 --              expense_attachments, expenses, parties, inventory_transactions,
 --              master_items                     (child tables first, FK-safe)
+--   event_types (migration 006) are deliberately KEPT: they are per-business
+--   user CONFIGURATION (like the business profile / settings), not
+--   operational data — wiping bookings must not wipe the user's preset list.
 --   Also resets bookings-dependent state on the kept tables:
 --     - businesses.invoice_counter -> 0  (invoice numbers restart from scratch;
 --       the numbers themselves lived on the deleted bookings.invoice_number)
@@ -113,7 +116,7 @@ begin
   get diagnostics n = row_count;
   raise notice 'business_settings: last_backup_at cleared on % row(s)', n;
 
-  raise notice 'DONE — % data row(s) deleted (accounts, businesses, members, settings and google_accounts kept).', total;
+  raise notice 'DONE — % data row(s) deleted (accounts, businesses, members, settings, google_accounts and event_types kept).', total;
 end $$;
 
 -- OPTIONAL: also remove data-dependent FILES from Supabase Storage. The rows
