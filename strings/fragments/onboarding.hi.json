@@ -87,6 +87,10 @@
     "value": "स्वीकार कर जुड़ें",
     "description": "Button on an invitation row that accepts the invite and enters that business."
   },
+  "onboarding.join.accept_failed": {
+    "value": "निमंत्रण स्वीकार नहीं हो सका। अपना कनेक्शन जांचें और फिर से कोशिश करें।",
+    "description": "Error shown on the invitation screen when accepting an invitation fails (offline, or the server refused the activation)."
+  },
   "onboarding.join.empty": {
     "value": "आपके ईमेल के लिए अभी कोई निमंत्रण नहीं मिला। मालिक से निमंत्रण भेजने को कहें, फिर दोबारा कोशिश करें।",
     "description": "Empty state on the invitation screen when no pending invitation exists for the signed-in email."

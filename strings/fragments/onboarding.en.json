@@ -87,6 +87,10 @@
     "value": "Accept & join",
     "description": "Button on an invitation row that accepts the invite and enters that business."
   },
+  "onboarding.join.accept_failed": {
+    "value": "Couldn't accept the invitation. Check your connection and try again.",
+    "description": "Error shown on the invitation screen when accepting an invitation fails (offline, or the server refused the activation)."
+  },
   "onboarding.join.empty": {
     "value": "No invitations found for your email yet. Ask the owner to invite you, then try again.",
     "description": "Empty state on the invitation screen when no pending invitation exists for the signed-in email."
