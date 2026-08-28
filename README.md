@@ -1,5 +1,7 @@
 # samaroh-shared
 
+[![CI](https://github.com/itsluminous/samaroh-shared/actions/workflows/ci.yml/badge.svg)](https://github.com/itsluminous/samaroh-shared/actions/workflows/ci.yml)
+
 Single source of truth for everything Samaroh's Android app and web app must agree on:
 strings, database schema, brand assets, invoice layout, permission shapes and event types.
 Both app repos consume this repo as a **git submodule** mounted at `shared/`.
