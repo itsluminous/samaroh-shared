@@ -550,5 +550,13 @@
   "settings.event_types.duplicate_name": {
     "value": "An event type with this name already exists",
     "description": "Inline error in the add/edit dialog when the entered name matches another live preset of this business (backed by the partial unique index on event_types)."
+  },
+  "settings.event_types.move_up": {
+    "value": "Move up",
+    "description": "Accessible name of the reorder-up button on an event-type preset row (decreases event_types.sort_order)."
+  },
+  "settings.event_types.move_down": {
+    "value": "Move down",
+    "description": "Accessible name of the reorder-down button on an event-type preset row (increases event_types.sort_order)."
   }
 }
