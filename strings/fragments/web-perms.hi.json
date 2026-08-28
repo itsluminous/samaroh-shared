@@ -1,0 +1,10 @@
+{
+  "common.permission.no_access_title": {
+    "value": "इस सेक्शन की पहुँच नहीं है",
+    "description": "Title of the web no-access state shown when a member opens a section (Booking / Expenses / Inventory) their permissions do not allow them to view — e.g. via a direct URL."
+  },
+  "common.permission.no_access_message": {
+    "value": "पहुँच के लिए व्यवसाय मालिक से पूछें।",
+    "description": "Body of the web no-access state under common.permission.no_access_title, telling the member the owner controls permissions."
+  }
+}
