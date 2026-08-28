@@ -534,5 +534,9 @@
   "booking.calendar.add_new_event": {
     "value": "नया कार्यक्रम जोड़ें",
     "description": "Final row of the day bottom sheet (shown when a tapped date has bookings): opens the add-booking form prefilled with that date."
+  },
+  "booking.card.audit_added_unknown_member": {
+    "value": "एक सदस्य",
+    "description": "Fallback for the {name} placeholder of booking.card.audit_added when the booking creator's user id has no matching business member locally (e.g. the member was removed or not yet synced)."
   }
 }
