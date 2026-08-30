@@ -568,5 +568,25 @@
   "settings.event_types.move_down": {
     "value": "Move down",
     "description": "Accessible name of the reorder-down button on an event-type preset row (increases event_types.sort_order)."
+  },
+  "menu.identity.sign_out": {
+    "value": "Sign out",
+    "description": "Menu home: explanation/content description of the sign-out icon at the right of the signed-in identity row (long-press toast)."
+  },
+  "menu.sign_out.confirm_title": {
+    "value": "Sign out?",
+    "description": "Title of the sign-out confirmation dialog opened from the Menu identity row."
+  },
+  "menu.sign_out.confirm_message": {
+    "value": "Your data stays safe in your account and will download again the next time you sign in on this device.",
+    "description": "Body of the sign-out confirmation dialog when everything is synced (no pending outbox items). Local data on the device is removed on sign-out."
+  },
+  "menu.sign_out.confirm_message_pending": {
+    "value": "{count, plural, one {# change not yet synced will be lost. Sign out anyway?} other {# changes not yet synced will be lost. Sign out anyway?}}",
+    "description": "Body of the sign-out confirmation dialog when the outbox still has unsynced items. ICU plural; count is the number of pending (queued, unpushed) changes that will be discarded."
+  },
+  "menu.sign_out.confirm_action": {
+    "value": "Sign out",
+    "description": "Confirm button of the sign-out dialog; performs the sign-out and removes local data."
   }
 }

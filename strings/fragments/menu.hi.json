@@ -558,5 +558,25 @@
   "settings.event_types.move_down": {
     "value": "नीचे ले जाएँ",
     "description": "Accessible name of the reorder-down button on an event-type preset row (increases event_types.sort_order)."
+  },
+  "menu.identity.sign_out": {
+    "value": "साइन आउट करें",
+    "description": "Menu home: explanation/content description of the sign-out icon at the right of the signed-in identity row (long-press toast)."
+  },
+  "menu.sign_out.confirm_title": {
+    "value": "साइन आउट करें?",
+    "description": "Title of the sign-out confirmation dialog opened from the Menu identity row."
+  },
+  "menu.sign_out.confirm_message": {
+    "value": "आपका डेटा आपके खाते में सुरक्षित रहेगा और इस डिवाइस पर अगली बार साइन इन करने पर फिर से डाउनलोड हो जाएगा।",
+    "description": "Body of the sign-out confirmation dialog when everything is synced (no pending outbox items). Local data on the device is removed on sign-out."
+  },
+  "menu.sign_out.confirm_message_pending": {
+    "value": "{count, plural, one {# बदलाव अभी सिंक नहीं हुआ है और साइन आउट करने पर खो जाएगा। फिर भी साइन आउट करें?} other {# बदलाव अभी सिंक नहीं हुए हैं और साइन आउट करने पर खो जाएंगे। फिर भी साइन आउट करें?}}",
+    "description": "Body of the sign-out confirmation dialog when the outbox still has unsynced items. ICU plural; count is the number of pending (queued, unpushed) changes that will be discarded."
+  },
+  "menu.sign_out.confirm_action": {
+    "value": "साइन आउट करें",
+    "description": "Confirm button of the sign-out dialog; performs the sign-out and removes local data."
   }
 }
