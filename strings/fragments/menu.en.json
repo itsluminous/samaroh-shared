@@ -211,6 +211,42 @@
     "value": "Default sound",
     "description": "Reminder settings: shown when no custom ringtone is selected."
   },
+  "settings.reminders.permissions_title": {
+    "value": "Reminder permissions",
+    "description": "Reminder settings: title of the permission-status section listing the system grants reminders depend on (notifications, full-screen intent, exact alarms). Every permission is optional (§6) — the rows show state and offer a fix, never block the app."
+  },
+  "settings.reminders.permission_notifications": {
+    "value": "Notifications",
+    "description": "Permission-status row: the POST_NOTIFICATIONS runtime permission (Android 13+). Without it no reminder can appear outside the app."
+  },
+  "settings.reminders.permission_notifications_denied": {
+    "value": "Not allowed — reminders won't appear outside the app",
+    "description": "Permission-status row state when notifications are denied. The in-app pending-confirmations card remains the reliable path."
+  },
+  "settings.reminders.permission_fullscreen": {
+    "value": "Full-screen reminders",
+    "description": "Permission-status row: the Android 14+ full-screen-intent grant needed by the alarm-style reminder. Shown only when the full-screen style is selected."
+  },
+  "settings.reminders.permission_fullscreen_denied": {
+    "value": "Not allowed — the reminder will show as a normal notification instead",
+    "description": "Permission-status row state when the full-screen-intent grant is off: the system downgrades the alarm-style popup to a heads-up notification."
+  },
+  "settings.reminders.permission_exact_alarm": {
+    "value": "Exact-time alarms",
+    "description": "Permission-status row: the SCHEDULE_EXACT_ALARM grant (Android 12+) used to fire the alarm-style reminder at the exact time. Shown only when the full-screen style is selected."
+  },
+  "settings.reminders.permission_exact_alarm_denied": {
+    "value": "Not allowed — the reminder may arrive a little late",
+    "description": "Permission-status row state when exact alarms are not permitted: scheduling falls back to an inexact alarm."
+  },
+  "settings.reminders.permission_granted": {
+    "value": "Allowed",
+    "description": "Permission-status row state when the grant is in place."
+  },
+  "settings.reminders.permission_fix": {
+    "value": "Allow",
+    "description": "Permission-status row action button: requests the permission (notifications) or deep-links to the matching system-settings screen (full-screen intent, exact alarms)."
+  },
   "settings.google.title": {
     "value": "Google account",
     "description": "Settings: Google account section title."
