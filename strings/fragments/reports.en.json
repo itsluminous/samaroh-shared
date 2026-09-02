@@ -35,6 +35,10 @@
     "value": "Bookings and revenue by event type",
     "description": "Reports home: subtitle under the Event types row."
   },
+  "reports.event_types.marker_note": {
+    "value": "Marker events (like Lagan or Tilak) only mark days on the calendar — they are not counted in bookings or revenue.",
+    "description": "Footnote on the Event types report explaining that entries whose event type has kind = 'marker' are excluded from booking counts and revenue."
+  },
   "reports.report.sources": {
     "value": "Booking sources",
     "description": "Report name: which channel (walk-in, phone, referral, repeat) brings revenue."

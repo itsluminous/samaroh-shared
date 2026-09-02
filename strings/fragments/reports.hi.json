@@ -35,6 +35,10 @@
     "value": "प्रकार के अनुसार बुकिंग और आय",
     "description": "Reports home: subtitle under the Event types row."
   },
+  "reports.event_types.marker_note": {
+    "value": "निशान वाले आयोजन (जैसे लगन या तिलक) सिर्फ़ कैलेंडर पर दिन दर्शाते हैं — ये बुकिंग या आय में नहीं गिने जाते।",
+    "description": "Footnote on the Event types report explaining that entries whose event type has kind = 'marker' are excluded from booking counts and revenue."
+  },
   "reports.report.sources": {
     "value": "बुकिंग का स्रोत",
     "description": "Report name: which channel (walk-in, phone, referral, repeat) brings revenue."

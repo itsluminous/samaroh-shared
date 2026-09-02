@@ -1,14 +1,14 @@
 {
-  "$comment": "SEED TEMPLATE for the event_types table (see supabase/migrations/006_event_types.sql and docs/event-type-presets.md). Presets are database-backed and user-managed since migration 006; clients seed a NEW business's event_types rows from this file at business creation (existing businesses were seeded by the migration itself, in English). `key` is stored in bookings.event_type for pre-006 bookings; `emoji` is the default bookings.event_icon; `label_key` resolves the localized display name from the string catalog (used for seeding and for rendering old bookings recorded with a built-in key); `color` is the type's DEFAULT calendar color — a key from booking-colors.json. Color resolution contract (both apps): explicit bookings.color if set → event-type default → standard themed purple. The `custom` type additionally lets the user enter a free-text label and pick any emoji. Emoji are NOT localized.",
+  "$comment": "SEED TEMPLATE for the event_types table (see supabase/migrations/006_event_types.sql and docs/event-type-presets.md). Presets are database-backed and user-managed since migration 006; clients seed a NEW business's event_types rows from this file at business creation (existing businesses were seeded by the migration itself, in English). `key` is stored in bookings.event_type for pre-006 bookings; `emoji` is the default bookings.event_icon; `label_key` resolves the localized display name from the string catalog (used for seeding and for rendering old bookings recorded with a built-in key); `color` is the type's DEFAULT calendar color — a key from booking-colors.json. Color resolution contract (both apps): explicit bookings.color if set → event-type default → standard themed purple. The `custom` type additionally lets the user enter a free-text label and pick any emoji. Emoji are NOT localized. `kind` maps to event_types.kind: 'booking' = real customer booking; 'marker' = auspicious-day self-indicator (Lagan, Tilak) — calendar highlight only, no customer or payments, excluded from booking counts and revenue.",
   "event_types": [
-    { "key": "engagement", "emoji": "💍", "label_key": "booking.event_type.engagement", "color": "flamingo" },
-    { "key": "tilak", "emoji": "🪔", "label_key": "booking.event_type.tilak", "color": "tangerine" },
-    { "key": "wedding", "emoji": "💒", "label_key": "booking.event_type.wedding", "color": "tomato" },
-    { "key": "room_booking", "emoji": "🏨", "label_key": "booking.event_type.room_booking", "color": "blueberry" },
-    { "key": "birthday", "emoji": "🎂", "label_key": "booking.event_type.birthday", "color": "banana" },
-    { "key": "anniversary", "emoji": "👫🏻", "label_key": "booking.event_type.anniversary", "color": "sage" },
-    { "key": "custom", "emoji": "✨", "label_key": "booking.event_type.custom", "color": "grape" },
-    { "key": "lagan", "emoji": "⭐", "label_key": "booking.event_type.lagan", "color": "peacock" },
-    { "key": "muh_dikhayi", "emoji": "👰🏻‍♀️", "label_key": "booking.event_type.muh_dikhayi", "color": "fuchsia" }
+    { "key": "engagement", "emoji": "💍", "label_key": "booking.event_type.engagement", "color": "flamingo", "kind": "booking" },
+    { "key": "tilak", "emoji": "🪔", "label_key": "booking.event_type.tilak", "color": "tangerine", "kind": "marker" },
+    { "key": "wedding", "emoji": "💒", "label_key": "booking.event_type.wedding", "color": "tomato", "kind": "booking" },
+    { "key": "room_booking", "emoji": "🏨", "label_key": "booking.event_type.room_booking", "color": "blueberry", "kind": "booking" },
+    { "key": "birthday", "emoji": "🎂", "label_key": "booking.event_type.birthday", "color": "banana", "kind": "booking" },
+    { "key": "anniversary", "emoji": "👫🏻", "label_key": "booking.event_type.anniversary", "color": "sage", "kind": "booking" },
+    { "key": "custom", "emoji": "✨", "label_key": "booking.event_type.custom", "color": "grape", "kind": "booking" },
+    { "key": "lagan", "emoji": "⭐", "label_key": "booking.event_type.lagan", "color": "peacock", "kind": "marker" },
+    { "key": "muh_dikhayi", "emoji": "👰🏻‍♀️", "label_key": "booking.event_type.muh_dikhayi", "color": "fuchsia", "kind": "booking" }
   ]
 }

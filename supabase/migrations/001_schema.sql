@@ -248,7 +248,15 @@ create table event_types (
   sort_order int not null default 0, -- display order in pickers and the manage screen
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
-  deleted_at timestamptz
+  deleted_at timestamptz,
+  -- trailing position matches scripts/alter-event-type-kind.sql applied to an
+  -- existing database (ALTER TABLE appends the column physically last)
+  kind text not null default 'booking'
+    check (kind in ('booking', 'marker'))  -- 'booking' = real customer booking;
+                                           -- 'marker' = auspicious-day self-indicator
+                                           -- (e.g. Lagan, Tilak): highlights the day
+                                           -- on the calendar, no customer/payments,
+                                           -- excluded from booking counts and revenue
 );
 
 comment on table event_types is
@@ -257,6 +265,8 @@ comment on column event_types.label is
   'Plain-text display name. User data — NOT localized; not a string-catalog key.';
 comment on column event_types.color is
   'Default calendar color key from booking-colors.json (e.g. tomato). NULL = standard themed color.';
+comment on column event_types.kind is
+  'booking = real customer booking; marker = auspicious-day self-indicator (Lagan/Tilak style): calendar highlight only, no customer or payments, excluded from reports.';
 
 -- Live presets must have unique names per business; tombstoned rows do not block reuse.
 create unique index uq_event_types_biz_label

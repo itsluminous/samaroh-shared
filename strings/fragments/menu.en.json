@@ -549,6 +549,22 @@
     "value": "Colour",
     "description": "Label of the default calendar-colour picker in the add/edit event-type dialog (event_types.color, a booking-colors.json key; empty = themed default)."
   },
+  "settings.event_types.kind_label": {
+    "value": "Used for",
+    "description": "Label of the kind selector in the add/edit event-type dialog (event_types.kind): a two-option pill row, same UX as the confirmed/tentative status pills on the booking form."
+  },
+  "settings.event_types.kind_booking": {
+    "value": "For bookings",
+    "description": "Kind selector pill: event_types.kind = 'booking' — a real customer booking with payments; counted in reports. The default."
+  },
+  "settings.event_types.kind_marker": {
+    "value": "Just a marker",
+    "description": "Kind selector pill: event_types.kind = 'marker' — an auspicious-day self-indicator (Lagan/Tilak style) that only highlights the day on the calendar."
+  },
+  "settings.event_types.kind_marker_hint": {
+    "value": "Markers just highlight the day on the calendar — no customer, no payments, and not counted in reports.",
+    "description": "Helper text under the kind selector when 'Just a marker' is selected, explaining what a marker event type does (and doesn't do)."
+  },
   "settings.event_types.delete_title": {
     "value": "Delete event type?",
     "description": "Title of the delete-preset confirmation dialog."

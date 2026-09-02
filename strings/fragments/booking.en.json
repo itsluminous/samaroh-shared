@@ -59,6 +59,10 @@
     "value": "Cancelled",
     "description": "Booking status chip/label: cancelled booking (hidden on the calendar, struck through in lists)."
   },
+  "booking.marker.badge": {
+    "value": "Marker",
+    "description": "Badge on a calendar/list entry whose event type has kind = 'marker' (auspicious-day self-indicator like Lagan or Tilak): highlights the day only — no customer, no payments, excluded from reports."
+  },
   "booking.card.phone_call": {
     "value": "Call",
     "description": "Tap-to-call icon explanation on the booking card; opens the dialer with the customer's number."
