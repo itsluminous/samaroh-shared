@@ -542,5 +542,9 @@
   "booking.card.audit_added_unknown_member": {
     "value": "a member",
     "description": "Fallback for the {name} placeholder of booking.card.audit_added when the booking creator's user id has no matching business member locally (e.g. the member was removed or not yet synced)."
+  },
+  "booking.reminder.test_sample_title": {
+    "value": "This is how your booking reminder will look",
+    "description": "Title of the SAMPLE reminder fired by the Test button in Settings → Booking reminders. Goes through the real reminder pipeline with the selected style and sound."
   }
 }

@@ -640,5 +640,21 @@
   "menu.sign_out.confirm_action": {
     "value": "Sign out",
     "description": "Confirm button of the sign-out dialog; performs the sign-out and removes local data."
+  },
+  "settings.reminders.test_button": {
+    "value": "Test",
+    "description": "Reminder settings: button next to the style selector that immediately fires a sample booking reminder through the real reminder pipeline, using the currently selected style and sound."
+  },
+  "settings.reminders.style_hint": {
+    "value": "While the screen is on and unlocked, Android shows every reminder as a banner at the top. The full-screen popup takes over only when the screen is off or locked.",
+    "description": "Reminder settings: helper text under the style options explaining the Android system behavior — a full-screen-intent notification is deliberately shown as a heads-up banner while the device is in use, and only takes over the whole screen when it is off or locked."
+  },
+  "settings.reminders.test_fullscreen_blocked_title": {
+    "value": "Allow full-screen reminders first",
+    "description": "Title of the dialog shown when the user taps Test with the full-screen style selected but the Android 14+ full-screen-intent grant is off."
+  },
+  "settings.reminders.test_fullscreen_blocked_body": {
+    "value": "Full-screen reminders are not allowed for this app, so the popup would appear as a normal notification. Tap Allow to open the system setting.",
+    "description": "Body of the dialog shown when Test is tapped with the full-screen style selected but the full-screen-intent grant is off; instead of silently demoting, it deep-links to the system screen."
   }
 }
