@@ -14,5 +14,9 @@
   "common.cropper.image_desc": {
     "value": "Photo being cropped",
     "description": "Accessibility description of the image shown inside the crop viewport."
+  },
+  "common.camera_missing": {
+    "value": "No camera app available",
+    "description": "Snackbar/toast shown when a photo-capture button is tapped on a device with no camera app installed."
   }
 }

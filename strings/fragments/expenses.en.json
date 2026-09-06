@@ -194,5 +194,9 @@
   "expenses.google_prompt.link_failed": {
     "value": "Couldn't connect Google. You can try again from Settings.",
     "description": "Snackbar shown when the link-Google flow launched from the attachment prompt fails; attachments stay safely pending on the phone."
+  },
+  "expenses.entry.attach_too_large": {
+    "value": "That file is too large to attach",
+    "description": "Snackbar shown when a picked document exceeds the attachment size limit; distinct from the generic attach-failed message so the user knows picking a smaller file will work."
   }
 }

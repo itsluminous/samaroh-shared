@@ -14,5 +14,9 @@
   "common.cropper.image_desc": {
     "value": "क्रॉप की जा रही फ़ोटो",
     "description": "Accessibility description of the image shown inside the crop viewport."
+  },
+  "common.camera_missing": {
+    "value": "कोई कैमरा ऐप उपलब्ध नहीं है",
+    "description": "Snackbar/toast shown when a photo-capture button is tapped on a device with no camera app installed."
   }
 }
