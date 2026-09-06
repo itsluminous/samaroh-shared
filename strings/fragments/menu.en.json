@@ -319,6 +319,10 @@
     "value": "Re-link Google to move events into a dedicated Samaroh calendar",
     "description": "Hint button under the calendar-sync toggle when the linked account lacks the calendar.app.created scope; tapping re-runs the Google link flow."
   },
+  "settings.gcal.description_line": {
+    "value": "{label}: {value}",
+    "description": "One line of the Google Calendar event description: a localized field label (reused booking.* keys) followed by its value. The description carries the booking's full picture, one field per line."
+  },
   "settings.backup.title": {
     "value": "Backup",
     "description": "Settings: backup section title (owner only)."
