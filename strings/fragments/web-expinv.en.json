@@ -87,6 +87,14 @@
     "value": "Upload pending",
     "description": "Badge on an attachment whose Google Drive upload has not completed yet."
   },
+  "expenses.entry.attachment_open_drive": {
+    "value": "Opens in Google Drive",
+    "description": "Tooltip on an uploaded attachment chip in the ledger/entry dialog: clicking opens the file in Google Drive in a new tab (works because the browser is signed into the owning Google account)."
+  },
+  "expenses.entry.attachment_not_uploaded": {
+    "value": "Not uploaded yet",
+    "description": "Tooltip on a disabled attachment chip whose Google Drive upload is still pending — there is no file to open yet."
+  },
   "expenses.entry.attachment_limit_hint": {
     "value": "Up to {max} attachments",
     "description": "Hint under the attach button. {max} is the numeric attachment limit (4)."
