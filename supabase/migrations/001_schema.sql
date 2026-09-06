@@ -226,6 +226,12 @@ create index idx_invtxn_fifo on inventory_transactions
 create table business_settings (
   business_id uuid primary key references businesses(id) on delete cascade,
   gcal_sync_enabled boolean not null default false,
+  -- ADR-048: the per-BUSINESS Google Calendar registry — the app-created calendar
+  -- (named after the business) that this business's bookings push to. Replaces
+  -- google_accounts.calendar_id as the push target (that column stays for the
+  -- pre-app-created-scope primary fallback and is otherwise deprecated). Synced so
+  -- every device of the linked account reuses the same calendar.
+  gcal_calendar_id text,
   backup_frequency text not null default 'weekly',  -- 'daily'|'weekly'|'monthly'|'manual'
   last_backup_at timestamptz,
   updated_at timestamptz not null default now()
