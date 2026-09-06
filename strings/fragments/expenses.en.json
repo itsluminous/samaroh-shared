@@ -198,5 +198,33 @@
   "expenses.entry.attach_too_large": {
     "value": "That file is too large to attach",
     "description": "Snackbar shown when a picked document exceeds the attachment size limit; distinct from the generic attach-failed message so the user knows picking a smaller file will work."
+  },
+  "expenses.ledger.attachment_expanded": {
+    "value": "Expanded bill image",
+    "description": "Content description of the full-screen expanded image shown after tapping an attachment thumbnail on a ledger row; tapping it closes the viewer."
+  },
+  "expenses.ledger.attachment_opening": {
+    "value": "Opening attachment",
+    "description": "Content description of the progress spinner overlaid on an attachment thumbnail while its file is being fetched (e.g. downloading from Google Drive)."
+  },
+  "expenses.attachment_view.link_title": {
+    "value": "Link Google to view this bill",
+    "description": "Title of the dialog shown when the user taps an attachment whose file is only in Google Drive and no Google account is linked on this phone."
+  },
+  "expenses.attachment_view.link_message": {
+    "value": "This bill is saved in Google Drive. Link your Google account to view it.",
+    "description": "Body of the link-Google-to-view dialog; explains the file lives in Drive and linking will let this phone download it."
+  },
+  "expenses.attachment_view.not_available": {
+    "value": "This bill isn't on this device yet. It will appear once the phone it was added on backs it up.",
+    "description": "Snackbar shown when a tapped attachment has neither a local file nor a Google Drive copy yet (it was added on another device and its upload is still pending)."
+  },
+  "expenses.attachment_view.download_failed": {
+    "value": "Couldn't download the bill. Check your internet connection and try again.",
+    "description": "Snackbar shown when downloading a tapped attachment from Google Drive fails (typically offline); tapping the thumbnail again retries."
+  },
+  "expenses.attachment_view.no_viewer_app": {
+    "value": "No app on this phone can open this file",
+    "description": "Snackbar shown when the phone has no app able to display a tapped attachment (e.g. no PDF viewer installed)."
   }
 }

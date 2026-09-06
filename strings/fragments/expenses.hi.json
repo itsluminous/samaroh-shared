@@ -198,5 +198,33 @@
   "expenses.entry.attach_too_large": {
     "value": "यह फ़ाइल अटैच करने के लिए बहुत बड़ी है",
     "description": "Snackbar shown when a picked document exceeds the attachment size limit; distinct from the generic attach-failed message so the user knows picking a smaller file will work."
+  },
+  "expenses.ledger.attachment_expanded": {
+    "value": "बिल की बड़ी छवि",
+    "description": "Content description of the full-screen expanded image shown after tapping an attachment thumbnail on a ledger row; tapping it closes the viewer."
+  },
+  "expenses.ledger.attachment_opening": {
+    "value": "अटैचमेंट खुल रहा है",
+    "description": "Content description of the progress spinner overlaid on an attachment thumbnail while its file is being fetched (e.g. downloading from Google Drive)."
+  },
+  "expenses.attachment_view.link_title": {
+    "value": "यह बिल देखने के लिए Google से जोड़ें",
+    "description": "Title of the dialog shown when the user taps an attachment whose file is only in Google Drive and no Google account is linked on this phone."
+  },
+  "expenses.attachment_view.link_message": {
+    "value": "यह बिल Google Drive में सहेजा गया है। इसे देखने के लिए अपना Google खाता जोड़ें।",
+    "description": "Body of the link-Google-to-view dialog; explains the file lives in Drive and linking will let this phone download it."
+  },
+  "expenses.attachment_view.not_available": {
+    "value": "यह बिल अभी इस डिवाइस पर नहीं है। जिस फ़ोन पर इसे जोड़ा गया था, वहाँ से बैकअप होते ही यह दिखेगा।",
+    "description": "Snackbar shown when a tapped attachment has neither a local file nor a Google Drive copy yet (it was added on another device and its upload is still pending)."
+  },
+  "expenses.attachment_view.download_failed": {
+    "value": "बिल डाउनलोड नहीं हो सका। इंटरनेट कनेक्शन जाँचें और फिर कोशिश करें।",
+    "description": "Snackbar shown when downloading a tapped attachment from Google Drive fails (typically offline); tapping the thumbnail again retries."
+  },
+  "expenses.attachment_view.no_viewer_app": {
+    "value": "इस फ़ोन पर यह फ़ाइल खोलने वाला कोई ऐप नहीं है",
+    "description": "Snackbar shown when the phone has no app able to display a tapped attachment (e.g. no PDF viewer installed)."
   }
 }
