@@ -668,5 +668,45 @@
   "settings.reminders.test_fullscreen_blocked_body": {
     "value": "Full-screen reminders are not allowed for this app, so the popup would appear as a normal notification. Tap Allow to open the system setting.",
     "description": "Body of the dialog shown when Test is tapped with the full-screen style selected but the full-screen-intent grant is off; instead of silently demoting, it deep-links to the system screen."
+  },
+  "settings.image_quality.title": {
+    "value": "Image quality",
+    "description": "Settings section header: per-use-case image compression quality."
+  },
+  "settings.image_quality.subtitle": {
+    "value": "How strongly photos are compressed before saving. Higher quality means larger files.",
+    "description": "Explains the image-quality section: how strongly photos are compressed before saving/syncing."
+  },
+  "settings.image_quality.bills_label": {
+    "value": "Bill photos",
+    "description": "Label of the bill/invoice photo quality control (expense attachments)."
+  },
+  "settings.image_quality.inventory_label": {
+    "value": "Item photos",
+    "description": "Label of the inventory item photo quality control."
+  },
+  "settings.image_quality.level_high": {
+    "value": "High quality",
+    "description": "Quality choice chip: highest quality (largest files)."
+  },
+  "settings.image_quality.level_balanced": {
+    "value": "Balanced",
+    "description": "Quality choice chip: balanced quality/size."
+  },
+  "settings.image_quality.level_low": {
+    "value": "Space saver",
+    "description": "Quality choice chip: strongest compression (smallest files)."
+  },
+  "settings.image_quality.hint_high": {
+    "value": "Sharpest photos, larger files",
+    "description": "Approx-size hint shown when the High quality level is selected."
+  },
+  "settings.image_quality.hint_balanced": {
+    "value": "Good quality, smaller files",
+    "description": "Approx-size hint shown when the Balanced level is selected."
+  },
+  "settings.image_quality.hint_low": {
+    "value": "Smallest files, less detail",
+    "description": "Approx-size hint shown when the Space saver level is selected."
   }
 }

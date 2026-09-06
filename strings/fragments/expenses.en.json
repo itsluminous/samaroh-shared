@@ -226,5 +226,17 @@
   "expenses.attachment_view.no_viewer_app": {
     "value": "No app on this phone can open this file",
     "description": "Snackbar shown when the phone has no app able to display a tapped attachment (e.g. no PDF viewer installed)."
+  },
+  "expenses.attachment_view.delete_title": {
+    "value": "Delete this bill?",
+    "description": "Confirmation dialog title when deleting a bill image from the full-screen viewer."
+  },
+  "expenses.attachment_view.delete_message": {
+    "value": "The bill will be removed from this entry on every device.",
+    "description": "Confirmation dialog body when deleting a bill image: warns the bill will be removed everywhere (tombstone syncs to all devices)."
+  },
+  "expenses.attachment_view.deleted": {
+    "value": "Bill removed",
+    "description": "Snackbar after a bill image was deleted from the viewer."
   }
 }

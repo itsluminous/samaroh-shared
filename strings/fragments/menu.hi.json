@@ -658,5 +658,45 @@
   "settings.reminders.test_fullscreen_blocked_body": {
     "value": "इस ऐप को पूरी स्क्रीन रिमाइंडर की अनुमति नहीं है, इसलिए पॉपअप एक सामान्य नोटिफ़िकेशन की तरह दिखेगा। सिस्टम सेटिंग खोलने के लिए ‘अनुमति दें’ दबाएँ।",
     "description": "Body of the dialog shown when Test is tapped with the full-screen style selected but the full-screen-intent grant is off; instead of silently demoting, it deep-links to the system screen."
+  },
+  "settings.image_quality.title": {
+    "value": "फ़ोटो क्वालिटी",
+    "description": "Settings section header: per-use-case image compression quality."
+  },
+  "settings.image_quality.subtitle": {
+    "value": "सेव करने से पहले फ़ोटो कितनी कंप्रेस होंगी। बेहतर क्वालिटी यानी बड़ी फ़ाइलें।",
+    "description": "Explains the image-quality section: how strongly photos are compressed before saving/syncing."
+  },
+  "settings.image_quality.bills_label": {
+    "value": "बिल की फ़ोटो",
+    "description": "Label of the bill/invoice photo quality control (expense attachments)."
+  },
+  "settings.image_quality.inventory_label": {
+    "value": "आइटम की फ़ोटो",
+    "description": "Label of the inventory item photo quality control."
+  },
+  "settings.image_quality.level_high": {
+    "value": "बेहतर क्वालिटी",
+    "description": "Quality choice chip: highest quality (largest files)."
+  },
+  "settings.image_quality.level_balanced": {
+    "value": "संतुलित",
+    "description": "Quality choice chip: balanced quality/size."
+  },
+  "settings.image_quality.level_low": {
+    "value": "जगह बचाएं",
+    "description": "Quality choice chip: strongest compression (smallest files)."
+  },
+  "settings.image_quality.hint_high": {
+    "value": "सबसे साफ़ फ़ोटो, बड़ी फ़ाइलें",
+    "description": "Approx-size hint shown when the High quality level is selected."
+  },
+  "settings.image_quality.hint_balanced": {
+    "value": "अच्छी क्वालिटी, छोटी फ़ाइलें",
+    "description": "Approx-size hint shown when the Balanced level is selected."
+  },
+  "settings.image_quality.hint_low": {
+    "value": "सबसे छोटी फ़ाइलें, कम बारीकी",
+    "description": "Approx-size hint shown when the Space saver level is selected."
   }
 }

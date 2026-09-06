@@ -18,5 +18,33 @@
   "common.camera_missing": {
     "value": "कोई कैमरा ऐप उपलब्ध नहीं है",
     "description": "Snackbar/toast shown when a photo-capture button is tapped on a device with no camera app installed."
+  },
+  "common.viewer.fullscreen": {
+    "value": "फ़ुल स्क्रीन",
+    "description": "Action icon in the full-screen image viewer: enter immersive full-screen (hides system bars and viewer controls)."
+  },
+  "common.viewer.exit_fullscreen": {
+    "value": "फ़ुल स्क्रीन बंद करें",
+    "description": "Action icon in the full-screen image viewer while immersive: restore system bars and viewer controls."
+  },
+  "common.viewer.download": {
+    "value": "डिवाइस में सेव करें",
+    "description": "Action icon in the full-screen image viewer: save a copy of the image to the device's Downloads."
+  },
+  "common.viewer.delete": {
+    "value": "हटाएं",
+    "description": "Action icon in the full-screen image viewer: delete the shown image (feature decides what delete means)."
+  },
+  "common.viewer.close": {
+    "value": "बंद करें",
+    "description": "Action icon in the full-screen image viewer: close the viewer."
+  },
+  "common.viewer.saved_to": {
+    "value": "%1$s में सेव हो गया",
+    "description": "Snackbar after the viewer's download action succeeds; %1$s is the folder the copy landed in (e.g. Download/Samaroh)."
+  },
+  "common.viewer.save_failed": {
+    "value": "फ़ोटो सेव नहीं हो सकी",
+    "description": "Snackbar after the viewer's download action fails (no space, denied permission on old Android)."
   }
 }

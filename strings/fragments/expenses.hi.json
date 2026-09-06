@@ -226,5 +226,17 @@
   "expenses.attachment_view.no_viewer_app": {
     "value": "इस फ़ोन पर यह फ़ाइल खोलने वाला कोई ऐप नहीं है",
     "description": "Snackbar shown when the phone has no app able to display a tapped attachment (e.g. no PDF viewer installed)."
+  },
+  "expenses.attachment_view.delete_title": {
+    "value": "यह बिल हटाएं?",
+    "description": "Confirmation dialog title when deleting a bill image from the full-screen viewer."
+  },
+  "expenses.attachment_view.delete_message": {
+    "value": "यह बिल इस एंट्री से हर डिवाइस से हटा दिया जाएगा।",
+    "description": "Confirmation dialog body when deleting a bill image: warns the bill will be removed everywhere (tombstone syncs to all devices)."
+  },
+  "expenses.attachment_view.deleted": {
+    "value": "बिल हटा दिया गया",
+    "description": "Snackbar after a bill image was deleted from the viewer."
   }
 }
