@@ -56,7 +56,10 @@ create table business_members (
 create table google_accounts (
   user_id uuid primary key references auth.users(id) on delete cascade,
   email text not null,
-  refresh_token_cipher text not null,
+  -- NULLABLE by design: client-linked accounts (Credential Manager, ADR-003) keep
+  -- tokens on-device and never send a cipher — the row is inserted WITHOUT this
+  -- column. Reserved for a future server-side OAuth flow; nothing reads it today.
+  refresh_token_cipher text,
   scopes text[] not null,
   drive_root_folder_id text,
   calendar_id text,
