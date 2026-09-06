@@ -186,5 +186,13 @@
   "expenses.a11y.back": {
     "value": "पीछे जाएँ",
     "description": "Content description of the back navigation arrow on Expenses screens."
+  },
+  "expenses.ledger.pending_upload_unlinked": {
+    "value": "फ़ाइल अभी इसी फ़ोन पर है — Drive में सुरक्षित रखने के लिए Settings में अपना Google खाता जोड़ें",
+    "description": "Long-press explanation and content description of the pending-upload badge on an attachment when NO Google account is linked; points the user at the Settings link flow. Replaces expenses.ledger.pending_upload in that state."
+  },
+  "expenses.google_prompt.link_failed": {
+    "value": "Google से जोड़ नहीं सके। Settings से फिर से कोशिश कर सकते हैं।",
+    "description": "Snackbar shown when the link-Google flow launched from the attachment prompt fails; attachments stay safely pending on the phone."
   }
 }
