@@ -311,6 +311,14 @@
     "value": "Managed by Samaroh",
     "description": "Google Calendar event description footer line."
   },
+  "settings.gcal.calendar_name": {
+    "value": "Samaroh",
+    "description": "Display name of the dedicated Google Calendar the app creates for bookings (ADR-046). Keep as the Latin brand name in every locale."
+  },
+  "settings.gcal.relink_hint": {
+    "value": "Re-link Google to move events into a dedicated Samaroh calendar",
+    "description": "Hint button under the calendar-sync toggle when the linked account lacks the calendar.app.created scope; tapping re-runs the Google link flow."
+  },
   "settings.backup.title": {
     "value": "Backup",
     "description": "Settings: backup section title (owner only)."
