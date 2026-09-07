@@ -232,7 +232,7 @@ create table business_settings (
   -- pre-app-created-scope primary fallback and is otherwise deprecated). Synced so
   -- every device of the linked account reuses the same calendar.
   gcal_calendar_id text,
-  backup_frequency text not null default 'weekly',  -- 'daily'|'weekly'|'monthly'|'manual'
+  backup_frequency text not null default 'daily',  -- 'daily'|'weekly'|'monthly'|'manual'
   last_backup_at timestamptz,
   updated_at timestamptz not null default now()
 );
