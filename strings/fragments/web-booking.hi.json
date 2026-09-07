@@ -1,0 +1,30 @@
+{
+  "booking.card.action_restore_booking": {
+    "value": "बुकिंग बहाल करें",
+    "description": "Booking card action on a CANCELLED booking: puts it back on the calendar as Confirmed (the pre-cancellation status is not stored)."
+  },
+  "booking.card.restored": {
+    "value": "बुकिंग बहाल हो गई",
+    "description": "Snackbar shown after a cancelled booking is restored and its dates are free."
+  },
+  "booking.card.restore_conflict_warning": {
+    "value": "{count, plural, one {बुकिंग बहाल हो गई — इन तारीख़ों पर # और बुकिंग है।} other {बुकिंग बहाल हो गई — इन तारीख़ों पर # और बुकिंग हैं।}}",
+    "description": "Non-blocking snackbar after restoring a cancelled booking whose dates now overlap other active bookings. ICU plural; count is the number of overlapping bookings. The restore still succeeds — halls can host multiple events."
+  },
+  "booking.card.action_delete_booking": {
+    "value": "हमेशा के लिए हटाएँ",
+    "description": "Booking card action on a CANCELLED booking: permanently removes it (soft-delete tombstone) from every view. Distinct from Cancel booking, which only releases the date."
+  },
+  "booking.card.delete_confirm_title": {
+    "value": "यह बुकिंग हटाएँ?",
+    "description": "Title of the confirmation dialog before permanently deleting a cancelled booking."
+  },
+  "booking.card.delete_confirm_message": {
+    "value": "बुकिंग और उसका भुगतान इतिहास सभी जगहों से हटा दिया जाएगा। इसे वापस नहीं किया जा सकता।",
+    "description": "Body of the permanent-delete confirmation dialog for a cancelled booking."
+  },
+  "booking.card.deleted": {
+    "value": "बुकिंग हटा दी गई",
+    "description": "Snackbar shown after a cancelled booking is permanently deleted."
+  }
+}
