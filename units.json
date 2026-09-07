@@ -1,0 +1,50 @@
+{
+  "$comment": "CANONICAL inventory unit list, shared by the Android and web apps (like event-types.json — single source of truth). Each unit: `key` is the stable identifier; `wire` is the EXACT string stored in master_items.unit (frozen for compatibility — the original five values pcs/qty/kg/litre plus free text for custom MUST never change); `label_key` resolves the localized dropdown/display label from the string catalog (fragments/inventory.*.json). Units are grouped for the picker UI: each group carries its own localized `label_key` header. The `custom` entry is special: it stores the user's free text verbatim instead of a wire value, and any stored unit string that matches no wire value renders as that raw text. Rendering contract (both apps): dropdown shows groups in file order with units in file order; stored value round-trips by wire. Clients may bind this file to a compile-time enum, but MUST verify parity against this file in tests (Android: UnitCatalogParityTest).",
+  "groups": [
+    {
+      "key": "count",
+      "label_key": "inventory.masterlist.unit_group_count",
+      "units": [
+        { "key": "pieces", "wire": "pcs", "label_key": "inventory.masterlist.unit_pieces" },
+        { "key": "quantity", "wire": "qty", "label_key": "inventory.masterlist.unit_quantity" },
+        { "key": "sets", "wire": "sets", "label_key": "inventory.masterlist.unit_sets" },
+        { "key": "units", "wire": "units", "label_key": "inventory.masterlist.unit_units" },
+        { "key": "items", "wire": "items", "label_key": "inventory.masterlist.unit_items" },
+        { "key": "boxes", "wire": "boxes", "label_key": "inventory.masterlist.unit_boxes" },
+        { "key": "packets", "wire": "packets", "label_key": "inventory.masterlist.unit_packets" }
+      ]
+    },
+    {
+      "key": "weight",
+      "label_key": "inventory.masterlist.unit_group_weight",
+      "units": [
+        { "key": "kilograms", "wire": "kg", "label_key": "inventory.masterlist.unit_kg" },
+        { "key": "grams", "wire": "g", "label_key": "inventory.masterlist.unit_grams" },
+        { "key": "milligrams", "wire": "mg", "label_key": "inventory.masterlist.unit_milligrams" },
+        { "key": "tons", "wire": "ton", "label_key": "inventory.masterlist.unit_tons" }
+      ]
+    },
+    {
+      "key": "liquid",
+      "label_key": "inventory.masterlist.unit_group_liquid",
+      "units": [
+        { "key": "litres", "wire": "litre", "label_key": "inventory.masterlist.unit_litre" },
+        { "key": "millilitres", "wire": "ml", "label_key": "inventory.masterlist.unit_millilitres" },
+        { "key": "cups", "wire": "cup", "label_key": "inventory.masterlist.unit_cups" }
+      ]
+    },
+    {
+      "key": "distance",
+      "label_key": "inventory.masterlist.unit_group_distance",
+      "units": [
+        { "key": "meters", "wire": "m", "label_key": "inventory.masterlist.unit_meters" },
+        { "key": "centimeters", "wire": "cm", "label_key": "inventory.masterlist.unit_centimeters" },
+        { "key": "millimeters", "wire": "mm", "label_key": "inventory.masterlist.unit_millimeters" },
+        { "key": "kilometers", "wire": "km", "label_key": "inventory.masterlist.unit_kilometers" },
+        { "key": "feet", "wire": "ft", "label_key": "inventory.masterlist.unit_feet" },
+        { "key": "inches", "wire": "in", "label_key": "inventory.masterlist.unit_inches" }
+      ]
+    }
+  ],
+  "custom": { "key": "custom", "label_key": "inventory.masterlist.unit_custom" }
+}

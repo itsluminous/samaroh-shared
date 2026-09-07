@@ -135,6 +135,86 @@
     "value": "Custom unit",
     "description": "Label of the free-text unit input shown when Custom is picked in the unit dropdown."
   },
+  "inventory.masterlist.unit_group_count": {
+    "value": "Count",
+    "description": "Group header in the unit dropdown for countable units (pieces, sets, boxes…)."
+  },
+  "inventory.masterlist.unit_group_weight": {
+    "value": "Weight",
+    "description": "Group header in the unit dropdown for weight units (kg, g, mg, tons)."
+  },
+  "inventory.masterlist.unit_group_liquid": {
+    "value": "Liquid",
+    "description": "Group header in the unit dropdown for liquid-volume units (litres, ml, cups)."
+  },
+  "inventory.masterlist.unit_group_distance": {
+    "value": "Distance",
+    "description": "Group header in the unit dropdown for length units (m, cm, mm, km, ft, in)."
+  },
+  "inventory.masterlist.unit_sets": {
+    "value": "Sets",
+    "description": "Unit dropdown option for sets (stored as wire value 'sets')."
+  },
+  "inventory.masterlist.unit_units": {
+    "value": "Units",
+    "description": "Unit dropdown option for generic units (stored as wire value 'units')."
+  },
+  "inventory.masterlist.unit_items": {
+    "value": "Items",
+    "description": "Unit dropdown option for items (stored as wire value 'items')."
+  },
+  "inventory.masterlist.unit_boxes": {
+    "value": "Boxes",
+    "description": "Unit dropdown option for boxes (stored as wire value 'boxes')."
+  },
+  "inventory.masterlist.unit_packets": {
+    "value": "Packets",
+    "description": "Unit dropdown option for packets (stored as wire value 'packets')."
+  },
+  "inventory.masterlist.unit_grams": {
+    "value": "Grams (g)",
+    "description": "Unit dropdown option for grams (stored as wire value 'g')."
+  },
+  "inventory.masterlist.unit_milligrams": {
+    "value": "Milligrams (mg)",
+    "description": "Unit dropdown option for milligrams (stored as wire value 'mg')."
+  },
+  "inventory.masterlist.unit_tons": {
+    "value": "Tons",
+    "description": "Unit dropdown option for tons (stored as wire value 'ton')."
+  },
+  "inventory.masterlist.unit_millilitres": {
+    "value": "Millilitres (ml)",
+    "description": "Unit dropdown option for millilitres (stored as wire value 'ml')."
+  },
+  "inventory.masterlist.unit_cups": {
+    "value": "Cups",
+    "description": "Unit dropdown option for cups (stored as wire value 'cup')."
+  },
+  "inventory.masterlist.unit_meters": {
+    "value": "Meters (m)",
+    "description": "Unit dropdown option for meters (stored as wire value 'm')."
+  },
+  "inventory.masterlist.unit_centimeters": {
+    "value": "Centimeters (cm)",
+    "description": "Unit dropdown option for centimeters (stored as wire value 'cm')."
+  },
+  "inventory.masterlist.unit_millimeters": {
+    "value": "Millimeters (mm)",
+    "description": "Unit dropdown option for millimeters (stored as wire value 'mm')."
+  },
+  "inventory.masterlist.unit_kilometers": {
+    "value": "Kilometers (km)",
+    "description": "Unit dropdown option for kilometers (stored as wire value 'km')."
+  },
+  "inventory.masterlist.unit_feet": {
+    "value": "Feet (ft)",
+    "description": "Unit dropdown option for feet (stored as wire value 'ft')."
+  },
+  "inventory.masterlist.unit_inches": {
+    "value": "Inches (in)",
+    "description": "Unit dropdown option for inches (stored as wire value 'in')."
+  },
   "inventory.masterlist.photo_pick": {
     "value": "Choose photo",
     "description": "Button that opens the system photo picker in the item editor. The picked image is cropped square and compressed."
