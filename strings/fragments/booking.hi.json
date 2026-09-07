@@ -123,6 +123,26 @@
     "value": "बुकिंग रद्द मानी जाएगी और तारीख खाली हो जाएगी।",
     "description": "Body of the cancel-booking confirmation dialog."
   },
+  "booking.card.action_restore": {
+    "value": "बुकिंग बहाल करें",
+    "description": "Booking card action on a CANCELLED booking: returns it to Confirmed status and re-adds it to the calendar."
+  },
+  "booking.card.restore_conflict_confirm": {
+    "value": "फिर भी बहाल करें",
+    "description": "Confirm button of the non-blocking double-booking warning shown when restoring a cancelled booking whose dates now have other bookings."
+  },
+  "booking.card.action_delete_permanent": {
+    "value": "हमेशा के लिए हटाएँ",
+    "description": "Booking card action on a CANCELLED booking: permanently removes the booking (tombstone) from every device."
+  },
+  "booking.card.delete_confirm_title": {
+    "value": "यह बुकिंग हटाएँ?",
+    "description": "Title of the confirmation dialog before permanently deleting a cancelled booking."
+  },
+  "booking.card.delete_confirm_message": {
+    "value": "इससे बुकिंग हर डिवाइस से हमेशा के लिए हट जाएगी।",
+    "description": "Body of the permanent-delete confirmation dialog for a cancelled booking."
+  },
   "booking.card.invoice_pdf": {
     "value": "PDF साझा करें",
     "description": "Invoice output option: generate the PDF invoice and open the share sheet."
