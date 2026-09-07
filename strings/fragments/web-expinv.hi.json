@@ -239,6 +239,10 @@
     "value": "फ़ोटो हटाएँ",
     "description": "Button that clears the picked/existing photo on the master-item form."
   },
+  "inventory.master.photo_mobile_hint": {
+    "value": "फ़ोटो मोबाइल ऐप से जोड़ें",
+    "description": "Hint shown in place of the disabled photo picker on the web master-item form — item photos are stored in Google Drive and the web app has no Drive access, so photos can only be added/changed from the Android app."
+  },
   "inventory.master.similar_title": {
     "value": "मिलते-जुलते आइटम पहले से मौजूद हैं:",
     "description": "Heading above the fuzzy-duplicate suggestion chips on the master-item form (3+ chars, 40% similarity)."
