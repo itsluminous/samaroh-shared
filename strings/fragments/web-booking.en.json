@@ -1,8 +1,4 @@
 {
-  "booking.card.action_restore_booking": {
-    "value": "Restore booking",
-    "description": "Booking card action on a CANCELLED booking: puts it back on the calendar as Confirmed (the pre-cancellation status is not stored)."
-  },
   "booking.card.restored": {
     "value": "Booking restored",
     "description": "Snackbar shown after a cancelled booking is restored and its dates are free."
@@ -10,18 +6,6 @@
   "booking.card.restore_conflict_warning": {
     "value": "{count, plural, one {Booking restored — # other booking overlaps these dates.} other {Booking restored — # other bookings overlap these dates.}}",
     "description": "Non-blocking snackbar after restoring a cancelled booking whose dates now overlap other active bookings. ICU plural; count is the number of overlapping bookings. The restore still succeeds — halls can host multiple events."
-  },
-  "booking.card.action_delete_booking": {
-    "value": "Delete permanently",
-    "description": "Booking card action on a CANCELLED booking: permanently removes it (soft-delete tombstone) from every view. Distinct from Cancel booking, which only releases the date."
-  },
-  "booking.card.delete_confirm_title": {
-    "value": "Delete this booking?",
-    "description": "Title of the confirmation dialog before permanently deleting a cancelled booking."
-  },
-  "booking.card.delete_confirm_message": {
-    "value": "The booking and its payment history will be removed from all views. This cannot be undone.",
-    "description": "Body of the permanent-delete confirmation dialog for a cancelled booking."
   },
   "booking.card.deleted": {
     "value": "Booking deleted",
