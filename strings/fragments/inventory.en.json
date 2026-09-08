@@ -318,5 +318,37 @@
   "inventory.detail.delete_item": {
     "value": "Delete item",
     "description": "Overflow menu entry on the item detail screen that starts the delete-item flow."
+  },
+  "inventory.txn.menu": {
+    "value": "Transaction options",
+    "description": "Long-press explanation / content description of the three-dots overflow menu on an inventory transaction row."
+  },
+  "inventory.txn.edit_title": {
+    "value": "Edit transaction",
+    "description": "Title of the dialog that edits an existing inventory transaction (quantity, price, date, notes)."
+  },
+  "inventory.txn.date_label": {
+    "value": "Date",
+    "description": "Label of the transaction-date field in the edit-transaction dialog."
+  },
+  "inventory.txn.delete_confirm_title": {
+    "value": "Delete this transaction?",
+    "description": "Title of the confirmation dialog before deleting an inventory transaction."
+  },
+  "inventory.txn.delete_confirm_message": {
+    "value": "The transaction will be removed and the item's stock will be recalculated.",
+    "description": "Body of the delete-transaction confirmation dialog."
+  },
+  "inventory.txn.error_history_negative": {
+    "value": "This change can't be saved: the item's stock would drop below zero at some point in its history.",
+    "description": "Error shown when editing or deleting a transaction would make the cumulative stock negative at any point in the item's history."
+  },
+  "inventory.txn.updated": {
+    "value": "Transaction updated.",
+    "description": "Snackbar confirmation after an inventory transaction edit is saved."
+  },
+  "inventory.txn.deleted": {
+    "value": "Transaction deleted.",
+    "description": "Snackbar confirmation after an inventory transaction is deleted."
   }
 }

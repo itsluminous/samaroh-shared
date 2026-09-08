@@ -318,5 +318,37 @@
   "inventory.detail.delete_item": {
     "value": "सामान हटाएँ",
     "description": "Overflow menu entry on the item detail screen that starts the delete-item flow."
+  },
+  "inventory.txn.menu": {
+    "value": "लेन-देन के विकल्प",
+    "description": "Long-press explanation / content description of the three-dots overflow menu on an inventory transaction row."
+  },
+  "inventory.txn.edit_title": {
+    "value": "लेन-देन संपादित करें",
+    "description": "Title of the dialog that edits an existing inventory transaction (quantity, price, date, notes)."
+  },
+  "inventory.txn.date_label": {
+    "value": "तारीख",
+    "description": "Label of the transaction-date field in the edit-transaction dialog."
+  },
+  "inventory.txn.delete_confirm_title": {
+    "value": "यह लेन-देन हटाएं?",
+    "description": "Title of the confirmation dialog before deleting an inventory transaction."
+  },
+  "inventory.txn.delete_confirm_message": {
+    "value": "लेन-देन हटा दिया जाएगा और आइटम का स्टॉक फिर से गिना जाएगा।",
+    "description": "Body of the delete-transaction confirmation dialog."
+  },
+  "inventory.txn.error_history_negative": {
+    "value": "यह बदलाव सहेजा नहीं जा सकता: इतिहास में किसी समय आइटम का स्टॉक शून्य से नीचे चला जाएगा।",
+    "description": "Error shown when editing or deleting a transaction would make the cumulative stock negative at any point in the item's history."
+  },
+  "inventory.txn.updated": {
+    "value": "लेन-देन अपडेट हो गया।",
+    "description": "Snackbar confirmation after an inventory transaction edit is saved."
+  },
+  "inventory.txn.deleted": {
+    "value": "लेन-देन हटा दिया गया।",
+    "description": "Snackbar confirmation after an inventory transaction is deleted."
   }
 }
