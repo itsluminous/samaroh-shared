@@ -42,5 +42,21 @@
   "common.viewer.save_failed": {
     "value": "Couldn't save the photo",
     "description": "Snackbar after the viewer's download action fails (no space, denied permission on old Android)."
+  },
+  "common.sort.open": {
+    "value": "Sort",
+    "description": "Content description / long-press explanation of the compact sort icon that opens a list's sort menu."
+  },
+  "common.sort.last_updated": {
+    "value": "Last updated",
+    "description": "Sort-menu option: order the list by most recent activity, newest first (default)."
+  },
+  "common.sort.name_asc": {
+    "value": "Name (A to Z)",
+    "description": "Sort-menu option: order the list alphabetically by name, ascending."
+  },
+  "common.sort.name_desc": {
+    "value": "Name (Z to A)",
+    "description": "Sort-menu option: order the list alphabetically by name, descending."
   }
 }
