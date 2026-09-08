@@ -342,5 +342,13 @@
   "inventory.master.save_success": {
     "value": "Item saved",
     "description": "Success snackbar after creating or editing a master item."
+  },
+  "inventory.image.open_in_drive": {
+    "value": "Open in Drive",
+    "description": "Small secondary link inside the item-photo lightbox (and in its load-failure state) that opens the Google Drive file view page in a new tab for the full-resolution image or download. 'Drive' is the product name and stays untranslated."
+  },
+  "inventory.image.load_failed": {
+    "value": "Could not load the photo",
+    "description": "Error message shown inside the item-photo lightbox when the large image fails to load from both Drive endpoints (e.g. the file is not link-shared yet); the Open in Drive link is offered underneath as the fallback."
   }
 }
