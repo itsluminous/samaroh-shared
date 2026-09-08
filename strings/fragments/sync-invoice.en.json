@@ -23,10 +23,6 @@
     "value": "'{title}' was changed on another device - your edit to {fields} was overridden.",
     "description": "Conflict notification body when the local pending operation lost to a newer remote change and was discarded. {title} is the record name, {fields} the comma-joined overridden field names."
   },
-  "sync.banner.conflict": {
-    "value": "A change from another device replaced a local edit. Review it in Sync status.",
-    "description": "In-app banner text shown while unacknowledged sync conflicts exist; tapping opens Settings → Sync status."
-  },
   "invoice.title": {
     "value": "Invoice",
     "description": "Localized 'Invoice' document title in the PDF header band and the text receipt."

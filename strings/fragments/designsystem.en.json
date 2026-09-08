@@ -23,10 +23,6 @@
     "value": "Full screen",
     "description": "Action icon in the full-screen image viewer: enter immersive full-screen (hides system bars and viewer controls)."
   },
-  "common.viewer.exit_fullscreen": {
-    "value": "Exit full screen",
-    "description": "Action icon in the full-screen image viewer while immersive: restore system bars and viewer controls."
-  },
   "common.viewer.download": {
     "value": "Save to device",
     "description": "Action icon in the full-screen image viewer: save a copy of the image to the device's Downloads."
@@ -40,8 +36,8 @@
     "description": "Action icon in the full-screen image viewer: close the viewer."
   },
   "common.viewer.saved_to": {
-    "value": "Saved to %1$s",
-    "description": "Snackbar after the viewer's download action succeeds; %1$s is the folder the copy landed in (e.g. Download/Samaroh)."
+    "value": "Saved to {folder}",
+    "description": "Snackbar after the viewer's download action succeeds; {folder} is the folder the copy landed in (e.g. Download/Samaroh)."
   },
   "common.viewer.save_failed": {
     "value": "Couldn't save the photo",

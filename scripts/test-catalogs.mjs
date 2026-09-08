@@ -123,6 +123,34 @@ const GOOD = {
   rmSync(dir, { recursive: true, force: true });
 }
 
+{
+  const dir = fixture({
+    en: { 'common.viewer.saved_to': entry('Saved to %1$s') },
+    hi: { 'common.viewer.saved_to': entry('%1$s में सेव हो गया') },
+  });
+  const r = run('scripts/validate-catalogs.mjs', dir);
+  check(
+    r.status !== 0 && r.stderr.includes('positional'),
+    'validator rejects raw Android positional syntax in a translatable value',
+    r.stderr,
+  );
+  rmSync(dir, { recursive: true, force: true });
+}
+
+{
+  const dir = fixture({
+    en: { 'reports.format.percent': entry('{percent}% of total') },
+    hi: { 'reports.format.percent': entry('कुल का {percent}%') },
+  });
+  const r = run('scripts/validate-catalogs.mjs', dir);
+  check(
+    r.status === 0,
+    'validator accepts an ordinary literal % next to an ICU placeholder',
+    r.stderr,
+  );
+  rmSync(dir, { recursive: true, force: true });
+}
+
 // --- gen-android -------------------------------------------------------------------
 
 {

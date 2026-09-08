@@ -566,5 +566,25 @@
   "booking.reminder.test_sample_title": {
     "value": "आपका बुकिंग रिमाइंडर ऐसा दिखेगा",
     "description": "Title of the SAMPLE reminder fired by the Test button in Settings → Booking reminders. Goes through the real reminder pipeline with the selected style and sound."
+  },
+  "booking.calendar.a11y_today": {
+    "value": "आज",
+    "description": "Screen-reader announcement fragment for the current date's calendar cell."
+  },
+  "booking.calendar.a11y_blocked_day": {
+    "value": "रखरखाव या बंदी के लिए बंद",
+    "description": "Screen-reader announcement fragment for a calendar cell inside a date block."
+  },
+  "booking.calendar.a11y_no_bookings": {
+    "value": "कोई बुकिंग नहीं",
+    "description": "Screen-reader announcement fragment for a calendar cell without any bookings."
+  },
+  "booking.calendar.a11y_bookings_on_day": {
+    "value": "{count, plural, one {# बुकिंग: {summaries}} other {# बुकिंग: {summaries}}}",
+    "description": "Screen-reader booking summary for a calendar cell. ICU plural; count is the number of bookings on the date, summaries is a comma-separated list of customer first names (icons render only in the day cell)."
+  },
+  "booking.calendar.agenda_empty_hint": {
+    "value": "बुकिंग जोड़ने के लिए ऊपर कैलेंडर में कोई भी खाली तारीख दबाएँ।",
+    "description": "Guidance under the agenda empty-state title telling the user how to create their first booking of the month."
   }
 }

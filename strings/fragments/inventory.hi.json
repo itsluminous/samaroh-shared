@@ -259,14 +259,6 @@
     "value": "शुरू करने के लिए फ़ोटो और इकाई के साथ सामान जोड़ें।",
     "description": "Body of the empty state on the item list screen."
   },
-  "inventory.list.all_zero_title": {
-    "value": "स्टॉक में कुछ नहीं",
-    "description": "Title of the empty state on the current-inventory screen when items exist but every one has zero stock (zero-quantity rows are hidden)."
-  },
-  "inventory.list.all_zero_message": {
-    "value": "सभी सामान शून्य पर हैं। स्टॉक लाने के लिए जोड़ें लेन-देन दर्ज करें।",
-    "description": "Body of the all-at-zero empty state on the current-inventory screen guiding the user to record an Add transaction."
-  },
   "inventory.txn.saved_add": {
     "value": "स्टॉक जोड़ दिया गया।",
     "description": "Snackbar confirmation after an Add transaction is recorded."

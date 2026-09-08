@@ -566,5 +566,25 @@
   "booking.reminder.test_sample_title": {
     "value": "This is how your booking reminder will look",
     "description": "Title of the SAMPLE reminder fired by the Test button in Settings → Booking reminders. Goes through the real reminder pipeline with the selected style and sound."
+  },
+  "booking.calendar.a11y_today": {
+    "value": "Today",
+    "description": "Screen-reader announcement fragment for the current date's calendar cell."
+  },
+  "booking.calendar.a11y_blocked_day": {
+    "value": "Blocked for maintenance or closure",
+    "description": "Screen-reader announcement fragment for a calendar cell inside a date block."
+  },
+  "booking.calendar.a11y_no_bookings": {
+    "value": "No bookings",
+    "description": "Screen-reader announcement fragment for a calendar cell without any bookings."
+  },
+  "booking.calendar.a11y_bookings_on_day": {
+    "value": "{count, plural, one {# booking: {summaries}} other {# bookings: {summaries}}}",
+    "description": "Screen-reader booking summary for a calendar cell. ICU plural; count is the number of bookings on the date, summaries is a comma-separated list of customer first names (icons render only in the day cell)."
+  },
+  "booking.calendar.agenda_empty_hint": {
+    "value": "Tap any empty date on the calendar above to add a booking.",
+    "description": "Guidance under the agenda empty-state title telling the user how to create their first booking of the month."
   }
 }

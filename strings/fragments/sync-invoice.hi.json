@@ -23,10 +23,6 @@
     "value": "'{title}' को दूसरे डिवाइस पर बदला गया - {fields} में आपका बदलाव हटा दिया गया।",
     "description": "Conflict notification body when the local pending operation lost to a newer remote change and was discarded. {title} is the record name, {fields} the comma-joined overridden field names."
   },
-  "sync.banner.conflict": {
-    "value": "दूसरे डिवाइस के बदलाव ने आपका एक स्थानीय बदलाव बदल दिया। सिंक स्थिति में देखें।",
-    "description": "In-app banner text shown while unacknowledged sync conflicts exist; tapping opens Settings → Sync status."
-  },
   "invoice.title": {
     "value": "बिल",
     "description": "Localized 'Invoice' document title in the PDF header band and the text receipt."

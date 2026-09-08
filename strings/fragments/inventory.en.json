@@ -259,14 +259,6 @@
     "value": "Add an item with its photo and unit to get started.",
     "description": "Body of the empty state on the item list screen."
   },
-  "inventory.list.all_zero_title": {
-    "value": "Nothing in stock",
-    "description": "Title of the empty state on the current-inventory screen when items exist but every one has zero stock (zero-quantity rows are hidden)."
-  },
-  "inventory.list.all_zero_message": {
-    "value": "Every item is at zero. Record an Add transaction to bring stock in.",
-    "description": "Body of the all-at-zero empty state on the current-inventory screen guiding the user to record an Add transaction."
-  },
   "inventory.txn.saved_add": {
     "value": "Stock added successfully.",
     "description": "Snackbar confirmation after an Add transaction is recorded."

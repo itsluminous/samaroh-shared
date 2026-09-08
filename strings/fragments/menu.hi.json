@@ -87,10 +87,6 @@
     "value": "अनुमतियाँ",
     "description": "Member editor: heading above the permission matrix."
   },
-  "menu.members.permissions_placeholder": {
-    "value": "अनुमति नियंत्रण यहाँ दिखेंगे।",
-    "description": "Member editor: placeholder text shown until the permission matrix editor is integrated."
-  },
   "menu.members.revoke": {
     "value": "पहुँच हटाएँ",
     "description": "Member editor: action that sets the member's status to revoked."
@@ -302,10 +298,6 @@
   "settings.gcal.tentative_suffix": {
     "value": " (संभावित)",
     "description": "Suffix appended to the Google Calendar event title of tentative bookings. Keep the leading space."
-  },
-  "settings.gcal.event_description": {
-    "value": "कुल: {total} · मिला: {paid} · बाकी: {due}",
-    "description": "Google Calendar event description: amounts summary. {total}/{paid}/{due} are formatted rupee amounts."
   },
   "settings.gcal.event_managed_by": {
     "value": "Samaroh द्वारा प्रबंधित",
@@ -698,5 +690,9 @@
   "settings.image_quality.hint_low": {
     "value": "सबसे छोटी फ़ाइलें, कम बारीकी",
     "description": "Approx-size hint shown when the Space saver level is selected."
+  },
+  "settings.sync.all_synced_message": {
+    "value": "आपके सभी बदलाव सुरक्षित हैं। ऑनलाइन होते ही नए बदलाव अपने आप सिंक हो जाते हैं।",
+    "description": "Reassuring guidance on the Sync status screen when there are no pending changes, conflicts or errors."
   }
 }

@@ -238,5 +238,13 @@
   "expenses.attachment_view.deleted": {
     "value": "Bill removed",
     "description": "Snackbar after a bill image was deleted from the viewer."
+  },
+  "expenses.home.no_results_title": {
+    "value": "No matching people",
+    "description": "Empty-state title on the Expenses tab when the search box filters out every party."
+  },
+  "expenses.home.no_results_message": {
+    "value": "Check the spelling, or add them as a new person.",
+    "description": "Empty-state guidance on the Expenses tab when a search has no matches."
   }
 }

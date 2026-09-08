@@ -13,6 +13,9 @@
 //   4. ICU placeholder-name parity per key across locales
 //   5. plural shape parity (a key that is a plural in en must be a plural everywhere);
 //      a non-translatable entry must not be a plural (nothing locale-varying to pluralize)
+//   6. no raw Android positional syntax (%1$s, %2$d …) in translatable values — authors
+//      must use ICU {name} placeholders (gen-android converts them); a raw positional
+//      works on Android by accident but renders literally on the web (next-intl)
 import {
   CANONICAL_LOCALE,
   discoverLocales,
@@ -62,6 +65,12 @@ for (const locale of locales) {
     if (entry.value.trim() === '') fail(`[${locale}] key "${key}" has an empty value`);
     if (isNonTranslatable(entry) && parseIcuPlural(entry.value)) {
       fail(`[${locale}] key "${key}" is non-translatable but a plural — plurals are inherently locale-varying`);
+    }
+    // 6: raw Android positional syntax must not appear in translatable values —
+    // authors must use ICU {name} placeholders. (Non-translatable entries are exempt:
+    // they may carry technical literals like percent-encoded URIs.)
+    if (!isNonTranslatable(entry) && /%\d+\$[a-zA-Z]/.test(entry.value)) {
+      fail(`[${locale}] key "${key}" contains raw Android positional syntax (%N$x) — use an ICU {name} placeholder instead`);
     }
   }
 }

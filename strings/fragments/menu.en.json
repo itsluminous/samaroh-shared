@@ -87,10 +87,6 @@
     "value": "Permissions",
     "description": "Member editor: heading above the permission matrix."
   },
-  "menu.members.permissions_placeholder": {
-    "value": "Permission controls will appear here.",
-    "description": "Member editor: placeholder text shown until the permission matrix editor is integrated."
-  },
   "menu.members.revoke": {
     "value": "Revoke access",
     "description": "Member editor: action that sets the member's status to revoked."
@@ -302,10 +298,6 @@
   "settings.gcal.tentative_suffix": {
     "value": " (Tentative)",
     "description": "Suffix appended to the Google Calendar event title of tentative bookings. Keep the leading space."
-  },
-  "settings.gcal.event_description": {
-    "value": "Total: {total} · Paid: {paid} · Due: {due}",
-    "description": "Google Calendar event description: amounts summary. {total}/{paid}/{due} are formatted rupee amounts."
   },
   "settings.gcal.event_managed_by": {
     "value": "Managed by Samaroh",
@@ -708,5 +700,9 @@
   "settings.image_quality.hint_low": {
     "value": "Smallest files, less detail",
     "description": "Approx-size hint shown when the Space saver level is selected."
+  },
+  "settings.sync.all_synced_message": {
+    "value": "All your changes are saved. New changes sync on their own whenever you are online.",
+    "description": "Reassuring guidance on the Sync status screen when there are no pending changes, conflicts or errors."
   }
 }
