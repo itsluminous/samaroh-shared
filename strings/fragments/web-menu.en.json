@@ -59,6 +59,10 @@
     "value": "Could not save the changes",
     "description": "Snackbar shown when saving the business profile failed."
   },
+  "settings.business.logo_mobile_hint": {
+    "value": "Change the logo from the mobile app",
+    "description": "Hint next to the read-only business logo preview on the web business profile card - the web app has no logo upload path, so the logo can only be set/changed from the Android app (business-profile variant of the inventory.master.photo_mobile_hint pattern)."
+  },
   "menu.about.licenses_body_web": {
     "value": "The web app is built with open-source software, including: Next.js and React (MIT), Material UI (MIT), Supabase JS (MIT), next-intl (MIT), pdf-lib (MIT), Dexie.js (Apache 2.0).",
     "description": "Licenses note on the web About screen listing the open-source libraries the web app uses."

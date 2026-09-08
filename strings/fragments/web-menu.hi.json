@@ -59,6 +59,10 @@
     "value": "बदलाव सहेजे नहीं जा सके",
     "description": "Snackbar shown when saving the business profile failed."
   },
+  "settings.business.logo_mobile_hint": {
+    "value": "लोगो मोबाइल ऐप से बदलें",
+    "description": "Hint next to the read-only business logo preview on the web business profile card - the web app has no logo upload path, so the logo can only be set/changed from the Android app (business-profile variant of the inventory.master.photo_mobile_hint pattern)."
+  },
   "menu.about.licenses_body_web": {
     "value": "यह वेब ऐप ओपन-सोर्स सॉफ़्टवेयर से बना है, जिनमें शामिल हैं: Next.js और React (MIT), Material UI (MIT), Supabase JS (MIT), next-intl (MIT), pdf-lib (MIT), Dexie.js (Apache 2.0)।",
     "description": "Licenses note on the web About screen listing the open-source libraries the web app uses."
