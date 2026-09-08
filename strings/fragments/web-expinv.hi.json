@@ -79,6 +79,10 @@
     "value": "अटैचमेंट",
     "description": "Heading of the attachment list in the add/edit entry dialog."
   },
+  "expenses.entry.attachments_mobile_hint": {
+    "value": "बिल मोबाइल ऐप से जोड़ें",
+    "description": "Hint shown in place of the disabled attachment picker on the web add/edit entry dialog - bill files are uploaded to Google Drive by the Android app and the web app has no Drive upload path, so attachments can only be added from the mobile app (same pattern as inventory.master.photo_mobile_hint)."
+  },
   "expenses.entry.attach": {
     "value": "बिल जोड़ें",
     "description": "Button that opens the file picker to attach an invoice (image/PDF) to an entry."

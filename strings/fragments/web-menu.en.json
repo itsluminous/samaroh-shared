@@ -74,5 +74,10 @@
   "reports.export.download_csv": {
     "value": "Download CSV",
     "description": "Button on web report pages that downloads the current report as a CSV file (web counterpart of the Android share action)."
+  },
+  "menu.about.source_code_url_web": {
+    "value": "https://github.com/itsluminous/samaroh-web",
+    "description": "Data, not copy: the URL the web About page's source-code link opens (the web repo - Android's row uses menu.about.source_code_url). Never localized.",
+    "translatable": false
   }
 }
