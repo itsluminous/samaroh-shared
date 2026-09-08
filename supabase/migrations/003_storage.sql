@@ -1,22 +1,23 @@
 -- 003_storage.sql — private storage buckets, RLS'd by business membership.
 --
--- Buckets (all PRIVATE): logos, inventory-images, booking-invoices.
--- Path convention: {business_id}/{entity_id}/{filename} — the first path segment is the
--- business UUID, and every policy checks membership/permission against it.
--- Expense invoice attachments do NOT get a bucket — they live in Google Drive; only
--- metadata rows sync (see expense_attachments in 001_schema.sql).
+-- ONE bucket (PRIVATE): logos — the business logo, the ONLY image that lives in
+-- Supabase Storage. Every other image lives in Google Drive:
+--   - inventory item photos  -> Drive files referenced by master_items.drive_image_id
+--   - expense bill photos/PDFs -> Drive files referenced by expense_attachments.drive_file_id
+--   - invoice PDFs -> generated on demand and shared directly; never persisted server-side
+-- (The legacy 'inventory-images' and 'booking-invoices' buckets are gone — nothing
+-- writes to them; scripts/alter-drop-image-path.sql retires them on an existing DB.)
 --
--- Write-permission mapping per bucket:
---   logos             -> settings.manage_business (business identity)
---   inventory-images  -> inventory.manage_master_items (item photos)
---   booking-invoices  -> booking.generate_invoice (invoice PDFs)
--- Reads require active membership plus the module's view permission where one exists.
+-- Path convention: {business_id}/{filename} — the first path segment is the business
+-- UUID, and every policy checks membership/permission against it.
+--
+-- Write-permission mapping:
+--   logos -> settings.manage_business (business identity)
+-- Reads require active membership.
 
 insert into storage.buckets (id, name, public)
 values
-  ('logos', 'logos', false),
-  ('inventory-images', 'inventory-images', false),
-  ('booking-invoices', 'booking-invoices', false)
+  ('logos', 'logos', false)
 on conflict (id) do nothing;
 
 -- Helper: extract the business id from the object path ({business_id}/...).
@@ -52,56 +53,4 @@ create policy storage_logos_delete on storage.objects
   for delete using (
     bucket_id = 'logos'
     and has_perm(storage_object_business_id(name), 'settings', 'manage_business')
-  );
-
--- ============ inventory-images ============
-create policy storage_inventory_images_select on storage.objects
-  for select using (
-    bucket_id = 'inventory-images'
-    and has_perm(storage_object_business_id(name), 'inventory', 'view')
-  );
-create policy storage_inventory_images_insert on storage.objects
-  for insert with check (
-    bucket_id = 'inventory-images'
-    and has_perm(storage_object_business_id(name), 'inventory', 'manage_master_items')
-  );
-create policy storage_inventory_images_update on storage.objects
-  for update using (
-    bucket_id = 'inventory-images'
-    and has_perm(storage_object_business_id(name), 'inventory', 'manage_master_items')
-  )
-  with check (
-    bucket_id = 'inventory-images'
-    and has_perm(storage_object_business_id(name), 'inventory', 'manage_master_items')
-  );
-create policy storage_inventory_images_delete on storage.objects
-  for delete using (
-    bucket_id = 'inventory-images'
-    and has_perm(storage_object_business_id(name), 'inventory', 'manage_master_items')
-  );
-
--- ============ booking-invoices ============
-create policy storage_booking_invoices_select on storage.objects
-  for select using (
-    bucket_id = 'booking-invoices'
-    and has_perm(storage_object_business_id(name), 'booking', 'view')
-  );
-create policy storage_booking_invoices_insert on storage.objects
-  for insert with check (
-    bucket_id = 'booking-invoices'
-    and has_perm(storage_object_business_id(name), 'booking', 'generate_invoice')
-  );
-create policy storage_booking_invoices_update on storage.objects
-  for update using (
-    bucket_id = 'booking-invoices'
-    and has_perm(storage_object_business_id(name), 'booking', 'generate_invoice')
-  )
-  with check (
-    bucket_id = 'booking-invoices'
-    and has_perm(storage_object_business_id(name), 'booking', 'generate_invoice')
-  );
-create policy storage_booking_invoices_delete on storage.objects
-  for delete using (
-    bucket_id = 'booking-invoices'
-    and has_perm(storage_object_business_id(name), 'booking', 'delete')
   );

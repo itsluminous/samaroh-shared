@@ -23,22 +23,19 @@
 --   • storage.buckets       — bucket rows stay; the baseline 003_storage.sql
 --                             creates them idempotently (on conflict do nothing),
 --                             so leaving them is safe.
---   • storage OBJECTS       — SQL cannot delete files on hosted Supabase
---                             (error 42501). Wipe the files separately with the
---                             companion script:
---                               node scripts/cleanup-storage.mjs --dry-run   # preview
---                               SUPABASE_URL=... SUPABASE_SERVICE_KEY=... \
---                                 node scripts/cleanup-storage.mjs
---   • Google Drive          — expense attachment files live in the owner's
---                             Drive; never touched from here.
+--   • storage OBJECTS       — the only bucket is 'logos' (business logo =
+--                             setup); its files are kept. (SQL could not
+--                             delete files on hosted Supabase anyway —
+--                             error 42501.)
+--   • Google Drive          — item photos and expense bills live in the
+--                             owner's Drive; never touched from here.
 --
 -- INTENDED SEQUENCE (full clean-slate reset)
 --   1. Run THIS script in the Supabase SQL editor (runs as postgres).
---   2. Wipe storage files:  node scripts/cleanup-storage.mjs
---   3. Re-apply the consolidated baseline:  supabase db push
---   4. Recreate the business via app onboarding (the app seeds the
+--   2. Re-apply the consolidated baseline:  supabase db push
+--   3. Recreate the business via app onboarding (the app seeds the
 --      event-type presets client-side at business creation).
---   5. Re-run the import scripts.
+--   4. Re-run the import scripts.
 --   Also clear every device's local store (sign out / clear site data) —
 --   synced clients will not see tombstones for dropped rows.
 -- ============================================================================
@@ -126,4 +123,4 @@ end $$;
 
 commit;
 
--- Done. Next steps: cleanup-storage.mjs → supabase db push → app onboarding → imports.
+-- Done. Next steps: supabase db push → app onboarding → imports.

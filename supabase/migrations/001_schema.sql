@@ -195,8 +195,12 @@ create table master_items (
   business_id uuid not null references businesses(id) on delete cascade,
   name text not null,
   unit text not null,                -- 'pcs' | 'qty' | 'kg' | free text
-  image_path text,                   -- Supabase Storage, ≤320px WebP
-  drive_image_id text,
+  drive_image_id text,               -- Google Drive = THE image store for item photos
+                                     -- (anyone-with-link file, ≤320px WebP). Null while
+                                     -- the photo is device-local pending upload, or when
+                                     -- the item has no photo. The photo file never
+                                     -- touches Supabase Storage; the device-local path
+                                     -- lives in the client DB only (not synced).
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
   deleted_at timestamptz,
@@ -347,7 +351,6 @@ returns table (
   master_item_id uuid,
   name text,
   unit text,
-  image_path text,
   current_quantity numeric,
   current_value numeric,
   last_transaction_at timestamptz
@@ -359,7 +362,6 @@ as $$
     mi.id as master_item_id,
     mi.name,
     mi.unit,
-    mi.image_path,
     coalesce(sum(
       case t.transaction_type when 'add' then t.quantity else -t.quantity end
     ), 0) as current_quantity,
@@ -372,5 +374,5 @@ as $$
     on t.master_item_id = mi.id and t.deleted_at is null
   where mi.business_id = p_business_id
     and mi.deleted_at is null
-  group by mi.id, mi.name, mi.unit, mi.image_path;
+  group by mi.id, mi.name, mi.unit;
 $$;

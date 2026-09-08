@@ -81,19 +81,18 @@ Apply new migrations **before** deploying app versions that read the new columns
 
 | Script | Purpose |
 |---|---|
-| `scripts/cleanup-data.sql` | **The** data-wipe script — wipe operational data for one business (or all, the default): hard-deletes bookings/payments/reminders/date blocks, expenses/parties/attachments, inventory transactions/master items (child tables first, FK-safe). **Keeps** accounts and setup (`auth.users`, `businesses`, `business_members`, `business_settings`, `google_accounts`, `event_types` — user config) and resets `businesses.invoice_counter` to 0. Run in the Supabase SQL editor (transactional, FK-ordered). |
-| `scripts/cleanup-storage.mjs` | Companion to the SQL scripts — empties the `inventory-images` and `booking-invoices` storage buckets via the Storage API (hosted Supabase rejects SQL against storage tables with error 42501). Keeps the `logos` bucket. Supports `--dry-run`. Setup: `cd scripts && npm i`, then `SUPABASE_SERVICE_KEY=<key> node cleanup-storage.mjs`. |
-| `scripts/destroy-everything.sql` | ☢️ **Total schema destruction** — drops every Samaroh table (cascade), enum, function, the `auth.users` trigger and the storage policies, and clears the `supabase_migrations` history so `supabase db push` re-applies the baseline from scratch. Keeps `auth.users` rows and `storage.buckets`. Storage FILES are wiped separately by `cleanup-storage.mjs`. |
+| `scripts/cleanup-data.sql` | **The** data-wipe script — wipe operational data for one business (or all, the default): hard-deletes bookings/payments/reminders/date blocks, expenses/parties/attachments, inventory transactions/master items (child tables first, FK-safe). **Keeps** accounts and setup (`auth.users`, `businesses`, `business_members`, `business_settings`, `google_accounts`, `event_types` — user config) and resets `businesses.invoice_counter` to 0. Run in the Supabase SQL editor (transactional, FK-ordered). Item photos/bills live in Google Drive and are not touched; the only Storage bucket (`logos`) is setup and kept. |
+| `scripts/destroy-everything.sql` | ☢️ **Total schema destruction** — drops every Samaroh table (cascade), enum, function, the `auth.users` trigger and the storage policies, and clears the `supabase_migrations` history so `supabase db push` re-applies the baseline from scratch. Keeps `auth.users` rows and `storage.buckets`. |
+| `scripts/alter-drop-image-path.sql` | One-time convergence of an EXISTING deployment on the final image architecture: recreates `get_current_inventory` without `image_path`, drops `master_items.image_path` (the column no longer syncs — item photos are referenced by `drive_image_id`; the local path is device-only), and removes the retired `inventory-images`/`booking-invoices` buckets + policies. Run AFTER all devices run an app version that no longer pushes `image_path`. |
 
-A full reset (data only) = run `cleanup-data.sql` in the SQL editor, then
-`cleanup-storage.mjs` with the service-role key. Accounts and business setup survive both.
+A full reset (data only) = run `cleanup-data.sql` in the SQL editor. Accounts and
+business setup survive.
 
 A **clean-slate rebuild** (drop and recreate the whole schema) =
 
 1. `destroy-everything.sql` in the SQL editor,
-2. `node scripts/cleanup-storage.mjs` (wipe stored files),
-3. `supabase db push` (re-applies the consolidated baseline),
-4. recreate the business via app onboarding (presets seed client-side),
+2. `supabase db push` (re-applies the consolidated baseline),
+3. recreate the business via app onboarding (presets seed client-side),
 5. re-run the import scripts.
 
 ## Invoice layout contract

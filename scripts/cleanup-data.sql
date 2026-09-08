@@ -19,19 +19,13 @@
 --     - business_settings.last_backup_at -> null (recorded backups described
 --       data that no longer exists)
 --
--- STORAGE FILES — handled by the COMPANION SCRIPT, not here
---   This script does NOT touch Supabase Storage. Hosted Supabase forbids SQL
---   against the storage tables:
---     ERROR 42501: "Direct deletion from storage tables is not allowed.
---     Use the Storage API instead."
---   Run the companion Node script AFTER this one to wipe the files the
---   deleted rows referenced (invoice PDFs in 'booking-invoices', item photos
---   in 'inventory-images'; the 'logos' bucket is kept — logos are setup):
---     node scripts/cleanup-storage.mjs --dry-run     # preview
---     SUPABASE_URL=... SUPABASE_SERVICE_KEY=... node scripts/cleanup-storage.mjs
---   (Expense attachment files live in the owner's Google Drive, not Supabase
---   Storage — only the expense_attachments metadata rows are removed here;
---   Drive is never touched.)
+-- STORAGE FILES — nothing to wipe
+--   Item photos and expense bills live in Google Drive (referenced by
+--   master_items.drive_image_id / expense_attachments.drive_file_id) — only
+--   metadata rows are removed here; Drive is never touched. Invoice PDFs are
+--   generated on demand and never persisted server-side. The only Supabase
+--   Storage bucket is 'logos' (business logo = setup, not data), which this
+--   script deliberately keeps.
 --
 -- HOW TO RUN (Supabase SQL editor)
 --   1. Open the project's SQL editor (runs as postgres, bypasses RLS).
@@ -129,5 +123,5 @@ begin
   raise notice 'business_settings: last_backup_at cleared on % row(s)', n;
 
   raise notice 'DONE — % data row(s) deleted. Kept: auth.users, businesses, business_members, business_settings, google_accounts, event_types.', total;
-  raise notice 'NEXT: wipe the stored files with  node scripts/cleanup-storage.mjs  (SQL cannot — error 42501).';
+  raise notice 'Item photos/bills live in Google Drive (not deleted here); the only Storage bucket (logos) is setup and kept.';
 end $$;

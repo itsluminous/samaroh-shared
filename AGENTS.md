@@ -51,10 +51,12 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
   this repo and the remote may have advanced mid-task. Never force-push.
 - Conventional Commits, imperative, ≤50-char subject (`feat(strings): …`,
   `feat(schema): …`, `feat(scripts): …`).
-- Operational scripts live in `scripts/` (`cleanup-data.sql` for data rows,
-  `cleanup-storage.mjs` for storage files — SQL cannot touch storage tables on
-  hosted Supabase, error 42501; `destroy-everything.sql` for a full schema
-  drop + rebuild via `supabase db push`). Keep the header comments (what's
+- Operational scripts live in `scripts/` (`cleanup-data.sql` for data rows —
+  item photos/bills live in Google Drive and the only Storage bucket, `logos`,
+  is setup, so there is no storage companion; `destroy-everything.sql` for a
+  full schema drop + rebuild via `supabase db push`;
+  `alter-drop-image-path.sql` converges an existing deployment on the final
+  image architecture). Keep the header comments (what's
   kept vs deleted) accurate when editing. Event-type presets are seeded
   CLIENT-SIDE at business creation (both apps, from `event-types.json`); the
   booking import script backfills — migrations never seed them.
