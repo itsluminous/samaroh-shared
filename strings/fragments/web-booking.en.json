@@ -4,8 +4,8 @@
     "description": "Snackbar shown after a cancelled booking is restored and its dates are free."
   },
   "booking.card.restore_conflict_warning": {
-    "value": "{count, plural, one {Booking restored — # other booking overlaps these dates.} other {Booking restored — # other bookings overlap these dates.}}",
-    "description": "Non-blocking snackbar after restoring a cancelled booking whose dates now overlap other active bookings. ICU plural; count is the number of overlapping bookings. The restore still succeeds — halls can host multiple events."
+    "value": "{count, plural, one {Booking restored - # other booking overlaps these dates.} other {Booking restored - # other bookings overlap these dates.}}",
+    "description": "Non-blocking snackbar after restoring a cancelled booking whose dates now overlap other active bookings. ICU plural; count is the number of overlapping bookings. The restore still succeeds - halls can host multiple events."
   },
   "booking.card.deleted": {
     "value": "Booking deleted",

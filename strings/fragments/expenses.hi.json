@@ -13,7 +13,7 @@
   },
   "expenses.home.add_person": {
     "value": "पार्टी जोड़ें",
-    "description": "Label of the FAB on the Expenses home screen and the title of the add-party screen. (Renamed from 'Add person' — key name kept for compatibility.)"
+    "description": "Label of the FAB on the Expenses home screen and the title of the add-party screen. (Renamed from 'Add person' - key name kept for compatibility.)"
   },
   "expenses.home.empty_title": {
     "value": "अभी कोई व्यक्ति नहीं",
@@ -44,7 +44,7 @@
     "description": "Validation error under the name field when saving with an empty name."
   },
   "expenses.add_person.exists_notice": {
-    "value": "{name} पहले से मौजूद हैं — उनका पेज खोल रहे हैं",
+    "value": "{name} पहले से मौजूद हैं - उनका पेज खोल रहे हैं",
     "description": "Toast shown when saving a person whose name already exists; the app steers to the existing party's ledger instead of creating a duplicate. {name} is the existing party's name."
   },
   "expenses.add_person.business_question": {
@@ -61,7 +61,7 @@
   },
   "expenses.party.edit_title": {
     "value": "पार्टी बदलें",
-    "description": "Title of the edit-party dialog/screen (name, phone, business flag — same fields as add-party). Buttons reuse common.action.save / common.action.cancel."
+    "description": "Title of the edit-party dialog/screen (name, phone, business flag - same fields as add-party). Buttons reuse common.action.save / common.action.cancel."
   },
   "expenses.party.delete_action": {
     "value": "पार्टी हटाएँ",
@@ -188,7 +188,7 @@
     "description": "Content description of the back navigation arrow on Expenses screens."
   },
   "expenses.ledger.pending_upload_unlinked": {
-    "value": "फ़ाइल अभी इसी फ़ोन पर है — Drive में सुरक्षित रखने के लिए Settings में अपना Google खाता जोड़ें",
+    "value": "फ़ाइल अभी इसी फ़ोन पर है - Drive में सुरक्षित रखने के लिए Settings में अपना Google खाता जोड़ें",
     "description": "Long-press explanation and content description of the pending-upload badge on an attachment when NO Google account is linked; points the user at the Settings link flow. Replaces expenses.ledger.pending_upload in that state."
   },
   "expenses.google_prompt.link_failed": {

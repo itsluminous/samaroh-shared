@@ -36,7 +36,7 @@
     "description": "Reports home: subtitle under the Event types row."
   },
   "reports.event_types.marker_note": {
-    "value": "निशान वाले आयोजन (जैसे लगन या तिलक) सिर्फ़ कैलेंडर पर दिन दर्शाते हैं — ये बुकिंग या आय में नहीं गिने जाते।",
+    "value": "निशान वाले आयोजन (जैसे लगन या तिलक) सिर्फ़ कैलेंडर पर दिन दर्शाते हैं - ये बुकिंग या आय में नहीं गिने जाते।",
     "description": "Footnote on the Event types report explaining that entries whose event type has kind = 'marker' are excluded from booking counts and revenue."
   },
   "reports.report.sources": {
@@ -348,7 +348,7 @@
     "description": "One legend/value pair inside the chart selection details, e.g. \"Collected: ₹50,000\"."
   },
   "reports.inventory.snapshot_note": {
-    "value": "मौजूदा स्टॉक की कीमत — तारीख़ें लागू नहीं होतीं",
+    "value": "मौजूदा स्टॉक की कीमत - तारीख़ें लागू नहीं होतीं",
     "description": "Note on the inventory value report explaining why it has no date-range filter."
   },
   "reports.pdf.footer": {

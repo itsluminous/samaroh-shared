@@ -88,7 +88,7 @@
     "description": "Validation error for a missing or non-numeric unit price on an Add transaction."
   },
   "inventory.txn.error_insufficient_stock": {
-    "value": "Not enough stock — only {quantity} {unit} available.",
+    "value": "Not enough stock - only {quantity} {unit} available.",
     "description": "Validation error when a Remove asks for more than the current stock. {quantity} is the available stock, {unit} its localized unit."
   },
   "inventory.masterlist.title": {

@@ -4,7 +4,7 @@
     "description": "Placeholder of the search box above the party list on the expenses home."
   },
   "expenses.home.empty": {
-    "value": "No parties yet — add a person to start the ledger.",
+    "value": "No parties yet - add a person to start the ledger.",
     "description": "Empty state of the expenses home when the business has no parties."
   },
   "expenses.home.no_results": {
@@ -64,7 +64,7 @@
     "description": "Net-balance caption when the party balance is zero."
   },
   "expenses.ledger.empty": {
-    "value": "No entries yet — record what you gave or got.",
+    "value": "No entries yet - record what you gave or got.",
     "description": "Empty state of a person ledger with no entries."
   },
   "expenses.ledger.back": {
@@ -93,7 +93,7 @@
   },
   "expenses.entry.attachment_not_uploaded": {
     "value": "Not uploaded yet",
-    "description": "Tooltip on a disabled attachment chip whose Google Drive upload is still pending — there is no file to open yet."
+    "description": "Tooltip on a disabled attachment chip whose Google Drive upload is still pending - there is no file to open yet."
   },
   "expenses.entry.attachment_limit_hint": {
     "value": "Up to {max} attachments",
@@ -128,7 +128,7 @@
     "description": "Last-transaction caption on a stock row. {time} is a localized relative time like '2 days ago'."
   },
   "inventory.stock.empty": {
-    "value": "No stock yet — record a transaction to get started.",
+    "value": "No stock yet - record a transaction to get started.",
     "description": "Empty state of the current-stock list when there are no items with stock."
   },
   "inventory.stock.no_results": {
@@ -241,7 +241,7 @@
   },
   "inventory.master.photo_mobile_hint": {
     "value": "Add photos from the mobile app",
-    "description": "Hint shown in place of the disabled photo picker on the web master-item form — item photos are stored in Google Drive and the web app has no Drive access, so photos can only be added/changed from the Android app."
+    "description": "Hint shown in place of the disabled photo picker on the web master-item form - item photos are stored in Google Drive and the web app has no Drive access, so photos can only be added/changed from the Android app."
   },
   "inventory.master.similar_title": {
     "value": "Similar items already exist:",
@@ -268,11 +268,11 @@
     "description": "Confirmation dialog body before tombstone-deleting a master item."
   },
   "inventory.master.delete_blocked": {
-    "value": "Cannot delete — this item has transactions",
+    "value": "Cannot delete - this item has transactions",
     "description": "Tooltip/message on a disabled delete button for a master item that has inventory transactions."
   },
   "inventory.master.empty": {
-    "value": "No items yet — add your first item.",
+    "value": "No items yet - add your first item.",
     "description": "Empty state of the master list."
   },
   "inventory.master.image_upload_failed": {

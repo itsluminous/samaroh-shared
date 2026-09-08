@@ -1,7 +1,7 @@
 {
   "common.app_name": {
     "value": "Samaroh",
-    "description": "Application name shown in launcher, top bar and about screen. Never translated phonetically differently — brand name."
+    "description": "Application name shown in launcher, top bar and about screen. Never translated phonetically differently - brand name."
   },
   "common.action.save": {
     "value": "Save",
@@ -64,7 +64,7 @@
     "description": "Sync state label: local changes are queued and waiting to sync."
   },
   "common.state.offline_banner": {
-    "value": "Offline — changes will sync",
+    "value": "Offline - changes will sync",
     "description": "Persistent thin banner shown while the device has no connectivity."
   },
   "common.state.pending_changes": {
@@ -109,7 +109,7 @@
   },
   "booking.event_type.tilak": {
     "value": "Tilak",
-    "description": "Built-in event type label (🪔) — pre-wedding tilak ceremony."
+    "description": "Built-in event type label (🪔) - pre-wedding tilak ceremony."
   },
   "booking.event_type.wedding": {
     "value": "Wedding",
@@ -117,7 +117,7 @@
   },
   "booking.event_type.room_booking": {
     "value": "Room Booking",
-    "description": "Built-in event type label (🏨) — guest house / room stay."
+    "description": "Built-in event type label (🏨) - guest house / room stay."
   },
   "booking.event_type.birthday": {
     "value": "Birthday",
@@ -129,15 +129,15 @@
   },
   "booking.event_type.custom": {
     "value": "Custom",
-    "description": "Built-in event type label (✨) — user provides free-text label and emoji."
+    "description": "Built-in event type label (✨) - user provides free-text label and emoji."
   },
   "booking.event_type.lagan": {
     "value": "Lagan",
-    "description": "Built-in event type label (⭐) — lagan (auspicious wedding-date fixing) ceremony."
+    "description": "Built-in event type label (⭐) - lagan (auspicious wedding-date fixing) ceremony."
   },
   "booking.event_type.muh_dikhayi": {
     "value": "Muh Dikhayi",
-    "description": "Built-in event type label (👰🏻‍♀️) — muh dikhayi (bride's first-look) ceremony."
+    "description": "Built-in event type label (👰🏻‍♀️) - muh dikhayi (bride's first-look) ceremony."
   },
   "common.language.switcher_label": {
     "value": "Language",

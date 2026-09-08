@@ -28,7 +28,7 @@
     "description": "Title of welcome carousel slide 1 (booking calendar pitch)."
   },
   "onboarding.welcome.slide1.body": {
-    "value": "See every event at a glance and never miss a payment — as easy as WhatsApp.",
+    "value": "See every event at a glance and never miss a payment - as easy as WhatsApp.",
     "description": "Body of welcome carousel slide 1. WhatsApp is a permitted integration name."
   },
   "onboarding.welcome.slide2.title": {
@@ -297,7 +297,7 @@
   },
   "auth.permissions.action_view_amounts": {
     "value": "View amounts",
-    "description": "Permission toggle (row appears under Booking, Expenses, Inventory and Reports): see financial amounts in this tab. ON by default — an absent key means amounts stay visible; the owner switches it OFF explicitly to hide them, and the app then masks every figure as ₹•••."
+    "description": "Permission toggle (row appears under Booking, Expenses, Inventory and Reports): see financial amounts in this tab. ON by default - an absent key means amounts stay visible; the owner switches it OFF explicitly to hide them, and the app then masks every figure as ₹•••."
   },
   "auth.permissions.amount_hidden_a11y": {
     "value": "Amount hidden",

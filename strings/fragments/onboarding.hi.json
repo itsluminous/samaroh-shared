@@ -28,7 +28,7 @@
     "description": "Title of welcome carousel slide 1 (booking calendar pitch)."
   },
   "onboarding.welcome.slide1.body": {
-    "value": "हर आयोजन एक नज़र में देखें और कोई भुगतान न छूटे — WhatsApp जितना आसान।",
+    "value": "हर आयोजन एक नज़र में देखें और कोई भुगतान न छूटे - WhatsApp जितना आसान।",
     "description": "Body of welcome carousel slide 1. WhatsApp is a permitted integration name."
   },
   "onboarding.welcome.slide2.title": {
@@ -36,7 +36,7 @@
     "description": "Title of welcome carousel slide 2 (expenses ledger pitch)."
   },
   "onboarding.welcome.slide2.body": {
-    "value": "किसे कितना दिया और किससे कितना मिला — रसीदों के साथ, व्यक्ति-दर-व्यक्ति हिसाब रखें।",
+    "value": "किसे कितना दिया और किससे कितना मिला - रसीदों के साथ, व्यक्ति-दर-व्यक्ति हिसाब रखें।",
     "description": "Body of welcome carousel slide 2."
   },
   "onboarding.welcome.slide3.title": {
@@ -297,7 +297,7 @@
   },
   "auth.permissions.action_view_amounts": {
     "value": "राशि देखें",
-    "description": "Permission toggle (row appears under Booking, Expenses, Inventory and Reports): see financial amounts in this tab. ON by default — an absent key means amounts stay visible; the owner switches it OFF explicitly to hide them, and the app then masks every figure as ₹•••."
+    "description": "Permission toggle (row appears under Booking, Expenses, Inventory and Reports): see financial amounts in this tab. ON by default - an absent key means amounts stay visible; the owner switches it OFF explicitly to hide them, and the app then masks every figure as ₹•••."
   },
   "auth.permissions.amount_hidden_a11y": {
     "value": "राशि छिपाई गई है",

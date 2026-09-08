@@ -12,7 +12,7 @@
     "description": "Client-side validation error on the web sign-up form for a too-short password."
   },
   "guest.banner.message": {
-    "value": "Guest mode — your data is saved only on this device.",
+    "value": "Guest mode - your data is saved only on this device.",
     "description": "Persistent thin banner shown across the web app while using it without an account (local-only storage)."
   },
   "guest.banner.sign_in": {

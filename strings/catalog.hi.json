@@ -64,7 +64,7 @@
     "description": "Sync state label: local changes are queued and waiting to sync."
   },
   "common.state.offline_banner": {
-    "value": "ऑफ़लाइन — बदलाव बाद में सिंक होंगे",
+    "value": "ऑफ़लाइन - बदलाव बाद में सिंक होंगे",
     "description": "Persistent thin banner shown while the device has no connectivity."
   },
   "common.state.pending_changes": {
@@ -109,7 +109,7 @@
   },
   "booking.event_type.tilak": {
     "value": "तिलक",
-    "description": "Built-in event type label (🪔) — pre-wedding tilak ceremony."
+    "description": "Built-in event type label (🪔) - pre-wedding tilak ceremony."
   },
   "booking.event_type.wedding": {
     "value": "शादी",
@@ -117,7 +117,7 @@
   },
   "booking.event_type.room_booking": {
     "value": "कमरा बुकिंग",
-    "description": "Built-in event type label (🏨) — guest house / room stay."
+    "description": "Built-in event type label (🏨) - guest house / room stay."
   },
   "booking.event_type.birthday": {
     "value": "जन्मदिन",
@@ -129,15 +129,15 @@
   },
   "booking.event_type.custom": {
     "value": "अपनी पसंद",
-    "description": "Built-in event type label (✨) — user provides free-text label and emoji."
+    "description": "Built-in event type label (✨) - user provides free-text label and emoji."
   },
   "booking.event_type.lagan": {
     "value": "लगन",
-    "description": "Built-in event type label (⭐) — lagan (auspicious wedding-date fixing) ceremony."
+    "description": "Built-in event type label (⭐) - lagan (auspicious wedding-date fixing) ceremony."
   },
   "booking.event_type.muh_dikhayi": {
     "value": "मुंह दिखाई",
-    "description": "Built-in event type label (👰🏻‍♀️) — muh dikhayi (bride's first-look) ceremony."
+    "description": "Built-in event type label (👰🏻‍♀️) - muh dikhayi (bride's first-look) ceremony."
   },
   "common.language.switcher_label": {
     "value": "भाषा",

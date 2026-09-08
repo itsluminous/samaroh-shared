@@ -16,11 +16,11 @@
     "description": "Title of the conflict notification fired when a pulled remote change wins over a local pending edit."
   },
   "sync.notification.conflict_rebased": {
-    "value": "'{title}' was changed on another device — your edit to {fields} was re-applied over that change.",
+    "value": "'{title}' was changed on another device - your edit to {fields} was re-applied over that change.",
     "description": "Conflict notification body when the local pending edit was rebased on top of a newer remote row and re-queued. {title} is the record name (customer/party/item), {fields} the comma-joined changed field names."
   },
   "sync.notification.conflict_dropped": {
-    "value": "'{title}' was changed on another device — your edit to {fields} was overridden.",
+    "value": "'{title}' was changed on another device - your edit to {fields} was overridden.",
     "description": "Conflict notification body when the local pending operation lost to a newer remote change and was discarded. {title} is the record name, {fields} the comma-joined overridden field names."
   },
   "sync.banner.conflict": {

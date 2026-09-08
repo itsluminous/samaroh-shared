@@ -61,7 +61,7 @@
   },
   "booking.marker.badge": {
     "value": "निशान",
-    "description": "Badge on a calendar/list entry whose event type has kind = 'marker' (auspicious-day self-indicator like Lagan or Tilak): highlights the day only — no customer, no payments, excluded from reports."
+    "description": "Badge on a calendar/list entry whose event type has kind = 'marker' (auspicious-day self-indicator like Lagan or Tilak): highlights the day only - no customer, no payments, excluded from reports."
   },
   "booking.card.phone_call": {
     "value": "कॉल करें",
@@ -277,7 +277,7 @@
   },
   "booking.form.conflict_save_anyway": {
     "value": "फिर भी सहेजें",
-    "description": "Confirm button of the double-booking warning — halls can host multiple events, so saving is allowed."
+    "description": "Confirm button of the double-booking warning - halls can host multiple events, so saving is allowed."
   },
   "booking.form.conflict_go_back": {
     "value": "वापस जाएँ",
@@ -388,7 +388,7 @@
     "description": "View action on upcoming-event reminders; opens the booking in the app."
   },
   "booking.whatsapp.reminder_text": {
-    "value": "नमस्ते {name}, {event} ({date}) के {due} बाकी हैं — {business}।",
+    "value": "नमस्ते {name}, {event} ({date}) के {due} बाकी हैं - {business}।",
     "description": "Prefilled WhatsApp payment-reminder message. {due} is a pre-formatted rupee amount, {event} the localized event type, {date} a localized date, {business} the business name."
   },
   "booking.whatsapp.not_installed": {
@@ -420,7 +420,7 @@
     "description": "Label of the manual invoice-number field on the booking form."
   },
   "booking.form.invoice_number_hint": {
-    "value": "वैकल्पिक — खाली छोड़ने पर अपने आप बनेगा",
+    "value": "वैकल्पिक - खाली छोड़ने पर अपने आप बनेगा",
     "description": "Supporting text under the invoice-number field while it is still editable (no number assigned yet)."
   },
   "booking.form.invoice_number_duplicate": {
@@ -488,7 +488,7 @@
     "description": "First option in the booking color picker: no explicit color chosen, the booking keeps the standard themed (purple) look."
   },
   "booking.color.follows_type": {
-    "value": "डिफ़ॉल्ट — आयोजन के प्रकार के अनुसार",
+    "value": "डिफ़ॉल्ट - आयोजन के प्रकार के अनुसार",
     "description": "Accessibility/annotation on the color swatch that is the current event type's default color while no explicit color is chosen: the booking follows the type's default (picking the swatch stores an explicit color; Default stores none)."
   },
   "booking.color.tomato": {

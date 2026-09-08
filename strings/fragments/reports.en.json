@@ -36,7 +36,7 @@
     "description": "Reports home: subtitle under the Event types row."
   },
   "reports.event_types.marker_note": {
-    "value": "Marker events (like Lagan or Tilak) only mark days on the calendar — they are not counted in bookings or revenue.",
+    "value": "Marker events (like Lagan or Tilak) only mark days on the calendar - they are not counted in bookings or revenue.",
     "description": "Footnote on the Event types report explaining that entries whose event type has kind = 'marker' are excluded from booking counts and revenue."
   },
   "reports.report.sources": {
@@ -348,7 +348,7 @@
     "description": "One legend/value pair inside the chart selection details, e.g. \"Collected: ₹50,000\"."
   },
   "reports.inventory.snapshot_note": {
-    "value": "Current stock value — dates do not apply",
+    "value": "Current stock value - dates do not apply",
     "description": "Note on the inventory value report explaining why it has no date-range filter."
   },
   "reports.pdf.footer": {

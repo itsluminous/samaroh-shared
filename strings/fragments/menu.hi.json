@@ -141,11 +141,11 @@
   },
   "settings.language.name_en": {
     "value": "English",
-    "description": "Language picker: English shown in its own script — identical in every locale."
+    "description": "Language picker: English shown in its own script - identical in every locale."
   },
   "settings.language.name_hi": {
     "value": "हिन्दी",
-    "description": "Language picker: Hindi shown in its own script — identical in every locale."
+    "description": "Language picker: Hindi shown in its own script - identical in every locale."
   },
   "settings.theme.title": {
     "value": "थीम",
@@ -213,14 +213,14 @@
   },
   "settings.reminders.permissions_title": {
     "value": "रिमाइंडर अनुमतियाँ",
-    "description": "Reminder settings: title of the permission-status section listing the system grants reminders depend on (notifications, full-screen intent, exact alarms). Every permission is optional (§6) — the rows show state and offer a fix, never block the app."
+    "description": "Reminder settings: title of the permission-status section listing the system grants reminders depend on (notifications, full-screen intent, exact alarms). Every permission is optional (§6) - the rows show state and offer a fix, never block the app."
   },
   "settings.reminders.permission_notifications": {
     "value": "सूचनाएँ",
     "description": "Permission-status row: the POST_NOTIFICATIONS runtime permission (Android 13+). Without it no reminder can appear outside the app."
   },
   "settings.reminders.permission_notifications_denied": {
-    "value": "अनुमति नहीं — रिमाइंडर ऐप के बाहर नहीं दिखेंगे",
+    "value": "अनुमति नहीं - रिमाइंडर ऐप के बाहर नहीं दिखेंगे",
     "description": "Permission-status row state when notifications are denied. The in-app pending-confirmations card remains the reliable path."
   },
   "settings.reminders.permission_fullscreen": {
@@ -228,7 +228,7 @@
     "description": "Permission-status row: the Android 14+ full-screen-intent grant needed by the alarm-style reminder. Shown only when the full-screen style is selected."
   },
   "settings.reminders.permission_fullscreen_denied": {
-    "value": "अनुमति नहीं — रिमाइंडर सामान्य सूचना की तरह दिखेगा",
+    "value": "अनुमति नहीं - रिमाइंडर सामान्य सूचना की तरह दिखेगा",
     "description": "Permission-status row state when the full-screen-intent grant is off: the system downgrades the alarm-style popup to a heads-up notification."
   },
   "settings.reminders.permission_exact_alarm": {
@@ -236,7 +236,7 @@
     "description": "Permission-status row: the SCHEDULE_EXACT_ALARM grant (Android 12+) used to fire the alarm-style reminder at the exact time. Shown only when the full-screen style is selected."
   },
   "settings.reminders.permission_exact_alarm_denied": {
-    "value": "अनुमति नहीं — रिमाइंडर थोड़ी देर से आ सकता है",
+    "value": "अनुमति नहीं - रिमाइंडर थोड़ी देर से आ सकता है",
     "description": "Permission-status row state when exact alarms are not permitted: scheduling falls back to an inexact alarm."
   },
   "settings.reminders.permission_granted": {
@@ -396,8 +396,8 @@
     "description": "Sync status: composes one pending-change line from a localized operation verb and entity noun, e.g. 'Add booking'. Hindi reorders to noun-first."
   },
   "settings.sync.op_line": {
-    "value": "{operation} — {detail}",
-    "description": "Sync status: full pending-change line: the composed operation phrase plus a human identifier, e.g. 'Add booking — Sharma'."
+    "value": "{operation} - {detail}",
+    "description": "Sync status: full pending-change line: the composed operation phrase plus a human identifier, e.g. 'Add booking - Sharma'."
   },
   "settings.sync.verb_add": {
     "value": "जोड़ना",
@@ -413,7 +413,7 @@
   },
   "settings.sync.entity_booking": {
     "value": "बुकिंग",
-    "description": "Sync status: entity noun for a booking, composed into 'Add booking — Sharma'."
+    "description": "Sync status: entity noun for a booking, composed into 'Add booking - Sharma'."
   },
   "settings.sync.entity_payment": {
     "value": "भुगतान",
@@ -469,11 +469,11 @@
   },
   "settings.sync.payment_detail": {
     "value": "{name} के लिए {amount}",
-    "description": "Sync status: payment identifier — formatted amount plus the booking's customer name, e.g. '₹500 for Sharma'."
+    "description": "Sync status: payment identifier - formatted amount plus the booking's customer name, e.g. '₹500 for Sharma'."
   },
   "settings.sync.technical_detail": {
     "value": "{type} · {op} · {id}",
-    "description": "Sync status: technical detail line shown when a pending/error row is expanded — raw table name, operation and record id."
+    "description": "Sync status: technical detail line shown when a pending/error row is expanded - raw table name, operation and record id."
   },
   "settings.sync.queued_at": {
     "value": "कतार में जोड़ा गया: {time}",
@@ -544,7 +544,7 @@
     "description": "Slider label for the date ↔ icon crossfade on booked calendar days: left = full date with a faint icon, middle = the default watermark look, right = the date number fades until only the icon shows."
   },
   "settings.booking_calendar.icon_alpha_description": {
-    "value": "दाईं ओर खिसकाने पर बुक की गई तारीख़ों पर इवेंट आइकन गहरे दिखते हैं — बीच से आगे तारीख़ का अंक धुँधला होता जाता है और सबसे दाईं ओर सिर्फ़ आइकन दिखता है",
+    "value": "दाईं ओर खिसकाने पर बुक की गई तारीख़ों पर इवेंट आइकन गहरे दिखते हैं - बीच से आगे तारीख़ का अंक धुँधला होता जाता है और सबसे दाईं ओर सिर्फ़ आइकन दिखता है",
     "description": "Supporting text under the date-and-icon balance slider; the sample cell next to the slider previews the crossfade live. Unbooked days always show the full date."
   },
   "menu.about.donate_upi": {
@@ -564,7 +564,7 @@
     "description": "Title of the manage event-type presets screen (Menu → Settings). Preset labels themselves are plain-text user data from the event_types table, NOT catalog keys."
   },
   "settings.event_types.empty": {
-    "value": "अभी कोई आयोजन प्रकार नहीं है — एक जोड़ें और वह बुकिंग फ़ॉर्म में दिखेगा",
+    "value": "अभी कोई आयोजन प्रकार नहीं है - एक जोड़ें और वह बुकिंग फ़ॉर्म में दिखेगा",
     "description": "Empty state of the manage event-type presets screen, shown when every preset has been deleted."
   },
   "settings.event_types.add_title": {
@@ -593,14 +593,14 @@
   },
   "settings.event_types.kind_booking": {
     "value": "बुकिंग के लिए",
-    "description": "Kind selector pill: event_types.kind = 'booking' — a real customer booking with payments; counted in reports. The default."
+    "description": "Kind selector pill: event_types.kind = 'booking' - a real customer booking with payments; counted in reports. The default."
   },
   "settings.event_types.kind_marker": {
     "value": "सिर्फ़ निशान",
-    "description": "Kind selector pill: event_types.kind = 'marker' — an auspicious-day self-indicator (Lagan/Tilak style) that only highlights the day on the calendar."
+    "description": "Kind selector pill: event_types.kind = 'marker' - an auspicious-day self-indicator (Lagan/Tilak style) that only highlights the day on the calendar."
   },
   "settings.event_types.kind_marker_hint": {
-    "value": "निशान सिर्फ़ कैलेंडर पर दिन दर्शाते हैं — न ग्राहक, न भुगतान, न रिपोर्ट में गिनती।",
+    "value": "निशान सिर्फ़ कैलेंडर पर दिन दर्शाते हैं - न ग्राहक, न भुगतान, न रिपोर्ट में गिनती।",
     "description": "Helper text under the kind selector when 'Just a marker' is selected, explaining what a marker event type does (and doesn't do)."
   },
   "settings.event_types.delete_title": {
@@ -649,7 +649,7 @@
   },
   "settings.reminders.style_hint": {
     "value": "जब स्क्रीन चालू और अनलॉक हो, तो Android हर रिमाइंडर ऊपर एक बैनर की तरह दिखाता है। पूरी स्क्रीन वाला पॉपअप तभी आता है जब स्क्रीन बंद या लॉक हो।",
-    "description": "Reminder settings: helper text under the style options explaining the Android system behavior — a full-screen-intent notification is deliberately shown as a heads-up banner while the device is in use, and only takes over the whole screen when it is off or locked."
+    "description": "Reminder settings: helper text under the style options explaining the Android system behavior - a full-screen-intent notification is deliberately shown as a heads-up banner while the device is in use, and only takes over the whole screen when it is off or locked."
   },
   "settings.reminders.test_fullscreen_blocked_title": {
     "value": "पहले पूरी स्क्रीन रिमाइंडर की अनुमति दें",
