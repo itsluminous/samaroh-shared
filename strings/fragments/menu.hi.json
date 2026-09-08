@@ -192,12 +192,28 @@
     "description": "Reminder settings: heading above the notification/full-screen choice."
   },
   "settings.reminders.style_notification": {
-    "value": "सादी सूचना",
-    "description": "Reminder style option: a normal notification."
+    "value": "सूचना",
+    "description": "Reminder style option 1 of 3 (ADR-072): a normal banner notification only - never takes over the screen."
+  },
+  "settings.reminders.style_notification_desc": {
+    "value": "स्क्रीन के ऊपर एक बैनर सूचना",
+    "description": "Behaviour line under the 'Notification' style option."
   },
   "settings.reminders.style_fullscreen": {
-    "value": "पूरी स्क्रीन पर पॉपअप",
-    "description": "Reminder style option: an alarm-style full-screen popup."
+    "value": "लॉक स्क्रीन पर पूरी स्क्रीन",
+    "description": "Reminder style option 2 of 3 (ADR-072): the alarm-style popup that takes over a locked/off screen and shows as a banner while the phone is in use - the pre-ADR-072 'Full-screen popup' renamed for what it actually does."
+  },
+  "settings.reminders.style_fullscreen_desc": {
+    "value": "लॉक स्क्रीन पर पूरी स्क्रीन घेरता है; फ़ोन इस्तेमाल करते समय बैनर दिखता है",
+    "description": "Behaviour line under the 'Full screen when locked' style option, stating the Android system behavior (screen in use = banner; locked/off = takeover)."
+  },
+  "settings.reminders.style_fullscreen_always": {
+    "value": "हमेशा पूरी स्क्रीन",
+    "description": "Reminder style option 3 of 3 (ADR-072): the popup takes over even while the phone is unlocked or another app is in use - needs the 'Display over other apps' special-access grant."
+  },
+  "settings.reminders.style_fullscreen_always_desc": {
+    "value": "फ़ोन इस्तेमाल करते समय भी पूरी स्क्रीन घेरता है - इसके लिए 'दूसरे ऐप्स के ऊपर दिखाएँ' अनुमति चाहिए",
+    "description": "Behaviour line under the 'Always full screen' style option, naming the grant it depends on."
   },
   "settings.reminders.sound_title": {
     "value": "रिमाइंडर की आवाज़",
@@ -234,6 +250,22 @@
   "settings.reminders.permission_exact_alarm_denied": {
     "value": "अनुमति नहीं - रिमाइंडर थोड़ी देर से आ सकता है",
     "description": "Permission-status row state when exact alarms are not permitted: scheduling falls back to an inexact alarm."
+  },
+  "settings.reminders.permission_overlay": {
+    "value": "दूसरे ऐप्स के ऊपर दिखाना",
+    "description": "Permission-status row: the SYSTEM_ALERT_WINDOW special-access grant (ADR-072). Shown only while the 'Always full screen' style is selected - it exempts the app from background-activity-launch restrictions so the reminder popup can take over an unlocked, in-use device."
+  },
+  "settings.reminders.permission_overlay_denied": {
+    "value": "अनुमति नहीं - रिमाइंडर सिर्फ़ लॉक स्क्रीन पर ही पूरी स्क्रीन घेरेगा",
+    "description": "Permission-status row state when the display-over-other-apps grant is off: the 'Always full screen' style degrades to the 'when locked' behaviour (banner while the phone is in use)."
+  },
+  "settings.reminders.overlay_needed_title": {
+    "value": "दूसरे ऐप्स के ऊपर दिखाने की अनुमति दें",
+    "description": "Title of the dialog shown when the user picks the 'Always full screen' style (or taps Test with it selected) without the display-over-other-apps grant."
+  },
+  "settings.reminders.overlay_needed_body": {
+    "value": "फ़ोन इस्तेमाल करते समय भी रिमाइंडर पूरी स्क्रीन पर दिखे, इसके लिए इस ऐप को 'दूसरे ऐप्स के ऊपर दिखाएँ' की अनुमति दें। सिस्टम सेटिंग खोलने के लिए ‘अनुमति दें’ दबाएँ।",
+    "description": "Body of the contextual overlay-permission dialog (ADR-072); the Allow button deep-links to the system's display-over-other-apps screen. Without the grant the style degrades to the locked-screen-only takeover."
   },
   "settings.reminders.permission_granted": {
     "value": "अनुमति है",
