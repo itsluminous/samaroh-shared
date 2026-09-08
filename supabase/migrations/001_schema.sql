@@ -262,8 +262,8 @@ create table event_types (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
   deleted_at timestamptz,
-  -- trailing position matches scripts/alter-event-type-kind.sql applied to an
-  -- existing database (ALTER TABLE appends the column physically last)
+  -- trailing position matches the (since-retired) alter-event-type-kind script
+  -- applied to an existing database (ALTER TABLE appends the column physically last)
   kind text not null default 'booking'
     check (kind in ('booking', 'marker'))  -- 'booking' = real customer booking;
                                            -- 'marker' = auspicious-day self-indicator

@@ -88,6 +88,10 @@ drop table if exists businesses             cascade;
 -- 4. Functions (after tables/policies so nothing still references them)
 -- ---------------------------------------------------------------------------
 drop function if exists activate_pending_invites()             cascade;
+drop function if exists auth_email()                           cascade;
+drop function if exists is_invited_member(uuid)                cascade;
+drop function if exists guard_member_self_activation()         cascade;
+drop function if exists link_invited_member()                  cascade;
 drop function if exists has_perm(uuid, text, text)             cascade;
 drop function if exists is_owner(uuid)                         cascade;
 drop function if exists is_active_member(uuid)                 cascade;
@@ -108,7 +112,7 @@ drop type if exists booking_source    cascade;
 
 -- ---------------------------------------------------------------------------
 -- 6. Migration history — cleared so `supabase db push` treats the
---    consolidated files as a fresh baseline and applies all three.
+--    consolidated files as a fresh baseline and applies all four.
 --    Guarded: the table only exists on databases the CLI has pushed to.
 -- ---------------------------------------------------------------------------
 do $$

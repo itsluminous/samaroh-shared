@@ -18,6 +18,7 @@
 --   expenses            5xxxxxxx-…
 --   master items        6xxxxxxx-…-0001..0015
 --   inventory txns      7xxxxxxx-…
+--   event-type presets  8xxxxxxx-…-0001..0009
 
 -- Demo owner (local stacks only; harmless no-op if the id already exists).
 insert into auth.users (id, email)
@@ -36,6 +37,22 @@ insert into business_members (id, business_id, invited_email, user_id, display_n
 
 insert into business_settings (business_id) values
 ('10000000-0000-0000-0000-000000000001');
+
+-- ============ EVENT-TYPE PRESETS (9, from event-types.json) ============
+-- In production both apps seed these CLIENT-SIDE at business creation; the demo
+-- business is created here, not by an app, so seed them explicitly — otherwise the
+-- booking form / calendar pickers show an empty preset list on a local stack.
+-- Labels are the English catalog values of the corresponding booking.event_type.* keys.
+insert into event_types (id, business_id, label, icon, color, sort_order, kind) values
+('80000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000001', 'Engagement',   '💍',  'flamingo',  0, 'booking'),
+('80000000-0000-0000-0000-000000000002', '10000000-0000-0000-0000-000000000001', 'Tilak',        '🪔',  'tangerine', 1, 'marker'),
+('80000000-0000-0000-0000-000000000003', '10000000-0000-0000-0000-000000000001', 'Wedding',      '💒',  'tomato',    2, 'booking'),
+('80000000-0000-0000-0000-000000000004', '10000000-0000-0000-0000-000000000001', 'Room Booking', '🏨',  'blueberry', 3, 'booking'),
+('80000000-0000-0000-0000-000000000005', '10000000-0000-0000-0000-000000000001', 'Birthday',     '🎂',  'banana',    4, 'booking'),
+('80000000-0000-0000-0000-000000000006', '10000000-0000-0000-0000-000000000001', 'Anniversary',  '👫🏻', 'sage',      5, 'booking'),
+('80000000-0000-0000-0000-000000000007', '10000000-0000-0000-0000-000000000001', 'Custom',       '✨',  'grape',     6, 'booking'),
+('80000000-0000-0000-0000-000000000008', '10000000-0000-0000-0000-000000000001', 'Lagan',        '⭐',  'peacock',   7, 'marker'),
+('80000000-0000-0000-0000-000000000009', '10000000-0000-0000-0000-000000000001', 'Muh Dikhayi',  '👰🏻♀️', 'fuchsia',   8, 'booking');
 
 -- ============ BOOKINGS (10, Jul–Sep 2026, mix of confirmed + tentative) ============
 insert into bookings (id, business_id, event_type, event_icon, customer_name, customer_phone,
