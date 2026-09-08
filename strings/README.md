@@ -74,6 +74,7 @@ Module namespaces and their owners:
 | `app.*` | app shell (placeholders, top-level chrome) |
 | `booking.*`, `expenses.*`, `inventory.*` | the respective feature |
 | `onboarding.*`, `auth.*`, `sync.*`, `invoice.*`, `menu.*`, `settings.*`, `reports.*` | the respective feature/core module |
+| `guest.*` | web guest mode (lives in `fragments/web-auth`) |
 
 New keys are added **only in this repo**, always to **both** locale files, in the feature's
 own namespace. CI enforces key parity and shape (`scripts/validate-catalogs.mjs`).
@@ -84,13 +85,24 @@ To let Wave-1 agents add keys **without merge conflicts** in the base catalog, e
 owns exactly **one fragment namespace file pair** under `strings/fragments/`:
 
 ```
-fragments/booking.en.json     fragments/booking.hi.json      # W1-A
-fragments/expenses.en.json    fragments/expenses.hi.json     # W1-B
-fragments/inventory.en.json   fragments/inventory.hi.json    # W1-C
-fragments/onboarding.en.json  fragments/onboarding.hi.json   # W1-D  (auth.* keys too)
-fragments/invoice.en.json     fragments/invoice.hi.json      # W1-E  (sync.* keys too)
-fragments/menu.en.json        fragments/menu.hi.json         # W1-F  (settings.* keys too)
+fragments/booking.en.json       fragments/booking.hi.json      # bookings (incl. calendar a11y)
+fragments/designsystem.en.json  fragments/designsystem.hi.json # shared UI components (viewer, cropper)
+fragments/expenses.en.json      fragments/expenses.hi.json     # expenses
+fragments/inventory.en.json     fragments/inventory.hi.json    # inventory
+fragments/menu.en.json          fragments/menu.hi.json         # menu (settings.* keys too)
+fragments/onboarding.en.json    fragments/onboarding.hi.json   # onboarding (auth.* keys too)
+fragments/reports.en.json       fragments/reports.hi.json      # reports
+fragments/sync-invoice.en.json  fragments/sync-invoice.hi.json # sync.* + invoice.* keys
+fragments/web-auth.en.json      fragments/web-auth.hi.json     # web track: auth + guest.*
+fragments/web-booking.en.json   fragments/web-booking.hi.json  # web track: booking one-offs
+fragments/web-expinv.en.json    fragments/web-expinv.hi.json   # web track: expenses + inventory
+fragments/web-menu.en.json      fragments/web-menu.hi.json     # web track: menu/settings/reports
+fragments/web-perms.en.json     fragments/web-perms.hi.json    # web track: permissions vocabulary
 ```
+
+The `web-*` pairs are deliberately kept separate (not folded into the feature
+fragments): the Android repo's catalog-usage audit skips `web-*.json` by filename so
+web-only keys don't pollute its unused-key signal.
 
 Rules:
 

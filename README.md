@@ -33,11 +33,12 @@ scripts/                  CI validators + operational SQL (see below)
 String keys are added **only here**, always to every locale
 (see `strings/README.md` for key, placeholder and plural conventions). The catalog is
 split into a small base catalog plus **per-namespace fragment files**
-(`strings/fragments/<namespace>.{en,hi}.json` — booking, expenses, inventory, menu,
-onboarding, reports, sync-invoice, designsystem, polish, web-auth, web-expinv, web-menu).
+(`strings/fragments/<namespace>.{en,hi}.json` — booking, designsystem, expenses,
+inventory, menu, onboarding, reports, sync-invoice, and the web-track pairs
+web-auth, web-booking, web-expinv, web-menu, web-perms).
 Fragments exist so parallel feature work merges additively: each feature owns its own
 fragment pair and never touches another feature's file. Codegen and the validator merge
-base + all fragments into one catalog (currently **734 keys × 2 locales**).
+base + all fragments into one catalog (currently **830 keys × 2 locales**).
 
 App repos never hand-edit generated resources — they are git-ignored and regenerated at
 build time:
@@ -58,14 +59,17 @@ node codegen/gen-web.mjs <web-app>/messages
 
 ## Database
 
-`supabase/migrations/` is the canonical schema — a **consolidated 3-file baseline**
-(the former migrations 001–007 were squashed into it; the net schema is identical):
+`supabase/migrations/` is the canonical schema — a **consolidated baseline of four
+files** (the former migrations 001–007 were squashed into 001–003; the net schema is
+identical. `004_invite_activation.sql` is a later, legitimately additive migration on
+top of the consolidated baseline):
 
 | File | Contents |
 |---|---|
 | `001_schema.sql` | extensions, enums, all tables in final shape (incl. `parties.business_related`, `bookings.color`, `event_types`), indexes, `updated_at` triggers, inventory helper |
 | `002_rls.sql` | RLS helper functions, per-command policies on every table (incl. `event_types`), invite activation trigger on `auth.users` |
 | `003_storage.sql` | private storage buckets (created idempotently) + membership-scoped object policies |
+| `004_invite_activation.sql` | invite visibility + activation for EXISTING auth users: `auth_email()`/`is_invited_member()` helpers, invited-self SELECT/UPDATE policies, self-activation guard trigger, invite-time user linking + backfill |
 
 There is **no server-side seeding of event-type presets**: a fresh database has no
 businesses. Both apps seed the presets **client-side from `event-types.json` when a
@@ -84,6 +88,7 @@ Apply new migrations **before** deploying app versions that read the new columns
 | `scripts/cleanup-data.sql` | **The** data-wipe script — wipe operational data for one business (or all, the default): hard-deletes bookings/payments/reminders/date blocks, expenses/parties/attachments, inventory transactions/master items (child tables first, FK-safe). **Keeps** accounts and setup (`auth.users`, `businesses`, `business_members`, `business_settings`, `google_accounts`, `event_types` — user config) and resets `businesses.invoice_counter` to 0. Run in the Supabase SQL editor (transactional, FK-ordered). Item photos/bills live in Google Drive and are not touched; the only Storage bucket (`logos`) is setup and kept. |
 | `scripts/destroy-everything.sql` | ☢️ **Total schema destruction** — drops every Samaroh table (cascade), enum, function, the `auth.users` trigger and the storage policies, and clears the `supabase_migrations` history so `supabase db push` re-applies the baseline from scratch. Keeps `auth.users` rows and `storage.buckets`. |
 | `scripts/alter-drop-image-path.sql` | One-time convergence of an EXISTING deployment on the final image architecture: recreates `get_current_inventory` without `image_path`, drops `master_items.image_path` (the column no longer syncs — item photos are referenced by `drive_image_id`; the local path is device-only), and removes the retired `inventory-images`/`booking-invoices` buckets + policies. Run AFTER all devices run an app version that no longer pushes `image_path`. |
+| `scripts/archive/` | Retired one-time alter scripts, kept for the record after their change was folded into the baseline (see `scripts/archive/README.md`). Never run these against a current-baseline database. |
 
 A full reset (data only) = run `cleanup-data.sql` in the SQL editor. Accounts and
 business setup survive.
@@ -93,7 +98,7 @@ A **clean-slate rebuild** (drop and recreate the whole schema) =
 1. `destroy-everything.sql` in the SQL editor,
 2. `supabase db push` (re-applies the consolidated baseline),
 3. recreate the business via app onboarding (presets seed client-side),
-5. re-run the import scripts.
+4. re-run the import scripts.
 
 ## Invoice layout contract
 
@@ -127,11 +132,12 @@ and writes from this shape.
 
 ```bash
 node scripts/validate-catalogs.mjs   # catalog shape, key parity, placeholder parity (base + fragments)
+node scripts/test-catalogs.mjs       # fixture-driven validator + codegen tests
 bash scripts/legal-check.sh          # repo-wide denylist scan (legal hygiene)
 ```
 
-CI (`.github/workflows/ci.yml`) runs both, smoke-tests the generators, and applies the
-migrations plus seed to a scratch Postgres.
+CI (`.github/workflows/ci.yml`) runs all three, smoke-tests the generators, and applies
+the migrations plus seed to a scratch Postgres.
 
 ## Making changes here
 

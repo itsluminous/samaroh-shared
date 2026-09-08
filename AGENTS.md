@@ -33,10 +33,11 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
    `supabase/migrations/00N_*.sql`; add the next-numbered file. Contract-level changes
    (schema, invoice layout, permissions shape, key-namespace structure) also require an
    ADR entry in the affected app repos' `docs/decisions.md`. (One historical exception:
-   in Aug 2026 the original migrations 001–007 were consolidated into the current
-   3-file baseline as part of a deliberate full-schema rebuild via
+   in Aug 2026 the original migrations 001–007 were consolidated into a 3-file
+   baseline as part of a deliberate full-schema rebuild via
    `scripts/destroy-everything.sql`; the net schema was verified identical by
-   old-vs-new pg_dump diff. From that baseline the additive rule applies again.)
+   old-vs-new pg_dump diff. From that baseline the additive rule applies again —
+   `004_invite_activation.sql` is the first such additive migration.)
 
 ## Conventions
 
@@ -56,7 +57,9 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
   is setup, so there is no storage companion; `destroy-everything.sql` for a
   full schema drop + rebuild via `supabase db push`;
   `alter-drop-image-path.sql` converges an existing deployment on the final
-  image architecture). Keep the header comments (what's
+  image architecture). One-time `alter-*.sql` scripts move to `scripts/archive/`
+  once their change is folded into the baseline (see `scripts/archive/README.md`).
+  Keep the header comments (what's
   kept vs deleted) accurate when editing. Event-type presets are seeded
   CLIENT-SIDE at business creation (both apps, from `event-types.json`); the
   booking import script backfills — migrations never seed them.
