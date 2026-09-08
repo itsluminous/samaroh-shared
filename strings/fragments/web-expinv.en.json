@@ -354,5 +354,33 @@
   "inventory.image.load_failed": {
     "value": "Could not load the photo",
     "description": "Error message shown inside the item-photo lightbox when the large image fails to load from both Drive endpoints (e.g. the file is not link-shared yet); the Open in Drive link is offered underneath as the fallback."
+  },
+  "inventory.item.txn_more": {
+    "value": "Transaction options",
+    "description": "Accessible label of the per-row three-dots menu button in the item detail transaction table (opens Edit/Delete)."
+  },
+  "inventory.item.txn_edit_title": {
+    "value": "Edit transaction",
+    "description": "Title of the dialog for editing an existing inventory transaction (quantity, unit price for adds, notes)."
+  },
+  "inventory.item.txn_delete_title": {
+    "value": "Delete transaction?",
+    "description": "Title of the confirmation dialog before deleting one inventory transaction."
+  },
+  "inventory.item.txn_delete_message": {
+    "value": "The transaction will be removed and this item's stock history recalculated.",
+    "description": "Body of the delete-transaction confirmation: the FIFO history is replayed after the delete."
+  },
+  "inventory.item.txn_history_negative": {
+    "value": "Can't save - stock would go below zero at some point in this item's history.",
+    "description": "Error when an edit/delete is rejected because replaying the item's history would make stock negative at a past date. Nothing is saved."
+  },
+  "inventory.item.txn_update_success": {
+    "value": "Transaction updated.",
+    "description": "Snackbar confirmation after a transaction edit is saved and the stock history recalculated."
+  },
+  "inventory.item.txn_delete_success": {
+    "value": "Transaction deleted.",
+    "description": "Snackbar confirmation after a transaction is deleted and the stock history recalculated."
   }
 }
