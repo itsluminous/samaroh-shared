@@ -204,24 +204,24 @@
     "description": "Reminder style option 2 of 3 (ADR-072): the alarm-style popup that takes over a locked/off screen and shows as a banner while the phone is in use - the pre-ADR-072 'Full-screen popup' renamed for what it actually does."
   },
   "settings.reminders.style_fullscreen_desc": {
-    "value": "Takes over the locked screen; a banner while you're using the phone",
-    "description": "Behaviour line under the 'Full screen when locked' style option, stating the Android system behavior (screen in use = banner; locked/off = takeover)."
+    "value": "Takes over the locked screen; a banner while you're using the phone. The sound repeats until you dismiss it",
+    "description": "Behaviour line under the 'Full screen when locked' style option: the Android system behavior (screen in use = banner; locked/off = takeover) plus the repeat-until-acknowledged sound loop both full-screen styles share."
   },
   "settings.reminders.style_fullscreen_always": {
     "value": "Always full screen",
     "description": "Reminder style option 3 of 3 (ADR-072): the popup takes over even while the phone is unlocked or another app is in use - needs the 'Display over other apps' special-access grant."
   },
   "settings.reminders.style_fullscreen_always_desc": {
-    "value": "Takes over even while you're using the phone - needs the 'Display over other apps' permission",
-    "description": "Behaviour line under the 'Always full screen' style option, naming the grant it depends on."
+    "value": "Takes over even while you're using the phone - needs the 'Display over other apps' permission. The sound repeats until you dismiss it",
+    "description": "Behaviour line under the 'Always full screen' style option, naming the grant it depends on plus the repeat-until-acknowledged sound loop both full-screen styles share."
   },
   "settings.reminders.sound_title": {
     "value": "Reminder sound",
     "description": "Reminder settings: row that opens the system ringtone picker."
   },
   "settings.reminders.sound_default": {
-    "value": "Default sound",
-    "description": "Reminder settings: shown when no custom ringtone is selected."
+    "value": "System default sound",
+    "description": "Reminder settings: shown when no custom ringtone is selected - an unset preference means the system default notification sound, never silence."
   },
   "settings.reminders.permissions_title": {
     "value": "Reminder permissions",
@@ -736,5 +736,17 @@
   "settings.sync.all_synced_message": {
     "value": "All your changes are saved. New changes sync on their own whenever you are online.",
     "description": "Reassuring guidance on the Sync status screen when there are no pending changes, conflicts or errors."
+  },
+  "menu.search.placeholder": {
+    "value": "Search menu and settings",
+    "description": "Menu home: placeholder of the search field at the top of the Menu tab that filters every menu destination (settings rows, reports, members, about, sign-out)."
+  },
+  "menu.search.no_results": {
+    "value": "Nothing matched your search",
+    "description": "Menu home search: shown instead of results when the typed query matches no menu destination."
+  },
+  "menu.search.about_version": {
+    "value": "App version",
+    "description": "Menu home search: index title of the About screen's version row (the row itself composes 'Version {version}', which cannot serve as a static search label)."
   }
 }
