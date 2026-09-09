@@ -78,5 +78,17 @@
   "reports.export.download_csv": {
     "value": "CSV डाउनलोड करें",
     "description": "Button on web report pages that downloads the current report as a CSV file (web counterpart of the Android share action)."
+  },
+  "menu.search.placeholder": {
+    "value": "मेनू में खोजें",
+    "description": "मेनू टैब के ऊपर के खोज फ़ील्ड का प्लेसहोल्डर (और सुलभ नाम) — यह मेनू के अंदर की हर मंज़िल (सेटिंग पंक्तियाँ, रिपोर्टें, ऐप के बारे में, साइन आउट) को छानता है।"
+  },
+  "menu.search.no_results": {
+    "value": "कोई मेल खाता मेनू आइटम नहीं",
+    "description": "जब खोज किसी भी मेनू मंज़िल से मेल नहीं खाती तो मेनू-टैब खोज फ़ील्ड के नीचे दिखता है।"
+  },
+  "menu.search.clear": {
+    "value": "खोज साफ़ करें",
+    "description": "उस बटन का सुलभ लेबल जो मेनू-टैब खोज फ़ील्ड को खाली कर सामान्य मेनू वापस दिखाता है।"
   }
 }

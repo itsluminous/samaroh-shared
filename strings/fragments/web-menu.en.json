@@ -83,5 +83,17 @@
     "value": "https://github.com/itsluminous/samaroh-web",
     "description": "Data, not copy: the URL the web About page's source-code link opens (the web repo - Android's row uses menu.about.source_code_url). Never localized.",
     "translatable": false
+  },
+  "menu.search.placeholder": {
+    "value": "Search menu",
+    "description": "Placeholder (and accessible name) of the search field at the top of the Menu tab that filters every destination nested under it (settings rows, reports, About items, sign out)."
+  },
+  "menu.search.no_results": {
+    "value": "No matching menu items",
+    "description": "Shown under the Menu-tab search field when the query matches no menu destination."
+  },
+  "menu.search.clear": {
+    "value": "Clear search",
+    "description": "Accessible label of the button that clears the Menu-tab search field and restores the normal menu."
   }
 }
