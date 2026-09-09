@@ -727,14 +727,6 @@
     "value": "आपके सभी बदलाव सुरक्षित हैं। ऑनलाइन होते ही नए बदलाव अपने आप सिंक हो जाते हैं।",
     "description": "Reassuring guidance on the Sync status screen when there are no pending changes, conflicts or errors."
   },
-  "menu.search.placeholder": {
-    "value": "मेनू और सेटिंग्स में खोजें",
-    "description": "Menu home: placeholder of the search field at the top of the Menu tab that filters every menu destination (settings rows, reports, members, about, sign-out)."
-  },
-  "menu.search.no_results": {
-    "value": "आपकी खोज से कुछ नहीं मिला",
-    "description": "Menu home search: shown instead of results when the typed query matches no menu destination."
-  },
   "menu.search.about_version": {
     "value": "ऐप का संस्करण",
     "description": "Menu home search: index title of the About screen's version row (the row itself composes 'Version {version}', which cannot serve as a static search label)."
