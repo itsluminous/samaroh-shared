@@ -31,6 +31,14 @@
     "value": "हटा दें",
     "description": "Button on a failed sync-queue row: throw the queued change away instead of retrying it."
   },
+  "settings.sync.discard_confirm_title": {
+    "value": "यह बदलाव हटा दें?",
+    "description": "Confirmation dialog title before throwing away a failed/conflicting sync-queue item (web sync-status page). Confirm button reuses settings.sync.discard; cancel reuses common.action.cancel."
+  },
+  "settings.sync.discard_confirm_message": {
+    "value": "{entity} का यह बदलाव इस डिवाइस से हटा दिया जाएगा और आपके खाते में सहेजा नहीं जाएगा।",
+    "description": "Confirmation dialog body before discarding a queued change. {entity} is the localized record label of the item (settings.sync.entity_* values, e.g. 'booking')."
+  },
   "menu.members.edit_title": {
     "value": "सदस्य बदलें",
     "description": "Dialog title when the owner edits an existing member's display name and permissions."
