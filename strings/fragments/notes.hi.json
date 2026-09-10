@@ -1,0 +1,126 @@
+{
+  "notes.nav.tab": {
+    "value": "नोट्स",
+    "description": "Navigation tab label for the Notes module (notes & checklists)."
+  },
+  "notes.home.create_note": {
+    "value": "नया नोट",
+    "description": "Create button/FAB action: start a new plain-text note."
+  },
+  "notes.home.create_checklist": {
+    "value": "नई चेकलिस्ट",
+    "description": "Create button/FAB action: start a new checklist note (items with checkboxes)."
+  },
+  "notes.home.search_placeholder": {
+    "value": "नोट खोजें",
+    "description": "Placeholder inside the notes search field; matches note titles, content and checklist items."
+  },
+  "notes.drawer.notes": {
+    "value": "नोट्स",
+    "description": "Drawer entry: the main list of active notes and checklists."
+  },
+  "notes.drawer.completed": {
+    "value": "पूर्ण",
+    "description": "Drawer entry: notes/checklists marked complete (status=completed)."
+  },
+  "notes.drawer.trash": {
+    "value": "ट्रैश",
+    "description": "Drawer entry: trashed notes (status=trashed), purged after 30 days."
+  },
+  "notes.drawer.tags_header": {
+    "value": "टैग",
+    "description": "Drawer section header above the per-business tag list used to filter notes."
+  },
+  "notes.action.edit": {
+    "value": "बदलें",
+    "description": "Note popup/long-press action: open the note or checklist for editing."
+  },
+  "notes.action.share": {
+    "value": "साझा करें",
+    "description": "Note popup action: share the note's text via the system share sheet."
+  },
+  "notes.action.delete": {
+    "value": "हटाएँ",
+    "description": "Note popup action: move the note to Trash (from Trash it means delete forever; needs the notes.delete permission there)."
+  },
+  "notes.action.complete": {
+    "value": "पूर्ण करें",
+    "description": "Note popup action: move the note to the Completed list (status=completed)."
+  },
+  "notes.action.restore": {
+    "value": "वापस लाएँ",
+    "description": "Note popup action in Completed/Trash: move the note back to the active Notes list."
+  },
+  "notes.action.pin": {
+    "value": "पिन करें",
+    "description": "Note popup action: pin the note to the top of the list."
+  },
+  "notes.action.unpin": {
+    "value": "पिन हटाएँ",
+    "description": "Note popup action: remove the pin so the note sorts normally again."
+  },
+  "notes.picker.color_title": {
+    "value": "रंग",
+    "description": "Title of the note color picker (swatches from booking-colors.json)."
+  },
+  "notes.picker.color_default": {
+    "value": "डिफ़ॉल्ट",
+    "description": "First swatch in the note color picker: no color key stored, themed default surface."
+  },
+  "notes.picker.tags_title": {
+    "value": "टैग",
+    "description": "Title of the tag picker sheet where tags are assigned to a note."
+  },
+  "notes.picker.tags_new": {
+    "value": "नया टैग",
+    "description": "Action in the tag picker: create a new tag for this business."
+  },
+  "notes.picker.tags_name_placeholder": {
+    "value": "टैग का नाम",
+    "description": "Placeholder in the new-tag name input inside the tag picker."
+  },
+  "notes.trash.notice": {
+    "value": "ट्रैश में मौजूद आइटम 30 दिनों के बाद हटा दिए जाते हैं",
+    "description": "Banner at the top of the Trash list explaining the 30-day auto-purge."
+  },
+  "notes.home.empty_title": {
+    "value": "अभी कोई नोट नहीं",
+    "description": "Empty-state title on the Notes list when the business has no active notes."
+  },
+  "notes.home.empty_message": {
+    "value": "अपना पहला नोट या चेकलिस्ट बनाएँ।",
+    "description": "Empty-state message under notes.home.empty_title, pointing at the create actions."
+  },
+  "notes.completed.empty": {
+    "value": "कोई पूर्ण नोट नहीं",
+    "description": "Empty-state text on the Completed list when nothing has been marked complete."
+  },
+  "notes.trash.empty": {
+    "value": "ट्रैश खाली है",
+    "description": "Empty-state text on the Trash list when no notes are trashed."
+  },
+  "notes.search.empty": {
+    "value": "कोई मिलता-जुलता नोट नहीं",
+    "description": "Empty-state text when a notes search returns no results."
+  },
+  "notes.permission.group": {
+    "value": "नोट्स",
+    "description": "Permission matrix group header for the notes module (rendered like auth.permissions.group_booking)."
+  },
+  "notes.permission.action_view": {
+    "value": "देखें",
+    "description": "Permission toggle for notes.view: see notes, checklists, tags, Completed and Trash."
+  },
+  "notes.permission.action_create": {
+    "value": "नया जोड़ें",
+    "description": "Permission toggle for notes.create: add notes/checklists (and tags while creating)."
+  },
+  "notes.permission.action_edit": {
+    "value": "बदलें",
+    "description": "Permission toggle for notes.edit: edit, pin, complete/restore, trash/restore, manage tags."
+  },
+  "notes.permission.action_delete": {
+    "value": "हमेशा के लिए हटाएँ",
+    "description": "Permission toggle for notes.delete: purge notes from Trash permanently."
+  }
+}

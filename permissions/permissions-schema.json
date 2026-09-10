@@ -43,6 +43,16 @@
         "view_amounts": { "type": "boolean", "default": true, "description": "See monetary values on inventory (item prices, transaction values, stock worth). ABSENT = TRUE (backward compat); set false explicitly to mask amounts as ₹•••. Presets: Viewer/Staff/Manager all leave this true — owners toggle it off per member." }
       }
     },
+    "notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "view": { "type": "boolean", "description": "See notes, checklists, tags, the Completed list and Trash. ABSENT = FALSE like every non-view_amounts action. Presets: Viewer/Staff/Manager all grant this." },
+        "create": { "type": "boolean", "description": "Add notes and checklists (and create tags while doing so). Presets: Staff and Manager grant this." },
+        "edit": { "type": "boolean", "description": "Edit notes/checklists, pin/unpin, complete/restore, move to Trash and restore from Trash, rename/manage tags. Presets: Manager grants this." },
+        "delete": { "type": "boolean", "description": "Delete forever (purge from Trash — the tombstoning update fired from the Trash screen and the 30-day auto-purge). Presets: Manager grants this." }
+      }
+    },
     "reports": {
       "type": "object",
       "additionalProperties": false,
