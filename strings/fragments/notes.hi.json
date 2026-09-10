@@ -190,5 +190,41 @@
   "notes.home.others_header": {
     "value": "अन्य",
     "description": "Section header above unpinned notes when a pinned section is shown."
+  },
+  "notes.picker.tags_create": {
+    "value": "\"{name}\" बनाएँ",
+    "description": "Type-ahead suggestion that creates a brand-new tag named {name} (the typed text) and assigns it to the note."
+  },
+  "notes.picker.tags_remove": {
+    "value": "{name} हटाएँ",
+    "description": "Accessible name of the remove (x) affordance on a selected tag chip in the note editor. {name} is the tag's name."
+  },
+  "notes.tags.manage_open": {
+    "value": "टैग प्रबंधित करें",
+    "description": "Explanation/accessible name of the edit icon next to the drawer's Tags header that opens the manage-tags dialog."
+  },
+  "notes.tags.manage_title": {
+    "value": "टैग प्रबंधित करें",
+    "description": "Title of the manage-tags dialog (rename or delete the business's note tags)."
+  },
+  "notes.tags.rename": {
+    "value": "टैग का नाम बदलें",
+    "description": "Icon action on a manage-tags row: start renaming that tag inline."
+  },
+  "notes.tags.rename_duplicate": {
+    "value": "इस नाम का टैग पहले से मौजूद है",
+    "description": "Inline validation error in the manage-tags rename field when another live tag already has the entered name (case-insensitive)."
+  },
+  "notes.tags.delete": {
+    "value": "टैग हटाएँ",
+    "description": "Icon action on a manage-tags row: open the delete confirmation for that tag."
+  },
+  "notes.tags.delete_title": {
+    "value": "{name} हटाएँ?",
+    "description": "Title of the tag delete confirmation dialog. {name} is the tag's name."
+  },
+  "notes.tags.delete_message": {
+    "value": "यह टैग {count} नोट से जुड़ा है — लिंक हटा दिए जाएँगे। नोट्स में कोई बदलाव नहीं होगा।",
+    "description": "Body of the tag delete confirmation dialog. {count} is the number of notes currently linked to the tag; deleting removes the tag and its links only."
   }
 }

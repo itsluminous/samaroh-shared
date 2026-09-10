@@ -190,5 +190,41 @@
   "notes.home.others_header": {
     "value": "Others",
     "description": "Section header above unpinned notes when a pinned section is shown."
+  },
+  "notes.picker.tags_create": {
+    "value": "Create \"{name}\"",
+    "description": "Type-ahead suggestion that creates a brand-new tag named {name} (the typed text) and assigns it to the note."
+  },
+  "notes.picker.tags_remove": {
+    "value": "Remove {name}",
+    "description": "Accessible name of the remove (x) affordance on a selected tag chip in the note editor. {name} is the tag's name."
+  },
+  "notes.tags.manage_open": {
+    "value": "Manage tags",
+    "description": "Explanation/accessible name of the edit icon next to the drawer's Tags header that opens the manage-tags dialog."
+  },
+  "notes.tags.manage_title": {
+    "value": "Manage tags",
+    "description": "Title of the manage-tags dialog (rename or delete the business's note tags)."
+  },
+  "notes.tags.rename": {
+    "value": "Rename tag",
+    "description": "Icon action on a manage-tags row: start renaming that tag inline."
+  },
+  "notes.tags.rename_duplicate": {
+    "value": "A tag with this name already exists",
+    "description": "Inline validation error in the manage-tags rename field when another live tag already has the entered name (case-insensitive)."
+  },
+  "notes.tags.delete": {
+    "value": "Delete tag",
+    "description": "Icon action on a manage-tags row: open the delete confirmation for that tag."
+  },
+  "notes.tags.delete_title": {
+    "value": "Delete {name}?",
+    "description": "Title of the tag delete confirmation dialog. {name} is the tag's name."
+  },
+  "notes.tags.delete_message": {
+    "value": "This tag is linked to {count} notes — links will be removed. The notes themselves stay unchanged.",
+    "description": "Body of the tag delete confirmation dialog. {count} is the number of notes currently linked to the tag; deleting removes the tag and its links only."
   }
 }
