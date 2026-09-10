@@ -749,14 +749,6 @@
     "value": "Discard change",
     "description": "Button on a failed sync item (Settings -> Sync status -> Items needing attention) that removes the queued change from this device."
   },
-  "settings.sync.discard_confirm_title": {
-    "value": "Discard this change?",
-    "description": "Title of the confirmation dialog before a failed sync item is discarded."
-  },
-  "settings.sync.discard_confirm_message": {
-    "value": "This change could not be saved to the server. Discarding removes it from this device's sync queue; the version saved on the server is restored on the next sync.",
-    "description": "Body of the discard-change confirmation dialog on the Sync status screen."
-  },
   "settings.sync.discarded": {
     "value": "Change discarded",
     "description": "Snackbar confirmation after a failed sync item was discarded from the Sync status screen."

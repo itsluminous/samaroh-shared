@@ -739,14 +739,6 @@
     "value": "बदलाव हटाएँ",
     "description": "Button on a failed sync item (Settings -> Sync status -> Items needing attention) that removes the queued change from this device."
   },
-  "settings.sync.discard_confirm_title": {
-    "value": "यह बदलाव हटाएँ?",
-    "description": "Title of the confirmation dialog before a failed sync item is discarded."
-  },
-  "settings.sync.discard_confirm_message": {
-    "value": "यह बदलाव सर्वर पर सहेजा नहीं जा सका। हटाने पर यह इस डिवाइस की सिंक कतार से निकल जाएगा; अगली सिंक पर सर्वर पर सहेजा गया संस्करण वापस आ जाएगा।",
-    "description": "Body of the discard-change confirmation dialog on the Sync status screen."
-  },
   "settings.sync.discarded": {
     "value": "बदलाव हटा दिया गया",
     "description": "Snackbar confirmation after a failed sync item was discarded from the Sync status screen."
