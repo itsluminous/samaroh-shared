@@ -59,6 +59,34 @@
     "value": "Unpin",
     "description": "Note popup action: remove the pin so the note sorts normally again."
   },
+  "notes.action.uncomplete": {
+    "value": "Mark not complete",
+    "description": "Note popup action on a completed note: move it back to the active Notes list (status completed -> active)."
+  },
+  "notes.action.delete_forever": {
+    "value": "Delete forever",
+    "description": "Trash-only note popup action: permanently remove the note (tombstone purge). Requires the notes.delete permission."
+  },
+  "notes.action.share_copied": {
+    "value": "Note copied to clipboard",
+    "description": "Snackbar shown when Share falls back to copying the note text to the clipboard (system share sheet unavailable)."
+  },
+  "notes.editor.title_placeholder": {
+    "value": "Title",
+    "description": "Placeholder/label of the note title field in the note editor popup."
+  },
+  "notes.editor.content_placeholder": {
+    "value": "Note",
+    "description": "Placeholder/label of the plain-text body field in the note editor popup (kind=note)."
+  },
+  "notes.editor.checklist_add": {
+    "value": "Add item",
+    "description": "Placeholder/label of the add-checklist-item field in the checklist editor (kind=checklist)."
+  },
+  "notes.editor.checklist_remove": {
+    "value": "Remove item",
+    "description": "Accessible name of the per-item remove (x) button in the checklist editor."
+  },
   "notes.picker.color_title": {
     "value": "Color",
     "description": "Title of the note color picker (swatches from booking-colors.json)."
