@@ -182,5 +182,13 @@
   "notes.trash.delete_forever_message": {
     "value": "यह नोट स्थायी रूप से हटा दिया जाएगा।",
     "description": "Body of the delete-forever confirmation dialog in Trash."
+  },
+  "notes.home.pinned_header": {
+    "value": "पिन किए गए",
+    "description": "Section header above pinned notes on the notes grid."
+  },
+  "notes.home.others_header": {
+    "value": "अन्य",
+    "description": "Section header above unpinned notes when a pinned section is shown."
   }
 }

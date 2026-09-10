@@ -182,5 +182,13 @@
   "notes.trash.delete_forever_message": {
     "value": "This note will be deleted permanently.",
     "description": "Body of the delete-forever confirmation dialog in Trash."
+  },
+  "notes.home.pinned_header": {
+    "value": "Pinned",
+    "description": "Section header above pinned notes on the notes grid."
+  },
+  "notes.home.others_header": {
+    "value": "Others",
+    "description": "Section header above unpinned notes when a pinned section is shown."
   }
 }
