@@ -246,5 +246,25 @@
   "expenses.home.no_results_message": {
     "value": "Check the spelling, or add them as a new person.",
     "description": "Empty-state guidance on the Expenses tab when a search has no matches."
+  },
+  "expenses.share_target.label": {
+    "value": "Create invoice",
+    "description": "System share-sheet target label (activity-alias): sharing an image/PDF to Samaroh starts an expense entry with the file attached."
+  },
+  "expenses.share_target.pick_party_title": {
+    "value": "Who is this invoice for?",
+    "description": "Title of the party picker shown after a file is shared to the Create invoice target."
+  },
+  "expenses.share_target.signed_out": {
+    "value": "Sign in and open your business to create invoices.",
+    "description": "Graceful message when a file is shared to Create invoice while nobody is signed in."
+  },
+  "expenses.share_target.no_permission": {
+    "value": "You don't have permission to add entries.",
+    "description": "Graceful message when the sharing member lacks the expenses.create permission."
+  },
+  "expenses.share_target.empty": {
+    "value": "No people yet. Add a party from the Expenses tab first.",
+    "description": "Party picker empty state when the business has no parties to attach the shared invoice to."
   }
 }

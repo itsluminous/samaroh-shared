@@ -246,5 +246,25 @@
   "expenses.home.no_results_message": {
     "value": "नाम की वर्तनी जाँचें, या इन्हें नए व्यक्ति के रूप में जोड़ें।",
     "description": "Empty-state guidance on the Expenses tab when a search has no matches."
+  },
+  "expenses.share_target.label": {
+    "value": "बिल बनाएँ",
+    "description": "System share-sheet target label (activity-alias): sharing an image/PDF to Samaroh starts an expense entry with the file attached."
+  },
+  "expenses.share_target.pick_party_title": {
+    "value": "यह बिल किसके लिए है?",
+    "description": "Title of the party picker shown after a file is shared to the Create invoice target."
+  },
+  "expenses.share_target.signed_out": {
+    "value": "बिल बनाने के लिए साइन इन करके अपना व्यवसाय खोलें।",
+    "description": "Graceful message when a file is shared to Create invoice while nobody is signed in."
+  },
+  "expenses.share_target.no_permission": {
+    "value": "आपको एंट्री जोड़ने की अनुमति नहीं है।",
+    "description": "Graceful message when the sharing member lacks the expenses.create permission."
+  },
+  "expenses.share_target.empty": {
+    "value": "अभी कोई व्यक्ति नहीं। पहले खर्च टैब से पार्टी जोड़ें।",
+    "description": "Party picker empty state when the business has no parties to attach the shared invoice to."
   }
 }

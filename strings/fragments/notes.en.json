@@ -150,5 +150,37 @@
   "notes.permission.action_delete": {
     "value": "Delete forever",
     "description": "Permission toggle for notes.delete: purge notes from Trash permanently."
+  },
+  "notes.editor.title_hint": {
+    "value": "Title",
+    "description": "Placeholder of the note title field in the note editor dialog."
+  },
+  "notes.editor.content_hint": {
+    "value": "Note",
+    "description": "Placeholder of the plain-text body field in the note editor dialog."
+  },
+  "notes.editor.add_item": {
+    "value": "Add item",
+    "description": "Button in the checklist editor: append a new empty checklist item."
+  },
+  "notes.editor.remove_item": {
+    "value": "Remove item",
+    "description": "Icon action on a checklist editor row: delete that item."
+  },
+  "notes.editor.move_up": {
+    "value": "Move up",
+    "description": "Icon action on a checklist editor row: move the item one position up (simple reorder)."
+  },
+  "notes.drawer.open": {
+    "value": "Open notes menu",
+    "description": "Content description / long-press explanation of the notes screen's hamburger button that opens the drawer."
+  },
+  "notes.trash.delete_forever_title": {
+    "value": "Delete forever?",
+    "description": "Title of the confirmation dialog before permanently deleting a note from Trash."
+  },
+  "notes.trash.delete_forever_message": {
+    "value": "This note will be deleted permanently.",
+    "description": "Body of the delete-forever confirmation dialog in Trash."
   }
 }

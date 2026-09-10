@@ -150,5 +150,37 @@
   "notes.permission.action_delete": {
     "value": "हमेशा के लिए हटाएँ",
     "description": "Permission toggle for notes.delete: purge notes from Trash permanently."
+  },
+  "notes.editor.title_hint": {
+    "value": "शीर्षक",
+    "description": "Placeholder of the note title field in the note editor dialog."
+  },
+  "notes.editor.content_hint": {
+    "value": "नोट",
+    "description": "Placeholder of the plain-text body field in the note editor dialog."
+  },
+  "notes.editor.add_item": {
+    "value": "आइटम जोड़ें",
+    "description": "Button in the checklist editor: append a new empty checklist item."
+  },
+  "notes.editor.remove_item": {
+    "value": "आइटम हटाएँ",
+    "description": "Icon action on a checklist editor row: delete that item."
+  },
+  "notes.editor.move_up": {
+    "value": "ऊपर ले जाएँ",
+    "description": "Icon action on a checklist editor row: move the item one position up (simple reorder)."
+  },
+  "notes.drawer.open": {
+    "value": "नोट्स मेनू खोलें",
+    "description": "Content description / long-press explanation of the notes screen's hamburger button that opens the drawer."
+  },
+  "notes.trash.delete_forever_title": {
+    "value": "हमेशा के लिए हटाएँ?",
+    "description": "Title of the confirmation dialog before permanently deleting a note from Trash."
+  },
+  "notes.trash.delete_forever_message": {
+    "value": "यह नोट स्थायी रूप से हटा दिया जाएगा।",
+    "description": "Body of the delete-forever confirmation dialog in Trash."
   }
 }
