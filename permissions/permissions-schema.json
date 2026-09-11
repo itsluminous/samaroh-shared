@@ -47,9 +47,11 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "view": { "type": "boolean", "description": "See notes, checklists, tags, the Completed list and Trash. ABSENT = FALSE like every non-view_amounts action. Presets: Viewer/Staff/Manager all grant this." },
+        "view": { "type": "boolean", "description": "See notes (kind='note'), tags, the Completed list and Trash. ABSENT = FALSE like every non-view_amounts action. Checklist visibility is gated by view_checklists (which inherits this key when absent). Presets: Viewer/Staff/Manager all grant this." },
+        "view_checklists": { "type": "boolean", "description": "See checklists (kind='checklist'). ABSENT = inherits view — clients MUST normalize exactly like the DB: coalesce(view_checklists, view, false); an existing permissions object written before this key existed keeps showing checklists unchanged. Set false explicitly to hide checklists from a member who can still see notes (or true with view=false for the reverse). Enforced server-side by has_notes_perm in migration 007." },
         "create": { "type": "boolean", "description": "Add notes and checklists (and create tags while doing so). Presets: Staff and Manager grant this." },
-        "edit": { "type": "boolean", "description": "Edit notes/checklists, pin/unpin, complete/restore, move to Trash and restore from Trash, rename/manage tags. Presets: Manager grants this." },
+        "edit": { "type": "boolean", "description": "Edit notes/checklists, pin/unpin, complete/restore, move to Trash and restore from Trash, rename/manage tags. Implies toggle_checklist behaviour (checking items is an edit). Presets: Manager grants this." },
+        "toggle_checklist": { "type": "boolean", "description": "Check/uncheck checklist items WITHOUT full edit: may only flip the 'done' flag of existing items — item texts, ids, order, and every other note field stay locked (guard trigger in migration 007). ABSENT = inherits edit — clients MUST normalize exactly like the DB: coalesce(toggle_checklist, edit, false); existing editors keep ticking items unchanged. Grant with view_checklists so the member can see what they tick." },
         "delete": { "type": "boolean", "description": "Delete forever (purge from Trash — the tombstoning update fired from the Trash screen and the 30-day auto-purge). Presets: Manager grants this." }
       }
     },

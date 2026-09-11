@@ -136,8 +136,12 @@
     "description": "Permission matrix group header for the notes module (rendered like auth.permissions.group_booking)."
   },
   "notes.permission.action_view": {
-    "value": "View",
-    "description": "Permission toggle for notes.view: see notes, checklists, tags, Completed and Trash."
+    "value": "View notes",
+    "description": "Permission toggle for notes.view: see notes (kind=note), tags, Completed and Trash. Checklist visibility has its own toggle (notes.permission.action_view_checklists) which inherits this one when unset."
+  },
+  "notes.permission.action_view_checklists": {
+    "value": "View checklists",
+    "description": "Permission toggle for notes.view_checklists: see checklists. UNSET = follows View notes (back-compat inheritance, coalesce(view_checklists, view)) — the matrix shows it inheriting until the owner toggles it explicitly."
   },
   "notes.permission.action_create": {
     "value": "Create",
@@ -145,7 +149,11 @@
   },
   "notes.permission.action_edit": {
     "value": "Edit",
-    "description": "Permission toggle for notes.edit: edit, pin, complete/restore, trash/restore, manage tags."
+    "description": "Permission toggle for notes.edit: edit, pin, complete/restore, trash/restore, manage tags. Implies ticking checklist items (see notes.permission.action_toggle_checklist)."
+  },
+  "notes.permission.action_toggle_checklist": {
+    "value": "Tick checklist items",
+    "description": "Permission toggle for notes.toggle_checklist: check/uncheck checklist items only — item texts and order stay locked without Edit. UNSET = follows Edit (back-compat inheritance, coalesce(toggle_checklist, edit))."
   },
   "notes.permission.action_delete": {
     "value": "Delete forever",
