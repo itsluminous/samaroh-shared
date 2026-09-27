@@ -259,6 +259,10 @@
     "value": "शुरू करने के लिए फ़ोटो और इकाई के साथ सामान जोड़ें।",
     "description": "Body of the empty state on the item list screen."
   },
+  "inventory.masterlist.no_results_message": {
+    "value": "कोई और नाम आज़माएँ, या इसे नए सामान के रूप में जोड़ें।",
+    "description": "Body of the empty state on the item list screen when the search query filters out every item (the title is inventory.list.no_results)."
+  },
   "inventory.txn.saved_add": {
     "value": "स्टॉक जोड़ दिया गया।",
     "description": "Snackbar confirmation after an Add transaction is recorded."

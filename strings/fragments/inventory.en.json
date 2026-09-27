@@ -259,6 +259,10 @@
     "value": "Add an item with its photo and unit to get started.",
     "description": "Body of the empty state on the item list screen."
   },
+  "inventory.masterlist.no_results_message": {
+    "value": "Try a different name, or add it as a new item.",
+    "description": "Body of the empty state on the item list screen when the search query filters out every item (the title is inventory.list.no_results)."
+  },
   "inventory.txn.saved_add": {
     "value": "Stock added successfully.",
     "description": "Snackbar confirmation after an Add transaction is recorded."
