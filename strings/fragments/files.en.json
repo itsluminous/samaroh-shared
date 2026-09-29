@@ -99,6 +99,10 @@
     "value": "Manage access",
     "description": "Folder kebab action (OWNER only): open the restricted-folder allow-list editor."
   },
+  "files.action.more": {
+    "value": "Options for {name}",
+    "description": "Accessibility label of the per-item kebab (more options) button on a file or folder row/tile; {name} = file or folder name."
+  },
   "files.folder.name_label": {
     "value": "Folder name",
     "description": "Text field label in the new-folder / rename-folder dialog."
