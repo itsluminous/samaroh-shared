@@ -24,7 +24,10 @@ event-types.json          SEED TEMPLATE for per-business event-type presets (key
                           key). Presets live in the event_types table; BOTH apps seed a
                           NEW business from this file client-side at business creation,
                           and the booking import script backfills missing presets.
-docs/                     shared decision notes (e.g. event-type presets model)
+docs/                     shared decision notes (e.g. event-type presets model;
+                          files-tab-design.md = the FILES contract incl. the app-shell
+                          nav model: bottom bar = modules only, Menu behind the title-bar
+                          kebab right of the sync indicator)
 scripts/                  CI validators + operational SQL (see below)
 ```
 
@@ -35,10 +38,10 @@ String keys are added **only here**, always to every locale
 split into a small base catalog plus **per-namespace fragment files**
 (`strings/fragments/<namespace>.{en,hi}.json` — booking, designsystem, expenses,
 files, inventory, menu, notes, onboarding, reports, sync-invoice, and the web-track pairs
-web-auth, web-booking, web-expinv, web-menu, web-perms).
+web-auth, web-booking, web-expinv, web-files, web-menu, web-perms).
 Fragments exist so parallel feature work merges additively: each feature owns its own
 fragment pair and never touches another feature's file. Codegen and the validator merge
-base + all fragments into one catalog (currently **830 keys × 2 locales**).
+base + all fragments into one catalog (currently **1026 keys × 2 locales**).
 
 App repos never hand-edit generated resources — they are git-ignored and regenerated at
 build time:

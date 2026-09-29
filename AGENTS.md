@@ -47,6 +47,11 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
   never add feature keys to another feature's fragment or to the base catalog.
 - **Descriptions matter**: every entry carries a `description` used by translators and
   the app repos' catalog-usage audits.
+- **App-shell nav model is a cross-platform contract**: `docs/files-tab-design.md` D15 /
+  §6 "Navigation" (revised 2026-09-29) — bottom bar = the member's visible modules only
+  (Booking, Expenses, Inventory, Notes, Files; cap 5), the Menu opens from a title-bar
+  kebab placed right of the sync indicator (`common.nav.menu`), sign-out lives only on the
+  Menu identity row. Change it there first; both app repos then follow with an ADR.
 - **Shared-push coordination**: commit and push here **first**, then bump the submodule
   in each app repo. Always `git pull --ff-only` before pushing — both app tracks bump
   this repo and the remote may have advanced mid-task. Never force-push.

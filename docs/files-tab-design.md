@@ -32,14 +32,14 @@ upload. Parity web+android with tests."*
 | D12 | Naming / conflicts | Folder names unique per parent per business, **case-insensitive, LIVE rows only** (partial index over `lower(name)`, the 008 lesson); 1–120 chars, no `/`. File names may **repeat** (Drive allows it; camera exports collide); 1–255 chars, no `/`; the display name = original file name incl. extension; Drive gets the same name. |
 | D13 | Limits | **25 MiB per file** (server CHECK `size_bytes ≤ 26214400`; client rejects with `files.upload.too_large`). **20 files per batch** (`files.upload.too_many`). Folder depth ≤ 10 (client), RLS chain cap 64. Any MIME accepted. **Images are NOT recompressed** (this is file storage — originals). |
 | D14 | Rename / move | Folder **rename**: yes (`files.manage_folders`; Drive folder not renamed — best-effort mirror). File rename: **not in v1** (RLS allows the uploader/delete-holder to change `name`, but no UI). **Move (file or folder): out of scope v1** — `parent_id`/`folder_id` are immutable via UPDATE (guard trigger); users re-upload/re-create. |
-| D15 | Tab placement | Files is a **top-level module** (own route/graph, deep link `/files`, `files.nav.tab`, bar icon `Folder`). Module order: Booking, Expenses, Inventory, Notes, **Files**, then Menu. **Bottom bar cap = 4 modules + Menu** (Material 3's 5-item limit): visible modules (by `<module>.view`) fill the bar in order; anything past the 4th **overflows into a "More" section at the TOP of the Menu tab** (icon rows, `files.nav.more_section`) and into menu search. Same rule on Android and web-mobile; the web desktop left rail lists all visible modules (no crowding). |
+| D15 | Tab placement | Files is a **top-level module** (own route/graph, deep link `/files`, `files.nav.tab`, bar icon `Folder`). Module order: Booking, Expenses, Inventory, Notes, **Files**. **Bottom bar = visible modules ONLY, cap 5** (Material 3's 5-item limit = all five modules; *revised 2026-09-29 on owner feedback* — originally "4 + Menu" with a Menu → More overflow). **The Menu is NOT a bar tab: it lives behind a title-bar kebab (⋮) placed immediately RIGHT of the sync indicator** (a11y label `common.nav.menu`) and opens the unchanged Menu screen (search, identity row, Settings, Reports, Members [owner], About). A module the member cannot `view` is hidden (not greyed) and the bar simply has one fewer item; **no viewable module → no bar at all** and the shell starts on the Menu. Same on Android and web-mobile (xs–sm); web **desktop** (md+) keeps the left rail with every visible module + Menu as the LAST rail entry and no kebab. Android hides the kebab while the Menu is open (it would stack a second Menu); web keeps it tinted/`aria-current` on `/menu` as the "you are here" cue (no nav stack). `files.nav.more_section` stays in the catalog: web-mobile keeps an inert overflow split for a hypothetical 6th module; Android removed its overflow machinery. |
 | D16 | Open behaviour | Tap image → in-app viewer (Android `ImageViewerDialog`, web lightbox — public thumbnail ladder `drive.google.com/thumbnail?id=…&sz=w1600` → `lh3` fallback). Tap anything else → Drive viewer `https://drive.google.com/file/d/{id}/view` in a Chrome Custom Tab / new tab. Thumbnails: images + PDFs via `thumbnail?id=…&sz=w320` (web) / `DriveFileFetcher` own-token→public download into a `files-cache/` (Android, images only); other MIMEs show a type icon. |
 | D17 | Actions | Long-press (Android) / kebab (web) on a file: Open, Open in Google Drive, Download, Copy link, Delete. On a folder: Rename, Delete, Manage access (owner only). **Permission-hidden, never greyed** (ADR-038). |
-| D18 | Share sheet (Android) | ONE share target alias labelled **"Save to Samaroh"** (`files.share_target.label`) accepting `ACTION_SEND` + `ACTION_SEND_MULTIPLE`, `*/*`. It opens a **chooser**: *Create invoice* (existing ADR-078 flow; single image/PDF; `expenses.create`), *Set as item photo* (single image; `inventory.manage_master_items`; opens the existing edit-item dialog with the photo pre-staged), *Save to Files* (anything, multiple; `files.upload`; folder picker, top level preselected). Rows are permission-hidden; none left → `files.share_target.no_options`. The existing `.CreateInvoiceShareTarget` alias is **replaced** by the new one. Web: drag-and-drop onto the folder view + multi-file picker. |
+| D18 | Share sheet (Android) | ONE share target alias labelled **"Save to Samaroh"** (`files.share_target.label`) accepting `ACTION_SEND` + `ACTION_SEND_MULTIPLE`, `*/*`. It opens a **chooser**: *Create invoice* (existing ADR-078 flow; single image/PDF; `expenses.create`), *Set as item photo* (single image; `inventory.manage_master_items`; opens the existing edit-item dialog with the photo pre-staged), *Save to Files* (anything, multiple; `files.upload`; folder picker, top level preselected, **with a "New folder" row** — see §7). Rows are permission-hidden; none left → `files.share_target.no_options`. The existing `.CreateInvoiceShareTarget` alias is **replaced** by the new one. Web: drag-and-drop onto the folder view + multi-file picker; uploads started from a NON-folder context (global search results) go through the same destination picker (`files.picker.confirm`, `files.picker.selected_hint`, `web-files` fragment). |
 | D19 | Sync spec | Android `SyncTables`: `folders` (business-scoped, `updated_at` cursor), `files` (same), `folder_access` (composite PK `folder_id|member_id`, `idColumn2`, soft link like `note_tag_links`). Web: all three through `insertWithOutbox`/`updateWithOutbox`; `folder_access` uses the composite `match` locator. Files rows are pushed **only after** the Drive upload succeeded (Android: upload-before-row-push exactly like bills, `FilesUploader` in `core:google`). |
 | D20 | Backup | Drive backup (Android) **exports** `folders`, `files`, `folder_access` rows (metadata) and adds `files.drive_file_id` to the attachment manifest; `BackupExporter.BUSINESS_SCOPED_TABLES` grows by three and `BackupExporterSchemaGuardTest` expects them; `docs/backup-format.md` updated. |
 | D21 | Room | Android Room migration **12→13**: entities `folders`, `files`, `folder_access` (+ device-only `files.local_cache_path`, `files.drive_permission_ensured` like bills; `LocalApplier` preserves them across pulls). |
-| D22 | ADRs | Android: **ADR-085** "FILES module: Drive-indexed file storage, restricted folders, nav overflow rule (shared migration 009)"; **ADR-086** "Unified share target: Save to Samaroh chooser (invoice / item photo / Files)". Web decisions.md: "2026-09-xx — FILES section (shared migration 009) + nav overflow rule" and "2026-09-xx — Browser-side Google Drive linking (GIS `drive.file`) for Files uploads". |
+| D22 | ADRs | Android: **ADR-085** "FILES module: Drive-indexed file storage, restricted folders, nav overflow rule (shared migration 009)"; **ADR-086** "Unified share target: Save to Samaroh chooser (invoice / item photo / Files)"; **ADR-087** "Menu becomes title-bar overflow (kebab); Files takes its bottom slot; picker New folder" (supersedes the ADR-085 overflow rule). Web decisions.md: "2026-09-xx — FILES section (shared migration 009) + nav overflow rule", "2026-09-xx — Browser-side Google Drive linking (GIS `drive.file`) for Files uploads" and "Web chrome feedback batch" (kebab, Files in bar, folder picker, sign-out only on Menu). |
 
 ---
 
@@ -195,9 +195,22 @@ Copy link, Delete (confirm `files.file.delete_confirm_*`). Delete needs `files.d
 `subfolders_note`, `owner_always`; saves `folders.restricted` + `folder_access` diffs;
 snackbar `files.access.saved`.
 
-**Navigation.** See D15. Menu tab: a "More" section (`files.nav.more_section`) at the top
-listing overflowed modules as icon rows; menu search (ADR-075) indexes `files.nav.tab`.
-Android App Links: `/{locale}/files` → Files. Web: `/files` route + `SectionGuard module="files"`;
+**Navigation** (D15, revised 2026-09-29). Bottom bar (Android + web-mobile) = the
+member's visible modules in order — Booking, Expenses, Inventory, Notes, Files — and
+nothing else; Files sits in the slot the Menu used to occupy. Title bar, left → right:
+business name, sync indicator, **Menu kebab** (`MoreVert`, label `common.nav.menu`). The
+kebab opens the existing Menu screen (search, identity row, Settings, Reports, Members
+[owner], About). Android pushes the Menu graph over the current tab (back arrow on the Menu
+home, kebab hidden while inside the Menu, no bar tab highlighted, bar tap pops back); web
+links to `/menu` (kebab tinted + `aria-current` there, bottom bar nothing selected).
+A member with no viewable module gets no bar and lands on the Menu (Android
+`NavPermissions.startDestination`, web `firstVisibleSection` → `/menu`). Web desktop (md+):
+left rail with every visible module + Menu last; no kebab. Sign-out lives ONLY on the Menu
+identity row on both platforms (web dropped its title-bar logout icon; the guest state
+shows a **Sign in** row, `menu.identity.sign_in`). Menu search (ADR-075) no longer needs
+module entries on Android; web keeps them for the (currently empty) overflow set.
+Android App Links: `/{locale}/files` → Files; `/menu…` and `/reports` push the Menu the same
+way the kebab does. Web: `/files` route + `SectionGuard module="files"`;
 `resolveLandingHref` includes `files` in nav order.
 
 **Permission matrix** (both apps): group `files.permission.group` with the four rows;
@@ -218,8 +231,16 @@ Android App Links: `/{locale}/files` → Files. Web: `/files` route + `SectionGu
      pre-staged through the existing item-photo pipeline (crop → ≤320px WebP → Drive mirror).
    - **Save to Files** — `files.share_target.option_files(_subtitle)`; any MIME, any count
      (≤ 20); needs `files.upload`; folder picker (`files.share_target.pick_folder_title`,
-     top level preselected, restricted folders only if accessible) → same upload pipeline
-     as in-app → `files.share_target.saved`.
+     top level preselected, restricted folders only if accessible, whole reachable tree
+     indented A–Z per level) → same upload pipeline as in-app → `files.share_target.saved`.
+     The picker carries a **"New folder"** affordance (`files.action.new_folder`,
+     `CreateNewFolder` icon; permission-HIDDEN unless effective `files.manage_folders`
+     AND the depth cap allows a child under the SELECTED row) → the standard
+     `FolderNameDialog` validated against the selected parent's live siblings → the new
+     folder is created (outbox) and auto-selected so the share lands in it; Android joins
+     the pending folder save before staging so the share never lands in an unwritten folder.
+     Web parity (no share sheet): the same picker + New folder guards uploads started from
+     the global search results (`FolderPickerDialog`, confirm `files.picker.confirm`).
    Signed out / no business → `files.share_target.signed_out`; no row applicable →
    `files.share_target.no_options`; unreadable stream → `files.share_target.unsupported`.
 4. Web has no share sheet: drag-and-drop + picker are the parity surface.
@@ -234,8 +255,14 @@ tables — that is the intended guard. `docs/backup-format.md` gains the three t
 ## 9. Tests both implementers must add
 
 - Permission normalization (`manage_folders` inheritance, explicit false) — unit.
-- Nav overflow rule (4 + Menu; Files overflows for a full-permission owner; a member
-  without inventory sees Files in the bar) — unit.
+- Nav composition (D15 revised): bar = visible modules only, Files last for a
+  full-permission owner; Files absent (nothing takes its slot) without `files.view`; no
+  viewable module → no bar + Menu start; kebab right of sync opens the Menu — unit
+  (Android `NavPermissionsTest`/`NavTabSelectionTest`, web `kebab-menu` +
+  `files-permission-gating`).
+- Folder-picker "New folder": hidden without `manage_folders`, hidden past the depth cap
+  under the selected row, creates + auto-selects, duplicate validation vs the selected
+  parent's live siblings — unit (Android `FilesViewModelTest`, web `files-folder-picker`).
 - Folder name validation + case-insensitive live duplicate steering — unit/DAO.
 - Sync spec entries (`folder_access` composite id) — unit.
 - Upload pipeline with fake Drive: upload → permission → row push; unlinked → staged
