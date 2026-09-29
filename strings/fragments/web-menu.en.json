@@ -103,5 +103,9 @@
   "menu.search.clear": {
     "value": "Clear search",
     "description": "Accessible label of the button that clears the Menu-tab search field and restores the normal menu."
+  },
+  "menu.identity.sign_in": {
+    "value": "Sign in",
+    "description": "Menu home (web): action at the right of the identity row in its not-signed-in state (guest mode / no session) — opens the sign-in page. The guest-mode counterpart of menu.identity.sign_out now that the title bar carries no sign-out icon; also the label of the matching menu-search entry."
   }
 }

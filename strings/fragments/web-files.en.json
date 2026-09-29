@@ -1,0 +1,10 @@
+{
+  "files.picker.confirm": {
+    "value": "Upload here",
+    "description": "Confirm button of the web destination-folder picker (title reuses files.share_target.pick_folder_title): uploads the picked files into the selected folder. Shown when an upload starts from a non-folder context (global search results)."
+  },
+  "files.picker.selected_hint": {
+    "value": "Uploading to: {path}",
+    "description": "Helper line under the folder list of the web destination-folder picker. {path} = the selected folder's breadcrumb path built like files.search.result_path (e.g. 'All files › Contracts')."
+  }
+}

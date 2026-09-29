@@ -98,6 +98,7 @@ fragments/web-auth.en.json      fragments/web-auth.hi.json     # web track: auth
 fragments/web-booking.en.json   fragments/web-booking.hi.json  # web track: booking one-offs
 fragments/web-expinv.en.json    fragments/web-expinv.hi.json   # web track: expenses + inventory
 fragments/web-menu.en.json      fragments/web-menu.hi.json     # web track: menu/settings/reports
+fragments/web-files.en.json     fragments/web-files.hi.json    # web track: files one-offs (folder picker)
 fragments/web-perms.en.json     fragments/web-perms.hi.json    # web track: permissions vocabulary
 ```
 
