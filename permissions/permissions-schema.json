@@ -31,6 +31,16 @@
         "view_amounts": { "type": "boolean", "default": true, "description": "See rupee amounts on ledger entries and party balances. ABSENT = TRUE (backward compat); set false explicitly to mask amounts as ₹•••. Presets: Viewer/Staff/Manager all leave this true — owners toggle it off per member." }
       }
     },
+    "files": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "view": { "type": "boolean", "description": "Open the Files tab: browse folders, search, open/download files. ABSENT = FALSE. Restricted folders additionally require a folder_access row (or ownership) — folder_access narrows, never grants. Presets: Viewer/Staff/Manager all grant this." },
+        "upload": { "type": "boolean", "description": "Upload files into any folder the member can open (uploads land in the UPLOADER's Google Drive, shared anyone-with-link). Also lets the uploader re-push/rename their OWN file rows. Presets: Staff and Manager grant this." },
+        "manage_folders": { "type": "boolean", "description": "Create and rename folders. ABSENT = inherits upload — clients MUST normalize exactly like the DB: coalesce(manage_folders, upload, false) (has_files_perm in migration 009); an explicit false never falls through. Only the OWNER can restrict a folder or edit its allow-list regardless of this key. Presets: Staff (inherited, materialized) and Manager grant this." },
+        "delete": { "type": "boolean", "description": "Delete files and folders for every member (tombstone; the deleting client best-effort deletes the Drive copy it owns). Also guards hard DELETE. Presets: Manager grants this." }
+      }
+    },
     "inventory": {
       "type": "object",
       "additionalProperties": false,

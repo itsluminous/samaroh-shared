@@ -34,7 +34,7 @@ String keys are added **only here**, always to every locale
 (see `strings/README.md` for key, placeholder and plural conventions). The catalog is
 split into a small base catalog plus **per-namespace fragment files**
 (`strings/fragments/<namespace>.{en,hi}.json` — booking, designsystem, expenses,
-inventory, menu, onboarding, reports, sync-invoice, and the web-track pairs
+files, inventory, menu, notes, onboarding, reports, sync-invoice, and the web-track pairs
 web-auth, web-booking, web-expinv, web-menu, web-perms).
 Fragments exist so parallel feature work merges additively: each feature owns its own
 fragment pair and never touches another feature's file. Codegen and the validator merge
@@ -70,6 +70,11 @@ top of the consolidated baseline):
 | `002_rls.sql` | RLS helper functions, per-command policies on every table (incl. `event_types`), invite activation trigger on `auth.users` |
 | `003_storage.sql` | private storage buckets (created idempotently) + membership-scoped object policies |
 | `004_invite_activation.sql` | invite visibility + activation for EXISTING auth users: `auth_email()`/`is_invited_member()` helpers, invited-self SELECT/UPDATE policies, self-activation guard trigger, invite-time user linking + backfill |
+| `005_notes.sql` | NOTES module: `notes`, `note_tags`, `note_tag_links` + RLS (`notes.*` permissions) |
+| `006_invoice_counter_grant.sql` | `booking.generate_invoice` may bump `businesses.invoice_counter` (guard trigger) |
+| `007_notes_fine_perms.sql` | `notes.view_checklists` / `notes.toggle_checklist` with inheritance (`has_notes_perm`) + toggle guard |
+| `008_live_name_uniqueness.sql` | `parties` / `master_items` names unique over LIVE rows only, case-insensitive |
+| `009_files_tab.sql` | FILES module: `folders`, `files`, `folder_access` (Drive-indexed file storage, restricted folders) + RLS (`files.*` permissions, `has_files_perm` / `can_access_folder`) — design in `docs/files-tab-design.md` |
 
 There is **no server-side seeding of event-type presets**: a fresh database has no
 businesses. Both apps seed the presets **client-side from `event-types.json` when a
