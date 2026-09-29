@@ -1,0 +1,362 @@
+{
+  "files.nav.tab": {
+    "value": "Files",
+    "description": "Navigation tab label for the Files module (Drive-backed file storage). Also the Menu-tab row label when the module overflows the bottom bar (design: docs/files-tab-design.md §UX)."
+  },
+  "files.nav.more_section": {
+    "value": "More",
+    "description": "Section header at the top of the Menu tab listing modules that did not fit the bottom bar (bar cap = 4 modules + Menu). Shown only when at least one module overflowed."
+  },
+  "files.home.title": {
+    "value": "Files",
+    "description": "Top app bar title of the Files screen at the top level."
+  },
+  "files.home.root_label": {
+    "value": "All files",
+    "description": "Breadcrumb label for the top level (folder_id NULL); first crumb on every folder screen."
+  },
+  "files.home.search_placeholder": {
+    "value": "Search files and folders",
+    "description": "Placeholder of the Files search field. Search is GLOBAL across the business (all folders the member can access), case-insensitive name substring."
+  },
+  "files.home.empty_title": {
+    "value": "No files yet",
+    "description": "Empty-state title when the top level has no folders and no files."
+  },
+  "files.home.empty_message": {
+    "value": "Upload files or create a folder to get started.",
+    "description": "Empty-state body under files.home.empty_title (shown to members who can upload or manage folders; viewers see the title only)."
+  },
+  "files.folder.empty_title": {
+    "value": "This folder is empty",
+    "description": "Empty-state title inside a folder with no subfolders and no files."
+  },
+  "files.search.empty": {
+    "value": "No matching files or folders",
+    "description": "Empty-state text when a Files search returns no results."
+  },
+  "files.search.result_path": {
+    "value": "In {path}",
+    "description": "Subtitle under a search result: the folder path it lives in. {path} = 'All files › Contracts › 2026' style breadcrumb string."
+  },
+  "files.breadcrumb.separator": {
+    "value": "›",
+    "description": "Separator glyph between breadcrumb crumbs (kept in the catalog so both apps render the same path string, incl. in files.search.result_path)."
+  },
+  "files.breadcrumb.up": {
+    "value": "Up one level",
+    "description": "Accessibility label of the back/up affordance that navigates to the parent folder."
+  },
+  "files.view.grid": {
+    "value": "Grid view",
+    "description": "Toggle action / a11y label: switch the listing to a thumbnail grid."
+  },
+  "files.view.list": {
+    "value": "List view",
+    "description": "Toggle action / a11y label: switch the listing to a detail list."
+  },
+  "files.action.upload": {
+    "value": "Upload",
+    "description": "Primary action (FAB / toolbar button): pick one or more files to upload into the current folder. Hidden without files.upload."
+  },
+  "files.action.new_folder": {
+    "value": "New folder",
+    "description": "Action: create a subfolder in the current folder. Hidden without files.manage_folders (which inherits files.upload when unset)."
+  },
+  "files.action.rename_folder": {
+    "value": "Rename folder",
+    "description": "Folder kebab / long-press action. Hidden without files.manage_folders."
+  },
+  "files.action.delete_folder": {
+    "value": "Delete folder",
+    "description": "Folder kebab / long-press action: tombstone the folder and everything inside. Hidden without files.delete."
+  },
+  "files.action.delete_file": {
+    "value": "Delete file",
+    "description": "File kebab / long-press / viewer action: tombstone the file (best-effort Drive delete). Hidden without files.delete."
+  },
+  "files.action.open": {
+    "value": "Open",
+    "description": "File action: open the file (images in the in-app viewer; everything else in Google Drive's viewer in the browser)."
+  },
+  "files.action.open_in_drive": {
+    "value": "Open in Google Drive",
+    "description": "File action: open the Drive viewer page for this file in the browser / a custom tab."
+  },
+  "files.action.download": {
+    "value": "Download",
+    "description": "File action: save a copy to the device (Android: Download/Samaroh via MediaStore; web: browser download)."
+  },
+  "files.action.copy_link": {
+    "value": "Copy link",
+    "description": "File action: copy the anyone-with-link Drive URL to the clipboard."
+  },
+  "files.action.link_copied": {
+    "value": "Link copied",
+    "description": "Snackbar after files.action.copy_link."
+  },
+  "files.action.manage_access": {
+    "value": "Manage access",
+    "description": "Folder kebab action (OWNER only): open the restricted-folder allow-list editor."
+  },
+  "files.folder.name_label": {
+    "value": "Folder name",
+    "description": "Text field label in the new-folder / rename-folder dialog."
+  },
+  "files.folder.name_required": {
+    "value": "Enter a folder name",
+    "description": "Validation error when the folder name is blank."
+  },
+  "files.folder.name_invalid": {
+    "value": "Folder names can't contain / and must be 120 characters or fewer",
+    "description": "Validation error mirroring the server CHECK on folders.name (no slash, 1–120 chars)."
+  },
+  "files.folder.duplicate": {
+    "value": "A folder with this name already exists here",
+    "description": "Validation error: another LIVE folder in the same parent has this name (case-insensitive) — mirrors uq_folders_biz_parent_name."
+  },
+  "files.folder.created": {
+    "value": "Folder created",
+    "description": "Snackbar after a folder is created."
+  },
+  "files.folder.renamed": {
+    "value": "Folder renamed",
+    "description": "Snackbar after a folder is renamed."
+  },
+  "files.folder.delete_confirm_title": {
+    "value": "Delete this folder?",
+    "description": "Confirmation dialog title before tombstoning a folder."
+  },
+  "files.folder.delete_confirm_message": {
+    "value": "{count, plural, one {The folder and # item inside will be removed for every member.} other {The folder and # items inside will be removed for every member.}}",
+    "description": "Confirmation body before deleting a NON-empty folder; {count} = live subfolders + files underneath (recursive, ≥1). Empty folders use files.folder.delete_confirm_message_empty."
+  },
+  "files.folder.delete_confirm_message_empty": {
+    "value": "The folder will be removed for every member.",
+    "description": "Confirmation body before deleting an EMPTY folder (count = 0; ICU has no exact-zero branch on Android)."
+  },
+  "files.folder.deleted": {
+    "value": "Folder deleted",
+    "description": "Snackbar after a folder tombstone."
+  },
+  "files.folder.icon_a11y": {
+    "value": "Folder",
+    "description": "Accessibility description of the folder icon in grid/list rows."
+  },
+  "files.folder.item_count": {
+    "value": "{count, plural, one {# item} other {# items}}",
+    "description": "Secondary line of a folder row: number of live direct children (subfolders + files), ≥1. Empty folders use files.folder.item_count_empty."
+  },
+  "files.folder.item_count_empty": {
+    "value": "Empty",
+    "description": "Secondary line of a folder row with no live children (count = 0; ICU has no exact-zero branch on Android)."
+  },
+  "files.file.delete_confirm_title": {
+    "value": "Delete this file?",
+    "description": "Confirmation dialog title before tombstoning a file."
+  },
+  "files.file.delete_confirm_message": {
+    "value": "It will be removed for every member. This can't be undone.",
+    "description": "Confirmation body before deleting a file."
+  },
+  "files.file.deleted": {
+    "value": "File deleted",
+    "description": "Snackbar after a file tombstone."
+  },
+  "files.file.pending_label": {
+    "value": "Uploading…",
+    "description": "Badge on a locally staged file whose Drive upload has not finished yet (Android outbox; the row is not on the server until it does)."
+  },
+  "files.file.added_by": {
+    "value": "Added by {name}",
+    "description": "Detail line: display name of the member who uploaded the file."
+  },
+  "files.file.thumbnail_a11y": {
+    "value": "Preview of {name}",
+    "description": "Accessibility description of an image/PDF thumbnail; {name} = file name."
+  },
+  "files.file.open_failed": {
+    "value": "Couldn't open the file. Check your internet connection and try again.",
+    "description": "Error snackbar when opening/downloading a file fails (network, or Drive withheld the file)."
+  },
+  "files.file.download_done": {
+    "value": "Saved to Download/Samaroh",
+    "description": "Android snackbar after files.action.download copies the file into public Downloads."
+  },
+  "files.file.size_kb": {
+    "value": "{size} KB",
+    "description": "File size label under 1 MB; {size} = locale-formatted number (no decimals)."
+  },
+  "files.file.size_mb": {
+    "value": "{size} MB",
+    "description": "File size label at or above 1 MB; {size} = locale-formatted number with one decimal."
+  },
+  "files.upload.too_large": {
+    "value": "{name} is larger than 25 MB and was skipped",
+    "description": "Error when a picked file exceeds the 25 MiB cap (mirrors the server CHECK on files.size_bytes); {name} = file name."
+  },
+  "files.upload.too_many": {
+    "value": "You can upload up to {max} files at once",
+    "description": "Error when more than {max} (=20) files are picked or shared in one go."
+  },
+  "files.upload.in_progress": {
+    "value": "Uploading {done} of {total}…",
+    "description": "Progress label while a batch uploads; {done}/{total} counts."
+  },
+  "files.upload.done": {
+    "value": "{count, plural, one {# file uploaded} other {# files uploaded}}",
+    "description": "Snackbar after a batch finishes (web: immediately; Android: after the Drive upload + row push)."
+  },
+  "files.upload.queued": {
+    "value": "{count, plural, one {# file will upload when you're online} other {# files will upload when you're online}}",
+    "description": "Android snackbar when files were staged offline (outbox); they upload on the next connected sync."
+  },
+  "files.upload.failed": {
+    "value": "Couldn't upload {name}. Check your connection and try again.",
+    "description": "Error when a single file's Drive upload fails; {name} = file name."
+  },
+  "files.upload.pending_unlinked": {
+    "value": "Waiting on this phone - link your Google account in Settings to save it in Drive",
+    "description": "Android hint on staged files while no Google account is linked (uploads stay local until the user links)."
+  },
+  "files.upload.link_google_title": {
+    "value": "Connect Google Drive",
+    "description": "Title of the link-Google prompt shown when an unlinked user taps Upload."
+  },
+  "files.upload.link_google_message": {
+    "value": "Files are saved in your Google Drive and shared with your team. Connect your Google account to upload.",
+    "description": "Body of the link-Google prompt (Android: Credential Manager link flow; web: Google consent popup)."
+  },
+  "files.upload.link_google_connect": {
+    "value": "Connect",
+    "description": "Confirm button of the link-Google prompt."
+  },
+  "files.upload.link_google_later": {
+    "value": "Not now",
+    "description": "Dismiss button of the link-Google prompt."
+  },
+  "files.upload.link_failed": {
+    "value": "Couldn't connect Google. Try again.",
+    "description": "Error snackbar when the Google link/consent flow fails or is cancelled."
+  },
+  "files.upload.not_configured": {
+    "value": "Uploads aren't set up on this site yet. Use the mobile app to add files.",
+    "description": "Web-only: shown when the deployment has no Google web client id configured (NEXT_PUBLIC_GOOGLE_WEB_CLIENT_ID)."
+  },
+  "files.upload.guest_hint": {
+    "value": "Sign in to save files to Google Drive.",
+    "description": "Web guest mode: shown in place of the upload action (guest has no Google account to upload with)."
+  },
+  "files.upload.drop_hint": {
+    "value": "Drop files here to upload",
+    "description": "Web-only overlay text while dragging files over the folder view."
+  },
+  "files.access.restricted_badge": {
+    "value": "Restricted",
+    "description": "Badge/chip on a restricted folder (folders.restricted = true)."
+  },
+  "files.access.title": {
+    "value": "Who can open this folder",
+    "description": "Title of the OWNER-only folder access editor."
+  },
+  "files.access.everyone": {
+    "value": "Everyone with Files access",
+    "description": "Access editor option: folder is not restricted (any member with files.view sees it)."
+  },
+  "files.access.only_selected": {
+    "value": "Only selected members",
+    "description": "Access editor option: folder is restricted to the members ticked below (folder_access rows)."
+  },
+  "files.access.subfolders_note": {
+    "value": "Subfolders follow this folder's access.",
+    "description": "Helper text in the access editor: restrictions apply to the whole subtree."
+  },
+  "files.access.owner_always": {
+    "value": "You (the owner) always have access.",
+    "description": "Helper text in the access editor."
+  },
+  "files.access.no_members": {
+    "value": "No members yet. Add members first from the Members screen.",
+    "description": "Access editor empty state when the business has no non-owner members."
+  },
+  "files.access.saved": {
+    "value": "Access updated",
+    "description": "Snackbar after saving the access editor."
+  },
+  "files.access.no_access": {
+    "value": "You don't have access to this folder.",
+    "description": "Shown when a deep link / stale local row points at a folder the member can no longer open."
+  },
+  "files.permission.group": {
+    "value": "Files",
+    "description": "Permission matrix group header for the files module (rendered like auth.permissions.group_booking)."
+  },
+  "files.permission.action_view": {
+    "value": "View files",
+    "description": "Permission toggle for files.view: open the Files tab, browse folders, search, open/download files."
+  },
+  "files.permission.action_upload": {
+    "value": "Upload files",
+    "description": "Permission toggle for files.upload: add files (and, unless files.manage_folders is set off explicitly, create folders)."
+  },
+  "files.permission.action_manage_folders": {
+    "value": "Create and rename folders",
+    "description": "Permission toggle for files.manage_folders. ABSENT = inherits files.upload — clients normalize exactly like the DB: coalesce(manage_folders, upload, false). Set false explicitly to let a member upload without changing the folder structure."
+  },
+  "files.permission.action_delete": {
+    "value": "Delete files and folders",
+    "description": "Permission toggle for files.delete: remove files and folders for every member (tombstone + best-effort Drive delete)."
+  },
+  "files.share_target.label": {
+    "value": "Save to Samaroh",
+    "description": "System share-sheet label of the app's single share target (images, PDFs, any file; single or multiple)."
+  },
+  "files.share_target.chooser_title": {
+    "value": "What would you like to do?",
+    "description": "Title of the chooser dialog shown after a share: create invoice / set item photo / save to Files."
+  },
+  "files.share_target.option_invoice_subtitle": {
+    "value": "Attach it as a bill to an expense entry",
+    "description": "Subtitle of the 'Create invoice' chooser row (title reuses expenses.share_target.label). Single image or PDF only; hidden without expenses.create."
+  },
+  "files.share_target.option_inventory": {
+    "value": "Set as item photo",
+    "description": "Chooser row: use the shared image as an inventory master item's photo. Single image only; hidden without inventory.manage_master_items."
+  },
+  "files.share_target.option_inventory_subtitle": {
+    "value": "Use this picture for an inventory item",
+    "description": "Subtitle of files.share_target.option_inventory."
+  },
+  "files.share_target.option_files": {
+    "value": "Save to Files",
+    "description": "Chooser row: upload the shared file(s) into the Files module. Any type, single or multiple; hidden without files.upload."
+  },
+  "files.share_target.option_files_subtitle": {
+    "value": "Keep it in your business's file storage",
+    "description": "Subtitle of files.share_target.option_files."
+  },
+  "files.share_target.pick_folder_title": {
+    "value": "Save where?",
+    "description": "Title of the folder picker shown after choosing Save to Files (top level preselected)."
+  },
+  "files.share_target.pick_item_title": {
+    "value": "Which item is this photo for?",
+    "description": "Title of the master-item type-ahead picker shown after choosing Set as item photo."
+  },
+  "files.share_target.saved": {
+    "value": "{count, plural, one {# file saved to Files} other {# files saved to Files}}",
+    "description": "Snackbar after a share-sheet save into Files is staged/uploaded."
+  },
+  "files.share_target.signed_out": {
+    "value": "Sign in and open your business to save files.",
+    "description": "Chooser message when the device has no signed-in session / active business."
+  },
+  "files.share_target.no_options": {
+    "value": "You don't have permission for any action on this file.",
+    "description": "Chooser message when every row is permission-hidden for this member and file type."
+  },
+  "files.share_target.unsupported": {
+    "value": "This file type can't be used here.",
+    "description": "Chooser message when a share carries no usable stream (no MIME / unreadable content URI)."
+  }
+}

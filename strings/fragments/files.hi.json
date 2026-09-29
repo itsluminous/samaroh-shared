@@ -1,0 +1,362 @@
+{
+  "files.nav.tab": {
+    "value": "फ़ाइलें",
+    "description": "Navigation tab label for the Files module (Drive-backed file storage). Also the Menu-tab row label when the module overflows the bottom bar (design: docs/files-tab-design.md §UX)."
+  },
+  "files.nav.more_section": {
+    "value": "और",
+    "description": "Section header at the top of the Menu tab listing modules that did not fit the bottom bar (bar cap = 4 modules + Menu). Shown only when at least one module overflowed."
+  },
+  "files.home.title": {
+    "value": "फ़ाइलें",
+    "description": "Top app bar title of the Files screen at the top level."
+  },
+  "files.home.root_label": {
+    "value": "सभी फ़ाइलें",
+    "description": "Breadcrumb label for the top level (folder_id NULL); first crumb on every folder screen."
+  },
+  "files.home.search_placeholder": {
+    "value": "फ़ाइलें और फ़ोल्डर खोजें",
+    "description": "Placeholder of the Files search field. Search is GLOBAL across the business (all folders the member can access), case-insensitive name substring."
+  },
+  "files.home.empty_title": {
+    "value": "अभी कोई फ़ाइल नहीं",
+    "description": "Empty-state title when the top level has no folders and no files."
+  },
+  "files.home.empty_message": {
+    "value": "शुरू करने के लिए फ़ाइलें अपलोड करें या फ़ोल्डर बनाएँ।",
+    "description": "Empty-state body under files.home.empty_title (shown to members who can upload or manage folders; viewers see the title only)."
+  },
+  "files.folder.empty_title": {
+    "value": "यह फ़ोल्डर खाली है",
+    "description": "Empty-state title inside a folder with no subfolders and no files."
+  },
+  "files.search.empty": {
+    "value": "कोई मिलती-जुलती फ़ाइल या फ़ोल्डर नहीं",
+    "description": "Empty-state text when a Files search returns no results."
+  },
+  "files.search.result_path": {
+    "value": "{path} में",
+    "description": "Subtitle under a search result: the folder path it lives in. {path} = 'All files › Contracts › 2026' style breadcrumb string."
+  },
+  "files.breadcrumb.separator": {
+    "value": "›",
+    "description": "Separator glyph between breadcrumb crumbs (kept in the catalog so both apps render the same path string, incl. in files.search.result_path)."
+  },
+  "files.breadcrumb.up": {
+    "value": "एक स्तर ऊपर",
+    "description": "Accessibility label of the back/up affordance that navigates to the parent folder."
+  },
+  "files.view.grid": {
+    "value": "ग्रिड व्यू",
+    "description": "Toggle action / a11y label: switch the listing to a thumbnail grid."
+  },
+  "files.view.list": {
+    "value": "सूची व्यू",
+    "description": "Toggle action / a11y label: switch the listing to a detail list."
+  },
+  "files.action.upload": {
+    "value": "अपलोड करें",
+    "description": "Primary action (FAB / toolbar button): pick one or more files to upload into the current folder. Hidden without files.upload."
+  },
+  "files.action.new_folder": {
+    "value": "नया फ़ोल्डर",
+    "description": "Action: create a subfolder in the current folder. Hidden without files.manage_folders (which inherits files.upload when unset)."
+  },
+  "files.action.rename_folder": {
+    "value": "फ़ोल्डर का नाम बदलें",
+    "description": "Folder kebab / long-press action. Hidden without files.manage_folders."
+  },
+  "files.action.delete_folder": {
+    "value": "फ़ोल्डर हटाएँ",
+    "description": "Folder kebab / long-press action: tombstone the folder and everything inside. Hidden without files.delete."
+  },
+  "files.action.delete_file": {
+    "value": "फ़ाइल हटाएँ",
+    "description": "File kebab / long-press / viewer action: tombstone the file (best-effort Drive delete). Hidden without files.delete."
+  },
+  "files.action.open": {
+    "value": "खोलें",
+    "description": "File action: open the file (images in the in-app viewer; everything else in Google Drive's viewer in the browser)."
+  },
+  "files.action.open_in_drive": {
+    "value": "Google Drive में खोलें",
+    "description": "File action: open the Drive viewer page for this file in the browser / a custom tab."
+  },
+  "files.action.download": {
+    "value": "डाउनलोड करें",
+    "description": "File action: save a copy to the device (Android: Download/Samaroh via MediaStore; web: browser download)."
+  },
+  "files.action.copy_link": {
+    "value": "लिंक कॉपी करें",
+    "description": "File action: copy the anyone-with-link Drive URL to the clipboard."
+  },
+  "files.action.link_copied": {
+    "value": "लिंक कॉपी हो गया",
+    "description": "Snackbar after files.action.copy_link."
+  },
+  "files.action.manage_access": {
+    "value": "पहुँच प्रबंधित करें",
+    "description": "Folder kebab action (OWNER only): open the restricted-folder allow-list editor."
+  },
+  "files.folder.name_label": {
+    "value": "फ़ोल्डर का नाम",
+    "description": "Text field label in the new-folder / rename-folder dialog."
+  },
+  "files.folder.name_required": {
+    "value": "फ़ोल्डर का नाम लिखें",
+    "description": "Validation error when the folder name is blank."
+  },
+  "files.folder.name_invalid": {
+    "value": "फ़ोल्डर के नाम में / नहीं हो सकता और वह 120 अक्षरों से लंबा नहीं हो सकता",
+    "description": "Validation error mirroring the server CHECK on folders.name (no slash, 1–120 chars)."
+  },
+  "files.folder.duplicate": {
+    "value": "इस नाम का फ़ोल्डर यहाँ पहले से है",
+    "description": "Validation error: another LIVE folder in the same parent has this name (case-insensitive) — mirrors uq_folders_biz_parent_name."
+  },
+  "files.folder.created": {
+    "value": "फ़ोल्डर बन गया",
+    "description": "Snackbar after a folder is created."
+  },
+  "files.folder.renamed": {
+    "value": "फ़ोल्डर का नाम बदल गया",
+    "description": "Snackbar after a folder is renamed."
+  },
+  "files.folder.delete_confirm_title": {
+    "value": "यह फ़ोल्डर हटाएँ?",
+    "description": "Confirmation dialog title before tombstoning a folder."
+  },
+  "files.folder.delete_confirm_message": {
+    "value": "{count, plural, one {फ़ोल्डर और उसके अंदर की # चीज़ सभी सदस्यों के लिए हट जाएगी।} other {फ़ोल्डर और उसके अंदर की # चीज़ें सभी सदस्यों के लिए हट जाएँगी।}}",
+    "description": "Confirmation body before deleting a NON-empty folder; {count} = live subfolders + files underneath (recursive, ≥1). Empty folders use files.folder.delete_confirm_message_empty."
+  },
+  "files.folder.delete_confirm_message_empty": {
+    "value": "फ़ोल्डर सभी सदस्यों के लिए हट जाएगा।",
+    "description": "Confirmation body before deleting an EMPTY folder (count = 0; ICU has no exact-zero branch on Android)."
+  },
+  "files.folder.deleted": {
+    "value": "फ़ोल्डर हटा दिया गया",
+    "description": "Snackbar after a folder tombstone."
+  },
+  "files.folder.icon_a11y": {
+    "value": "फ़ोल्डर",
+    "description": "Accessibility description of the folder icon in grid/list rows."
+  },
+  "files.folder.item_count": {
+    "value": "{count, plural, one {# चीज़} other {# चीज़ें}}",
+    "description": "Secondary line of a folder row: number of live direct children (subfolders + files), ≥1. Empty folders use files.folder.item_count_empty."
+  },
+  "files.folder.item_count_empty": {
+    "value": "खाली",
+    "description": "Secondary line of a folder row with no live children (count = 0; ICU has no exact-zero branch on Android)."
+  },
+  "files.file.delete_confirm_title": {
+    "value": "यह फ़ाइल हटाएँ?",
+    "description": "Confirmation dialog title before tombstoning a file."
+  },
+  "files.file.delete_confirm_message": {
+    "value": "यह सभी सदस्यों के लिए हट जाएगी। इसे वापस नहीं लाया जा सकता।",
+    "description": "Confirmation body before deleting a file."
+  },
+  "files.file.deleted": {
+    "value": "फ़ाइल हटा दी गई",
+    "description": "Snackbar after a file tombstone."
+  },
+  "files.file.pending_label": {
+    "value": "अपलोड हो रही…",
+    "description": "Badge on a locally staged file whose Drive upload has not finished yet (Android outbox; the row is not on the server until it does)."
+  },
+  "files.file.added_by": {
+    "value": "{name} ने जोड़ी",
+    "description": "Detail line: display name of the member who uploaded the file."
+  },
+  "files.file.thumbnail_a11y": {
+    "value": "{name} की झलक",
+    "description": "Accessibility description of an image/PDF thumbnail; {name} = file name."
+  },
+  "files.file.open_failed": {
+    "value": "फ़ाइल खोल नहीं सके। अपना इंटरनेट कनेक्शन जाँचकर फिर से कोशिश करें।",
+    "description": "Error snackbar when opening/downloading a file fails (network, or Drive withheld the file)."
+  },
+  "files.file.download_done": {
+    "value": "Download/Samaroh में सहेज दी गई",
+    "description": "Android snackbar after files.action.download copies the file into public Downloads."
+  },
+  "files.file.size_kb": {
+    "value": "{size} KB",
+    "description": "File size label under 1 MB; {size} = locale-formatted number (no decimals)."
+  },
+  "files.file.size_mb": {
+    "value": "{size} MB",
+    "description": "File size label at or above 1 MB; {size} = locale-formatted number with one decimal."
+  },
+  "files.upload.too_large": {
+    "value": "{name} 25 MB से बड़ी है, इसे छोड़ दिया गया",
+    "description": "Error when a picked file exceeds the 25 MiB cap (mirrors the server CHECK on files.size_bytes); {name} = file name."
+  },
+  "files.upload.too_many": {
+    "value": "आप एक बार में अधिकतम {max} फ़ाइलें अपलोड कर सकते हैं",
+    "description": "Error when more than {max} (=20) files are picked or shared in one go."
+  },
+  "files.upload.in_progress": {
+    "value": "{total} में से {done} अपलोड हो रही…",
+    "description": "Progress label while a batch uploads; {done}/{total} counts."
+  },
+  "files.upload.done": {
+    "value": "{count, plural, one {# फ़ाइल अपलोड हो गई} other {# फ़ाइलें अपलोड हो गईं}}",
+    "description": "Snackbar after a batch finishes (web: immediately; Android: after the Drive upload + row push)."
+  },
+  "files.upload.queued": {
+    "value": "{count, plural, one {# फ़ाइल ऑनलाइन होने पर अपलोड होगी} other {# फ़ाइलें ऑनलाइन होने पर अपलोड होंगी}}",
+    "description": "Android snackbar when files were staged offline (outbox); they upload on the next connected sync."
+  },
+  "files.upload.failed": {
+    "value": "{name} अपलोड नहीं हो सकी। कनेक्शन जाँचकर फिर से कोशिश करें।",
+    "description": "Error when a single file's Drive upload fails; {name} = file name."
+  },
+  "files.upload.pending_unlinked": {
+    "value": "फ़ाइल अभी इसी फ़ोन पर है - Drive में सुरक्षित रखने के लिए Settings में अपना Google खाता जोड़ें",
+    "description": "Android hint on staged files while no Google account is linked (uploads stay local until the user links)."
+  },
+  "files.upload.link_google_title": {
+    "value": "Google Drive जोड़ें",
+    "description": "Title of the link-Google prompt shown when an unlinked user taps Upload."
+  },
+  "files.upload.link_google_message": {
+    "value": "फ़ाइलें आपके Google Drive में सुरक्षित रहती हैं और आपकी टीम के साथ साझा होती हैं। अपलोड करने के लिए अपना Google खाता जोड़ें।",
+    "description": "Body of the link-Google prompt (Android: Credential Manager link flow; web: Google consent popup)."
+  },
+  "files.upload.link_google_connect": {
+    "value": "जोड़ें",
+    "description": "Confirm button of the link-Google prompt."
+  },
+  "files.upload.link_google_later": {
+    "value": "अभी नहीं",
+    "description": "Dismiss button of the link-Google prompt."
+  },
+  "files.upload.link_failed": {
+    "value": "Google से जोड़ नहीं सके। फिर से कोशिश करें।",
+    "description": "Error snackbar when the Google link/consent flow fails or is cancelled."
+  },
+  "files.upload.not_configured": {
+    "value": "इस साइट पर अपलोड अभी सेट नहीं है। फ़ाइलें जोड़ने के लिए मोबाइल ऐप इस्तेमाल करें।",
+    "description": "Web-only: shown when the deployment has no Google web client id configured (NEXT_PUBLIC_GOOGLE_WEB_CLIENT_ID)."
+  },
+  "files.upload.guest_hint": {
+    "value": "फ़ाइलें Google Drive में सहेजने के लिए साइन इन करें।",
+    "description": "Web guest mode: shown in place of the upload action (guest has no Google account to upload with)."
+  },
+  "files.upload.drop_hint": {
+    "value": "अपलोड करने के लिए फ़ाइलें यहाँ छोड़ें",
+    "description": "Web-only overlay text while dragging files over the folder view."
+  },
+  "files.access.restricted_badge": {
+    "value": "सीमित",
+    "description": "Badge/chip on a restricted folder (folders.restricted = true)."
+  },
+  "files.access.title": {
+    "value": "यह फ़ोल्डर कौन खोल सकता है",
+    "description": "Title of the OWNER-only folder access editor."
+  },
+  "files.access.everyone": {
+    "value": "फ़ाइलें देखने की अनुमति वाले सभी",
+    "description": "Access editor option: folder is not restricted (any member with files.view sees it)."
+  },
+  "files.access.only_selected": {
+    "value": "केवल चुने हुए सदस्य",
+    "description": "Access editor option: folder is restricted to the members ticked below (folder_access rows)."
+  },
+  "files.access.subfolders_note": {
+    "value": "उप-फ़ोल्डर इसी फ़ोल्डर की पहुँच मानते हैं।",
+    "description": "Helper text in the access editor: restrictions apply to the whole subtree."
+  },
+  "files.access.owner_always": {
+    "value": "आपके (मालिक) पास हमेशा पहुँच रहेगी।",
+    "description": "Helper text in the access editor."
+  },
+  "files.access.no_members": {
+    "value": "अभी कोई सदस्य नहीं। पहले सदस्य स्क्रीन से सदस्य जोड़ें।",
+    "description": "Access editor empty state when the business has no non-owner members."
+  },
+  "files.access.saved": {
+    "value": "पहुँच अपडेट हो गई",
+    "description": "Snackbar after saving the access editor."
+  },
+  "files.access.no_access": {
+    "value": "आपके पास इस फ़ोल्डर की पहुँच नहीं है।",
+    "description": "Shown when a deep link / stale local row points at a folder the member can no longer open."
+  },
+  "files.permission.group": {
+    "value": "फ़ाइलें",
+    "description": "Permission matrix group header for the files module (rendered like auth.permissions.group_booking)."
+  },
+  "files.permission.action_view": {
+    "value": "फ़ाइलें देखें",
+    "description": "Permission toggle for files.view: open the Files tab, browse folders, search, open/download files."
+  },
+  "files.permission.action_upload": {
+    "value": "फ़ाइलें अपलोड करें",
+    "description": "Permission toggle for files.upload: add files (and, unless files.manage_folders is set off explicitly, create folders)."
+  },
+  "files.permission.action_manage_folders": {
+    "value": "फ़ोल्डर बनाएँ और नाम बदलें",
+    "description": "Permission toggle for files.manage_folders. ABSENT = inherits files.upload — clients normalize exactly like the DB: coalesce(manage_folders, upload, false). Set false explicitly to let a member upload without changing the folder structure."
+  },
+  "files.permission.action_delete": {
+    "value": "फ़ाइलें और फ़ोल्डर हटाएँ",
+    "description": "Permission toggle for files.delete: remove files and folders for every member (tombstone + best-effort Drive delete)."
+  },
+  "files.share_target.label": {
+    "value": "Samaroh में सहेजें",
+    "description": "System share-sheet label of the app's single share target (images, PDFs, any file; single or multiple)."
+  },
+  "files.share_target.chooser_title": {
+    "value": "आप क्या करना चाहेंगे?",
+    "description": "Title of the chooser dialog shown after a share: create invoice / set item photo / save to Files."
+  },
+  "files.share_target.option_invoice_subtitle": {
+    "value": "किसी खर्च एंट्री में बिल के रूप में जोड़ें",
+    "description": "Subtitle of the 'Create invoice' chooser row (title reuses expenses.share_target.label). Single image or PDF only; hidden without expenses.create."
+  },
+  "files.share_target.option_inventory": {
+    "value": "आइटम की फ़ोटो बनाएँ",
+    "description": "Chooser row: use the shared image as an inventory master item's photo. Single image only; hidden without inventory.manage_master_items."
+  },
+  "files.share_target.option_inventory_subtitle": {
+    "value": "इस फ़ोटो को इन्वेंटरी आइटम के लिए इस्तेमाल करें",
+    "description": "Subtitle of files.share_target.option_inventory."
+  },
+  "files.share_target.option_files": {
+    "value": "फ़ाइलें में सहेजें",
+    "description": "Chooser row: upload the shared file(s) into the Files module. Any type, single or multiple; hidden without files.upload."
+  },
+  "files.share_target.option_files_subtitle": {
+    "value": "अपने व्यवसाय के फ़ाइल स्टोरेज में रखें",
+    "description": "Subtitle of files.share_target.option_files."
+  },
+  "files.share_target.pick_folder_title": {
+    "value": "कहाँ सहेजें?",
+    "description": "Title of the folder picker shown after choosing Save to Files (top level preselected)."
+  },
+  "files.share_target.pick_item_title": {
+    "value": "यह फ़ोटो किस आइटम की है?",
+    "description": "Title of the master-item type-ahead picker shown after choosing Set as item photo."
+  },
+  "files.share_target.saved": {
+    "value": "{count, plural, one {# फ़ाइल फ़ाइलें में सहेज दी गई} other {# फ़ाइलें फ़ाइलें में सहेज दी गईं}}",
+    "description": "Snackbar after a share-sheet save into Files is staged/uploaded."
+  },
+  "files.share_target.signed_out": {
+    "value": "फ़ाइलें सहेजने के लिए साइन इन करके अपना व्यवसाय खोलें।",
+    "description": "Chooser message when the device has no signed-in session / active business."
+  },
+  "files.share_target.no_options": {
+    "value": "इस फ़ाइल पर किसी भी कार्य की अनुमति आपके पास नहीं है।",
+    "description": "Chooser message when every row is permission-hidden for this member and file type."
+  },
+  "files.share_target.unsupported": {
+    "value": "यह फ़ाइल प्रकार यहाँ इस्तेमाल नहीं हो सकता।",
+    "description": "Chooser message when a share carries no usable stream (no MIME / unreadable content URI)."
+  }
+}

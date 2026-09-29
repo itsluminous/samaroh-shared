@@ -72,7 +72,7 @@ Module namespaces and their owners:
 |---|---|
 | `common.*` | shared vocabulary (actions, states, nav) - integrator-owned |
 | `app.*` | app shell (placeholders, top-level chrome) |
-| `booking.*`, `expenses.*`, `inventory.*` | the respective feature |
+| `booking.*`, `expenses.*`, `inventory.*`, `notes.*`, `files.*` | the respective feature |
 | `onboarding.*`, `auth.*`, `sync.*`, `invoice.*`, `menu.*`, `settings.*`, `reports.*` | the respective feature/core module |
 | `guest.*` | web guest mode (lives in `fragments/web-auth`) |
 
@@ -88,6 +88,7 @@ owns exactly **one fragment namespace file pair** under `strings/fragments/`:
 fragments/booking.en.json       fragments/booking.hi.json      # bookings (incl. calendar a11y)
 fragments/designsystem.en.json  fragments/designsystem.hi.json # shared UI components (viewer, cropper)
 fragments/expenses.en.json      fragments/expenses.hi.json     # expenses
+fragments/files.en.json         fragments/files.hi.json        # files (Drive-indexed file storage, share-sheet chooser)
 fragments/inventory.en.json     fragments/inventory.hi.json    # inventory
 fragments/menu.en.json          fragments/menu.hi.json         # menu (settings.* keys too)
 fragments/onboarding.en.json    fragments/onboarding.hi.json   # onboarding (auth.* keys too)
