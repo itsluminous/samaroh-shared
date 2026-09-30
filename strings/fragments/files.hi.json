@@ -422,5 +422,13 @@
   "files.picker.collapse": {
     "value": "{name} के सब-फ़ोल्डर छिपाएँ",
     "description": "Accessibility label of the collapse chevron on an expanded folder-picker row; {name} = folder name."
+  },
+  "files.move.selected_hint": {
+    "value": "यहाँ स्थानांतरित हो रहा है: {path}",
+    "description": "Helper line under the folder list of the move picker (web; Android may reuse). {path} = the selected destination's breadcrumb path built like files.search.result_path (e.g. 'All files › Contracts')."
+  },
+  "files.move.duplicate_folder": {
+    "value": "गंतव्य में इस नाम का फ़ोल्डर पहले से है",
+    "description": "Move picker inline error: a LIVE folder in the chosen destination already carries the moved folder's name (case-insensitive) — mirrors uq_folders_biz_parent_name (the server would answer 23505). Rename first."
   }
 }
