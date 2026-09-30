@@ -266,5 +266,21 @@
   "expenses.share_target.empty": {
     "value": "अभी कोई व्यक्ति नहीं। पहले खर्च टैब से पार्टी जोड़ें।",
     "description": "Party picker empty state when the business has no parties to attach the shared invoice to."
+  },
+  "expenses.summary.period_label": {
+    "value": "सारांश की अवधि",
+    "description": "Accessible name of the summary period switch (segmented control) in the totals card at the top of the Expenses home screen."
+  },
+  "expenses.summary.period_month": {
+    "value": "इस महीने",
+    "description": "Summary period switch option: totals over the current calendar month (the default)."
+  },
+  "expenses.summary.period_year": {
+    "value": "इस साल",
+    "description": "Summary period switch option: totals over the current calendar year."
+  },
+  "expenses.summary.period_all": {
+    "value": "अब तक",
+    "description": "Summary period switch option: totals over every entry regardless of date."
   }
 }

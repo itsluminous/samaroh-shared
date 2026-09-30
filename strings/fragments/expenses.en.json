@@ -266,5 +266,21 @@
   "expenses.share_target.empty": {
     "value": "No people yet. Add a party from the Expenses tab first.",
     "description": "Party picker empty state when the business has no parties to attach the shared invoice to."
+  },
+  "expenses.summary.period_label": {
+    "value": "Summary period",
+    "description": "Accessible name of the summary period switch (segmented control) in the totals card at the top of the Expenses home screen."
+  },
+  "expenses.summary.period_month": {
+    "value": "This month",
+    "description": "Summary period switch option: totals over the current calendar month (the default)."
+  },
+  "expenses.summary.period_year": {
+    "value": "This year",
+    "description": "Summary period switch option: totals over the current calendar year."
+  },
+  "expenses.summary.period_all": {
+    "value": "All time",
+    "description": "Summary period switch option: totals over every entry regardless of date."
   }
 }
