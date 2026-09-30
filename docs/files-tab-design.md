@@ -191,15 +191,43 @@ siblings). Delete: confirm `files.folder.delete_confirm_title` +
 
 **File actions** (long-press sheet / kebab menu): Open, Open in Google Drive, Download,
 Copy link, Rename (`files.file.name_label`, validation `files.file.name_required` /
-`name_invalid`, snackbar `files.file.renamed`), Move to… (picker `files.move.title`, confirm
-`files.move.confirm`, inline errors `files.move.same_folder` / `into_self` / `too_deep` /
-`files.folder.duplicate`, snackbar `files.move.done`), Delete (confirm
-`files.file.delete_confirm_*`). Gates per D14.
+`name_invalid`, snackbar `files.file.renamed`; the dialog is prefilled with the current
+name INCLUDING the extension; 1–255 chars, no `/`, duplicates allowed per D12), Move to…
+(see below), Delete (confirm `files.file.delete_confirm_*`). Gates per D14. Folder rename
+keeps the folder-name rules (1–120, no `/`, live case-insensitive sibling uniqueness).
+
+**Move to…** (file or folder; *reconciled 2026-09-30*). The lazy folder picker opens with
+the item's CURRENT location preselected (title `files.move.title`, confirm
+`files.move.confirm`, helper `files.move.selected_hint` = `Moving to: {path}`). When a
+FOLDER is moved, the folder itself and its whole subtree are HIDDEN from the list (never
+greyed) — it can never be its own destination; the cycle check still runs as defence.
+Validation is LIVE on the current selection on both platforms: the inline error for the
+selection shows at once and the Move button is disabled until a valid destination is
+picked — `files.move.same_folder` (already there), `into_self` (self or a descendant),
+`too_deep` (destination depth + moved subtree height > 10), `files.move.duplicate_folder`
+(live case-insensitive sibling clash in the destination; folders only — file names may
+repeat). Files add no depth, so a file move can only fail on same-place. Confirm writes ONE
+`folder_id` / `parent_id` update via the outbox (the subtree follows by reference),
+snackbar `files.move.done {folder}` (`All files` for the top level), then the best-effort
+Drive re-parent (D14).
 
 **Folder pickers** (share-sheet destination, move destination, web upload destination) are
-ONE lazy-tree component: roots only at first, expand chevrons on rows with children,
-`All files` selectable, indentation per depth, compact `body`-sized rows, full available
-width on compact screens (Android `usePlatformDefaultWidth=false`, ~92% width).
+ONE lazy-tree component: `All files` + ROOT folders only at first; rows with children carry
+an expand/collapse chevron (`files.picker.expand` / `collapse` with `{name}`, web
+`role=tree`/`treeitem` + `aria-level`/`aria-expanded`); children indent one level per depth
+(A–Z per level); the ancestors of the preselected folder start expanded so the selection
+is visible; `All files` is selectable; "New folder" (permission-hidden, depth-capped under
+the selection) expands the parent and selects the created child. Sizing: compact
+`body`-sized rows, near-full width on compact screens (Android `WideDialog`
+`usePlatformDefaultWidth=false`, ~92% width ≤ 560 dp; web `compactDialogProps`, 8 px
+gutters on `xs`). The other choosers (share chooser, name dialogs, Manage access) share the
+same sizing.
+
+**Open file** (D16). Image → in-app viewer on both. Anything else: Android resolves the
+bytes and opens them with the system chooser via the module `FileProvider`
+(`files.file.no_viewer_app` when nothing can display the type) — never an implicit
+`drive.google.com` VIEW; web opens the Drive viewer URL in a new tab (the same URL the
+expense-bill chips use). "Open in Google Drive" stays an explicit row on both.
 
 **Manage access** (owner only, folder kebab): radio `files.access.everyone` /
 `files.access.only_selected` + member checklist (display names), helper texts
@@ -277,6 +305,16 @@ tables — that is the intended guard. `docs/backup-format.md` gains the three t
   under the selected row, creates + auto-selects, duplicate validation vs the selected
   parent's live siblings — unit (Android `FilesViewModelTest`, web `files-folder-picker`).
 - Folder name validation + case-insensitive live duplicate steering — unit/DAO.
+- Rename / move (D14, 2026-09-30): file-name rules (1–255, no `/`, duplicates allowed);
+  per-row gates hidden-not-greyed per role (viewer / upload-own-only / delete /
+  manage_folders) mirroring `files_update`; move validation same-place / cycle / depth
+  boundary (9+3 rejected, 7+3 ok) / live duplicate vs tombstone; lazy picker rows
+  (roots only, chevrons, ancestors pre-expanded, moved subtree hidden); live error +
+  disabled confirm; ONE parent/folder update with the subtree following; best-effort
+  Drive rename / re-parent with 403/404 swallowed — unit (Android `FilesTreeMoveTest`,
+  `FileActionGatesTest`, `DriveFilesMirrorTest`, `FilesViewModelTest`; web
+  `files-rename-move-logic`, `files-rename-move`, `files-drive-client`) + Playwright
+  `files-rename-move.spec.ts`.
 - Sync spec entries (`folder_access` composite id) — unit.
 - Upload pipeline with fake Drive: upload → permission → row push; unlinked → staged
   (Android) / prompt (web); size cap rejects before network — unit.
