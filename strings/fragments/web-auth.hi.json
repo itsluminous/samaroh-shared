@@ -18,5 +18,13 @@
   "guest.banner.sign_in": {
     "value": "साइन इन करें",
     "description": "Call-to-action button on the guest-mode banner that takes the user to the sign-in page."
+  },
+  "auth.session_lost.banner": {
+    "value": "आप साइन आउट हो गए हैं। सहेजना जारी रखने के लिए दोबारा साइन इन करें — बाकी बदलाव उसके बाद अपने आप सिंक हो जाएँगे।",
+    "description": "Web: persistent banner on every app screen when a signed-in (non-guest) tab loses its Supabase session mid-use (revoked/expired refresh token). The outbox is held (never replayed as anon) until the user signs in again."
+  },
+  "auth.session_lost.sign_in": {
+    "value": "साइन इन करें",
+    "description": "Web: CTA on the session-lost banner — opens the sign-in page."
   }
 }
