@@ -110,5 +110,33 @@
   "invoice.method.other": {
     "value": "Other",
     "description": "Localized payment-method label for 'other' in the payments table."
+  },
+  "sync.signed_out.banner": {
+    "value": "You were signed out. Sign in again to resume syncing — pending changes then sync automatically.",
+    "description": "App-wide banner under the offline banner while a previously signed-in device has lost its session (ADR-089): the sync engine never pushes or pulls without a user session, so nothing syncs until the user signs in again."
+  },
+  "sync.signed_out.action_sign_in": {
+    "value": "Sign in",
+    "description": "Action button on the signed-out banner (app shell and Sync status screen): opens the sign-in screen. Pending changes sync automatically after a successful sign-in as the same account."
+  },
+  "sync.signed_out.icon": {
+    "value": "Signed out — tap to sign in",
+    "description": "Long-press explanation of the app-bar cloud icon in its signed-out state (ADR-089): tapping opens the Sync status screen with the sign-in banner."
+  },
+  "sync.signed_out.status_title": {
+    "value": "Signed out — your changes are waiting for sign-in",
+    "description": "Sync status screen banner title while the device has lost its session: queued changes are held locally, nothing is pushed or pulled."
+  },
+  "sync.signed_out.status_message": {
+    "value": "Nothing is synced while signed out. Sign in with the same account and everything below syncs automatically.",
+    "description": "Sync status screen banner body in the signed-out state (ADR-089)."
+  },
+  "sync.no_account.status_title": {
+    "value": "Not signed in — changes stay on this device",
+    "description": "Sync status screen banner title in offline/no-account mode with queued changes: the user never signed in on this device, so the queue cannot be pushed until they do."
+  },
+  "sync.waiting_for_sign_in.pending": {
+    "value": "{count, plural, one {# change waiting for sign-in} other {# changes waiting for sign-in}}",
+    "description": "Sync status screen heading replacing settings.sync.pending while there is no user session (ADR-089): the count of queued local changes that will push once the user signs in."
   }
 }

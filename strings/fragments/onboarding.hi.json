@@ -306,5 +306,9 @@
   "onboarding.sign_in.continue_offline": {
     "value": "बिना खाते के जारी रखें",
     "description": "Sign-in screen escape hatch (offline-first): proceeds to business setup in device-local owner mode; data syncs once the user signs in later."
+  },
+  "onboarding.sign_in.signed_out_notice": {
+    "value": "इस डिवाइस पर आप साइन आउट हो गए थे। उसी खाते से साइन इन करें — बाकी बदलाव अपने आप सिंक हो जाएँगे।",
+    "description": "Sign-in screen notice shown when the user re-enters sign-in after the device lost its session (ADR-089), so the visit is explained and the user knows queued changes are safe."
   }
 }
