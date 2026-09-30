@@ -362,5 +362,65 @@
   "files.share_target.unsupported": {
     "value": "यह फ़ाइल प्रकार यहाँ इस्तेमाल नहीं हो सकता।",
     "description": "Chooser message when a share carries no usable stream (no MIME / unreadable content URI)."
+  },
+  "files.action.rename_file": {
+    "value": "फ़ाइल का नाम बदलें",
+    "description": "File kebab / long-press action: change the display name (and best-effort the Drive file name). Hidden unless the member holds files.delete OR uploaded this file and holds files.upload — exactly the server's files UPDATE policy."
+  },
+  "files.action.move": {
+    "value": "यहाँ ले जाएँ…",
+    "description": "File / folder kebab / long-press action: choose another folder as the new location (lazy folder picker). Files: hidden unless files.delete OR (own upload ∧ files.upload); folders: hidden without files.manage_folders."
+  },
+  "files.file.name_label": {
+    "value": "फ़ाइल का नाम",
+    "description": "Text field label in the rename-file dialog (prefilled with the current name incl. extension)."
+  },
+  "files.file.name_required": {
+    "value": "फ़ाइल का नाम लिखें",
+    "description": "Validation error when the file name is blank."
+  },
+  "files.file.name_invalid": {
+    "value": "फ़ाइल के नाम में / नहीं हो सकता और वह 255 अक्षरों से ज़्यादा नहीं हो सकता",
+    "description": "Validation error mirroring the server CHECK on files.name (no slash, 1–255 chars)."
+  },
+  "files.file.renamed": {
+    "value": "फ़ाइल का नाम बदल दिया गया",
+    "description": "Snackbar after a file is renamed."
+  },
+  "files.file.no_viewer_app": {
+    "value": "इस फ़ोन पर इस प्रकार की फ़ाइल खोलने वाला कोई ऐप नहीं है",
+    "description": "Android snackbar when the phone has no app able to display a tapped non-image file (e.g. no PDF viewer installed); the file was downloaded fine."
+  },
+  "files.move.title": {
+    "value": "कहाँ ले जाएँ?",
+    "description": "Title of the folder picker shown after files.action.move (the item's current folder is preselected)."
+  },
+  "files.move.confirm": {
+    "value": "ले जाएँ",
+    "description": "Confirm button of the move folder picker."
+  },
+  "files.move.done": {
+    "value": "{folder} में ले जाया गया",
+    "description": "Snackbar after a file or folder was moved; {folder} = destination folder name (files.home.root_label at the top level)."
+  },
+  "files.move.same_folder": {
+    "value": "यह पहले से इसी फ़ोल्डर में है",
+    "description": "Move picker inline error when the chosen destination is the item's current location."
+  },
+  "files.move.into_self": {
+    "value": "फ़ोल्डर को उसके अपने या उसके किसी सब-फ़ोल्डर में नहीं ले जाया जा सकता",
+    "description": "Move picker inline error (cycle guard) when a folder's destination is itself or a descendant."
+  },
+  "files.move.too_deep": {
+    "value": "यहाँ ले जाने से फ़ोल्डर की गहराई की सीमा पार हो जाएगी",
+    "description": "Move picker inline error when the destination depth plus the moved folder's own subtree height would exceed the 10-level cap (design D13)."
+  },
+  "files.picker.expand": {
+    "value": "{name} के सब-फ़ोल्डर दिखाएँ",
+    "description": "Accessibility label of the expand chevron on a folder-picker row that has subfolders (lazy tree); {name} = folder name."
+  },
+  "files.picker.collapse": {
+    "value": "{name} के सब-फ़ोल्डर छिपाएँ",
+    "description": "Accessibility label of the collapse chevron on an expanded folder-picker row; {name} = folder name."
   }
 }

@@ -2,8 +2,9 @@
 
 **Status:** decided. This is the cross-platform contract for the FILES module; the
 Android and web implementers build against it in parallel. Server side:
-`supabase/migrations/009_files_tab.sql` (validated 001→009 + seed replay and RLS probes
-on scratch Postgres 15). Strings: `strings/fragments/files.{en,hi}.json` (90 keys).
+`supabase/migrations/009_files_tab.sql` + `010_files_rename_move.sql` (rename/move,
+2026-09-30; both validated by 001→010 + seed replay and RLS probes on scratch Postgres 15).
+Strings: `strings/fragments/files.{en,hi}.json` (105 keys).
 Permissions: `files` module in `permissions/permissions-schema.json`.
 
 Owner requirement (verbatim): *"A Files tab which behaves like file storage proxying to
@@ -31,10 +32,10 @@ upload. Parity web+android with tests."*
 | D11 | Search | **Global**: the search field on the Files screen searches ALL folders + files of the business the member can access (case-insensitive name substring), results flat with a path subtitle (`files.search.result_path`). Empty query = current folder listing. Android: Room query; web: client filter over the fetched index (PostgREST `ilike` acceptable). |
 | D12 | Naming / conflicts | Folder names unique per parent per business, **case-insensitive, LIVE rows only** (partial index over `lower(name)`, the 008 lesson); 1–120 chars, no `/`. File names may **repeat** (Drive allows it; camera exports collide); 1–255 chars, no `/`; the display name = original file name incl. extension; Drive gets the same name. |
 | D13 | Limits | **25 MiB per file** (server CHECK `size_bytes ≤ 26214400`; client rejects with `files.upload.too_large`). **20 files per batch** (`files.upload.too_many`). Folder depth ≤ 10 (client), RLS chain cap 64. Any MIME accepted. **Images are NOT recompressed** (this is file storage — originals). |
-| D14 | Rename / move | Folder **rename**: yes (`files.manage_folders`; Drive folder not renamed — best-effort mirror). File rename: **not in v1** (RLS allows the uploader/delete-holder to change `name`, but no UI). **Move (file or folder): out of scope v1** — `parent_id`/`folder_id` are immutable via UPDATE (guard trigger); users re-upload/re-create. |
+| D14 | Rename / move | *Revised 2026-09-30 (owner feedback on the 0.18 drop; shared migration `010_files_rename_move.sql`).* **Folder rename** (`files.manage_folders`; Drive folder renamed best-effort). **File rename** (new): the `files_update` policy verbatim — `files.delete` OR (`files.upload` ∧ `created_by = me`); owners always; Drive file name patched best-effort. **Move (file AND folder)**: `folder_id` / `parent_id` are now mutable via UPDATE. Files: same gate as file rename; folders: `files.manage_folders`. Guard trigger (010) refuses cycles (destination = self or a live descendant) for everyone and, for non-owners, requires `manage_folders` + access to the destination parent; the files policy's WITH CHECK requires access to the destination folder. Clients validate before writing: same-location, cycle, depth (destination depth + moved subtree height ≤ 10), live case-insensitive sibling-name duplicate for folders (the unique index would 23505). Metadata via the outbox (whole-row UPSERT Android / PATCH web); Drive `files.update` (`name`, `addParents`/`removeParents` onto the find-or-create mirror chain) best-effort — linked actor only, 403/404 swallowed, exactly the D10 delete posture. Rows renamed/moved on Drive by hand are never reconciled (the index stays authoritative). |
 | D15 | Tab placement | Files is a **top-level module** (own route/graph, deep link `/files`, `files.nav.tab`, bar icon `Folder`). Module order: Booking, Expenses, Inventory, Notes, **Files**. **Bottom bar = visible modules ONLY, cap 5** (Material 3's 5-item limit = all five modules; *revised 2026-09-29 on owner feedback* — originally "4 + Menu" with a Menu → More overflow). **The Menu is NOT a bar tab: it lives behind a title-bar kebab (⋮) placed immediately RIGHT of the sync indicator** (a11y label `common.nav.menu`) and opens the unchanged Menu screen (search, identity row, Settings, Reports, Members [owner], About). A module the member cannot `view` is hidden (not greyed) and the bar simply has one fewer item; **no viewable module → no bar at all** and the shell starts on the Menu. Same on Android and web-mobile (xs–sm); web **desktop** (md+) keeps the left rail with every visible module + Menu as the LAST rail entry and no kebab. Android hides the kebab while the Menu is open (it would stack a second Menu); web keeps it tinted/`aria-current` on `/menu` as the "you are here" cue (no nav stack). `files.nav.more_section` stays in the catalog: web-mobile keeps an inert overflow split for a hypothetical 6th module; Android removed its overflow machinery. |
-| D16 | Open behaviour | Tap image → in-app viewer (Android `ImageViewerDialog`, web lightbox — public thumbnail ladder `drive.google.com/thumbnail?id=…&sz=w1600` → `lh3` fallback). Tap anything else → Drive viewer `https://drive.google.com/file/d/{id}/view` in a Chrome Custom Tab / new tab. Thumbnails: images + PDFs via `thumbnail?id=…&sz=w320` (web) / `DriveFileFetcher` own-token→public download into a `files-cache/` (Android, images only); other MIMEs show a type icon. |
-| D17 | Actions | Long-press (Android) / kebab (web) on a file: Open, Open in Google Drive, Download, Copy link, Delete. On a folder: Rename, Delete, Manage access (owner only). **Permission-hidden, never greyed** (ADR-038). |
+| D16 | Open behaviour | Tap image → in-app viewer (Android `ImageViewerDialog`, web lightbox — public thumbnail ladder `drive.google.com/thumbnail?id=…&sz=w1600` → `lh3` fallback). **Tap anything else — Android (*revised 2026-09-30*): resolve the BYTES exactly like an expense bill (staged original → `files-cache/` via the `DriveFileFetcher` own-token→public ladder) and hand the local file to the system via the module's `FileProvider` + `ACTION_VIEW` with the row's MIME (chooser; `files.file.no_viewer_app` when nothing can display the type). NEVER an implicit `VIEW` on a `drive.google.com` URL: the Google Drive app owns that host as a verified App Link, captures the intent and demands an account every time (the 0.18 bug). Web: Drive viewer `https://drive.google.com/file/d/{id}/view` in a new tab.** "Open in Google Drive" stays an explicit action and, on Android, pins the Custom Tab to a browser package. Thumbnails: images + PDFs via `thumbnail?id=…&sz=w320` (web) / `DriveFileFetcher` own-token→public download into a `files-cache/` (Android, images only); other MIMEs show a type icon. |
+| D17 | Actions | Long-press (Android) / kebab (web) on a file: Open, Open in Google Drive, Download, Copy link, **Rename** (`files.action.rename_file`), **Move to…** (`files.action.move`), Delete. On a folder: Rename, **Move to…**, Delete, Manage access (owner only). **Permission-hidden, never greyed** (ADR-038); gates per D14. |
 | D18 | Share sheet (Android) | ONE share target alias labelled **"Save to Samaroh"** (`files.share_target.label`) accepting `ACTION_SEND` + `ACTION_SEND_MULTIPLE`, `*/*`. It opens a **chooser**: *Create invoice* (existing ADR-078 flow; single image/PDF; `expenses.create`), *Set as item photo* (single image; `inventory.manage_master_items`; opens the existing edit-item dialog with the photo pre-staged), *Save to Files* (anything, multiple; `files.upload`; folder picker, top level preselected, **with a "New folder" row** — see §7). Rows are permission-hidden; none left → `files.share_target.no_options`. The existing `.CreateInvoiceShareTarget` alias is **replaced** by the new one. Web: drag-and-drop onto the folder view + multi-file picker; uploads started from a NON-folder context (global search results) go through the same destination picker (`files.picker.confirm`, `files.picker.selected_hint`, `web-files` fragment). |
 | D19 | Sync spec | Android `SyncTables`: `folders` (business-scoped, `updated_at` cursor), `files` (same), `folder_access` (composite PK `folder_id|member_id`, `idColumn2`, soft link like `note_tag_links`). Web: all three through `insertWithOutbox`/`updateWithOutbox`; `folder_access` uses the composite `match` locator. Files rows are pushed **only after** the Drive upload succeeded (Android: upload-before-row-push exactly like bills, `FilesUploader` in `core:google`). |
 | D20 | Backup | Drive backup (Android) **exports** `folders`, `files`, `folder_access` rows (metadata) and adds `files.drive_file_id` to the attachment manifest; `BackupExporter.BUSINESS_SCOPED_TABLES` grows by three and `BackupExporterSchemaGuardTest` expects them; `docs/backup-format.md` updated. |
@@ -63,8 +64,9 @@ upload. Parity web+android with tests."*
 - A revoked member's uploads stay in *their* Drive; the anyone-with-link permission keeps
   them openable; the owner can only tombstone the row (Drive delete 403s → swallowed) —
   same as bills today (ADR-053 consequences).
-- Folder renames/moves are not mirrored into Drive; Drive ids are stable so nothing
-  breaks. Drive is a mirror for humans browsing Drive, never the source of truth.
+- Renames/moves are mirrored into Drive only best-effort (D14: linked actor, own bytes,
+  403/404 swallowed); Drive ids are stable so nothing breaks. Drive is a mirror for humans
+  browsing Drive, never the source of truth.
 - Threat model = ADR-059 §4 verbatim: anyone WITH a file's link can open it; ids are
   high-entropy, discovery is off, ids live behind RLS. Copy-link exposes exactly one file.
 
@@ -99,8 +101,8 @@ Helpers: `has_files_perm(biz, action)` (inheritance `manage_folders → upload`)
 
 | Table | SELECT | INSERT | UPDATE | DELETE |
 |---|---|---|---|---|
-| folders | `view` ∧ access(id) | `manage_folders` ∧ access(parent) ∧ `created_by = uid` ∧ (¬restricted ∨ owner) | (`manage_folders` ∨ `delete`) ∧ access(id); guard: non-owner can't change `restricted`/`parent_id`/…; `deleted_at` needs `delete`; `name` needs `manage_folders` | `delete` ∧ access |
-| files | `view` ∧ access(folder) | `upload` ∧ access(folder) ∧ `created_by = uid` | access ∧ (`delete` ∨ (`upload` ∧ `created_by = uid`)); guard: `folder_id`/`drive_file_id`/`mime`/`size` immutable for all; `deleted_at` needs `delete` | `delete` ∧ access |
+| folders | `view` ∧ access(id) | `manage_folders` ∧ access(parent) ∧ `created_by = uid` ∧ (¬restricted ∨ owner) | (`manage_folders` ∨ `delete`) ∧ access(id); guard (010): non-owner can't change `restricted`; `deleted_at` needs `delete`; `name` and `parent_id` need `manage_folders`; `parent_id` change also needs access(new parent) and is cycle-guarded for everyone | `delete` ∧ access |
+| files | `view` ∧ access(folder) | `upload` ∧ access(folder) ∧ `created_by = uid` | access(old) ∧ access(new folder) ∧ (`delete` ∨ (`upload` ∧ `created_by = uid`)); guard (010): `drive_file_id`/`mime`/`size` immutable for all, `name` + `folder_id` mutable; `deleted_at` needs `delete` | `delete` ∧ access |
 | folder_access | owner ∨ row names me | owner | owner | owner |
 
 Why the uploader may UPDATE their own file: PostgREST upsert (`ON CONFLICT DO UPDATE`)
@@ -188,7 +190,16 @@ siblings). Delete: confirm `files.folder.delete_confirm_title` +
 `delete_confirm_message` (count ≥ 1) or `_empty`.
 
 **File actions** (long-press sheet / kebab menu): Open, Open in Google Drive, Download,
-Copy link, Delete (confirm `files.file.delete_confirm_*`). Delete needs `files.delete`.
+Copy link, Rename (`files.file.name_label`, validation `files.file.name_required` /
+`name_invalid`, snackbar `files.file.renamed`), Move to… (picker `files.move.title`, confirm
+`files.move.confirm`, inline errors `files.move.same_folder` / `into_self` / `too_deep` /
+`files.folder.duplicate`, snackbar `files.move.done`), Delete (confirm
+`files.file.delete_confirm_*`). Gates per D14.
+
+**Folder pickers** (share-sheet destination, move destination, web upload destination) are
+ONE lazy-tree component: roots only at first, expand chevrons on rows with children,
+`All files` selectable, indentation per depth, compact `body`-sized rows, full available
+width on compact screens (Android `usePlatformDefaultWidth=false`, ~92% width).
 
 **Manage access** (owner only, folder kebab): radio `files.access.everyone` /
 `files.access.only_selected` + member checklist (display names), helper texts
@@ -231,8 +242,10 @@ way the kebab does. Web: `/files` route + `SectionGuard module="files"`;
      pre-staged through the existing item-photo pipeline (crop → ≤320px WebP → Drive mirror).
    - **Save to Files** — `files.share_target.option_files(_subtitle)`; any MIME, any count
      (≤ 20); needs `files.upload`; folder picker (`files.share_target.pick_folder_title`,
-     top level preselected, restricted folders only if accessible, whole reachable tree
-     indented A–Z per level) → same upload pipeline as in-app → `files.share_target.saved`.
+     top level preselected, restricted folders only if accessible; **LAZY TREE** — only the
+     top-level folders show at first, rows with subfolders carry an expand chevron
+     (`files.picker.expand` / `files.picker.collapse`), children indent one level per depth,
+     A–Z per level; *revised 2026-09-30, was a flat pre-expanded tree*) → same upload pipeline as in-app → `files.share_target.saved`.
      The picker carries a **"New folder"** affordance (`files.action.new_folder`,
      `CreateNewFolder` icon; permission-HIDDEN unless effective `files.manage_folders`
      AND the depth cap allows a child under the SELECTED row) → the standard
@@ -275,7 +288,10 @@ tables — that is the intended guard. `docs/backup-format.md` gains the three t
 ## 10. Deployment order
 
 1. Owner applies `009_files_tab.sql` in the Supabase SQL editor (see
-   `~/.luminous/handoff/shared-009-files-owner-ddl.md`).
+   `~/.luminous/handoff/shared-009-files-owner-ddl.md`), then `010_files_rename_move.sql`
+   (idempotent `create or replace` of the two guard functions; until it is applied, a
+   move pushed by either client is rejected server-side with the 009 immutability error
+   and stays in the outbox as a per-item error — rename of files/folders already works on 009).
 2. Owner adds the web origins to the OAuth Web client's Authorized JavaScript origins and
    sets `NEXT_PUBLIC_GOOGLE_WEB_CLIENT_ID` on Vercel (web uploads; the site works without it).
 3. Deploy web, release Android (Room 12→13). Reads are tolerant either way: the module is
