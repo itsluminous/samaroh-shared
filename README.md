@@ -27,7 +27,8 @@ event-types.json          SEED TEMPLATE for per-business event-type presets (key
 docs/                     shared decision notes (e.g. event-type presets model;
                           files-tab-design.md = the FILES contract incl. the app-shell
                           nav model: bottom bar = modules only, Menu behind the title-bar
-                          kebab right of the sync indicator)
+                          kebab right of the sync indicator; ui-conventions.md =
+                          cross-platform presentation rules, e.g. metadata lines)
 scripts/                  CI validators + operational SQL (see below)
 ```
 

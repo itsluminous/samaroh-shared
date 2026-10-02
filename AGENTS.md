@@ -52,6 +52,9 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
   (Booking, Expenses, Inventory, Notes, Files; cap 5), the Menu opens from a title-bar
   kebab placed right of the sync indicator (`common.nav.menu`), sign-out lives only on the
   Menu identity row. Change it there first; both app repos then follow with an ADR.
+- **Presentation rules shared by both apps** (e.g. metadata lines = small + monospace +
+  muted, rendered only via each platform's `MetadataText`) live in
+  `docs/ui-conventions.md`. Same process: change it there first, then each app with an ADR.
 - **Shared-push coordination**: commit and push here **first**, then bump the submodule
   in each app repo. Always `git pull --ff-only` before pushing — both app tracks bump
   this repo and the remote may have advanced mid-task. Never force-push.
