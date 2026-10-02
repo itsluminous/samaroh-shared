@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Samaroh APP ICON — adaptive-icon FOREGROUND layer, on the Android 108×108dp
+     adaptive grid (the launcher shows the centre 72dp; the 66dp circle is the safe zone).
+     This file and samaroh-android/app/src/main/res/drawable/ic_launcher_foreground.xml
+     carry the SAME four pathData strings — change both together.
+     Original artwork: a three-arch celebration hall on a plinth. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="108" height="108">
+  <!-- Centre arch -->
+  <path fill="#FFFFFF" d="M47,68 L47,52 A7,7 0 0 1 61,52 L61,68 Z"/>
+  <!-- Left arch -->
+  <path fill="#FFFFFF" d="M33,68 L33,57 A5,5 0 0 1 43,57 L43,68 Z"/>
+  <!-- Right arch -->
+  <path fill="#FFFFFF" d="M65,68 L65,57 A5,5 0 0 1 75,57 L75,68 Z"/>
+  <!-- Base line -->
+  <path fill="#FFFFFF" d="M30,71 L78,71 L78,74 L30,74 Z"/>
+</svg>

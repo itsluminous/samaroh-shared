@@ -16,7 +16,7 @@ codegen/                  catalog → platform resource generators (pure Node, n
 supabase/
   migrations/             canonical Postgres schema, RLS and storage policies
   seed.sql                demo data for local development
-brand/                    logo + shared color palette tokens
+brand/                    app icon (canonical, both platforms) + logo + palette tokens
 invoice/                  invoice PDF layout contract (both renderers must match)
 permissions/              JSON Schema for member permissions
 event-types.json          SEED TEMPLATE for per-business event-type presets (key, emoji,
@@ -115,6 +115,24 @@ Android renderer (platform PDF API in `core:invoice`) and the web renderer (`pdf
 A4 portrait, fixed margins/typography, brand accent `#6750A4`, Devanagari-capable font,
 rendered in the app's current language from this catalog. Any layout change requires a
 `docs/decisions.md` entry in **both** app repos.
+
+## App icon (brand/)
+
+The launcher/PWA icon is **identical on both platforms** by contract:
+
+- `brand/app-icon-foreground.svg` — the adaptive-icon FOREGROUND layer on Android's
+  108×108dp grid (white three-arch hall). Its four `pathData` strings are copied verbatim
+  into `samaroh-android/app/src/main/res/drawable/ic_launcher_foreground.xml`.
+- `brand/app-icon.svg` — the flat COMPOSITE exactly as a launcher shows it: background
+  `#6750A4` (`ic_launcher_background`) + foreground, cropped to the centre 72dp visible
+  window and masked to a rounded square (20% radius). `samaroh-web` renders every web
+  icon (favicon.ico, `icon.svg`, PWA 192/512 + maskable, apple-touch 180) from this file
+  via `scripts/gen-icons.mjs`.
+- `brand/logo.svg` — the wider brand mark (canopy + spark) for marketing/invoice use; it is
+  **not** the app icon.
+
+Change the icon here first (both SVGs, same paths), then mirror the paths into the Android
+vector drawable and re-run the web generator.
 
 ## Booking calendar colors
 
