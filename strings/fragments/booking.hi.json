@@ -586,5 +586,41 @@
   "booking.calendar.agenda_empty_hint": {
     "value": "बुकिंग जोड़ने के लिए ऊपर कैलेंडर में कोई भी खाली तारीख दबाएँ।",
     "description": "Guidance under the agenda empty-state title telling the user how to create their first booking of the month."
+  },
+  "booking.reminder.snooze": {
+    "value": "स्नूज़",
+    "description": "Action on upcoming/follow-up reminder notifications and the full-screen reminder popup: opens the snooze preset chooser (ADR-094)."
+  },
+  "booking.reminder.snooze_title": {
+    "value": "फिर कब याद दिलाएँ?",
+    "description": "Title of the snooze preset chooser dialog."
+  },
+  "booking.reminder.snooze_10m": {
+    "value": "10 मिनट में",
+    "description": "Snooze preset: ring again in 10 minutes."
+  },
+  "booking.reminder.snooze_30m": {
+    "value": "30 मिनट में",
+    "description": "Snooze preset: ring again in 30 minutes."
+  },
+  "booking.reminder.snooze_1h": {
+    "value": "1 घंटे में",
+    "description": "Snooze preset: ring again in 1 hour."
+  },
+  "booking.reminder.snooze_3h": {
+    "value": "3 घंटे में",
+    "description": "Snooze preset: ring again in 3 hours."
+  },
+  "booking.reminder.snooze_tomorrow": {
+    "value": "कल {time}",
+    "description": "Snooze preset: ring again the next morning. {time} is the locale-formatted local time (e.g. 9:00 AM)."
+  },
+  "booking.reminder.snoozed_until": {
+    "value": "{time} तक स्नूज़ किया गया",
+    "description": "Confirmation shown after picking a snooze preset. {time} is a locale-formatted time (or date and time when it is not today)."
+  },
+  "booking.reminder.upcoming_today": {
+    "value": "आज",
+    "description": "Replaces the 'in N days' line on an upcoming-event reminder that re-fires (after a snooze) on the event day itself."
   }
 }

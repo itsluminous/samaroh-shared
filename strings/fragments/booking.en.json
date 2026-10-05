@@ -586,5 +586,41 @@
   "booking.calendar.agenda_empty_hint": {
     "value": "Tap any empty date on the calendar above to add a booking.",
     "description": "Guidance under the agenda empty-state title telling the user how to create their first booking of the month."
+  },
+  "booking.reminder.snooze": {
+    "value": "Snooze",
+    "description": "Action on upcoming/follow-up reminder notifications and the full-screen reminder popup: opens the snooze preset chooser (ADR-094)."
+  },
+  "booking.reminder.snooze_title": {
+    "value": "Remind me again in…",
+    "description": "Title of the snooze preset chooser dialog."
+  },
+  "booking.reminder.snooze_10m": {
+    "value": "10 minutes",
+    "description": "Snooze preset: ring again in 10 minutes."
+  },
+  "booking.reminder.snooze_30m": {
+    "value": "30 minutes",
+    "description": "Snooze preset: ring again in 30 minutes."
+  },
+  "booking.reminder.snooze_1h": {
+    "value": "1 hour",
+    "description": "Snooze preset: ring again in 1 hour."
+  },
+  "booking.reminder.snooze_3h": {
+    "value": "3 hours",
+    "description": "Snooze preset: ring again in 3 hours."
+  },
+  "booking.reminder.snooze_tomorrow": {
+    "value": "Tomorrow at {time}",
+    "description": "Snooze preset: ring again the next morning. {time} is the locale-formatted local time (e.g. 9:00 AM)."
+  },
+  "booking.reminder.snoozed_until": {
+    "value": "Snoozed until {time}",
+    "description": "Confirmation shown after picking a snooze preset. {time} is a locale-formatted time (or date and time when it is not today)."
+  },
+  "booking.reminder.upcoming_today": {
+    "value": "Today",
+    "description": "Replaces the 'in N days' line on an upcoming-event reminder that re-fires (after a snooze) on the event day itself."
   }
 }
