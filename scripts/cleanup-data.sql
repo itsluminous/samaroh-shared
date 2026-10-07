@@ -5,7 +5,8 @@
 --
 -- WHAT IT DOES
 --   Hard-deletes ALL operational data rows:
---     deleted: payment_reminders, booking_payments, bookings, date_blocks,
+--     deleted: payment_reminders (while the retired table exists), booking_payments,
+--              bookings, date_blocks,
 --              expense_attachments, expenses, parties, inventory_transactions,
 --              master_items                      (child tables first, FK-safe)
 --     kept   : auth.users, businesses, business_members, business_settings,
@@ -53,11 +54,14 @@ declare
 begin
   -- Child tables first so every FK parent is emptied after its children.
 
-  -- 1. payment_reminders (-> bookings, businesses)
-  delete from payment_reminders
-    where target_business is null or business_id = target_business;
-  get diagnostics n = row_count; total := total + n;
-  raise notice 'payment_reminders: % deleted', n;
+  -- 1. payment_reminders (-> bookings, businesses) — RETIRED table (migration 011 /
+  --    android ADR-095); still wiped while it exists, skipped once dropped.
+  if to_regclass('public.payment_reminders') is not null then
+    execute 'delete from public.payment_reminders where $1::uuid is null or business_id = $1::uuid'
+      using target_business;
+    get diagnostics n = row_count; total := total + n;
+    raise notice 'payment_reminders: % deleted', n;
+  end if;
 
   -- 2. booking_payments (-> bookings, businesses)
   delete from booking_payments

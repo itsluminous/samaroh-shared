@@ -79,6 +79,8 @@ top of the consolidated baseline):
 | `007_notes_fine_perms.sql` | `notes.view_checklists` / `notes.toggle_checklist` with inheritance (`has_notes_perm`) + toggle guard |
 | `008_live_name_uniqueness.sql` | `parties` / `master_items` names unique over LIVE rows only, case-insensitive |
 | `009_files_tab.sql` | FILES module: `folders`, `files`, `folder_access` (Drive-indexed file storage, restricted folders) + RLS (`files.*` permissions, `has_files_perm` / `can_access_folder`) — design in `docs/files-tab-design.md` |
+| `010_files_rename_move.sql` | FILES: file rename + file/folder move (guard-trigger replacement, cycle/depth checks) |
+| `011_retire_payment_reminders.sql` | `payment_reminders` RETIRED (android ADR-095): reminder rows are per-user, per-device state kept locally by Android ≥ 0.20.1; web never used the table. Comment-only (non-destructive) so lagging devices keep syncing; drop later with `scripts/drop-payment-reminders.sql` |
 
 There is **no server-side seeding of event-type presets**: a fresh database has no
 businesses. Both apps seed the presets **client-side from `event-types.json` when a
@@ -97,6 +99,7 @@ Apply new migrations **before** deploying app versions that read the new columns
 | `scripts/cleanup-data.sql` | **The** data-wipe script — wipe operational data for one business (or all, the default): hard-deletes bookings/payments/reminders/date blocks, expenses/parties/attachments, inventory transactions/master items (child tables first, FK-safe). **Keeps** accounts and setup (`auth.users`, `businesses`, `business_members`, `business_settings`, `google_accounts`, `event_types` — user config) and resets `businesses.invoice_counter` to 0. Run in the Supabase SQL editor (transactional, FK-ordered). Item photos/bills live in Google Drive and are not touched; the only Storage bucket (`logos`) is setup and kept. |
 | `scripts/destroy-everything.sql` | ☢️ **Total schema destruction** — drops every Samaroh table (cascade), enum, function, the `auth.users` trigger and the storage policies, and clears the `supabase_migrations` history so `supabase db push` re-applies the baseline from scratch. Keeps `auth.users` rows and `storage.buckets`. |
 | `scripts/alter-drop-image-path.sql` | One-time convergence of an EXISTING deployment on the final image architecture: recreates `get_current_inventory` without `image_path`, drops `master_items.image_path` (the column no longer syncs — item photos are referenced by `drive_image_id`; the local path is device-only), and removes the retired `inventory-images`/`booking-invoices` buckets + policies. Run AFTER all devices run an app version that no longer pushes `image_path`. |
+| `scripts/drop-payment-reminders.sql` | One-time retirement of the `payment_reminders` table + `reminder_status` enum (android ADR-095 / migration 011). Run ONLY after every device runs Android ≥ 0.20.1 — an older build's pull of the missing table would mark its replica inconsistent. |
 | `scripts/archive/` | Retired one-time alter scripts, kept for the record after their change was folded into the baseline (see `scripts/archive/README.md`). Never run these against a current-baseline database. |
 
 A full reset (data only) = run `cleanup-data.sql` in the SQL editor. Accounts and

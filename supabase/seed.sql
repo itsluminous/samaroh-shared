@@ -134,12 +134,9 @@ insert into booking_payments (id, booking_id, business_id, amount, paid_on, meth
 ('30000000-0000-0000-0000-000000000009', '20000000-0000-0000-0000-000000000010',
  '10000000-0000-0000-0000-000000000001', 5000, '2026-09-01', 'cash', 'Advance', '00000000-0000-0000-0000-000000000001');
 
--- A pending payment reminder for booking 1 (due ₹50,000 after the event).
-insert into payment_reminders (id, booking_id, business_id, remind_on, status, amount_due_snapshot) values
-('35000000-0000-0000-0000-000000000001', '20000000-0000-0000-0000-000000000001',
- '10000000-0000-0000-0000-000000000001', '2026-07-12', 'confirmed', 150000),
-('35000000-0000-0000-0000-000000000002', '20000000-0000-0000-0000-000000000001',
- '10000000-0000-0000-0000-000000000001', '2026-07-19', 'pending', 50000);
+-- payment_reminders is RETIRED (migration 011 / android ADR-095): reminder rows are
+-- device-local, no client reads this table. No seed rows — and the table may already
+-- have been dropped by scripts/drop-payment-reminders.sql.
 
 -- ============ PARTIES (5) + EXPENSES ============
 insert into parties (id, business_id, name, phone, notes) values
