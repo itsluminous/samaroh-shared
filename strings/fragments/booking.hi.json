@@ -63,6 +63,14 @@
     "value": "निशान",
     "description": "Badge on a calendar/list entry whose event type has kind = 'marker' (auspicious-day self-indicator like Lagan or Tilak): highlights the day only - no customer, no payments, excluded from reports."
   },
+  "booking.event_type.marker_badge": {
+    "value": "सूचक",
+    "description": "Short badge shown next to a marker-kind event type (ADR-041/044: Lagan/Tilak-style date markers) wherever event types are listed for choice - booking form picker, event-type management list. Tells the user this type marks a date only and is not a real booking."
+  },
+  "booking.event_type.marker_hint": {
+    "value": "केवल तारीख़ दर्शाता है - कोई राशि या उपलब्धता टकराव नहीं",
+    "description": "One-line helper shown under the event-type picker in the booking form when a marker-kind type is selected; explains why the amount fields are hidden."
+  },
   "booking.card.phone_call": {
     "value": "कॉल करें",
     "description": "Tap-to-call icon explanation on the booking card; opens the dialer with the customer's number."
