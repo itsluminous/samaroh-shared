@@ -26,6 +26,30 @@ document is the contract. Any change requires a `docs/decisions.md` entry in bot
   zero-padded to 4 digits.
 - Assigned **once** per booking on first invoice generation, stored in
   `bookings.invoice_number`, **immutable** afterwards — regenerating the PDF reuses it.
+- **Manual numbers** (booking form, Android ADR-020): the owner may type a number from the
+  paper register (e.g. `88`) before any PDF exists; it is stored verbatim and frozen.
+
+### Display form (2026-10-12) — one rule, used EVERYWHERE the number is shown
+
+`displayInvoiceNumber(stored, prefix)`:
+
+- stored matches `^[0-9]+$` (a bare manual register number) → parse as an integer and
+  format `{prefix}-{n:04d}`: `88` → `INV-0088`, `0088` → `INV-0088`, `12345` → `INV-12345`
+  (zero-pad to at least 4 digits; never truncate).
+- anything else → verbatim (auto numbers are already `{prefix}-{YYYY}-{counter:04d}`;
+  manual alphanumerics are respected).
+
+The STORED value never changes (uniqueness checks and the register mapping keep working).
+The display form is used by: the PDF header, the text receipt, the booking card/detail
+"Invoice no." line, the Google Calendar description line, and the **PDF file name** (§ File
+name). Both platforms implement it as one pure helper with the same unit tests.
+
+## File name
+
+`{displayInvoiceNumber}.pdf` — e.g. `INV-0088.pdf`, `SGH-2026-0042.pdf`. Characters outside
+`[A-Za-z0-9._-]` are replaced by `-` (defensive: manual numbers are free text). Android
+writes the file under `files/invoices/`; web passes it as the download name. (Previously a
+manual number `88` produced `88.pdf` on both platforms.)
 
 ## Amount formatting (both renderers, no exceptions)
 
@@ -37,9 +61,15 @@ document is the contract. Any change requires a `docs/decisions.md` entry in bot
 ## Sections — exact top-to-bottom order
 
 1. **Header band**
-   - Left: business logo (if set), 56 × 56 pt, rounded 8 pt corners.
-   - Right of logo: business name (20 pt bold), then business type, address and owner name
-     (11 pt, one per line, `onSurfaceVariant` grey `#49454F`).
+   - **Top-left: business logo** — only when the business has one (`businesses.logo_path`,
+     the sole Supabase Storage object, bucket `logos`; Android renders its local copy, web
+     downloads the PNG). 56 × 56 pt, rounded 8 pt corners, flush with the left margin and
+     the top margin. No logo → the text column starts at the left margin (no gap).
+   - Right of the logo (12 pt gap): business name (20 pt bold), then **address and owner
+     name only** (11 pt, one per line, `onSurfaceVariant` grey `#49454F`). The
+     **business-type line is REMOVED** (2026-10-12: the default `Marriage Hall` told the
+     customer nothing; `businesses.business_type` stays in the schema for the profile
+     screen). Blank address/owner lines are skipped, never printed empty.
    - Right-aligned column: localized "Invoice" title (13 pt bold, accent color),
      invoice number, issue date (locale-formatted).
    - 1 pt accent-colored rule under the band, 16 pt below content.
@@ -52,6 +82,19 @@ document is the contract. Any change requires a `docs/decisions.md` entry in bot
      emoji glyphs render inconsistently (or as tofu) across PDF fonts and viewers. The
      icon stays in the app UIs and in the text receipt.
    - Date or date range (locale-formatted; range with an en dash), times if set.
+
+3a. **Notes block** (2026-10-12) — printed **only when `bookings.notes` is non-blank**.
+   - Section title `invoice.notes_title` (13 pt bold, accent color), then **`bookings.notes`
+     verbatim**: trimmed, line breaks preserved, word-wrapped to the content width, 11 pt
+     body colour, emoji stripped like every other PDF text. No truncation (a long note may
+     push later sections down / onto page 2).
+   - Source of truth is the booking's own `notes` column — **not** `booking_payments.notes`
+     and not any import tag. The "Imported — …" text the owner saw on invoices is the
+     per-payment note written by the one-time booking import (`booking_payments.notes` =
+     `Imported — settled on event day`, `Imported — "rs"` …) rendered in the payment table's
+     *Notes* column (§5); it was never `bookings.notes`. That column keeps printing payment
+     notes; the owner clears the import markers once with
+     `scripts/clear-import-payment-notes.sql`.
 
 4. **Amounts block**
    - Row: localized "Total amount" — right-aligned amount.
@@ -83,8 +126,9 @@ document is the contract. Any change requires a `docs/decisions.md` entry in bot
 
 ## Text (non-PDF) variant
 
-The "share as text" receipt mirrors the same order — business name, invoice number,
-customer, event + dates, total / deposit / paid / due, then one line per payment — using
-the same localized labels and the same ₹ formatting. Unlike the PDF, the text receipt
+The "share as text" receipt mirrors the same order — business name, invoice number (display
+form), customer, event + dates, **notes (when non-blank, after the event line)**, total /
+deposit / paid / due, then one line per payment — using the same localized labels and the
+same ₹ formatting. No business-type line here either. Unlike the PDF, the text receipt
 KEEPS the event icon emoji on the event line (plain text renders emoji fine; it is sent
 through a share intent, not embedded in a PDF font). Emoji render as-is (not localized).
