@@ -282,5 +282,17 @@
   "expenses.summary.period_all": {
     "value": "All time",
     "description": "Summary period switch option: totals over every entry regardless of date."
+  },
+  "expenses.ledger.event_chip": {
+    "value": "Event: {label}",
+    "description": "Small chip on an expense entry that was recorded against a booking (expenses.booking_id). {label} = customer first name · localized event type, e.g. \"Priya · Wedding\". Tapping opens the booking card (requires booking.view)."
+  },
+  "expenses.entry.booking_notes_default": {
+    "value": "{eventType} · {dates}",
+    "description": "Default notes text pre-filled when recording an expense from a booking card (user may edit/clear). {eventType} = localized event-type label (no emoji); {dates} = the booking date or date range formatted exactly like the booking card."
+  },
+  "expenses.entry.party_create_forbidden": {
+    "value": "You can record expenses but not add people. Ask the owner to add {name} first.",
+    "description": "Blocking message when a member with expenses.create but without expenses.manage_parties records an expense from a booking whose customer has no party yet (the party would have to be created). {name} = the booking customer name. Nothing is saved."
   }
 }

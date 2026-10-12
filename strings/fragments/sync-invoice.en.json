@@ -138,5 +138,9 @@
   "sync.waiting_for_sign_in.pending": {
     "value": "{count, plural, one {# change waiting for sign-in} other {# changes waiting for sign-in}}",
     "description": "Sync status screen heading replacing settings.sync.pending while there is no user session (ADR-089): the count of queued local changes that will push once the user signs in."
+  },
+  "invoice.notes_title": {
+    "value": "Notes",
+    "description": "Invoice PDF / text receipt: title of the Notes section that prints bookings.notes verbatim (section printed only when the booking has notes)."
   }
 }

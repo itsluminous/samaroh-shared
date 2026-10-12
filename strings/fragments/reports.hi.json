@@ -101,11 +101,11 @@
   },
   "reports.range.last_3_months": {
     "value": "3 महीने",
-    "description": "Date-range filter chip: the last 3 calendar months including the current one."
+    "description": "DEPRECATED 2026-10-12 (docs/reports-range-filter.md) — superseded by reports.range.minus_*/plus_*; delete once both apps have switched. Date-range filter chip: the last 3 calendar months including the current one."
   },
   "reports.range.last_12_months": {
     "value": "12 महीने",
-    "description": "Date-range filter chip: the last 12 calendar months including the current one."
+    "description": "DEPRECATED 2026-10-12 (docs/reports-range-filter.md) — superseded by reports.range.minus_*/plus_*; delete once both apps have switched. Date-range filter chip: the last 12 calendar months including the current one."
   },
   "reports.range.custom": {
     "value": "अपनी तारीख़ें",
@@ -354,5 +354,21 @@
   "reports.pdf.footer": {
     "value": "Samaroh द्वारा बनाया गया",
     "description": "Footer line at the bottom of every exported report PDF page."
+  },
+  "reports.range.minus_12m": {
+    "value": "−12 महीने",
+    "description": "Reports date-range quick-filter chip (docs/reports-range-filter.md): today minus 12 months … today (backward-looking). Uses the typographic minus/plus sign."
+  },
+  "reports.range.minus_3m": {
+    "value": "−3 महीने",
+    "description": "Reports date-range quick-filter chip (docs/reports-range-filter.md): today minus 3 months … today (backward-looking). Uses the typographic minus/plus sign."
+  },
+  "reports.range.plus_3m": {
+    "value": "+3 महीने",
+    "description": "Reports date-range quick-filter chip (docs/reports-range-filter.md): today … today plus 3 months (forward-looking: upcoming bookings/dues). Uses the typographic minus/plus sign."
+  },
+  "reports.range.plus_12m": {
+    "value": "+12 महीने",
+    "description": "Reports date-range quick-filter chip (docs/reports-range-filter.md): today … today plus 12 months (forward-looking: upcoming bookings/dues). Uses the typographic minus/plus sign."
   }
 }

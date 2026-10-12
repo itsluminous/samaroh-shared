@@ -630,5 +630,9 @@
   "booking.reminder.upcoming_today": {
     "value": "आज",
     "description": "Replaces the 'in N days' line on an upcoming-event reminder that re-fires (after a snooze) on the event day itself."
+  },
+  "booking.card.action_record_expense": {
+    "value": "खर्च दर्ज करें",
+    "description": "Booking card/detail action (next to Record payment / Invoice): opens the add-expense form pre-filled for this booking (party = the customer, direction = You gave, notes = event + dates). Shown only with expenses.create; see docs/expense-against-event.md."
   }
 }
