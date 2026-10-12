@@ -8,7 +8,9 @@
 --     deleted: payment_reminders (while the retired table exists), booking_payments,
 --              bookings, date_blocks,
 --              expense_attachments, expenses, parties, inventory_transactions,
---              master_items                      (child tables first, FK-safe)
+--              master_items                      (child tables first, FK-safe;
+--              expenses.booking_id is ON DELETE SET NULL, so deleting bookings
+--              before expenses is fine — migration 012)
 --     kept   : auth.users, businesses, business_members, business_settings,
 --              google_accounts, event_types
 --   event_types are deliberately KEPT: they are per-business
