@@ -58,7 +58,7 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
 - **Other cross-platform behaviour contracts** live next to it: `docs/calendar-day-color.md`
   (day fill = most severe booking colour, never blended), `docs/reports-range-filter.md`
   (−12m/−3m/This month/+3m/+12m/Custom), `docs/expense-against-event.md` (Record expense
-  from a booking card → `expenses.booking_id`), `docs/invoice-layout.md` (change notes on
+  from a booking card → `expenses.booking_id`, schema in migration `012_expense_booking_link.sql`), `docs/invoice-layout.md` (change notes on
   top of `invoice/layout-spec.md`).
 - **Shared-push coordination**: commit and push here **first**, then bump the submodule
   in each app repo. Always `git pull --ff-only` before pushing — both app tracks bump
