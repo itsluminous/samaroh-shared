@@ -343,6 +343,22 @@
     "value": "Payment recorded",
     "description": "Confirmation toast after a payment is saved (also from the notification's Yes-full action)."
   },
+  "booking.payment.delete": {
+    "value": "Delete payment",
+    "description": "Action on a payment row in the booking's payment history: remove this payment."
+  },
+  "booking.payment.delete_confirm_title": {
+    "value": "Delete this payment?",
+    "description": "Title of the confirmation dialog before a payment is deleted."
+  },
+  "booking.payment.delete_confirm_body": {
+    "value": "{amount} on {date} will be removed and the due recalculated. This cannot be undone.",
+    "description": "Body of the delete-payment confirmation dialog. {amount} is a pre-formatted rupee amount, {date} the localized payment date."
+  },
+  "booking.payment.deleted": {
+    "value": "Payment deleted",
+    "description": "Confirmation toast after a payment is deleted and the booking's due is recalculated."
+  },
   "booking.reminder.channel_payment": {
     "value": "Payment confirmations",
     "description": "Notification channel name for day-after-event payment confirmation reminders."

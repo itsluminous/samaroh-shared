@@ -112,7 +112,7 @@
     "description": "About screen: row that shows the open-source license attributions."
   },
   "menu.about.licenses_body": {
-    "value": "Samaroh ओपन-सोर्स सॉफ़्टवेयर से बना है, जिनमें शामिल हैं: Kotlin, Jetpack Compose और AndroidX (Apache 2.0), Material Components (Apache 2.0), Hilt और Dagger (Apache 2.0), Room (Apache 2.0), WorkManager (Apache 2.0), kotlinx.serialization और kotlinx.coroutines (Apache 2.0), Coil (Apache 2.0)।",
+    "value": "समारोह ओपन-सोर्स सॉफ़्टवेयर से बना है, जिनमें शामिल हैं: Kotlin, Jetpack Compose और AndroidX (Apache 2.0), Material Components (Apache 2.0), Hilt और Dagger (Apache 2.0), Room (Apache 2.0), WorkManager (Apache 2.0), kotlinx.serialization और kotlinx.coroutines (Apache 2.0), Coil (Apache 2.0)।",
     "description": "About screen: license attribution text listing bundled open-source libraries. Library names are proper nouns and stay untranslated."
   },
   "menu.about.made_with_love": {
@@ -332,7 +332,7 @@
     "description": "Suffix appended to the Google Calendar event title of tentative bookings. Keep the leading space."
   },
   "settings.gcal.event_managed_by": {
-    "value": "Samaroh द्वारा प्रबंधित",
+    "value": "समारोह द्वारा प्रबंधित",
     "description": "Google Calendar event description footer line."
   },
   "settings.gcal.calendar_name": {
@@ -340,7 +340,7 @@
     "description": "Display name of the dedicated Google Calendar the app creates for bookings (ADR-046). Keep as the Latin brand name in every locale."
   },
   "settings.gcal.relink_hint": {
-    "value": "इवेंट्स को अलग Samaroh कैलेंडर में ले जाने के लिए Google फिर से लिंक करें",
+    "value": "इवेंट्स को अलग समारोह कैलेंडर में ले जाने के लिए Google फिर से लिंक करें",
     "description": "Hint button under the calendar-sync toggle when the linked account lacks the calendar.app.created scope; tapping re-runs the Google link flow."
   },
   "settings.gcal.description_line": {

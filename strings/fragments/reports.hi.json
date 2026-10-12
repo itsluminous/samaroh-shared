@@ -352,7 +352,7 @@
     "description": "Note on the inventory value report explaining why it has no date-range filter."
   },
   "reports.pdf.footer": {
-    "value": "Samaroh द्वारा बनाया गया",
+    "value": "समारोह द्वारा बनाया गया",
     "description": "Footer line at the bottom of every exported report PDF page."
   },
   "reports.range.minus_12m": {

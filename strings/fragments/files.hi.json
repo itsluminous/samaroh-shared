@@ -312,7 +312,7 @@
     "description": "Permission toggle for files.delete: remove files and folders for every member (tombstone + best-effort Drive delete)."
   },
   "files.share_target.label": {
-    "value": "Samaroh में सहेजें",
+    "value": "समारोह में सहेजें",
     "description": "System share-sheet label of the app's single share target (images, PDFs, any file; single or multiple)."
   },
   "files.share_target.chooser_title": {
