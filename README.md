@@ -84,6 +84,7 @@ top of the consolidated baseline):
 | `010_files_rename_move.sql` | FILES: file rename + file/folder move (guard-trigger replacement, cycle/depth checks) |
 | `011_retire_payment_reminders.sql` | `payment_reminders` RETIRED (android ADR-095): reminder rows are per-user, per-device state kept locally by Android ≥ 0.20.1; web never used the table. Comment-only (non-destructive) so lagging devices keep syncing; drop later with `scripts/drop-payment-reminders.sql` |
 | `012_expense_booking_link.sql` | `expenses.booking_id uuid null references bookings(id) on delete set null` + partial index: an expense recorded from a booking card remembers its event (contract: `docs/expense-against-event.md`). RLS unchanged |
+| `013_payment_tombstone_by_recorder.sql` | RLS only: `booking.record_payment` holders may soft-delete (tombstone) a live `booking_payments` row — the "Delete payment" action on the booking card uses the same gate as recording (android ADR-105). One additive UPDATE policy scoped to the live → tombstoned transition; `booking.edit` keeps the unrestricted update policy. Apply BEFORE the clients that carry the trash icon |
 
 There is **no server-side seeding of event-type presets**: a fresh database has no
 businesses. Both apps seed the presets **client-side from `event-types.json` when a
