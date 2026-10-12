@@ -1,5 +1,5 @@
 {
-  "$comment": "Curated booking calendar colors. `key` is stored in bookings.color (NULL = default themed look); `hex` is the swatch/fill color; `on_hex` is the legible text/icon color to use on top of `hex` (all pairs meet WCAG AA >= 4.5:1); `label_key` resolves the localized color name from the string catalog. Hexes are chosen to read well on both light and dark surfaces.",
+  "$comment": "Curated booking calendar colors. `key` is stored in bookings.color (NULL = default themed look); `hex` is the swatch/fill color; `on_hex` is the legible text/icon color to use on top of `hex` (all pairs meet WCAG AA >= 4.5:1); `label_key` resolves the localized color name from the string catalog. Hexes are chosen to read well on both light and dark surfaces. ORDER IS CONTRACTUAL (docs/calendar-day-color.md): when bookings of different colours share a day, the colour listed FIRST here wins the day fill (tomato … graphite, then the themed default) — never reorder.",
   "colors": [
     { "key": "tomato", "hex": "#C62828", "on_hex": "#FFFFFF", "label_key": "booking.color.tomato" },
     { "key": "flamingo", "hex": "#E67C73", "on_hex": "#212121", "label_key": "booking.color.flamingo" },

@@ -25,6 +25,8 @@ event-types.json          SEED TEMPLATE for per-business event-type presets (key
                           NEW business from this file client-side at business creation,
                           and the booking import script backfills missing presets.
 docs/                     shared decision notes (e.g. event-type presets model;
+                          expense-against-event.md, invoice-layout.md (2026-10-12
+                          change set), calendar-day-color.md, reports-range-filter.md;
                           files-tab-design.md = the FILES contract incl. the app-shell
                           nav model: bottom bar = modules only, Menu behind the title-bar
                           kebab right of the sync indicator; ui-conventions.md =
@@ -42,7 +44,7 @@ files, inventory, menu, notes, onboarding, reports, sync-invoice, and the web-tr
 web-auth, web-booking, web-expinv, web-files, web-menu, web-perms).
 Fragments exist so parallel feature work merges additively: each feature owns its own
 fragment pair and never touches another feature's file. Codegen and the validator merge
-base + all fragments into one catalog (currently **1026 keys × 2 locales**).
+base + all fragments into one catalog (currently **1077 keys × 2 locales**).
 
 App repos never hand-edit generated resources — they are git-ignored and regenerated at
 build time:
@@ -81,6 +83,7 @@ top of the consolidated baseline):
 | `009_files_tab.sql` | FILES module: `folders`, `files`, `folder_access` (Drive-indexed file storage, restricted folders) + RLS (`files.*` permissions, `has_files_perm` / `can_access_folder`) — design in `docs/files-tab-design.md` |
 | `010_files_rename_move.sql` | FILES: file rename + file/folder move (guard-trigger replacement, cycle/depth checks) |
 | `011_retire_payment_reminders.sql` | `payment_reminders` RETIRED (android ADR-095): reminder rows are per-user, per-device state kept locally by Android ≥ 0.20.1; web never used the table. Comment-only (non-destructive) so lagging devices keep syncing; drop later with `scripts/drop-payment-reminders.sql` |
+| `012_expense_booking_link.sql` | `expenses.booking_id uuid null references bookings(id) on delete set null` + partial index: an expense recorded from a booking card remembers its event (contract: `docs/expense-against-event.md`). RLS unchanged |
 
 There is **no server-side seeding of event-type presets**: a fresh database has no
 businesses. Both apps seed the presets **client-side from `event-types.json` when a
@@ -99,6 +102,7 @@ Apply new migrations **before** deploying app versions that read the new columns
 | `scripts/cleanup-data.sql` | **The** data-wipe script — wipe operational data for one business (or all, the default): hard-deletes bookings/payments/reminders/date blocks, expenses/parties/attachments, inventory transactions/master items (child tables first, FK-safe). **Keeps** accounts and setup (`auth.users`, `businesses`, `business_members`, `business_settings`, `google_accounts`, `event_types` — user config) and resets `businesses.invoice_counter` to 0. Run in the Supabase SQL editor (transactional, FK-ordered). Item photos/bills live in Google Drive and are not touched; the only Storage bucket (`logos`) is setup and kept. |
 | `scripts/destroy-everything.sql` | ☢️ **Total schema destruction** — drops every Samaroh table (cascade), enum, function, the `auth.users` trigger and the storage policies, and clears the `supabase_migrations` history so `supabase db push` re-applies the baseline from scratch. Keeps `auth.users` rows and `storage.buckets`. |
 | `scripts/alter-drop-image-path.sql` | One-time convergence of an EXISTING deployment on the final image architecture: recreates `get_current_inventory` without `image_path`, drops `master_items.image_path` (the column no longer syncs — item photos are referenced by `drive_image_id`; the local path is device-only), and removes the retired `inventory-images`/`booking-invoices` buckets + policies. Run AFTER all devices run an app version that no longer pushes `image_path`. |
+| `scripts/clear-import-payment-notes.sql` | One-time: nulls every `booking_payments.notes` that starts with `Imported` (markers written by the 2026-08 booking import) so customer invoices stop printing "Imported — …" in the payment table (`docs/invoice-layout.md`). Genuine payment notes untouched; idempotent; bumps `updated_at` so clients pull the change. |
 | `scripts/drop-payment-reminders.sql` | One-time retirement of the `payment_reminders` table + `reminder_status` enum (android ADR-095 / migration 011). Run ONLY after every device runs Android ≥ 0.20.1 — an older build's pull of the missing table would mark its replica inconsistent. |
 | `scripts/archive/` | Retired one-time alter scripts, kept for the record after their change was folded into the baseline (see `scripts/archive/README.md`). Never run these against a current-baseline database. |
 

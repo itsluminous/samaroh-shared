@@ -55,6 +55,11 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
 - **Presentation rules shared by both apps** (e.g. metadata lines = small + monospace +
   muted, rendered only via each platform's `MetadataText`) live in
   `docs/ui-conventions.md`. Same process: change it there first, then each app with an ADR.
+- **Other cross-platform behaviour contracts** live next to it: `docs/calendar-day-color.md`
+  (day fill = most severe booking colour, never blended), `docs/reports-range-filter.md`
+  (−12m/−3m/This month/+3m/+12m/Custom), `docs/expense-against-event.md` (Record expense
+  from a booking card → `expenses.booking_id`), `docs/invoice-layout.md` (change notes on
+  top of `invoice/layout-spec.md`).
 - **Shared-push coordination**: commit and push here **first**, then bump the submodule
   in each app repo. Always `git pull --ff-only` before pushing — both app tracks bump
   this repo and the remote may have advanced mid-task. Never force-push.
