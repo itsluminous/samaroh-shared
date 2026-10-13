@@ -650,5 +650,13 @@
   "booking.card.action_record_expense": {
     "value": "खर्च दर्ज करें",
     "description": "Booking card/detail action (next to Record payment / Invoice): opens the add-expense form pre-filled for this booking (party = the customer, direction = You gave, notes = event + dates). Shown only with expenses.create; see docs/expense-against-event.md."
+  },
+  "booking.card.expenses_history": {
+    "value": "खर्च का ब्योरा",
+    "description": "Heading of the \"Expenses history\" section on the booking card, placed below \"Payment history\" and styled like it: live expenses with expenses.booking_id = this booking, newest first (date · amount · notes). The whole section is hidden when there are none; shown only with expenses.view; amounts masked per expenses.view_amounts. See docs/expense-against-event.md §3b."
+  },
+  "booking.card.expenses_total": {
+    "value": "कुल खर्च",
+    "description": "Footer line of the \"Expenses history\" section on the booking card: sum of the listed linked expenses (paid − received). Informational only — never subtracted from the booking Due. Masked per expenses.view_amounts."
   }
 }

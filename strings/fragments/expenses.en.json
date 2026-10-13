@@ -285,7 +285,7 @@
   },
   "expenses.ledger.event_chip": {
     "value": "Event: {label}",
-    "description": "Small chip on an expense entry that was recorded against a booking (expenses.booking_id). {label} = customer first name · localized event type, e.g. \"Priya · Wedding\". Tapping opens the booking card (requires booking.view)."
+    "description": "Small chip on an expense entry that was recorded against a booking (expenses.booking_id). {label} = customer first name · localized event type, e.g. \"Priya · Wedding\". Tapping opens the booking card (requires booking.view). DEPRECATED (contract rev 2, 2026-10-13): replaced by expenses.ledger.show_event — the event party name already carries event type · date · customer. Kept so rev-1 builds compile; removed one shared release after both apps drop it."
   },
   "expenses.entry.booking_notes_default": {
     "value": "{eventType} · {dates}",
@@ -294,5 +294,9 @@
   "expenses.entry.party_create_forbidden": {
     "value": "You can record expenses but not add people. Ask the owner to add {name} first.",
     "description": "Blocking message when a member with expenses.create but without expenses.manage_parties records an expense from a booking whose customer has no party yet (the party would have to be created). {name} = the booking customer name. Nothing is saved."
+  },
+  "expenses.ledger.show_event": {
+    "value": "Show event",
+    "description": "Small chip / text button on an expense row with expenses.booking_id (and once in the party ledger header of an event party, parties.booking_id): opens the linked booking card. Rendered only when the member holds booking.view and the booking resolves locally. Replaces expenses.ledger.event_chip (rev 2). See docs/expense-against-event.md §3."
   }
 }
