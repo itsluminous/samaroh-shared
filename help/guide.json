@@ -47,6 +47,18 @@
           ]
         },
         {
+          "id": "get_help",
+          "title": { "en": "Get help for the screen you are on", "hi": "जिस स्क्रीन पर हैं उसकी मदद पाएँ" },
+          "deepLink": "menu/home",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "At the top right, next to the three-dots button, tap the question-mark icon called Help for this screen.", "hi": "ऊपर दाईं ओर, तीन बिंदु वाले बटन के बगल में, प्रश्नचिह्न वाला चिह्न इस स्क्रीन की मदद दबाएँ।", "keys": ["menu.help.for_this_screen"] },
+            { "en": "The guide opens at the section for this screen. Tap a task to see its steps.", "hi": "गाइड इसी स्क्रीन के भाग पर खुलती है। कदम देखने के लिए किसी काम को दबाएँ।" },
+            { "en": "Tap Show me under a task and the app takes you to the screen where it starts.", "hi": "किसी काम के नीचे मुझे दिखाएँ दबाएँ, ऐप आपको उस स्क्रीन पर ले जाता है जहाँ से वह शुरू होता है।", "keys": ["menu.help.show_me"] },
+            { "en": "You can also open the full guide any time from Menu, then Help, and search it with the Search help box.", "hi": "पूरी गाइड कभी भी मेनू, फिर मदद से खोलें और उसे मदद में खोजें बॉक्स से खोजें।", "keys": ["common.menu.help", "menu.help.search_placeholder"] }
+          ]
+        },
+        {
           "id": "offline_sync",
           "title": { "en": "Work without internet", "hi": "बिना इंटरनेट काम करें" },
           "deepLink": "menu/settings/sync",
@@ -776,6 +788,7 @@
             { "en": "Reports - Charts and summaries.", "hi": "रिपोर्ट - चार्ट और सारांश।", "keys": ["menu.section.reports", "menu.section.reports_subtitle"] },
             { "en": "Members - Invite staff and set permissions.", "hi": "सदस्य - स्टाफ़ जोड़ें और अनुमतियाँ तय करें।", "keys": ["menu.section.members", "menu.section.members_subtitle"] },
             { "en": "About - Version and licenses.", "hi": "ऐप के बारे में - संस्करण और लाइसेंस।", "keys": ["menu.section.about", "menu.section.about_subtitle"] },
+            { "en": "Help - How to use each screen, step by step. Every task has a Show me button that takes you to the right screen.", "hi": "मदद - हर स्क्रीन का इस्तेमाल, कदम-दर-कदम। हर काम में मुझे दिखाएँ बटन है जो आपको सही स्क्रीन पर ले जाता है।", "keys": ["common.menu.help", "menu.help.subtitle", "menu.help.show_me"], "platforms": ["android"] },
             { "en": "The Search menu box at the top finds any setting by name.", "hi": "ऊपर मेनू में खोजें बॉक्स किसी भी सेटिंग को नाम से ढूँढता है।", "keys": ["menu.search.placeholder"] }
           ]
         },

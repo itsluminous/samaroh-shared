@@ -43,6 +43,14 @@
     "value": "संस्करण और लाइसेंस",
     "description": "Menu home: subtitle under the About row."
   },
+  "menu.help.share_link": {
+    "value": "मदद पेज साझा करें",
+    "description": "Help screen: long-press label of the share icon on a screen section; shares the public help page link for that screen."
+  },
+  "menu.help.step_number": {
+    "value": "{number}.",
+    "description": "Help screen: numbered-step prefix; {number} is the 1-based step index as a string."
+  },
   "menu.members.title": {
     "value": "सदस्य",
     "description": "Members screen top bar title."

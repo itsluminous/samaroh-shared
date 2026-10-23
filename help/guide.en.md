@@ -49,6 +49,13 @@ Online version: https://itsluminous.github.io/samaroh-shared/help/en/app_shell.h
 1. Press and hold the icon (do not lift your finger) for about one second.
 2. A small message appears with the name of the button, for example Record payment.
 
+### Get help for the screen you are on *(Phone app only)*
+
+1. At the top right, next to the three-dots button, tap the question-mark icon called Help for this screen.
+2. The guide opens at the section for this screen. Tap a task to see its steps.
+3. Tap Show me under a task and the app takes you to the screen where it starts.
+4. You can also open the full guide any time from Menu, then Help, and search it with the Search help box.
+
 ### Work without internet
 
 1. You can keep adding bookings, payments and expenses without internet. A banner says Offline - changes will sync.
@@ -530,7 +537,8 @@ Online version: https://itsluminous.github.io/samaroh-shared/help/en/menu.html
 2. Reports - Charts and summaries.
 3. Members - Invite staff and set permissions.
 4. About - Version and licenses.
-5. The Search menu box at the top finds any setting by name.
+5. Help - How to use each screen, step by step. Every task has a Show me button that takes you to the right screen. *(phone)*
+6. The Search menu box at the top finds any setting by name.
 
 ### Sign out
 
