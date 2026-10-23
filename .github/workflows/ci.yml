@@ -18,6 +18,12 @@ jobs:
         run: node scripts/validate-catalogs.mjs
       - name: Catalog pipeline tests (validator + codegen, fixture-driven)
         run: node scripts/test-catalogs.mjs
+      - name: Validate help guide (schema, en/hi parity, catalog labels, routes, no PII)
+        run: |
+          node scripts/validate-help.mjs
+          node scripts/export-help-markdown.mjs --check
+          node scripts/build-help-site.mjs --out "$RUNNER_TEMP/help-site"
+          test -s "$RUNNER_TEMP/help-site/help/hi/booking_card.html"
       - name: Validate remaining JSON contracts parse
         run: |
           node -e "JSON.parse(require('fs').readFileSync('permissions/permissions-schema.json'))"

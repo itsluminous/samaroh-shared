@@ -1,0 +1,1000 @@
+{
+  "version": 1,
+  "languages": ["en", "hi"],
+  "site": {
+    "baseUrl": "https://itsluminous.github.io/samaroh-shared/help/",
+    "pagePattern": "{baseUrl}{lang}/{screenId}.html",
+    "indexPattern": "{baseUrl}{lang}/index.html"
+  },
+  "screens": [
+    {
+      "id": "app_shell",
+      "title": { "en": "Getting around the app", "hi": "ऐप में इधर-उधर जाना" },
+      "summary": {
+        "en": "The bottom bar has the main sections: Booking, Expenses, Inventory, Notes and Files. The Menu (settings, reports, members) opens from the three-dots button at the top right. On the phone, many buttons are only icons - press and hold any icon and its name pops up.",
+        "hi": "नीचे की पट्टी में मुख्य भाग हैं: बुकिंग, खर्च, सामान, नोट्स और फ़ाइलें। मेनू (सेटिंग्स, रिपोर्ट, सदस्य) ऊपर दाईं ओर तीन बिंदु वाले बटन से खुलता है। फ़ोन पर कई बटन सिर्फ़ चिह्न हैं - किसी भी चिह्न को दबाकर रखें, उसका नाम दिख जाएगा।"
+      },
+      "deepLink": "booking/calendar",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "switch_section",
+          "title": { "en": "Go to Booking, Expenses, Inventory, Notes or Files", "hi": "बुकिंग, खर्च, सामान, नोट्स या फ़ाइलें पर जाएँ" },
+          "deepLink": "booking/calendar",
+          "steps": [
+            { "en": "Look at the bar at the bottom of the screen.", "hi": "स्क्रीन के सबसे नीचे की पट्टी देखें।" },
+            { "en": "Tap Booking for the calendar, Expenses for the money ledger, Inventory for stock, Notes for notes, or Files for documents.", "hi": "कैलेंडर के लिए बुकिंग, हिसाब के लिए खर्च, स्टॉक के लिए सामान, नोट के लिए नोट्स, या दस्तावेज़ों के लिए फ़ाइलें दबाएँ।", "keys": ["common.nav.booking", "common.nav.expenses", "common.nav.inventory", "notes.nav.tab", "files.nav.tab"] },
+            { "en": "Only the sections you have permission for appear. If one is missing, ask the owner.", "hi": "सिर्फ़ वही भाग दिखते हैं जिनकी आपको अनुमति है। कोई भाग न दिखे तो मालिक से कहें।" }
+          ]
+        },
+        {
+          "id": "open_menu",
+          "title": { "en": "Open the Menu (settings, reports, members)", "hi": "मेनू खोलें (सेटिंग्स, रिपोर्ट, सदस्य)" },
+          "deepLink": "menu/home",
+          "steps": [
+            { "en": "At the top right of the screen, next to the cloud sync icon, tap the three-dots button called Menu.", "hi": "स्क्रीन के ऊपर दाईं ओर, बादल (सिंक) चिह्न के बगल में, तीन बिंदु वाला बटन मेनू दबाएँ।", "keys": ["common.nav.menu"] },
+            { "en": "The Menu lists Settings, Reports, Members and About.", "hi": "मेनू में सेटिंग्स, रिपोर्ट, सदस्य और ऐप के बारे में दिखते हैं।", "keys": ["menu.section.settings", "menu.section.reports", "menu.section.members", "menu.section.about"] }
+          ]
+        },
+        {
+          "id": "icon_names",
+          "title": { "en": "Find out what an icon button does", "hi": "किसी चिह्न बटन का काम जानें" },
+          "deepLink": "booking/calendar",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "Press and hold the icon (do not lift your finger) for about one second.", "hi": "चिह्न को लगभग एक सेकंड दबाकर रखें (उँगली न उठाएँ)।" },
+            { "en": "A small message appears with the name of the button, for example Record payment.", "hi": "एक छोटा संदेश बटन का नाम बताता है, जैसे भुगतान दर्ज करें।", "keys": ["booking.card.action_record_payment"] }
+          ]
+        },
+        {
+          "id": "offline_sync",
+          "title": { "en": "Work without internet", "hi": "बिना इंटरनेट काम करें" },
+          "deepLink": "menu/settings/sync",
+          "steps": [
+            { "en": "You can keep adding bookings, payments and expenses without internet. A banner says Offline - changes will sync.", "hi": "बिना इंटरनेट भी बुकिंग, भुगतान और खर्च जोड़ते रहें। एक पट्टी कहती है ऑफ़लाइन - बदलाव बाद में सिंक होंगे।", "keys": ["common.state.offline_banner"] },
+            { "en": "When internet returns, everything uploads on its own. To check, open Menu, then Settings, then Sync status.", "hi": "इंटरनेट आने पर सब कुछ अपने आप अपलोड हो जाता है। देखने के लिए मेनू, फिर सेटिंग्स, फिर सिंक की स्थिति खोलें।", "keys": ["settings.sync.title"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "booking_calendar",
+      "title": { "en": "Booking calendar", "hi": "बुकिंग कैलेंडर" },
+      "summary": {
+        "en": "The Booking tab shows a month calendar. Coloured days have bookings; the list under the calendar shows this month's bookings with money received and pending. Tap a day to see or add bookings.",
+        "hi": "बुकिंग टैब में महीने का कैलेंडर है। रंगीन तारीखों पर बुकिंग है; कैलेंडर के नीचे की सूची इस महीने की बुकिंग और मिला/बाकी पैसा दिखाती है। किसी तारीख को दबाकर बुकिंग देखें या जोड़ें।"
+      },
+      "deepLink": "booking/calendar",
+      "permission": "booking.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "change_month",
+          "title": { "en": "See another month", "hi": "दूसरा महीना देखें" },
+          "deepLink": "booking/calendar",
+          "steps": [
+            { "en": "Use the arrows beside the month name: Previous month on the left, Next month on the right. On the phone you can also swipe the calendar sideways.", "hi": "महीने के नाम के बगल के तीर दबाएँ: बाईं ओर पिछला महीना, दाईं ओर अगला महीना। फ़ोन पर कैलेंडर को बग़ल में खिसका भी सकते हैं।", "keys": ["booking.calendar.prev_month", "booking.calendar.next_month"] },
+            { "en": "Tap the month name to jump to any month (Choose month).", "hi": "किसी भी महीने पर जाने के लिए महीने के नाम को दबाएँ (महीना चुनें)।", "keys": ["booking.calendar.pick_month"] }
+          ]
+        },
+        {
+          "id": "open_booking",
+          "title": { "en": "Open a booking (the booking card)", "hi": "कोई बुकिंग खोलें (बुकिंग कार्ड)" },
+          "deepLink": "booking/card",
+          "steps": [
+            { "en": "Tap a coloured day on the calendar, or tap the booking in the list below the calendar.", "hi": "कैलेंडर में रंगीन तारीख दबाएँ, या कैलेंडर के नीचे की सूची में बुकिंग दबाएँ।" },
+            { "en": "If the day has more than one booking, a list opens - tap the one you want.", "hi": "अगर उस दिन एक से ज़्यादा बुकिंग हैं तो सूची खुलती है - जो चाहिए उसे दबाएँ।" },
+            { "en": "The booking card opens with the customer, dates, amounts and buttons like Record payment and Invoice.", "hi": "बुकिंग कार्ड खुलता है जिसमें ग्राहक, तारीखें, राशि और भुगतान दर्ज करें, बिल जैसे बटन होते हैं।", "keys": ["booking.card.action_record_payment", "booking.card.action_invoice"] }
+          ]
+        },
+        {
+          "id": "add_booking",
+          "title": { "en": "Add a new booking", "hi": "नई बुकिंग जोड़ें" },
+          "deepLink": "booking/form",
+          "permission": "booking.create",
+          "steps": [
+            { "en": "Tap an empty day on the calendar, or tap the round plus button (Add booking) at the bottom right.", "hi": "कैलेंडर में खाली तारीख दबाएँ, या नीचे दाईं ओर गोल प्लस बटन (बुकिंग जोड़ें) दबाएँ।", "keys": ["booking.calendar.add"] },
+            { "en": "If the day already has a booking, a list opens - tap Add new event at the bottom of it.", "hi": "अगर उस दिन पहले से बुकिंग है तो सूची खुलती है - उसके नीचे नया कार्यक्रम जोड़ें दबाएँ।", "keys": ["booking.calendar.add_new_event"] },
+            { "en": "Fill the booking form (see the Booking form page) and tap Save.", "hi": "बुकिंग फ़ॉर्म भरें (बुकिंग फ़ॉर्म पेज देखें) और सहेजें दबाएँ।", "keys": ["common.action.save"] }
+          ]
+        },
+        {
+          "id": "block_dates",
+          "title": { "en": "Block dates (no bookings allowed)", "hi": "तारीखें बंद करें (बुकिंग नहीं होगी)" },
+          "deepLink": "booking/calendar",
+          "permission": "booking.edit",
+          "steps": [
+            { "en": "Tap the three-dots button (More options) at the top of the calendar.", "hi": "कैलेंडर के ऊपर तीन बिंदु वाला बटन (और विकल्प) दबाएँ।", "keys": ["booking.calendar.more_options"] },
+            { "en": "Tap Block dates.", "hi": "तारीखें बंद करें दबाएँ।", "keys": ["booking.calendar.block_dates"] },
+            { "en": "Choose the Start date and End date, type a Reason if you like, and tap Save.", "hi": "शुरुआत की तारीख और आखिरी तारीख चुनें, चाहें तो कारण लिखें, और सहेजें दबाएँ।", "keys": ["booking.form.start_date", "booking.form.end_date", "booking.block.reason_label", "common.action.save"] },
+            { "en": "To remove a block, tap the blocked day and tap Remove block.", "hi": "बंदी हटाने के लिए बंद तारीख दबाएँ और बंदी हटाएँ दबाएँ।", "keys": ["booking.block.remove"] }
+          ]
+        },
+        {
+          "id": "events_view",
+          "title": { "en": "See all bookings as a list", "hi": "सारी बुकिंग सूची में देखें" },
+          "deepLink": "booking/calendar",
+          "steps": [
+            { "en": "Tap the three-dots button (More options) at the top of the calendar.", "hi": "कैलेंडर के ऊपर तीन बिंदु वाला बटन (और विकल्प) दबाएँ।", "keys": ["booking.calendar.more_options"] },
+            { "en": "Tap Events view. All bookings appear as a list, today first. Tap Month view to go back to the calendar.", "hi": "आयोजन सूची देखें दबाएँ। सारी बुकिंग सूची में दिखती हैं, आज सबसे पहले। कैलेंडर पर वापस जाने के लिए महीने का कैलेंडर देखें दबाएँ।", "keys": ["booking.calendar.events_view", "booking.calendar.month_view"] }
+          ]
+        },
+        {
+          "id": "pending_reminders",
+          "title": { "en": "Answer a payment reminder on the calendar", "hi": "कैलेंडर पर भुगतान रिमाइंडर का जवाब दें" },
+          "deepLink": "booking/calendar",
+          "permission": "booking.record_payment",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "After an event, a card titled Pending confirmations asks whether the customer paid. Tap Yes, full if the whole due came in.", "hi": "आयोजन के बाद पुष्टि बाकी है नाम का कार्ड पूछता है कि ग्राहक ने भुगतान किया या नहीं। पूरी बाकी राशि आ गई हो तो हाँ, पूरे दबाएँ।", "keys": ["booking.reminder.pending_card_title", "booking.reminder.action_yes_full"] },
+            { "en": "Tap Partial… to type the amount received, or Not yet to be reminded again later.", "hi": "कुछ राशि मिली हो तो कुछ मिले… दबाकर राशि लिखें, या बाद में याद दिलाने के लिए अभी नहीं दबाएँ।", "keys": ["booking.reminder.action_partial", "booking.reminder.action_not_yet"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "booking_form",
+      "title": { "en": "Booking form (add or edit a booking)", "hi": "बुकिंग फ़ॉर्म (बुकिंग जोड़ें या बदलें)" },
+      "summary": {
+        "en": "The form where you type the customer's details, the event type, the dates and the amounts. The Due amount is calculated for you from Total amount minus Advance paid.",
+        "hi": "यह वह फ़ॉर्म है जहाँ ग्राहक की जानकारी, आयोजन का प्रकार, तारीखें और राशि भरी जाती है। बाकी राशि अपने आप कुल राशि में से एडवांस घटाकर निकलती है।"
+      },
+      "deepLink": "booking/form",
+      "permission": "booking.create",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "fill_booking_form",
+          "title": { "en": "Fill in a booking", "hi": "बुकिंग की जानकारी भरें" },
+          "deepLink": "booking/form",
+          "steps": [
+            { "en": "Type the Customer name (required) and Phone number. On the phone you can tap Pick from contacts instead of typing.", "hi": "ग्राहक का नाम (ज़रूरी) और फ़ोन नंबर लिखें। फ़ोन पर टाइप करने की जगह संपर्कों में से चुनें भी दबा सकते हैं।", "keys": ["booking.form.customer_name", "booking.form.customer_phone", "booking.form.pick_contact"] },
+            { "en": "Choose the Event type (wedding, birthday and so on). Choose Custom to type your own Event name and Icon.", "hi": "आयोजन का प्रकार चुनें (शादी, जन्मदिन वग़ैरह)। अपनी पसंद चुनकर अपना आयोजन का नाम और चिह्न लिख सकते हैं।", "keys": ["booking.form.event_type", "booking.event_type.custom", "booking.form.custom_label", "booking.form.custom_emoji"] },
+            { "en": "Set the Start date and End date. The End date cannot be before the Start date.", "hi": "शुरुआत की तारीख और आखिरी तारीख तय करें। आखिरी तारीख शुरुआत से पहले नहीं हो सकती।", "keys": ["booking.form.start_date", "booking.form.end_date"] },
+            { "en": "Type the Total amount and the Advance paid. The Due (auto-calculated) line updates by itself.", "hi": "कुल राशि और एडवांस मिला लिखें। बाकी (अपने आप गिना गया) की पंक्ति अपने आप बदल जाती है।", "keys": ["booking.form.total_amount", "booking.form.advance", "booking.form.due_auto"] },
+            { "en": "Set the Status: Tentative (not final yet) or Confirmed.", "hi": "स्थिति तय करें: कच्ची (अभी पक्की नहीं) या पक्की।", "keys": ["booking.form.status", "booking.status.tentative", "booking.status.confirmed"] },
+            { "en": "Optional: Notes, Colour for the calendar, and Invoice number (leave blank to auto-generate).", "hi": "वैकल्पिक: नोट्स, कैलेंडर के लिए रंग, और चालान नंबर (खाली छोड़ने पर अपने आप बनेगा)।", "keys": ["booking.form.notes", "booking.form.color", "booking.form.invoice_number"] },
+            { "en": "Tap Save. If the date already has a booking, the app warns you - tap Save anyway or Go back.", "hi": "सहेजें दबाएँ। अगर उस तारीख पर पहले से बुकिंग है तो ऐप चेतावनी देता है - फिर भी सहेजें या वापस जाएँ दबाएँ।", "keys": ["common.action.save", "booking.form.conflict_save_anyway", "booking.form.conflict_go_back"] }
+          ]
+        },
+        {
+          "id": "edit_booking",
+          "title": { "en": "Change an existing booking", "hi": "पुरानी बुकिंग में बदलाव करें" },
+          "deepLink": "booking/card",
+          "permission": "booking.edit",
+          "steps": [
+            { "en": "Open the booking card (tap the booking on the calendar).", "hi": "बुकिंग कार्ड खोलें (कैलेंडर में बुकिंग दबाएँ)।" },
+            { "en": "Tap Edit (the pencil icon on the phone). The form opens with the title Edit booking.", "hi": "बदलें दबाएँ (फ़ोन पर पेंसिल चिह्न)। बुकिंग बदलें नाम का फ़ॉर्म खुलता है।", "keys": ["common.action.edit", "booking.form.title_edit"] },
+            { "en": "Change what you need and tap Save.", "hi": "जो बदलना है बदलें और सहेजें दबाएँ।", "keys": ["common.action.save"] }
+          ]
+        },
+        {
+          "id": "optional_fields",
+          "title": { "en": "Security deposit, booking source and event times are missing from the form", "hi": "फ़ॉर्म में सिक्योरिटी जमा, बुकिंग स्रोत या समय नहीं दिख रहा" },
+          "deepLink": "menu/settings",
+          "permission": "settings.manage_business",
+          "steps": [
+            { "en": "These are optional fields. Open Menu, then Settings, then Booking form fields.", "hi": "ये वैकल्पिक फ़ील्ड हैं। मेनू, फिर सेटिंग्स, फिर बुकिंग फ़ॉर्म फ़ील्ड खोलें।", "keys": ["settings.booking_form.title"] },
+            { "en": "Switch on Security deposit, Booking source or Event times. They then appear in the booking form.", "hi": "सिक्योरिटी डिपॉज़िट, बुकिंग स्रोत या कार्यक्रम का समय चालू करें। फिर ये बुकिंग फ़ॉर्म में दिखेंगे।", "keys": ["settings.booking_form.show_deposit", "settings.booking_form.show_source", "settings.booking_form.show_times"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "booking_card",
+      "title": { "en": "Booking card", "hi": "बुकिंग कार्ड" },
+      "summary": {
+        "en": "One booking in detail: customer and phone, dates, Total, Paid and Due, the payment history and the expenses history. The buttons along the bottom let you record a payment, record an expense, make the invoice, send a WhatsApp reminder, edit or cancel. On the phone these buttons are icons - press and hold one to see its name.",
+        "hi": "एक बुकिंग का पूरा विवरण: ग्राहक और फ़ोन, तारीखें, कुल राशि, मिल चुका और बाकी, भुगतान का ब्योरा और खर्च का ब्योरा। नीचे के बटनों से भुगतान दर्ज करें, खर्च दर्ज करें, बिल बनाएँ, WhatsApp पर याद दिलाएँ, बदलें या रद्द करें। फ़ोन पर ये बटन चिह्न हैं - नाम देखने के लिए दबाकर रखें।"
+      },
+      "deepLink": "booking/card",
+      "permission": "booking.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "record_payment",
+          "title": { "en": "Record a payment received from the customer", "hi": "ग्राहक से मिला भुगतान दर्ज करें" },
+          "deepLink": "booking/card",
+          "permission": "booking.record_payment",
+          "steps": [
+            { "en": "Open the booking card from the calendar.", "hi": "कैलेंडर से बुकिंग कार्ड खोलें।" },
+            { "en": "Tap Record payment (on the phone: the rupee ₹ icon at the bottom of the card).", "hi": "भुगतान दर्ज करें दबाएँ (फ़ोन पर: कार्ड के नीचे रुपये ₹ का चिह्न)।", "keys": ["booking.card.action_record_payment"] },
+            { "en": "Type the Amount, check the Date, choose the Method (Cash, UPI, Bank transfer, Cheque or Other) and tap Save.", "hi": "राशि लिखें, तारीख जाँचें, तरीका चुनें (नकद, UPI, बैंक ट्रांसफ़र, चेक या अन्य) और सहेजें दबाएँ।", "keys": ["booking.payment.amount", "booking.payment.date", "booking.payment.method", "booking.payment.method_cash", "booking.payment.method_upi", "booking.payment.method_bank_transfer", "booking.payment.method_cheque", "booking.payment.method_other", "common.action.save"] },
+            { "en": "The message Payment recorded appears and the Due amount goes down.", "hi": "भुगतान दर्ज हो गया संदेश दिखता है और बाकी राशि कम हो जाती है।", "keys": ["booking.payment.recorded", "booking.card.due_label"] }
+          ]
+        },
+        {
+          "id": "delete_payment",
+          "title": { "en": "Remove a wrongly entered payment", "hi": "ग़लती से दर्ज हुआ भुगतान हटाएँ" },
+          "deepLink": "booking/card",
+          "permission": "booking.record_payment",
+          "steps": [
+            { "en": "On the booking card, find the payment under Payment history.", "hi": "बुकिंग कार्ड में भुगतान का ब्योरा के नीचे वह भुगतान ढूँढें।", "keys": ["booking.card.payments_title"] },
+            { "en": "Tap the dustbin icon next to it (Delete payment), then confirm with Delete payment.", "hi": "उसके बगल में कूड़ेदान चिह्न (भुगतान हटाएँ) दबाएँ, फिर भुगतान हटाएँ दबाकर पुष्टि करें।", "keys": ["booking.payment.delete"] },
+            { "en": "The Due is recalculated. This cannot be undone - record the payment again if needed.", "hi": "बाकी राशि फिर से निकाली जाती है। इसे वापस नहीं किया जा सकता - ज़रूरत हो तो भुगतान फिर से दर्ज करें।", "keys": ["booking.card.due_label"] }
+          ]
+        },
+        {
+          "id": "share_invoice",
+          "title": { "en": "Make and share the invoice (bill)", "hi": "बिल बनाकर साझा करें" },
+          "deepLink": "booking/card",
+          "permission": "booking.generate_invoice",
+          "steps": [
+            { "en": "Open the booking card and tap Invoice (on the phone: the printer icon).", "hi": "बुकिंग कार्ड खोलें और बिल दबाएँ (फ़ोन पर: प्रिंटर चिह्न)।", "keys": ["booking.card.action_invoice"] },
+            { "en": "Choose Share PDF to send the bill as a PDF file (WhatsApp, email and so on), or Share as text to send it as a plain message.", "hi": "बिल PDF फ़ाइल के रूप में भेजने के लिए PDF साझा करें चुनें (WhatsApp, ईमेल वग़ैरह), या सादे संदेश के रूप में भेजने के लिए टेक्स्ट में साझा करें चुनें।", "keys": ["booking.card.invoice_pdf", "booking.card.invoice_text"] },
+            { "en": "Pick the app or contact to send it to.", "hi": "जिस ऐप या व्यक्ति को भेजना है, उसे चुनें।" }
+          ]
+        },
+        {
+          "id": "whatsapp_reminder",
+          "title": { "en": "Send a WhatsApp payment reminder", "hi": "WhatsApp पर भुगतान की याद दिलाएँ" },
+          "deepLink": "booking/card",
+          "steps": [
+            { "en": "Open the booking card and tap WhatsApp (on the phone: the share icon).", "hi": "बुकिंग कार्ड खोलें और WhatsApp दबाएँ (फ़ोन पर: साझा करें चिह्न)।", "keys": ["booking.card.action_whatsapp"] },
+            { "en": "WhatsApp opens with a ready message that names the customer, the event and the Due amount. Tap send in WhatsApp.", "hi": "WhatsApp खुलता है और उसमें तैयार संदेश होता है जिसमें ग्राहक, आयोजन और बाकी राशि लिखी होती है। WhatsApp में भेजें दबाएँ।", "keys": ["booking.card.due_label"] }
+          ]
+        },
+        {
+          "id": "call_customer",
+          "title": { "en": "Call the customer", "hi": "ग्राहक को फ़ोन करें" },
+          "deepLink": "booking/card",
+          "steps": [
+            { "en": "On the booking card, tap the phone icon next to the customer's number (Call).", "hi": "बुकिंग कार्ड में ग्राहक के नंबर के बगल का फ़ोन चिह्न (कॉल करें) दबाएँ।", "keys": ["booking.card.phone_call"] }
+          ]
+        },
+        {
+          "id": "record_expense_for_event",
+          "title": { "en": "Record an expense for this event", "hi": "इस आयोजन का खर्च दर्ज करें" },
+          "deepLink": "booking/card",
+          "permission": "expenses.create",
+          "steps": [
+            { "en": "Open the booking card and tap Record expense (on the phone: the wallet icon).", "hi": "बुकिंग कार्ड खोलें और खर्च दर्ज करें दबाएँ (फ़ोन पर: बटुआ चिह्न)।", "keys": ["booking.card.action_record_expense"] },
+            { "en": "The expense form opens in the Expenses section with the event already filled in. Type the Amount (₹), add a bill photo if you like, and tap Save.", "hi": "खर्च भाग में फ़ॉर्म खुलता है जिसमें आयोजन पहले से भरा होता है। राशि (₹) लिखें, चाहें तो बिल की फ़ोटो जोड़ें, और सहेजें दबाएँ।", "keys": ["expenses.entry.amount_label", "common.action.save"] },
+            { "en": "The expense then shows on the card under Expenses history.", "hi": "फिर वह खर्च कार्ड में खर्च का ब्योरा के नीचे दिखता है।", "keys": ["booking.card.expenses_history"] }
+          ]
+        },
+        {
+          "id": "cancel_booking",
+          "title": { "en": "Cancel a booking", "hi": "बुकिंग रद्द करें" },
+          "deepLink": "booking/card",
+          "permission": "booking.delete",
+          "steps": [
+            { "en": "Open the booking card and tap the red Cancel booking button.", "hi": "बुकिंग कार्ड खोलें और लाल बुकिंग रद्द करें बटन दबाएँ।", "keys": ["booking.card.action_cancel_booking"] },
+            { "en": "Confirm. The booking is marked cancelled and the date becomes free again. It is not deleted - you can still find it.", "hi": "पुष्टि करें। बुकिंग रद्द मानी जाती है और तारीख फिर खाली हो जाती है। यह हटती नहीं - आप इसे बाद में भी देख सकते हैं।" }
+          ]
+        },
+        {
+          "id": "restore_or_delete",
+          "title": { "en": "Bring back a cancelled booking, or delete it for good", "hi": "रद्द बुकिंग वापस लाएँ, या हमेशा के लिए हटाएँ" },
+          "deepLink": "booking/card",
+          "permission": "booking.edit",
+          "steps": [
+            { "en": "Open the cancelled booking (it shows struck through in the list).", "hi": "रद्द बुकिंग खोलें (सूची में वह कटी हुई दिखती है)।" },
+            { "en": "Tap the green Restore booking button to make it active again.", "hi": "फिर से चालू करने के लिए हरा बुकिंग बहाल करें बटन दबाएँ।", "keys": ["booking.card.action_restore_booking"] },
+            { "en": "Or tap Delete permanently to remove it from every device. This cannot be undone.", "hi": "या हर डिवाइस से हटाने के लिए हमेशा के लिए हटाएँ दबाएँ। इसे वापस नहीं किया जा सकता।", "keys": ["booking.card.action_delete_booking"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "record_payment",
+      "title": { "en": "Record payment form", "hi": "भुगतान दर्ज करने का फ़ॉर्म" },
+      "summary": {
+        "en": "The small form that opens when you tap Record payment on a booking card: Amount, Date, Method and Notes.",
+        "hi": "बुकिंग कार्ड पर भुगतान दर्ज करें दबाने पर खुलने वाला छोटा फ़ॉर्म: राशि, तारीख, तरीका और नोट्स।"
+      },
+      "deepLink": "booking/card",
+      "permission": "booking.record_payment",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "fill_payment",
+          "title": { "en": "Fill in the payment", "hi": "भुगतान की जानकारी भरें" },
+          "deepLink": "booking/card",
+          "steps": [
+            { "en": "Amount: type the rupees received. The full Due amount is suggested - change it if the customer paid less.", "hi": "राशि: मिले हुए रुपये लिखें। पूरी बाकी राशि पहले से भरी होती है - ग्राहक ने कम दिया हो तो बदल दें।", "keys": ["booking.payment.amount", "booking.card.due_label"] },
+            { "en": "Date: today is filled in. Tap it to pick another day.", "hi": "तारीख: आज की तारीख भरी होती है। दूसरा दिन चुनने के लिए उसे दबाएँ।", "keys": ["booking.payment.date"] },
+            { "en": "Method: tap one of Cash, UPI, Bank transfer, Cheque, Other.", "hi": "तरीका: नकद, UPI, बैंक ट्रांसफ़र, चेक, अन्य में से एक दबाएँ।", "keys": ["booking.payment.method", "booking.payment.method_cash", "booking.payment.method_upi", "booking.payment.method_bank_transfer", "booking.payment.method_cheque", "booking.payment.method_other"] },
+            { "en": "Notes are optional. Tap Save. Tap Cancel to close without saving.", "hi": "नोट्स वैकल्पिक हैं। सहेजें दबाएँ। बिना सहेजे बंद करने के लिए रद्द करें दबाएँ।", "keys": ["booking.form.notes", "common.action.save", "common.action.cancel"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "expenses_home",
+      "title": { "en": "Expenses - list of parties", "hi": "खर्च - पार्टियों की सूची" },
+      "summary": {
+        "en": "The Expenses tab is a ledger, person by person (a party is a supplier, worker or anyone you deal with). Each row shows the party and how much You gave or You got. Tap a party to open their ledger.",
+        "hi": "खर्च टैब एक बही है, व्यक्ति-दर-व्यक्ति (पार्टी यानी सप्लायर, कारीगर या कोई भी जिससे लेन-देन हो)। हर पंक्ति पार्टी और आपने दिया / आपको मिला दिखाती है। किसी पार्टी का खाता खोलने के लिए उसे दबाएँ।"
+      },
+      "deepLink": "expenses/home",
+      "permission": "expenses.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "find_party",
+          "title": { "en": "Find a party", "hi": "कोई पार्टी ढूँढें" },
+          "deepLink": "expenses/home",
+          "steps": [
+            { "en": "Type the name in the search box at the top (Search by name).", "hi": "ऊपर खोज बॉक्स में नाम लिखें (नाम से खोजें)।", "keys": ["expenses.home.search_hint"], "platforms": ["android"] },
+            { "en": "Type the name in the search box at the top (Search parties).", "hi": "ऊपर खोज बॉक्स में नाम लिखें (पार्टी खोजें)।", "keys": ["expenses.home.search_placeholder"], "platforms": ["web"] },
+            { "en": "Tap the party row to open their ledger.", "hi": "पार्टी की पंक्ति दबाकर उसका खाता खोलें।" }
+          ]
+        },
+        {
+          "id": "add_party",
+          "title": { "en": "Add a new party (person)", "hi": "नई पार्टी (व्यक्ति) जोड़ें" },
+          "deepLink": "expenses/add_party",
+          "permission": "expenses.manage_parties",
+          "steps": [
+            { "en": "Tap the round plus button at the bottom right (Add party).", "hi": "नीचे दाईं ओर गोल प्लस बटन (पार्टी जोड़ें) दबाएँ।", "keys": ["expenses.home.add_person"] },
+            { "en": "Type the Name. Phone (optional) can be typed or picked with Pick from contacts.", "hi": "नाम लिखें। फ़ोन (वैकल्पिक) लिख सकते हैं या संपर्कों से चुनें दबाकर चुन सकते हैं।", "keys": ["expenses.add_person.name_label", "expenses.add_person.phone_label", "expenses.add_person.pick_contact"], "platforms": ["android"] },
+            { "en": "Type the Name and Phone (optional).", "hi": "नाम और फ़ोन (वैकल्पिक) लिखें।", "keys": ["expenses.person.name_label", "expenses.person.phone_label"], "platforms": ["web"] },
+            { "en": "Answer the business question: Yes if the party is for the business, No if it is a personal expense. Personal parties are kept out of business reports.", "hi": "व्यवसाय वाला सवाल: पार्टी व्यवसाय की हो तो हाँ, निजी खर्च हो तो नहीं। निजी पार्टियाँ व्यवसाय की रिपोर्ट में नहीं गिनी जातीं।", "keys": ["common.action.yes", "common.action.no"] },
+            { "en": "Tap Save. If a party with that name already exists, the app opens the existing one instead.", "hi": "सहेजें दबाएँ। उस नाम की पार्टी पहले से हो तो ऐप पुरानी पार्टी ही खोल देता है।", "keys": ["common.action.save"] }
+          ]
+        },
+        {
+          "id": "summary_period",
+          "title": { "en": "See totals for this month, this year or all time", "hi": "इस महीने, इस साल या अब तक का कुल देखें" },
+          "deepLink": "expenses/home",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "Above the list, tap This month, This year or All time to change the You gave / You got totals.", "hi": "सूची के ऊपर इस महीने, इस साल या अब तक दबाकर आपने दिया / आपको मिला का कुल बदलें।", "keys": ["expenses.summary.period_month", "expenses.summary.period_year", "expenses.summary.period_all", "expenses.home.you_gave", "expenses.home.you_got"] }
+          ]
+        },
+        {
+          "id": "sort_parties",
+          "title": { "en": "Sort the list", "hi": "सूची क्रमबद्ध करें" },
+          "deepLink": "expenses/home",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "Tap Sort and choose Last updated, Name (A to Z) or Name (Z to A).", "hi": "क्रमबद्ध करें दबाएँ और अंतिम अपडेट, नाम (A से Z) या नाम (Z से A) चुनें।", "keys": ["common.sort.open", "common.sort.last_updated", "common.sort.name_asc", "common.sort.name_desc"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "expenses_ledger",
+      "title": { "en": "Party ledger", "hi": "पार्टी का खाता" },
+      "summary": {
+        "en": "All entries with one party, newest first, with the running balance. Two big buttons at the bottom: You gave ₹ (money you paid out) and You got ₹ (money you received). The three-dots on an entry lets you edit or delete it.",
+        "hi": "एक पार्टी की सारी एंट्री, नई सबसे ऊपर, साथ में चलता हुआ हिसाब। नीचे दो बड़े बटन: आपने दिया ₹ (जो पैसा आपने दिया) और आपको मिला ₹ (जो पैसा आपको मिला)। एंट्री के तीन बिंदु से उसे बदलें या हटाएँ।"
+      },
+      "deepLink": "expenses/ledger",
+      "permission": "expenses.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "add_entry",
+          "title": { "en": "Record money given or received", "hi": "दिया या मिला पैसा दर्ज करें" },
+          "deepLink": "expenses/add_entry",
+          "permission": "expenses.create",
+          "steps": [
+            { "en": "Open the party's ledger from the Expenses list.", "hi": "खर्च सूची से पार्टी का खाता खोलें।" },
+            { "en": "Tap You gave ₹ (red) if you paid them, or You got ₹ (green) if they paid you.", "hi": "आपने उन्हें पैसा दिया हो तो आपने दिया ₹ (लाल) दबाएँ, उन्होंने आपको दिया हो तो आपको मिला ₹ (हरा) दबाएँ।", "keys": ["expenses.ledger.you_gave_button", "expenses.ledger.you_got_button"] },
+            { "en": "Fill the form (Amount, Date, Notes, bill photo) and tap Save. See the Add expense page.", "hi": "फ़ॉर्म भरें (राशि, तारीख, नोट्स, बिल की फ़ोटो) और सहेजें दबाएँ। खर्च जोड़ें पेज देखें।", "keys": ["common.action.save"] }
+          ]
+        },
+        {
+          "id": "edit_or_delete_entry",
+          "title": { "en": "Change or delete an entry", "hi": "कोई एंट्री बदलें या हटाएँ" },
+          "deepLink": "expenses/ledger",
+          "permission": "expenses.edit",
+          "steps": [
+            { "en": "Tap the three-dots on the entry (Entry options).", "hi": "एंट्री पर तीन बिंदु (एंट्री के विकल्प) दबाएँ।", "keys": ["expenses.ledger.entry_menu"] },
+            { "en": "Tap Edit to change the amount, date or notes, then Save.", "hi": "राशि, तारीख या नोट बदलने के लिए बदलें दबाएँ, फिर सहेजें।", "keys": ["common.action.edit", "common.action.save"] },
+            { "en": "Tap Delete to remove the entry, and confirm. The balance is recalculated.", "hi": "एंट्री हटाने के लिए हटाएँ दबाएँ और पुष्टि करें। हिसाब फिर से निकाला जाता है।", "keys": ["common.action.delete"] }
+          ]
+        },
+        {
+          "id": "view_bill",
+          "title": { "en": "See the bill attached to an entry", "hi": "एंट्री से जुड़ा बिल देखें" },
+          "deepLink": "expenses/ledger",
+          "steps": [
+            { "en": "Tap the small bill picture on the entry (Attached invoice). It opens full screen.", "hi": "एंट्री पर बिल की छोटी तस्वीर (जुड़ा हुआ बिल) दबाएँ। वह पूरी स्क्रीन पर खुलती है।", "keys": ["expenses.ledger.attachment_thumbnail"], "platforms": ["android"] },
+            { "en": "Tap the attachment chip on the entry. It opens in Google Drive (Opens in Google Drive).", "hi": "एंट्री पर अटैचमेंट चिप दबाएँ। वह Google Drive में खुलता है (Google Drive में खुलता है)।", "keys": ["expenses.entry.attachment_open_drive"], "platforms": ["web"] },
+            { "en": "If the bill says it is waiting to upload, connect your Google account in Settings so bills are saved in Google Drive.", "hi": "अगर बिल अपलोड होना बाकी दिखे तो सेटिंग्स में अपना Google खाता जोड़ें, ताकि बिल Google Drive में सुरक्षित हों।" }
+          ]
+        },
+        {
+          "id": "show_event",
+          "title": { "en": "Open the booking an expense belongs to", "hi": "जिस बुकिंग का खर्च है, उसे खोलें" },
+          "deepLink": "expenses/ledger",
+          "steps": [
+            { "en": "Entries recorded from a booking card carry an event chip. Tap Show event to jump to that booking.", "hi": "बुकिंग कार्ड से दर्ज एंट्री पर कार्यक्रम का चिप होता है। उस बुकिंग पर जाने के लिए कार्यक्रम देखें दबाएँ।", "keys": ["expenses.ledger.show_event"] }
+          ]
+        },
+        {
+          "id": "edit_or_delete_party",
+          "title": { "en": "Rename or delete the party", "hi": "पार्टी का नाम बदलें या पार्टी हटाएँ" },
+          "deepLink": "expenses/ledger",
+          "permission": "expenses.manage_parties",
+          "steps": [
+            { "en": "At the top right of the ledger, tap the three-dots (Party options).", "hi": "खाते के ऊपर दाईं ओर तीन बिंदु (पार्टी के विकल्प) दबाएँ।", "keys": ["expenses.party.menu"] },
+            { "en": "Tap Edit party to change the name, phone or the business Yes/No answer, then Save.", "hi": "नाम, फ़ोन या व्यवसाय हाँ/नहीं बदलने के लिए पार्टी बदलें दबाएँ, फिर सहेजें।", "keys": ["expenses.party.edit_title", "common.action.save"] },
+            { "en": "Tap Delete party to remove the party and ALL its entries and bills. This cannot be undone.", "hi": "पार्टी और उसकी सारी एंट्री और बिल हटाने के लिए पार्टी हटाएँ दबाएँ। इसे वापस नहीं किया जा सकता।", "keys": ["expenses.party.delete_action"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "add_expense",
+      "title": { "en": "Add expense (ledger entry form)", "hi": "खर्च जोड़ें (एंट्री फ़ॉर्म)" },
+      "summary": {
+        "en": "The form that opens from You gave ₹ / You got ₹ or from Record expense on a booking card. Type the amount, check the date, and attach the bill photo. Bill photos can be added only on the phone; they are kept in your Google Drive.",
+        "hi": "आपने दिया ₹ / आपको मिला ₹ या बुकिंग कार्ड के खर्च दर्ज करें से खुलने वाला फ़ॉर्म। राशि लिखें, तारीख जाँचें और बिल की फ़ोटो जोड़ें। बिल की फ़ोटो सिर्फ़ फ़ोन से जुड़ती है; वह आपके Google Drive में रहती है।"
+      },
+      "deepLink": "expenses/add_entry",
+      "permission": "expenses.create",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "fill_expense",
+          "title": { "en": "Fill in the entry", "hi": "एंट्री भरें" },
+          "deepLink": "expenses/add_entry",
+          "steps": [
+            { "en": "Type the Amount (₹) - numbers only.", "hi": "राशि (₹) लिखें - सिर्फ़ अंक।", "keys": ["expenses.entry.amount_label"] },
+            { "en": "Date is today; tap it to change.", "hi": "तारीख आज की है; बदलने के लिए दबाएँ।", "keys": ["expenses.entry.date_label"] },
+            { "en": "Notes: what the money was for (optional).", "hi": "नोट्स: पैसा किस चीज़ का था (वैकल्पिक)।", "keys": ["expenses.entry.notes_label"] },
+            { "en": "Tap Save. The entry appears at the top of the ledger.", "hi": "सहेजें दबाएँ। एंट्री खाते में सबसे ऊपर दिखती है।", "keys": ["common.action.save"] }
+          ]
+        },
+        {
+          "id": "attach_bill",
+          "title": { "en": "Attach a bill photo or PDF", "hi": "बिल की फ़ोटो या PDF जोड़ें" },
+          "deepLink": "expenses/add_entry",
+          "steps": [
+            { "en": "Under Attach invoice tap Camera to take a photo now, Gallery to pick a photo from the phone, or PDF to pick a PDF file.", "hi": "बिल जोड़ें के नीचे अभी फ़ोटो लेने के लिए कैमरा, फ़ोन से फ़ोटो चुनने के लिए गैलरी, या PDF फ़ाइल चुनने के लिए PDF दबाएँ।", "keys": ["expenses.entry.attach_title", "expenses.entry.attach_camera", "expenses.entry.attach_gallery", "expenses.entry.attach_pdf"], "platforms": ["android"] },
+            { "en": "Up to 4 files can be attached. Tap the X on a thumbnail to remove it before saving.", "hi": "अधिकतम 4 फ़ाइलें जुड़ सकती हैं। सहेजने से पहले हटाने के लिए तस्वीर पर X दबाएँ।", "platforms": ["android"] },
+            { "en": "The first time, the app asks Back up invoices to Google Drive? Tap Connect Google so bills are safe in your Drive, or Later to decide another time.", "hi": "पहली बार ऐप पूछता है बिल Google Drive पर सुरक्षित करें? बिल Drive में सुरक्षित रखने के लिए Google से जोड़ें दबाएँ, या बाद में तय करने के लिए बाद में दबाएँ।", "keys": ["expenses.google_prompt.title", "expenses.google_prompt.connect", "expenses.google_prompt.later"], "platforms": ["android"] },
+            { "en": "On the web, bills cannot be added - the form says Attach bills from the mobile app. Use the phone for that.", "hi": "वेब पर बिल नहीं जुड़ते - फ़ॉर्म कहता है बिल मोबाइल ऐप से जोड़ें। इसके लिए फ़ोन इस्तेमाल करें।", "keys": ["expenses.entry.attachments_mobile_hint"], "platforms": ["web"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory_stock",
+      "title": { "en": "Inventory - current stock", "hi": "सामान - मौजूदा स्टॉक" },
+      "summary": {
+        "en": "The Inventory tab lists every item with how much is in stock right now. Add or remove stock with Record transaction. The item list (master list) is where item names, units and photos live.",
+        "hi": "सामान टैब हर चीज़ और उसका अभी का स्टॉक दिखाता है। स्टॉक जोड़ने या निकालने के लिए लेन-देन दर्ज करें। सामान की सूची (मास्टर सूची) में चीज़ों के नाम, इकाई और फ़ोटो रहते हैं।"
+      },
+      "deepLink": "inventory/stock",
+      "permission": "inventory.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "update_stock",
+          "title": { "en": "Add stock or remove stock (update the count)", "hi": "स्टॉक जोड़ें या निकालें (गिनती बदलें)" },
+          "deepLink": "inventory/stock",
+          "permission": "inventory.create",
+          "steps": [
+            { "en": "Tap the round plus button at the bottom right (Record transaction).", "hi": "नीचे दाईं ओर गोल प्लस बटन (लेन-देन दर्ज करें) दबाएँ।", "keys": ["inventory.fab.record_transaction"], "platforms": ["android"] },
+            { "en": "Tap the Record transaction button.", "hi": "लेन-देन दर्ज करें बटन दबाएँ।", "keys": ["inventory.stock.record_transaction"], "platforms": ["web"] },
+            { "en": "In Item, start typing the name and pick the item from the suggestions. The current stock is shown.", "hi": "सामान में नाम लिखना शुरू करें और सुझावों में से चीज़ चुनें। मौजूदा स्टॉक दिखता है।", "keys": ["inventory.txn.item_label"] },
+            { "en": "Choose Add (stock came in) or Remove (stock was used or sold).", "hi": "जोड़ें (माल आया) या निकालें (माल इस्तेमाल हुआ या बिका) चुनें।", "keys": ["inventory.txn.type_add", "inventory.txn.type_remove"] },
+            { "en": "Type the Quantity and the Unit price (price for one unit). Notes are optional.", "hi": "मात्रा और प्रति इकाई दाम (एक इकाई का दाम) लिखें। नोट्स वैकल्पिक हैं।", "keys": ["inventory.txn.quantity_label", "inventory.txn.unit_price_label", "inventory.txn.notes_label"] },
+            { "en": "Tap Save. You cannot remove more than is in stock.", "hi": "सहेजें दबाएँ। स्टॉक से ज़्यादा नहीं निकाल सकते।", "keys": ["common.action.save"] }
+          ]
+        },
+        {
+          "id": "find_item_stock",
+          "title": { "en": "Check how much of an item is in stock", "hi": "किसी चीज़ का स्टॉक कितना है, देखें" },
+          "deepLink": "inventory/stock",
+          "steps": [
+            { "en": "Type the name in the Search items box at the top.", "hi": "ऊपर सामान खोजें बॉक्स में नाम लिखें।", "keys": ["inventory.list.search_placeholder"], "platforms": ["android"] },
+            { "en": "Type the name in the Search items box at the top.", "hi": "ऊपर आइटम खोजें बॉक्स में नाम लिखें।", "keys": ["inventory.stock.search_placeholder"], "platforms": ["web"] },
+            { "en": "The row shows the quantity with its unit. Tap the row to see the item's full history.", "hi": "पंक्ति में मात्रा और इकाई दिखती है। चीज़ का पूरा इतिहास देखने के लिए पंक्ति दबाएँ।" }
+          ]
+        },
+        {
+          "id": "go_to_masterlist",
+          "title": { "en": "Open the item list (master list)", "hi": "सामान की सूची (मास्टर सूची) खोलें" },
+          "deepLink": "inventory/masterlist",
+          "steps": [
+            { "en": "At the top right of the Inventory screen, tap the list icon (Item list). Tap it again (Current inventory) to come back.", "hi": "सामान स्क्रीन के ऊपर दाईं ओर सूची चिह्न (सामान की सूची) दबाएँ। वापस आने के लिए फिर दबाएँ (मौजूदा सामान)।", "keys": ["inventory.toggle.masterlist", "inventory.toggle.stock"], "platforms": ["android"] },
+            { "en": "Tap the Master list button at the top of the Inventory page.", "hi": "सामान पेज के ऊपर मास्टर सूची बटन दबाएँ।", "keys": ["inventory.stock.open_masterlist"], "platforms": ["web"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory_masterlist",
+      "title": { "en": "Item list (master list)", "hi": "सामान की सूची (मास्टर सूची)" },
+      "summary": {
+        "en": "The list of all item names with their unit (pieces, kg, litre…) and photo. Add an item here once; after that you only record transactions for it.",
+        "hi": "सारी चीज़ों के नाम, इकाई (नग, किलो, लीटर…) और फ़ोटो की सूची। चीज़ यहाँ एक बार जोड़ें; उसके बाद सिर्फ़ उसका लेन-देन दर्ज करना होता है।"
+      },
+      "deepLink": "inventory/masterlist",
+      "permission": "inventory.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "add_item",
+          "title": { "en": "Add a new item", "hi": "नई चीज़ (आइटम) जोड़ें" },
+          "deepLink": "inventory/masterlist",
+          "permission": "inventory.manage_master_items",
+          "steps": [
+            { "en": "Open the item list (see Inventory - current stock).", "hi": "सामान की सूची खोलें (सामान - मौजूदा स्टॉक देखें)।" },
+            { "en": "Tap the round plus button at the bottom right. The form Add item opens.", "hi": "नीचे दाईं ओर गोल प्लस बटन दबाएँ। सामान जोड़ें फ़ॉर्म खुलता है।", "keys": ["inventory.masterlist.add_title"], "platforms": ["android"] },
+            { "en": "Tap the Add item button.", "hi": "आइटम जोड़ें बटन दबाएँ।", "keys": ["inventory.master.add_item"], "platforms": ["web"] },
+            { "en": "Type the Name. If a similar name already exists the app shows Did you mean one of these? - tap the suggestion instead of making a duplicate.", "hi": "नाम लिखें। मिलता-जुलता नाम पहले से हो तो ऐप दिखाता है क्या आपका मतलब इनमें से कोई है? - दोबारा जोड़ने की जगह सुझाव दबाएँ।", "keys": ["inventory.masterlist.name_label", "inventory.masterlist.similar_items_hint"], "platforms": ["android"] },
+            { "en": "Type the Name. If a similar name already exists the app shows Similar items already exist: - pick that instead of making a duplicate.", "hi": "नाम लिखें। मिलता-जुलता नाम पहले से हो तो ऐप दिखाता है मिलते-जुलते आइटम पहले से मौजूद हैं: - दोबारा जोड़ने की जगह उसे चुनें।", "keys": ["inventory.master.name_label", "inventory.master.similar_title"], "platforms": ["web"] },
+            { "en": "Choose the Unit (Pieces, Kg, Litre, Boxes… or Custom to type your own).", "hi": "इकाई चुनें (नग, किलो, लीटर, डिब्बे… या अपनी इकाई लिखने के लिए अपनी इकाई)।", "keys": ["inventory.masterlist.unit_label", "inventory.masterlist.unit_pieces", "inventory.masterlist.unit_kg", "inventory.masterlist.unit_litre", "inventory.masterlist.unit_boxes", "inventory.masterlist.unit_custom"], "platforms": ["android"] },
+            { "en": "Choose the Unit (Pieces, Kg, Litre or Custom…).", "hi": "इकाई चुनें (नग, किलो, लीटर या अन्य…)।", "keys": ["inventory.master.unit_label", "inventory.master.unit_pieces", "inventory.master.unit_kg", "inventory.master.unit_litre", "inventory.master.unit_custom"], "platforms": ["web"] },
+            { "en": "Optional: tap Choose photo to add a picture of the item (phone only).", "hi": "वैकल्पिक: चीज़ की तस्वीर जोड़ने के लिए फ़ोटो चुनें दबाएँ (सिर्फ़ फ़ोन पर)।", "keys": ["inventory.masterlist.photo_pick"], "platforms": ["android"] },
+            { "en": "Tap Save.", "hi": "सहेजें दबाएँ।", "keys": ["common.action.save"] }
+          ]
+        },
+        {
+          "id": "edit_item",
+          "title": { "en": "Change an item's name, unit or photo", "hi": "चीज़ का नाम, इकाई या फ़ोटो बदलें" },
+          "deepLink": "inventory/masterlist",
+          "permission": "inventory.manage_master_items",
+          "steps": [
+            { "en": "In the item list, tap the item (or its Edit action).", "hi": "सामान की सूची में चीज़ दबाएँ (या उसका बदलें बटन)।", "keys": ["common.action.edit"] },
+            { "en": "Change the Name, Unit or photo (Remove photo / Choose photo) and tap Save.", "hi": "नाम, इकाई या फ़ोटो (फ़ोटो हटाएँ / फ़ोटो चुनें) बदलें और सहेजें दबाएँ।", "keys": ["inventory.masterlist.photo_remove", "inventory.masterlist.photo_pick", "common.action.save"], "platforms": ["android"] },
+            { "en": "Change the Name or Unit and tap Save. Photos are changed from the phone (Add photos from the mobile app).", "hi": "नाम या इकाई बदलें और सहेजें दबाएँ। फ़ोटो फ़ोन से बदलती है (फ़ोटो मोबाइल ऐप से जोड़ें)।", "keys": ["inventory.master.photo_mobile_hint", "common.action.save"], "platforms": ["web"] }
+          ]
+        },
+        {
+          "id": "delete_item",
+          "title": { "en": "Delete an item", "hi": "कोई चीज़ हटाएँ" },
+          "deepLink": "inventory/masterlist",
+          "permission": "inventory.manage_master_items",
+          "steps": [
+            { "en": "Open the item and tap Delete, then confirm.", "hi": "चीज़ खोलें और हटाएँ दबाएँ, फिर पुष्टि करें।", "keys": ["common.action.delete"] },
+            { "en": "An item that already has transactions cannot be deleted - delete its transactions first from the item page.", "hi": "जिस चीज़ के लेन-देन दर्ज हैं वह नहीं हटती - पहले चीज़ के पेज से उसके लेन-देन हटाएँ।" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory_item",
+      "title": { "en": "Item page (transaction history)", "hi": "चीज़ का पेज (लेन-देन का इतिहास)" },
+      "summary": {
+        "en": "Opens when you tap an item in the stock list: current quantity, total value and every Add / Remove transaction. From here you can fix or delete a transaction, or edit and delete the item.",
+        "hi": "स्टॉक सूची में चीज़ दबाने पर खुलता है: मौजूदा मात्रा, कुल मूल्य और हर जोड़ें / निकालें लेन-देन। यहाँ से लेन-देन सुधारें या हटाएँ, या चीज़ को बदलें या हटाएँ।"
+      },
+      "deepLink": "inventory/item",
+      "permission": "inventory.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "fix_transaction",
+          "title": { "en": "Correct or delete a transaction", "hi": "कोई लेन-देन सुधारें या हटाएँ" },
+          "deepLink": "inventory/item",
+          "permission": "inventory.edit",
+          "steps": [
+            { "en": "Under Transaction history, tap the three-dots on the transaction (Transaction options).", "hi": "लेन-देन का इतिहास के नीचे उस लेन-देन के तीन बिंदु (लेन-देन के विकल्प) दबाएँ।", "keys": ["inventory.detail.transactions_title", "inventory.txn.menu"], "platforms": ["android"] },
+            { "en": "Under Transaction history, tap the three-dots on the transaction (Transaction options).", "hi": "लेन-देन इतिहास के नीचे उस लेन-देन के तीन बिंदु (लेन-देन विकल्प) दबाएँ।", "keys": ["inventory.item.history_title", "inventory.item.txn_more"], "platforms": ["web"] },
+            { "en": "Tap Edit to change the quantity, price, date or notes, then Save. Tap Delete to remove it and confirm.", "hi": "मात्रा, दाम, तारीख या नोट बदलने के लिए बदलें दबाएँ, फिर सहेजें। हटाने के लिए हटाएँ दबाएँ और पुष्टि करें।", "keys": ["common.action.edit", "common.action.save", "common.action.delete"] },
+            { "en": "The stock is recalculated. A change that would make the stock go below zero at any time is refused.", "hi": "स्टॉक फिर से गिना जाता है। जिस बदलाव से स्टॉक कभी शून्य से नीचे जाए, वह नहीं होता।" }
+          ]
+        },
+        {
+          "id": "edit_item_from_detail",
+          "title": { "en": "Edit or delete the item from its page", "hi": "चीज़ के पेज से उसे बदलें या हटाएँ" },
+          "deepLink": "inventory/item",
+          "permission": "inventory.manage_master_items",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "Tap the three-dots at the top right (More options).", "hi": "ऊपर दाईं ओर तीन बिंदु (और विकल्प) दबाएँ।", "keys": ["inventory.detail.more_options"] },
+            { "en": "Tap Edit item or Delete item.", "hi": "सामान बदलें या सामान हटाएँ दबाएँ।", "keys": ["inventory.detail.edit_item", "inventory.detail.delete_item"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "notes",
+      "title": { "en": "Notes and checklists", "hi": "नोट्स और चेकलिस्ट" },
+      "summary": {
+        "en": "Quick notes and tick-off checklists shared with your team. Pinned notes stay at the top. Deleted notes go to Trash for 30 days.",
+        "hi": "टीम के साथ साझा छोटे नोट और टिक करने वाली चेकलिस्ट। पिन किए नोट ऊपर रहते हैं। हटाए नोट 30 दिन ट्रैश में रहते हैं।"
+      },
+      "deepLink": "notes/home",
+      "permission": "notes.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "create_note",
+          "title": { "en": "Write a new note", "hi": "नया नोट लिखें" },
+          "deepLink": "notes/home",
+          "permission": "notes.create",
+          "steps": [
+            { "en": "Tap New note at the bottom of the Notes screen.", "hi": "नोट्स स्क्रीन के नीचे नया नोट दबाएँ।", "keys": ["notes.home.create_note"] },
+            { "en": "Type a Title and the note text. Optional: pick a Color and Tags.", "hi": "शीर्षक और नोट का टेक्स्ट लिखें। वैकल्पिक: रंग और टैग चुनें।", "keys": ["notes.editor.title_hint", "notes.picker.color_title", "notes.picker.tags_title"], "platforms": ["android"] },
+            { "en": "Type a Title and the note text. Optional: pick a Color and Tags.", "hi": "शीर्षक और नोट का टेक्स्ट लिखें। वैकल्पिक: रंग और टैग चुनें।", "keys": ["notes.editor.title_placeholder", "notes.picker.color_title", "notes.picker.tags_title"], "platforms": ["web"] },
+            { "en": "Tap Save.", "hi": "सहेजें दबाएँ।", "keys": ["common.action.save"] }
+          ]
+        },
+        {
+          "id": "create_checklist",
+          "title": { "en": "Make a checklist and tick items off", "hi": "चेकलिस्ट बनाएँ और काम टिक करें" },
+          "deepLink": "notes/home",
+          "permission": "notes.create",
+          "steps": [
+            { "en": "Tap New checklist at the bottom of the Notes screen.", "hi": "नोट्स स्क्रीन के नीचे नई चेकलिस्ट दबाएँ।", "keys": ["notes.home.create_checklist"] },
+            { "en": "Type a Title, then tap Add item for every line you need. Tap Save.", "hi": "शीर्षक लिखें, फिर हर काम के लिए आइटम जोड़ें दबाएँ। सहेजें दबाएँ।", "keys": ["notes.editor.add_item", "common.action.save"], "platforms": ["android"] },
+            { "en": "Type a Title, then tap Add item for every line you need. Tap Save.", "hi": "शीर्षक लिखें, फिर हर काम के लिए आइटम जोड़ें दबाएँ। सहेजें दबाएँ।", "keys": ["notes.editor.checklist_add", "common.action.save"], "platforms": ["web"] },
+            { "en": "Later, open the checklist and tap the box next to an item to tick it. When everything is done, tap Mark complete.", "hi": "बाद में चेकलिस्ट खोलें और काम के बगल के डिब्बे को दबाकर टिक करें। सब हो जाए तो पूर्ण करें दबाएँ।", "keys": ["notes.action.complete"] }
+          ]
+        },
+        {
+          "id": "pin_note",
+          "title": { "en": "Keep a note at the top (pin)", "hi": "नोट को ऊपर रखें (पिन करें)" },
+          "deepLink": "notes/home",
+          "permission": "notes.edit",
+          "steps": [
+            { "en": "Open the note and tap Pin. It moves to the Pinned section. Tap Unpin to undo.", "hi": "नोट खोलें और पिन करें दबाएँ। वह पिन किए गए भाग में चला जाता है। हटाने के लिए पिन हटाएँ दबाएँ।", "keys": ["notes.action.pin", "notes.action.unpin", "notes.home.pinned_header"] }
+          ]
+        },
+        {
+          "id": "find_note",
+          "title": { "en": "Find a note; see completed notes or the trash", "hi": "नोट ढूँढें; पूर्ण नोट या ट्रैश देखें" },
+          "deepLink": "notes/home",
+          "steps": [
+            { "en": "Type in the Search notes box - it searches titles, text and tags.", "hi": "नोट खोजें बॉक्स में लिखें - यह शीर्षक, टेक्स्ट और टैग में खोजता है।", "keys": ["notes.home.search_placeholder"] },
+            { "en": "Tap the menu lines at the top left (Open notes menu) to switch between Notes, Completed and Trash, or to filter by a tag.", "hi": "ऊपर बाईं ओर मेनू की लकीरें (नोट्स मेनू खोलें) दबाकर नोट्स, पूर्ण और ट्रैश में जाएँ, या टैग से छाँटें।", "keys": ["notes.drawer.open", "notes.drawer.notes", "notes.drawer.completed", "notes.drawer.trash"] }
+          ]
+        },
+        {
+          "id": "delete_restore_note",
+          "title": { "en": "Delete a note, or bring it back from Trash", "hi": "नोट हटाएँ, या ट्रैश से वापस लाएँ" },
+          "deepLink": "notes/home",
+          "permission": "notes.edit",
+          "steps": [
+            { "en": "Open the note and tap Delete. It moves to Trash and is removed after 30 days.", "hi": "नोट खोलें और हटाएँ दबाएँ। वह ट्रैश में जाता है और 30 दिन बाद मिट जाता है।", "keys": ["notes.action.delete", "notes.drawer.trash"] },
+            { "en": "To bring it back, open Trash from the notes menu, open the note and tap Restore. Delete forever removes it at once.", "hi": "वापस लाने के लिए नोट्स मेनू से ट्रैश खोलें, नोट खोलें और वापस लाएँ दबाएँ। हमेशा के लिए हटाएँ उसे तुरंत मिटा देता है।", "keys": ["notes.action.restore", "notes.action.delete_forever"] }
+          ]
+        },
+        {
+          "id": "share_note",
+          "title": { "en": "Share a note", "hi": "नोट साझा करें" },
+          "deepLink": "notes/home",
+          "steps": [
+            { "en": "Open the note and tap Share. On the phone the share sheet opens (WhatsApp, email…); on the web the text is copied.", "hi": "नोट खोलें और साझा करें दबाएँ। फ़ोन पर शेयर सूची खुलती है (WhatsApp, ईमेल…); वेब पर टेक्स्ट कॉपी हो जाता है।", "keys": ["notes.action.share"] }
+          ]
+        },
+        {
+          "id": "manage_tags",
+          "title": { "en": "Rename or delete tags", "hi": "टैग का नाम बदलें या टैग हटाएँ" },
+          "deepLink": "notes/home",
+          "permission": "notes.edit",
+          "steps": [
+            { "en": "Open the notes menu (top left) and tap Manage tags.", "hi": "नोट्स मेनू (ऊपर बाईं ओर) खोलें और टैग प्रबंधित करें दबाएँ।", "keys": ["notes.tags.manage_open"] },
+            { "en": "Tap Rename tag or Delete tag next to a tag. Deleting a tag never deletes the notes.", "hi": "किसी टैग के बगल में टैग का नाम बदलें या टैग हटाएँ दबाएँ। टैग हटाने से नोट नहीं हटते।", "keys": ["notes.tags.rename", "notes.tags.delete"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "files",
+      "title": { "en": "Files", "hi": "फ़ाइलें" },
+      "summary": {
+        "en": "A shared file cabinet for your business: folders and files (contracts, menus, photos, PDFs) stored in Google Drive and visible to your team. The path at the top (All files › …) shows where you are.",
+        "hi": "आपके व्यवसाय की साझा फ़ाइल-अलमारी: फ़ोल्डर और फ़ाइलें (कॉन्ट्रैक्ट, मेनू, फ़ोटो, PDF) जो Google Drive में रहती हैं और टीम को दिखती हैं। ऊपर का रास्ता (सभी फ़ाइलें › …) बताता है कि आप कहाँ हैं।"
+      },
+      "deepLink": "files/home",
+      "permission": "files.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "upload_file",
+          "title": { "en": "Upload a file", "hi": "फ़ाइल अपलोड करें" },
+          "deepLink": "files/home",
+          "permission": "files.upload",
+          "steps": [
+            { "en": "Open the folder where the file should go (tap a folder; All files is the top).", "hi": "वह फ़ोल्डर खोलें जिसमें फ़ाइल रखनी है (फ़ोल्डर दबाएँ; सभी फ़ाइलें सबसे ऊपर है)।", "keys": ["files.home.root_label"] },
+            { "en": "Tap the round upload button at the bottom right (Upload).", "hi": "नीचे दाईं ओर गोल अपलोड बटन (अपलोड करें) दबाएँ।", "keys": ["files.action.upload"], "platforms": ["android"] },
+            { "en": "Tap the Upload button at the top.", "hi": "ऊपर अपलोड करें बटन दबाएँ।", "keys": ["files.action.upload"], "platforms": ["web"] },
+            { "en": "The first time, the app asks to Connect Google Drive - tap Connect. Files are kept in your Google Drive.", "hi": "पहली बार ऐप Google Drive जोड़ें कहता है - जोड़ें दबाएँ। फ़ाइलें आपके Google Drive में रहती हैं।", "keys": ["files.upload.link_google_title", "files.upload.link_google_connect"] },
+            { "en": "Pick one or more files from the phone or computer. Each file must be under 25 MB. A message confirms the upload.", "hi": "फ़ोन या कंप्यूटर से एक या ज़्यादा फ़ाइलें चुनें। हर फ़ाइल 25 MB से छोटी हो। एक संदेश अपलोड की पुष्टि करता है।" }
+          ]
+        },
+        {
+          "id": "upload_from_other_app",
+          "title": { "en": "Save a file received on WhatsApp into Files", "hi": "WhatsApp पर मिली फ़ाइल Files में सहेजें" },
+          "deepLink": "files/home",
+          "permission": "files.upload",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "In WhatsApp (or any app), open the file and tap its share button.", "hi": "WhatsApp (या किसी ऐप) में फ़ाइल खोलें और उसका शेयर बटन दबाएँ।" },
+            { "en": "Choose Save to Samaroh, then Save to Files.", "hi": "समारोह में सहेजें चुनें, फिर फ़ाइलें में सहेजें।", "keys": ["files.share_target.label", "files.share_target.option_files"] },
+            { "en": "Pick the folder (Save where?) and tap Upload here.", "hi": "फ़ोल्डर चुनें (कहाँ सहेजें?) और यहाँ अपलोड करें दबाएँ।", "keys": ["files.share_target.pick_folder_title", "files.picker.confirm"] }
+          ]
+        },
+        {
+          "id": "new_folder",
+          "title": { "en": "Make a new folder", "hi": "नया फ़ोल्डर बनाएँ" },
+          "deepLink": "files/home",
+          "permission": "files.manage_folders",
+          "steps": [
+            { "en": "Open the folder that should contain it, then tap the new-folder icon at the top right (New folder).", "hi": "जिस फ़ोल्डर के अंदर बनाना है उसे खोलें, फिर ऊपर दाईं ओर नया-फ़ोल्डर चिह्न (नया फ़ोल्डर) दबाएँ।", "keys": ["files.action.new_folder"] },
+            { "en": "Type the Folder name and tap Save.", "hi": "फ़ोल्डर का नाम लिखें और सहेजें दबाएँ।", "keys": ["files.folder.name_label", "common.action.save"] }
+          ]
+        },
+        {
+          "id": "open_file",
+          "title": { "en": "Open or download a file", "hi": "फ़ाइल खोलें या डाउनलोड करें" },
+          "deepLink": "files/home",
+          "steps": [
+            { "en": "Tap the file to open it. Pictures open inside the app; other files open in the matching app on the phone.", "hi": "खोलने के लिए फ़ाइल दबाएँ। तस्वीरें ऐप के अंदर खुलती हैं; बाकी फ़ाइलें फ़ोन के उपयुक्त ऐप में खुलती हैं।" },
+            { "en": "Press and hold the file for more choices: Open, Open in Google Drive, Copy link, Download.", "hi": "और विकल्पों के लिए फ़ाइल को दबाकर रखें: खोलें, Google Drive में खोलें, लिंक कॉपी करें, डाउनलोड करें।", "keys": ["files.action.open", "files.action.open_in_drive", "files.action.copy_link", "files.action.download"], "platforms": ["android"] },
+            { "en": "Tap the three-dots on the file for more choices: Open, Open in Google Drive, Copy link, Download.", "hi": "और विकल्पों के लिए फ़ाइल के तीन बिंदु दबाएँ: खोलें, Google Drive में खोलें, लिंक कॉपी करें, डाउनलोड करें।", "keys": ["files.action.open", "files.action.open_in_drive", "files.action.copy_link", "files.action.download"], "platforms": ["web"] }
+          ]
+        },
+        {
+          "id": "rename_move_delete",
+          "title": { "en": "Rename, move or delete a file or folder", "hi": "फ़ाइल या फ़ोल्डर का नाम बदलें, ले जाएँ या हटाएँ" },
+          "deepLink": "files/home",
+          "permission": "files.manage_folders",
+          "steps": [
+            { "en": "Press and hold the file or folder (phone) or tap its three-dots (web).", "hi": "फ़ाइल या फ़ोल्डर को दबाकर रखें (फ़ोन) या उसके तीन बिंदु दबाएँ (वेब)।" },
+            { "en": "Tap Rename file / Rename folder, type the new name and tap Save.", "hi": "फ़ाइल का नाम बदलें / फ़ोल्डर का नाम बदलें दबाएँ, नया नाम लिखें और सहेजें दबाएँ।", "keys": ["files.action.rename_file", "files.action.rename_folder", "common.action.save"] },
+            { "en": "Tap Move to…, pick the destination folder (Move where?) and tap Move.", "hi": "यहाँ ले जाएँ… दबाएँ, नया फ़ोल्डर चुनें (कहाँ ले जाएँ?) और ले जाएँ दबाएँ।", "keys": ["files.action.move", "files.move.title", "files.move.confirm"] },
+            { "en": "Tap Delete file / Delete folder and confirm. It is removed for every member and cannot be undone.", "hi": "फ़ाइल हटाएँ / फ़ोल्डर हटाएँ दबाएँ और पुष्टि करें। यह सभी सदस्यों के लिए हट जाती है और वापस नहीं आती।", "keys": ["files.action.delete_file", "files.action.delete_folder"] }
+          ]
+        },
+        {
+          "id": "restrict_folder",
+          "title": { "en": "Allow only some members to open a folder", "hi": "फ़ोल्डर सिर्फ़ कुछ सदस्यों को दिखाएँ" },
+          "deepLink": "files/home",
+          "permission": "files.manage_folders",
+          "steps": [
+            { "en": "Press and hold the folder (phone) or tap its three-dots (web), then tap Manage access.", "hi": "फ़ोल्डर को दबाकर रखें (फ़ोन) या उसके तीन बिंदु दबाएँ (वेब), फिर पहुँच प्रबंधित करें दबाएँ।", "keys": ["files.action.manage_access"] },
+            { "en": "Choose Everyone with Files access or Only selected members and tick the members. Tap Save. A Restricted badge appears on the folder.", "hi": "फ़ाइलें देखने की अनुमति वाले सभी या केवल चुने हुए सदस्य चुनें और सदस्यों पर टिक करें। सहेजें दबाएँ। फ़ोल्डर पर सीमित का निशान दिखता है।", "keys": ["files.access.everyone", "files.access.only_selected", "common.action.save", "files.access.restricted_badge"] }
+          ]
+        },
+        {
+          "id": "search_files",
+          "title": { "en": "Search for a file", "hi": "कोई फ़ाइल खोजें" },
+          "deepLink": "files/home",
+          "steps": [
+            { "en": "Type part of the name in the Search files and folders box. Results show the folder each file is in.", "hi": "फ़ाइलें और फ़ोल्डर खोजें बॉक्स में नाम का हिस्सा लिखें। परिणाम बताते हैं कि फ़ाइल किस फ़ोल्डर में है।", "keys": ["files.home.search_placeholder"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "title": { "en": "Menu", "hi": "मेनू" },
+      "summary": {
+        "en": "Opens from the three-dots button at the top right. Shows who is signed in, then Settings, Reports, Members and About. Sign out is on the identity row at the top.",
+        "hi": "ऊपर दाईं ओर तीन बिंदु वाले बटन से खुलता है। बताता है कौन साइन इन है, फिर सेटिंग्स, रिपोर्ट, सदस्य और ऐप के बारे में। साइन आउट ऊपर की पहचान वाली पंक्ति में है।"
+      },
+      "deepLink": "menu/home",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "menu_sections",
+          "title": { "en": "What is in the Menu", "hi": "मेनू में क्या-क्या है" },
+          "deepLink": "menu/home",
+          "steps": [
+            { "en": "Settings - Language, theme, reminders, backup.", "hi": "सेटिंग्स - भाषा, थीम, रिमाइंडर, बैकअप।", "keys": ["menu.section.settings", "menu.section.settings_subtitle"] },
+            { "en": "Reports - Charts and summaries.", "hi": "रिपोर्ट - चार्ट और सारांश।", "keys": ["menu.section.reports", "menu.section.reports_subtitle"] },
+            { "en": "Members - Invite staff and set permissions.", "hi": "सदस्य - स्टाफ़ जोड़ें और अनुमतियाँ तय करें।", "keys": ["menu.section.members", "menu.section.members_subtitle"] },
+            { "en": "About - Version and licenses.", "hi": "ऐप के बारे में - संस्करण और लाइसेंस।", "keys": ["menu.section.about", "menu.section.about_subtitle"] },
+            { "en": "The Search menu box at the top finds any setting by name.", "hi": "ऊपर मेनू में खोजें बॉक्स किसी भी सेटिंग को नाम से ढूँढता है।", "keys": ["menu.search.placeholder"] }
+          ]
+        },
+        {
+          "id": "sign_out",
+          "title": { "en": "Sign out", "hi": "साइन आउट करें" },
+          "deepLink": "menu/home",
+          "steps": [
+            { "en": "In the Menu, on the row that says Signed in as, tap Sign out.", "hi": "मेनू में जिस पंक्ति में इस रूप में साइन इन लिखा है, वहाँ साइन आउट करें दबाएँ।", "keys": ["menu.identity.signed_in_as", "menu.identity.sign_out"] },
+            { "en": "Confirm. Your data stays safe in your account. If some changes have not synced yet, the app warns you - connect to the internet first.", "hi": "पुष्टि करें। आपका डेटा आपके खाते में सुरक्षित रहता है। कुछ बदलाव सिंक न हुए हों तो ऐप चेतावनी देता है - पहले इंटरनेट से जुड़ें।" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "title": { "en": "Settings", "hi": "सेटिंग्स" },
+      "summary": {
+        "en": "Menu, then Settings. Language and theme, business profile (name, address, logo), booking form fields, event types, Google account, backup, image quality, reminders and sync status.",
+        "hi": "मेनू, फिर सेटिंग्स। भाषा और थीम, व्यवसाय प्रोफ़ाइल (नाम, पता, लोगो), बुकिंग फ़ॉर्म फ़ील्ड, आयोजन के प्रकार, Google खाता, बैकअप, फ़ोटो क्वालिटी, रिमाइंडर और सिंक की स्थिति।"
+      },
+      "deepLink": "menu/settings",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "change_language",
+          "title": { "en": "Change the language (English / Hindi)", "hi": "भाषा बदलें (English / हिन्दी)" },
+          "deepLink": "menu/settings/language",
+          "steps": [
+            { "en": "Open Menu, then Settings, then Language.", "hi": "मेनू, फिर सेटिंग्स, फिर भाषा खोलें।", "keys": ["settings.language.title"] },
+            { "en": "Tap English or हिन्दी. On the phone you can also choose Use device language.", "hi": "English या हिन्दी दबाएँ। फ़ोन पर डिवाइस की भाषा इस्तेमाल करें भी चुन सकते हैं।", "keys": ["settings.language.name_en", "settings.language.name_hi", "settings.language.system"] }
+          ]
+        },
+        {
+          "id": "change_theme",
+          "title": { "en": "Light or dark look", "hi": "हल्की या गहरी थीम" },
+          "deepLink": "menu/settings",
+          "steps": [
+            { "en": "Open Menu, then Settings, then Theme, and choose Light, Dark or System.", "hi": "मेनू, फिर सेटिंग्स, फिर थीम खोलें, और हल्की, गहरी या सिस्टम चुनें।", "keys": ["settings.theme.title", "settings.theme.light", "settings.theme.dark", "settings.theme.system"] }
+          ]
+        },
+        {
+          "id": "business_profile",
+          "title": { "en": "Change the business name, address or logo", "hi": "व्यवसाय का नाम, पता या लोगो बदलें" },
+          "deepLink": "menu/settings/business",
+          "permission": "settings.manage_business",
+          "steps": [
+            { "en": "Open Menu, then Settings, then Business profile.", "hi": "मेनू, फिर सेटिंग्स, फिर व्यवसाय प्रोफ़ाइल खोलें।", "keys": ["settings.business.title"] },
+            { "en": "Edit Business name, Owner name, Address or Invoice prefix and tap Save. These appear on invoices.", "hi": "व्यवसाय का नाम, मालिक का नाम, पता या बिल प्रीफ़िक्स बदलें और सहेजें दबाएँ। ये बिल पर छपते हैं।", "keys": ["settings.business.name", "settings.business.owner_name", "settings.business.address", "settings.business.invoice_prefix", "common.action.save"] },
+            { "en": "Tap Change logo to pick a new logo picture (phone only).", "hi": "नया लोगो चुनने के लिए लोगो बदलें दबाएँ (सिर्फ़ फ़ोन पर)।", "keys": ["settings.business.change_logo"], "platforms": ["android"] }
+          ]
+        },
+        {
+          "id": "event_types",
+          "title": { "en": "Add or change event types (wedding, birthday…)", "hi": "आयोजन के प्रकार जोड़ें या बदलें (शादी, जन्मदिन…)" },
+          "deepLink": "menu/settings/event_types",
+          "permission": "settings.manage_business",
+          "steps": [
+            { "en": "Open Menu, then Settings, then Event types.", "hi": "मेनू, फिर सेटिंग्स, फिर आयोजन के प्रकार खोलें।", "keys": ["settings.event_types.title"] },
+            { "en": "Tap the plus button to add (New event type): type the Name, pick an Icon and a Colour. Under Used for choose For bookings, or Just a marker to only mark a day on the calendar.", "hi": "जोड़ने के लिए प्लस बटन दबाएँ (नया आयोजन प्रकार): नाम लिखें, चिह्न और रंग चुनें। उपयोग में बुकिंग के लिए चुनें, या कैलेंडर पर सिर्फ़ दिन दिखाने के लिए सिर्फ़ निशान।", "keys": ["settings.event_types.add_title", "settings.event_types.name_label", "settings.event_types.icon_label", "settings.event_types.color_label", "settings.event_types.kind_label", "settings.event_types.kind_booking", "settings.event_types.kind_marker"] },
+            { "en": "Tap an existing type to edit it. Move up / Move down changes the order in the booking form.", "hi": "पुराने प्रकार को बदलने के लिए उसे दबाएँ। ऊपर ले जाएँ / नीचे ले जाएँ से बुकिंग फ़ॉर्म में क्रम बदलता है।", "keys": ["settings.event_types.move_up", "settings.event_types.move_down"] }
+          ]
+        },
+        {
+          "id": "google_account",
+          "title": { "en": "Connect or disconnect the Google account (Drive, Calendar)", "hi": "Google खाता जोड़ें या हटाएँ (Drive, Calendar)" },
+          "deepLink": "menu/settings",
+          "steps": [
+            { "en": "Open Menu, then Settings, then Google account.", "hi": "मेनू, फिर सेटिंग्स, फिर Google खाता खोलें।", "keys": ["settings.google.title"] },
+            { "en": "Tap Link Google account and pick your Google account. Bills, item photos and files are then saved in your Google Drive. Tap Unlink to disconnect.", "hi": "Google खाता जोड़ें दबाएँ और अपना Google खाता चुनें। फिर बिल, सामान की फ़ोटो और फ़ाइलें आपके Google Drive में सुरक्षित रहती हैं। हटाने के लिए लिंक हटाएँ दबाएँ।", "keys": ["settings.google.link", "settings.google.unlink"] },
+            { "en": "Switch on Google Calendar sync to push bookings into Google Calendar as well.", "hi": "बुकिंग Google Calendar में भी भेजने के लिए Google Calendar सिंक चालू करें।", "keys": ["settings.gcal.title"], "platforms": ["android"] }
+          ]
+        },
+        {
+          "id": "backup",
+          "title": { "en": "Back up the data", "hi": "डेटा का बैकअप लें" },
+          "deepLink": "menu/settings",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "Open Menu, then Settings, then Backup. Tap Back up now.", "hi": "मेनू, फिर सेटिंग्स, फिर बैकअप खोलें। अभी बैकअप लें दबाएँ।", "keys": ["settings.backup.title", "settings.backup.backup_now"] },
+            { "en": "Under Backup frequency choose Daily, Weekly, Monthly or Manual only. Backups go to your Google Drive (connect Google first). Only the owner can back up.", "hi": "बैकअप कितनी बार हो में रोज़, हर हफ़्ते, हर महीने या सिर्फ़ खुद करने पर चुनें। बैकअप आपके Google Drive में जाता है (पहले Google जोड़ें)। बैकअप सिर्फ़ मालिक ले सकता है।", "keys": ["settings.backup.frequency_title", "settings.backup.freq_daily", "settings.backup.freq_weekly", "settings.backup.freq_monthly", "settings.backup.freq_manual"] }
+          ]
+        },
+        {
+          "id": "reminders",
+          "title": { "en": "Booking reminders (notifications)", "hi": "बुकिंग रिमाइंडर (सूचनाएँ)" },
+          "deepLink": "menu/settings/reminders",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "Open Menu, then Settings, then Booking reminders.", "hi": "मेनू, फिर सेटिंग्स, फिर बुकिंग रिमाइंडर खोलें।", "keys": ["settings.reminders.title"] },
+            { "en": "Choose when to be reminded about upcoming events and pending payments, and the Reminder sound. Allow notifications if the phone asks.", "hi": "तय करें कि आने वाले आयोजन और बाकी भुगतान की याद कब दिलाई जाए, और रिमाइंडर की आवाज़ चुनें। फ़ोन पूछे तो सूचनाओं की अनुमति दें।", "keys": ["settings.reminders.sound_title"] }
+          ]
+        },
+        {
+          "id": "sync_status",
+          "title": { "en": "Check that changes have synced", "hi": "देखें कि बदलाव सिंक हुए या नहीं" },
+          "deepLink": "menu/settings/sync",
+          "steps": [
+            { "en": "Tap the cloud icon at the top of the screen, or open Menu, then Settings, then Sync status.", "hi": "स्क्रीन के ऊपर बादल चिह्न दबाएँ, या मेनू, फिर सेटिंग्स, फिर सिंक की स्थिति खोलें।", "keys": ["settings.sync.title"] },
+            { "en": "Everything is synced means all changes are saved to your account. If changes are waiting, connect to the internet and tap Sync now.", "hi": "सब कुछ सिंक हो चुका है का मतलब है सारे बदलाव खाते में सुरक्षित हैं। बदलाव बाकी हों तो इंटरनेट से जुड़ें और अभी सिंक करें दबाएँ।", "keys": ["settings.sync.all_synced", "settings.sync.sync_now"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "members",
+      "title": { "en": "Members (staff and permissions)", "hi": "सदस्य (स्टाफ़ और अनुमतियाँ)" },
+      "summary": {
+        "en": "Menu, then Members. Invite staff by email and choose exactly what each person may see and do. Only the owner can manage members.",
+        "hi": "मेनू, फिर सदस्य। स्टाफ़ को ईमेल से आमंत्रित करें और तय करें कि हर व्यक्ति क्या देख और कर सकता है। सदस्य सिर्फ़ मालिक ही प्रबंधित कर सकता है।"
+      },
+      "deepLink": "menu/members",
+      "permission": "settings.manage_members",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "add_member",
+          "title": { "en": "Invite a staff member", "hi": "स्टाफ़ सदस्य को आमंत्रित करें" },
+          "deepLink": "menu/members",
+          "steps": [
+            { "en": "Open Menu, then Members, then tap Add member.", "hi": "मेनू, फिर सदस्य खोलें, फिर सदस्य जोड़ें दबाएँ।", "keys": ["menu.members.title", "menu.members.add"] },
+            { "en": "Type their Email (the one they will sign in with) and a Display name.", "hi": "उनका ईमेल (जिससे वे साइन इन करेंगे) और नाम लिखें।", "keys": ["menu.members.email_label", "menu.members.name_label"] },
+            { "en": "Under Permissions tick what they may do - for example Booking: view and record payment, but not delete.", "hi": "अनुमतियाँ में टिक करें कि वे क्या कर सकते हैं - जैसे बुकिंग: देखना और भुगतान दर्ज करना, पर हटाना नहीं।", "keys": ["menu.members.permissions_title"] },
+            { "en": "Tap Add. The member shows as Invited until they sign in with that email, then Active.", "hi": "जोड़ें दबाएँ। सदस्य उस ईमेल से साइन इन करने तक आमंत्रित दिखता है, फिर सक्रिय।", "keys": ["common.action.add", "menu.members.status_invited", "menu.members.status_active"], "platforms": ["android"] },
+            { "en": "Tap Save. The member shows as Invited until they sign in with that email, then Active.", "hi": "सहेजें दबाएँ। सदस्य उस ईमेल से साइन इन करने तक आमंत्रित दिखता है, फिर सक्रिय।", "keys": ["common.action.save", "menu.members.status_invited", "menu.members.status_active"], "platforms": ["web"] }
+          ]
+        },
+        {
+          "id": "change_permissions",
+          "title": { "en": "Change what a member can do", "hi": "सदस्य की अनुमतियाँ बदलें" },
+          "deepLink": "menu/members",
+          "steps": [
+            { "en": "Tap the member. The form Edit member opens.", "hi": "सदस्य दबाएँ। सदस्य बदलें फ़ॉर्म खुलता है।", "keys": ["menu.members.edit_title"] },
+            { "en": "Tick or untick the Permissions and tap Save.", "hi": "अनुमतियाँ पर टिक लगाएँ या हटाएँ और सहेजें दबाएँ।", "keys": ["menu.members.permissions_title", "common.action.save"] }
+          ]
+        },
+        {
+          "id": "revoke_member",
+          "title": { "en": "Remove a member's access (or give it back)", "hi": "सदस्य की पहुँच हटाएँ (या वापस दें)" },
+          "deepLink": "menu/members",
+          "steps": [
+            { "en": "Tap the member, then tap Revoke access and confirm. They lose access right away.", "hi": "सदस्य दबाएँ, फिर पहुँच हटाएँ दबाएँ और पुष्टि करें। उनकी पहुँच तुरंत खत्म हो जाती है।", "keys": ["menu.members.revoke"] },
+            { "en": "To give access back later, tap the member and tap Restore access.", "hi": "बाद में पहुँच वापस देने के लिए सदस्य दबाएँ और पहुँच वापस दें दबाएँ।", "keys": ["menu.members.reactivate"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reports",
+      "title": { "en": "Reports", "hi": "रिपोर्ट" },
+      "summary": {
+        "en": "Menu, then Reports. Ten reports: Revenue summary, Outstanding dues, Occupancy, Event types, Booking sources, Expense summary, Profit, Inventory value, Collection speed and Personal expenses. Each has a chart, a table and a date range.",
+        "hi": "मेनू, फिर रिपोर्ट। दस रिपोर्ट: आय सारांश, बकाया राशि, बुकिंग भराव, आयोजन के प्रकार, बुकिंग का स्रोत, खर्च सारांश, मुनाफ़ा, स्टॉक की कीमत, वसूली की रफ़्तार और निजी खर्च। हर रिपोर्ट में चार्ट, तालिका और तारीख की सीमा होती है।"
+      },
+      "deepLink": "reports/home",
+      "permission": "reports.view",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "open_report",
+          "title": { "en": "See who still owes money (and other reports)", "hi": "किस पर पैसा बाकी है, देखें (और अन्य रिपोर्ट)" },
+          "deepLink": "reports/detail",
+          "steps": [
+            { "en": "Open Menu, then Reports.", "hi": "मेनू, फिर रिपोर्ट खोलें।", "keys": ["reports.home.title"] },
+            { "en": "Tap Outstanding dues to see who owes what and for how long. Tap Revenue summary for money collected vs pending by month, or Profit for income minus expenses.", "hi": "किस पर कितना और कब से बकाया है, देखने के लिए बकाया राशि दबाएँ। महीने के हिसाब से वसूला गया बनाम बकाया देखने के लिए आय सारांश, या आय घटा खर्च के लिए मुनाफ़ा दबाएँ।", "keys": ["reports.report.dues_aging", "reports.report.revenue", "reports.report.profit"] }
+          ]
+        },
+        {
+          "id": "change_range",
+          "title": { "en": "Change the report dates", "hi": "रिपोर्ट की तारीखें बदलें" },
+          "deepLink": "reports/detail",
+          "steps": [
+            { "en": "At the top of the report tap −12 months, −3 months, This month, +3 months or +12 months.", "hi": "रिपोर्ट के ऊपर −12 महीने, −3 महीने, इस महीने, +3 महीने या +12 महीने दबाएँ।", "keys": ["reports.range.minus_12m", "reports.range.minus_3m", "reports.range.this_month", "reports.range.plus_3m", "reports.range.plus_12m"] },
+            { "en": "Tap Custom to pick your own From and To dates.", "hi": "अपनी से और तक तारीखें चुनने के लिए अपनी तारीख़ें दबाएँ।", "keys": ["reports.range.custom", "reports.range.from_label", "reports.range.to_label"] }
+          ]
+        },
+        {
+          "id": "export_report",
+          "title": { "en": "Share or download a report", "hi": "रिपोर्ट साझा करें या डाउनलोड करें" },
+          "deepLink": "reports/detail",
+          "steps": [
+            { "en": "At the bottom of the report tap Share PDF to send it as a document, or Share CSV for a spreadsheet file.", "hi": "रिपोर्ट के नीचे दस्तावेज़ के रूप में भेजने के लिए PDF शेयर करें, या स्प्रेडशीट फ़ाइल के लिए CSV शेयर करें दबाएँ।", "keys": ["reports.export.pdf", "reports.export.csv"], "platforms": ["android"] },
+            { "en": "Tap Download CSV to save the table as a spreadsheet file.", "hi": "तालिका को स्प्रेडशीट फ़ाइल में सहेजने के लिए CSV डाउनलोड करें दबाएँ।", "keys": ["reports.export.download_csv"], "platforms": ["web"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sign_in",
+      "title": { "en": "Sign in and first-time setup", "hi": "साइन इन और पहली बार सेटअप" },
+      "summary": {
+        "en": "Sign in with your email and password (or Continue with Google on the phone). New users create an account, then either create a business or join one they were invited to.",
+        "hi": "अपने ईमेल और पासवर्ड से साइन इन करें (या फ़ोन पर Google से जारी रखें)। नए उपयोगकर्ता खाता बनाते हैं, फिर नया व्यवसाय बनाते हैं या उस व्यवसाय से जुड़ते हैं जिसमें उन्हें आमंत्रित किया गया।"
+      },
+      "deepLink": "auth/sign_in",
+      "platforms": ["android", "web"],
+      "tasks": [
+        {
+          "id": "sign_in",
+          "title": { "en": "Sign in", "hi": "साइन इन करें" },
+          "deepLink": "auth/sign_in",
+          "steps": [
+            { "en": "Type your Email and Password and tap Sign in.", "hi": "अपना ईमेल और पासवर्ड लिखें और साइन इन करें दबाएँ।", "keys": ["auth.sign_in.email_label", "auth.sign_in.password_label", "auth.sign_in.submit"] },
+            { "en": "Or tap Continue with Google and pick your Google account.", "hi": "या Google से जारी रखें दबाएँ और अपना Google खाता चुनें।", "keys": ["auth.sign_in.google"], "platforms": ["android"] },
+            { "en": "If you have no account yet, tap New here? Create an account, then Create account.", "hi": "खाता न हो तो नए हैं? खाता बनाएँ दबाएँ, फिर खाता बनाएँ।", "keys": ["auth.mode.to_sign_up", "auth.sign_up.submit"] }
+          ]
+        },
+        {
+          "id": "join_business",
+          "title": { "en": "Join the business you were invited to", "hi": "जिस व्यवसाय में आमंत्रित हैं, उससे जुड़ें" },
+          "deepLink": "auth/sign_in",
+          "platforms": ["android"],
+          "steps": [
+            { "en": "Sign in with the SAME email the owner invited.", "hi": "उसी ईमेल से साइन इन करें जिसे मालिक ने आमंत्रित किया।" },
+            { "en": "On How would you like to start? tap Join a business, then Accept & join next to the invitation.", "hi": "आप कैसे शुरू करना चाहेंगे? पर किसी व्यवसाय से जुड़ें दबाएँ, फिर निमंत्रण के बगल में स्वीकार कर जुड़ें दबाएँ।", "keys": ["onboarding.fork.title", "onboarding.fork.join", "onboarding.join.accept"] },
+            { "en": "No invitation shown? Ask the owner to add your email under Members, then tap Check again.", "hi": "निमंत्रण न दिखे? मालिक से कहें कि सदस्य में आपका ईमेल जोड़ें, फिर फिर से जाँचें दबाएँ।", "keys": ["onboarding.join.refresh"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "$comment": "Allowed `deepLink` ids for help/guide.json (validated by scripts/validate-help.mjs). Each id maps to the Android nav route (feature nav graphs) and the web path (src/app/[locale]/(app)/…, locale prefix omitted). `null` = that platform has no equivalent screen. `{…}` segments are arguments the app fills in; when a guide step does not know the argument, the app opens the parent list screen.",
+  "version": 1,
+  "routes": {
+    "booking/calendar": { "android": "booking/calendar", "web": "/booking" },
+    "booking/form": { "android": "booking/form?bookingId={bookingId}&date={date}", "web": "/booking" },
+    "booking/card": { "android": "booking/calendar#booking={bookingId}", "web": "/booking" },
+    "expenses/home": { "android": "expenses/home", "web": "/expenses" },
+    "expenses/add_party": { "android": "expenses/add_person", "web": "/expenses" },
+    "expenses/ledger": { "android": "expenses/ledger/{partyId}", "web": "/expenses/{partyId}" },
+    "expenses/add_entry": { "android": "expenses/entry/{partyId}/{direction}", "web": "/expenses/{partyId}" },
+    "inventory/stock": { "android": "inventory/home", "web": "/inventory" },
+    "inventory/masterlist": { "android": "inventory/home#masterlist", "web": "/inventory/masterlist" },
+    "inventory/item": { "android": "inventory/item/{itemId}", "web": "/inventory/{itemId}" },
+    "notes/home": { "android": "notes", "web": "/notes" },
+    "files/home": { "android": "files", "web": "/files" },
+    "menu/home": { "android": "menu_home", "web": "/menu" },
+    "menu/settings": { "android": "menu_settings", "web": "/menu/settings" },
+    "menu/settings/language": { "android": "menu_settings_language", "web": "/menu/settings/language" },
+    "menu/settings/sync": { "android": "menu_settings_sync", "web": "/menu/settings/sync" },
+    "menu/settings/business": { "android": "menu_settings_business", "web": "/menu/settings" },
+    "menu/settings/event_types": { "android": "menu_settings_event_types", "web": "/menu/settings/event-types" },
+    "menu/settings/reminders": { "android": "menu_settings_reminders", "web": null },
+    "menu/members": { "android": "menu_members", "web": "/menu/members" },
+    "menu/about": { "android": "menu_about", "web": "/menu/about" },
+    "reports/home": { "android": "reports_home", "web": "/menu/reports" },
+    "reports/detail": { "android": "reports_detail/{reportType}", "web": "/menu/reports/{report}" },
+    "auth/sign_in": { "android": "onboarding?startAtSignIn=true", "web": "/sign-in" }
+  }
+}

@@ -31,6 +31,11 @@ docs/                     shared decision notes (e.g. event-type presets model;
                           nav model: bottom bar = modules only, Menu behind the title-bar
                           kebab right of the sync indicator; ui-conventions.md =
                           cross-platform presentation rules, e.g. metadata lines)
+help/                     THE user guide (guide.json, en+hi) consumed by the Android Help
+                          screen, web /help, the public GitHub Pages help site and Gemini
+                          (help/README.md = schema + help-site decision; help/gemini/ =
+                          Saved-info + Gem setup; docs/assistant-context.md = Android
+                          AssistContent contract)
 scripts/                  CI validators + operational SQL (see below)
 ```
 
@@ -163,11 +168,22 @@ defaults to **false** when absent; owners bypass the object entirely (implicit f
 access); backups are owner-only and deliberately not representable. Both clients gate UI
 and writes from this shape.
 
+## User guide & public help site
+
+`help/guide.json` is the single source for every "how do I…" in both apps: screens → tasks →
+numbered steps in en + hi, naming buttons exactly as the string catalog does (`keys` on each
+step are validated against the catalog). `scripts/export-help-markdown.mjs` writes
+`help/guide.{en,hi}.md` (Gemini Gem knowledge files); `.github/workflows/pages.yml` publishes
+a static site to **https://itsluminous.github.io/samaroh-shared/help/** (one page per screen
+per language) on every push to `main`. See `help/README.md`.
+
 ## Validation
 
 ```bash
 node scripts/validate-catalogs.mjs   # catalog shape, key parity, placeholder parity (base + fragments)
 node scripts/test-catalogs.mjs       # fixture-driven validator + codegen tests
+node scripts/validate-help.mjs       # help guide: schema, en/hi parity, catalog labels, routes, no PII
+node scripts/export-help-markdown.mjs --check   # guide.{en,hi}.md are in sync with guide.json
 bash scripts/legal-check.sh          # repo-wide denylist scan (legal hygiene)
 ```
 

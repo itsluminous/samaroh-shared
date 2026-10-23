@@ -10,6 +10,8 @@ event types consumed by `samaroh-android` and `samaroh-web` as a `shared/` git s
 node scripts/validate-catalogs.mjs    # catalog shape, key parity (en↔hi), placeholder parity
 node scripts/test-catalogs.mjs        # fixture-driven validator + codegen tests
 bash scripts/legal-check.sh           # legal-hygiene denylist scan (base64-embedded list)
+node scripts/validate-help.mjs        # help/guide.json: schema, en/hi parity, catalog labels, routes, no PII
+node scripts/export-help-markdown.mjs # regenerate help/guide.{en,hi}.md after editing guide.json (--check in CI)
 
 # codegen smoke (what the app repos run at build time):
 node codegen/gen-android.mjs /tmp/res-out
@@ -40,6 +42,12 @@ generators, and applies `supabase/migrations/` + `seed.sql` to a scratch Postgre
    `004_invite_activation.sql` is the first such additive migration.)
 
 ## Conventions
+
+- **User guide is single-source**: every how-to lives in `help/guide.json` (schema in
+  `help/README.md`). Button names in steps must be the catalog labels and list their `keys`;
+  never invent UI - read the feature code first. Edit `guide.json`, never the generated
+  `help/guide.*.md`. The public help site (GitHub Pages) and the Android assistant context
+  (`docs/assistant-context.md`) are built from it; screen ids are public URLs - never rename.
 
 - **Fragments per namespace**: new feature strings go in
   `strings/fragments/<namespace>.{en,hi}.json` — one fragment pair per feature namespace
