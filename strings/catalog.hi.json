@@ -83,6 +83,10 @@
     "value": "मेनू",
     "description": "Bottom navigation tab 4: settings, reports, members, about."
   },
+  "common.menu.help": {
+    "value": "मदद",
+    "description": "Menu: title of the Help row (Android: Menu screen row + kebab entry; web: Menu home row + /menu/help page title). Opens the in-app user guide built from help/guide.json."
+  },
   "booking.event_type.engagement": {
     "value": "सगाई",
     "description": "Built-in event type label (💍)."

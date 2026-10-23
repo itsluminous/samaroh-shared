@@ -102,5 +102,37 @@
   "menu.identity.sign_in": {
     "value": "साइन इन करें",
     "description": "मेनू होम (वेब): पहचान पंक्ति की दाईं ओर की क्रिया जब साइन इन नहीं किया गया (अतिथि मोड / कोई सत्र नहीं) — साइन-इन पेज खोलती है। अब जब टाइटल बार में साइन-आउट आइकन नहीं है, यह menu.identity.sign_out का अतिथि-मोड समकक्ष है; मेनू-खोज की संगत प्रविष्टि का लेबल भी।"
+  },
+  "menu.help.subtitle": {
+    "value": "हर स्क्रीन का इस्तेमाल, कदम-दर-कदम",
+    "description": "Menu home (web): subtitle under the Help row."
+  },
+  "menu.help.intro": {
+    "value": "पहले स्क्रीन चुनें, फिर काम। हर कदम में बटन का नाम ठीक वैसा ही है जैसा ऐप में दिखता है।",
+    "description": "Help page (web): one-line explanation under the title."
+  },
+  "menu.help.search_placeholder": {
+    "value": "मदद में खोजें",
+    "description": "Help page (web): placeholder (and accessible name) of the search field that filters screens, tasks and steps."
+  },
+  "menu.help.no_results": {
+    "value": "कोई मेल खाता मदद विषय नहीं",
+    "description": "Help page (web): shown when the search matches nothing."
+  },
+  "menu.help.show_me": {
+    "value": "मुझे दिखाएँ",
+    "description": "Help page (web): button on a task that navigates to the screen where the task starts (and opens its dialog when possible)."
+  },
+  "menu.help.for_this_screen": {
+    "value": "इस स्क्रीन की मदद",
+    "description": "Title bar (web): accessible name / tooltip of the ? icon that opens the Help page scrolled to the current screen's section."
+  },
+  "menu.help.open_online": {
+    "value": "ऑनलाइन गाइड खोलें",
+    "description": "Help page (web): link on each screen section that opens the public web page of that section (GitHub Pages) in a new tab, for sharing."
+  },
+  "menu.help.step_count": {
+    "value": "{count, plural, one {# कदम} other {# कदम}}",
+    "description": "Help page (web): number of steps shown next to a task title. ICU plural; count = steps applicable on the web."
   }
 }

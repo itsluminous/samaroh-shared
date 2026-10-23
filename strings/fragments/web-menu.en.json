@@ -107,5 +107,37 @@
   "menu.identity.sign_in": {
     "value": "Sign in",
     "description": "Menu home (web): action at the right of the identity row in its not-signed-in state (guest mode / no session) — opens the sign-in page. The guest-mode counterpart of menu.identity.sign_out now that the title bar carries no sign-out icon; also the label of the matching menu-search entry."
+  },
+  "menu.help.subtitle": {
+    "value": "How to use each screen, step by step",
+    "description": "Menu home (web): subtitle under the Help row."
+  },
+  "menu.help.intro": {
+    "value": "Pick a screen, then a task. Each step names the button exactly as the app shows it.",
+    "description": "Help page (web): one-line explanation under the title."
+  },
+  "menu.help.search_placeholder": {
+    "value": "Search help",
+    "description": "Help page (web): placeholder (and accessible name) of the search field that filters screens, tasks and steps."
+  },
+  "menu.help.no_results": {
+    "value": "No matching help topics",
+    "description": "Help page (web): shown when the search matches nothing."
+  },
+  "menu.help.show_me": {
+    "value": "Show me",
+    "description": "Help page (web): button on a task that navigates to the screen where the task starts (and opens its dialog when possible)."
+  },
+  "menu.help.for_this_screen": {
+    "value": "Help for this screen",
+    "description": "Title bar (web): accessible name / tooltip of the ? icon that opens the Help page scrolled to the current screen's section."
+  },
+  "menu.help.open_online": {
+    "value": "Open online guide",
+    "description": "Help page (web): link on each screen section that opens the public web page of that section (GitHub Pages) in a new tab, for sharing."
+  },
+  "menu.help.step_count": {
+    "value": "{count, plural, one {# step} other {# steps}}",
+    "description": "Help page (web): number of steps shown next to a task title. ICU plural; count = steps applicable on the web."
   }
 }
