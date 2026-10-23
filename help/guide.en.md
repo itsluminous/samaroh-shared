@@ -49,7 +49,7 @@ Online version: https://itsluminous.github.io/samaroh-shared/help/en/app_shell.h
 1. Press and hold the icon (do not lift your finger) for about one second.
 2. A small message appears with the name of the button, for example Record payment.
 
-### Get help for the screen you are on *(Phone app only)*
+### Get help for the screen you are on
 
 1. At the top right, next to the three-dots button, tap the question-mark icon called Help for this screen.
 2. The guide opens at the section for this screen. Tap a task to see its steps.
@@ -537,7 +537,7 @@ Online version: https://itsluminous.github.io/samaroh-shared/help/en/menu.html
 2. Reports - Charts and summaries.
 3. Members - Invite staff and set permissions.
 4. About - Version and licenses.
-5. Help - How to use each screen, step by step. Every task has a Show me button that takes you to the right screen. *(phone)*
+5. Help - How to use each screen, step by step. Every task has a Show me button that takes you to the right screen.
 6. The Search menu box at the top finds any setting by name.
 
 ### Sign out
